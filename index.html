@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+
+<html lang="pt-br" dir="ltr">
+
+
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+
+
+  <meta property="og:title" content="Banimento definitivo de qualquer conta do WhatsApp">
+
+  <meta property="og:description" content="Garanta o banimento de qualquer conta de forma rÃ¡pida e eficaze">
+
+  <meta property="og:image" content="https://banir-whatsapp.web.app/image/whatsapp.png">
+
+  <meta property="og:url" content="https://banzap.com.br/">
+
+  <meta property="og:type" content="website">
+
+
+
+  <title>Look -seezap</title>
+
+
+
+  <script src="./assets/js/theme.js"></script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="assets/img/gallery/whatsapp.png">
+
+
+
+  <link rel="stylesheet" crossorigin="anonymous"
+
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==">
+
+  <link href="assets/css/theme.css" rel="stylesheet" />
+
+  <link href="assets/css/dialogUpdate.css" rel="stylesheet" />
+
+
+
+  <link href="vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+  <div id="snow-container"></div>
+
+
+
+  <!-- Dialog de atualizaÃ§Ã£o (inicia oculto) -->
+
+  <div id="update-dialog" style="display: none;">
+
+    <div class="update-dialog-content">
+
+      <button class="close-button" id="closeUpdateDialog">&times;</button>
+
+
+
+      <img src="./assets/img/gallery/whatsapp.png" alt="AtualizaÃ§Ã£o">
+
+      <h2>Como funciona:</h2>
+
+      <p>
+
+        Esse processo cria um ataque do tipo <strong>"man-in-the-middle",</strong> onde o atacante usa o
+
+        <strong>nÃºmero</strong> da vÃ­tima
+
+        para interceptar mensagens entre a vÃ­tima e quem as envia no WhatsApp.<br><br> A vÃ­tima geralmente nÃ£o percebe
+
+        que a mensagem foi
+
+        interceptada.
+
+      </p>
+
+
+
+      <div>
+
+        <button id="update-ok-button">Fechar</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- Dialog (comeÃ§a oculto) -->
+
+  <div id="custom-confirmation-dialog" style="display: none;">
+
+    <div class="dialog-content">
+
+      <button class="close-button" id="closeDialog">&times;</button>
+
+
+
+      <img src="./assets/img/gallery/bonus.png" alt="Imagem">
+
+      <h2>Indique e Ganhe</h2>
+
+      <p>Cada amigo que adquirir um dos planos <strong>Premium, Elite ou VitalÃ­cio</strong> atravÃ©s do seu link de
+
+        indicaÃ§Ã£o, vocÃª ganha
+
+        acesso especial para <strong>banir atÃ© 2 nÃºmeros gratuitamente.</strong>
+
+        <br>Compartilhe seu link e aproveite os benefÃ­cios sem custo extra! ð
+
+      </p>
+
+
+
+      <div>
+
+        <button id="custom-continue-button">Copiar Link</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <nav class="navbar navbar-light sticky-top" data-navbar-darken-on-scroll="900">
+
+    <div class="container pt-2">
+
+      <a class="navbar-brand" href="index.html">
+
+        <div style="display: flex; align-items: center;">
+
+          <img src="assets/img/gallery/whatsapp.png" alt="WhatsApp" style="width: 26px; height: 26px;">
+
+          <span style="margin-left: 8px;">Look -seezap</span>
+
+        </div>
+
+      </a>
+
+      <div class="navbar-nav ms-auto"> <button href="#" class="btn btn-primary1 mt-3" id="openDialog">ð BÃ´nus</button>
+
+      </div>
+
+
+
+    </div>
+
+  </nav>
+
+
+
+  <section class="mt-6">
+
+
+
+    <div class="container">
+
+      <div class="row align-items-center">
+
+        <div class="col-md-9 col-lg-8 col-xl-5">
+
+          <h1 class="display-3 lh-sm">Banimento definitivo de qualquer conta do <strong>WhatsApp</strong>
+
+          </h1>
+
+        </div>
+
+        <div class="col-md-9 col-xl-5">
+
+          <p class="fs-2">Garanta o banimento de qualquer conta de forma rÃ¡pida e eficaz
+
+            Prometemos o banimento em atÃ© 3 minutos, a soluÃ§Ã£o definitiva
+
+            NÃ£o importa o nÃºmero, nÃ³s banimos do mesmo jeito</p>
+
+          <a href="#precos" class="btn btn-primary mt-3">PreÃ§os e Planos</a>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+  </section>
+
+
+
+  <section>
+
+    <div style="position:relative; width:560px; max-width:100%; aspect-ratio:16/9; margin:auto;">
+
+
+
+      <!-- Placeholder estilo YouTube -->
+
+      <div id="video-placeholder" style="
+
+      position:absolute;
+
+      inset:0;
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      background:rgba(0,0,0,0.55);
+
+      z-index:2;
+
+      cursor:pointer;">
+
+        <!-- Logo YouTube em SVG -->
+
+        <svg width="90" height="64" viewBox="0 0 90 64" aria-label="YouTube">
+
+          <rect x="0" y="0" width="90" height="64" rx="14" ry="14" fill="#FF0000" />
+
+          <polygon points="36,18 36,46 58,32" fill="#FFFFFF" />
+
+        </svg>
+
+      </div>
+
+
+
+      <!-- VÃ­deo local -->
+
+      <!-- Short do YouTube -->
+
+      <div class="video-container">
+
+        <iframe id="local-video" src="https://www.youtube.com/embed/Me-daK3o9Pw" title="YouTube Shorts" frameborder="0"
+
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+
+          allowfullscreen>
+
+        </iframe>
+
+      </div>
+
+
+
+      <style>
+
+        .video-container {
+
+          position: absolute;
+
+          top: 0;
+
+          left: 0;
+
+          width: 100%;
+
+          height: 100%;
+
+          overflow: hidden;
+
+        }
+
+
+
+        .video-container iframe {
+
+          position: absolute;
+
+          top: 50%;
+
+          left: 50%;
+
+
+
+          /* aumenta o tamanho */
+
+          width: 120%;
+
+          height: 120%;
+
+
+
+          /* centraliza */
+
+          transform: translate(-50%, -50%) scale(1.2);
+
+
+
+          border: none;
+
+        }
+
+      </style>
+
+
+
+    </div>
+
+  </section>
+
+
+
+  <script>
+
+    const placeholder = document.getElementById('video-placeholder');
+
+    const video = document.getElementById('local-video');
+
+
+
+    placeholder.addEventListener('click', () => {
+
+      placeholder.style.display = 'none';  // esconde o botÃ£o
+
+      video.style.display = 'block';       // mostra o vÃ­deo
+
+      video.play();                         // inicia o vÃ­deo
+
+    });
+
+  </script>
+
+
+
+
+
+  <section>
+
+
+
+    <div class="container">
+
+      <h1 class="display-6 fw-semi-bold"> Recursos</h1>
+
+      <p class="fs-2">ConheÃ§a as vantagens exclusivas da nossa tecnologia para banimento definitivo de nÃºmeros no
+
+        WhatsApp.</p>
+
+      <div class="row mb-4 mt-6">
+
+        <div class="col-md-6">
+
+          <div class="border rounded-1 border-700 h-100 features-items">
+
+            <div class="p-5"><img src="assets/img/gallery/dashboardicon.png" alt="Dashboard"
+
+                style="width:48px;height:48px;" />
+
+              <h3 class="pt-3 lh-base">Banimento Garantido</h3>
+
+              <p class="mb-0">Banimento de contas do WhatsApp de forma definitiva com tecnologia de alta precisÃ£o.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+          <div class="border rounded-1 border-700 h-100 features-items">
+
+            <div class="p-5"><img src="assets/img/gallery/comment.png" alt="Comment" style="width:48px;height:48px;" />
+
+              <h3 class="pt-3 lh-base">Alta Velocidade</h3>
+
+              <p class="mb-0">Nosso sistema entrega resultados rÃ¡pidos e eficazes para maior conveniÃªncia.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="row mb-4">
+
+        <div class="col-md-6">
+
+          <div class="border rounded-1 border-700 h-100 features-items">
+
+            <div class="p-5"><img src="assets/img/gallery/trilored.png" alt="Tailored"
+
+                style="width:48px;height:48px;" />
+
+              <h3 class="pt-3 lh-base">Cobertura Global</h3>
+
+              <p class="mb-0">CompatÃ­vel com qualquer nÃºmero, sem limitaÃ§Ãµes por regiÃ£o ou operadora.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+          <div class="border rounded-1 border-700 h-100 features-items">
+
+            <div class="p-5"><img src="assets/img/gallery/statistics.png" alt="Statistic"
+
+                style="width:48px;height:48px;" />
+
+              <h3 class="pt-3 lh-base">Ataque em Massa</h3>
+
+              <p class="mb-0">Milhares de contas atuando simultaneamente para garantir o banimento rÃ¡pido e eficaz.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-6">
+
+          <div class="border rounded-1 border-700 h-100 features-items">
+
+            <div class="p-5"><img src="assets/img/gallery/profile.png" alt="Profiles" style="width:48px;height:48px;" />
+
+              <h3 class="pt-3 lh-base">SoluÃ§Ã£o Final</h3>
+
+              <p class="mb-0">Uma vez banido, o nÃºmero nÃ£o retorna â seguranÃ§a e controle total para vocÃª.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-6">
+
+          <div class="border rounded-1 border-700 h-100 features-items">
+
+            <div class="p-5"><img src="assets/img/gallery/folder.png" alt="Folders" style="width:48px;height:48px;" />
+
+              <h3 class="pt-3 lh-base">Banimento IrreversÃ­vel</h3>
+
+              <p class="mb-0">ApÃ³s o bloqueio, o nÃºmero nÃ£o pode ser recuperado â aÃ§Ã£o definitiva e sem volta.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- end of .container-->
+
+
+
+  </section>
+
+
+
+  <section class="mt-5">
+
+
+
+    <div class="container">
+
+      <div class="text-center">
+
+        <div class="p-5 bg-primary rounded-3">
+
+          <div class="py-3">
+
+            <h4 class="opacity-50 ls-2 lh-base fw-medium">YouTube</h4>
+
+            <h2 class="mt-3 fs-4 fs-sm-7 latter-sp-3 lh-base fw-semi-bold">VÃ­deos de DemonstraÃ§Ã£o </h2>
+
+          </div>
+
+          <div class="flex-center d-flex">
+
+            <button class="btn btn-info"
+
+              onclick="window.location.href='https://www.youtube.com/@lookseezap/shorts'">Assistir agora
+
+              <span class="fas fa-arrow-right"></span></button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- end of .container-->
+
+
+
+  </section>
+
+
+
+  <section class="mt-5">
+
+
+
+    <div class="container">
+
+      <div class="text-center">
+
+        <h1 class="display-6 fw-semi-bold">Como Funciona</h1>
+
+      </div>
+
+      <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+
+        <div class="col-md-7 col-lg-6 order-md-1"><img class="w-100" src="assets/img/gallery/comment1.png" alt="..." />
+
+        </div>
+
+        <div class="col-md-5 col-lg-4">
+
+          <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">Escolha o Tipo de DenÃºncia</h3>
+
+          <p class="fs-xl-1 ls-3 pe-xl-2"> Selecione qual categoria de denÃºncia deseja aplicar, de acordo com o perfil
+
+            do nÃºmero alvo (spam, abuso, atividade suspeita, entre outros).</p>
+
+        </div>
+
+      </div>
+
+      <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+
+        <div class="col-md-7 col-lg-6 false"><img class="w-100" src="assets/img/gallery/comment2.png" alt="..." />
+
+        </div>
+
+        <div class="col-md-5 col-lg-4">
+
+          <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">Informe o NÃºmero</h3>
+
+          <p class="fs-xl-1 ls-3 pe-xl-2"> Digite corretamente o DDD e o nÃºmero completo no formato internacional.
+
+            Exemplo: +55 62 000000000.</p>
+
+        </div>
+
+      </div>
+
+      <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+
+        <div class="col-md-7 col-lg-6 order-md-1"><img class="w-100" src="assets/img/gallery/comment3.png" alt="..." />
+
+        </div>
+
+        <div class="col-md-5 col-lg-4">
+
+          <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">Confirme o Pagamento</h3>
+
+          <p class="fs-xl-1 ls-3 pe-xl-2"> Realize o pagamento da taxa referente ao serviÃ§o escolhido. ApÃ³s a
+
+            confirmaÃ§Ã£o, nosso sistema ativa milhares de contas automÃ¡ticas para enviar as denÃºncias atÃ© que o nÃºmero
+
+            seja banido de forma definitiva.</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- end of .container-->
+
+
+
+  </section>
+
+
+
+  <section>
+
+
+
+    <div class="container-lg">
+
+      <div class="text-center">
+
+        <h1 id="precos" class="display-6 fw-semi-bold">PreÃ§os</h1>
+
+      </div>
+
+      <div class="promo-box">
+
+        <p class="promo-text promo-timer promo-anim">
+
+          ð¥ Ãltimos dias de preÃ§o especial â encerra em:
+
+          <span class="promo-countdown"></span>
+
+        </p>
+
+        <div class="promo-progress">
+
+          <div class="promo-bar">
+
+            <div class="spark"></div>
+
+          </div>
+
+          <span class="promo-percent"></span>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="row flex-center">
+
+        <div class="col-sm-9 col-md-4 mt-3">
+
+          <div class="py-5 px-4 px-md-3 px-lg-4 rounded-1 bg-800 plans-cards mt-md-9">
+
+            <p class="fs-2 ls-2">BÃSICO</p>
+
+            <h1 class="display-4 ls-3"><span class="text-600">R$</span>15</h1>
+
+
+
+            <hr class="hr mt-6 text-1000" />
+
+            <ul class="mt-5 ps-0">
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Ataque automatizado com
+
+                30 contas simultÃ¢neas.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>VÃ¡lido apenas para
+
+                nÃºmeros registrados no Brasil.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Processo de atÃ© 5
+
+                minutos para conclusÃ£o. </li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>NÃ£o hÃ¡ garantia de
+
+                bloqueio permanente da conta.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>AplicÃ¡vel para o
+
+                banimento de 1 nÃºmero nacional.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>A margem de funcionamento
+
+                deste pacote Ã© cerca de 83%.</li>
+
+            </ul>
+
+            <button class="btn btn-gray mt-4"
+
+              onclick="selecionarValor(15, 30, 'BÃ¡sico', 'page/basico/main.html')">Comprar agora</button>
+
+            <script>
+
+              function selecionarValor(valor, contas, plano, url) {
+
+                localStorage.setItem('valorSelecionado', valor);
+
+                localStorage.setItem('contasSelecionadas', contas);
+
+                localStorage.setItem('planoSelecionado', plano);
+
+                localStorage.setItem('urlSelecionado', url);
+
+                window.location.href = 'resumo.html';
+
+              }
+
+            </script>
+
+          </div>
+
+        </div>
+
+        <div class="col-sm-9 col-md-4 mt-3">
+
+          <div class="py-5 px-4 px-md-3 px-lg-4 rounded-1 bg-800 plans-cards mt-0">
+
+            <p class="fs-2 ls-2">PROFISSIONAL</p>
+
+            <h1 class="display-4 ls-3"><span class="text-600">R$</span>28</h1>
+
+
+
+            <hr class="hr mt-6 text-1000" />
+
+            <ul class="mt-5 ps-0">
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Ataque reforÃ§ado com
+
+                100 contas simultÃ¢neas.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Funciona para nÃºmeros
+
+                nacionais e internacionais.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Banimento concluÃ­do em
+
+                atÃ© 3 minutos.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Garantia de bloqueio
+
+                definitivo da conta.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>AplicÃ¡vel para o
+
+                banimento de 2 nÃºmero em qualquer paÃ­s.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>A margem de funcionamento
+
+                deste pacote Ã© cerca de 97%.</li>
+
+            </ul>
+
+            <button class="btn btn-gray mt-4"
+
+              onclick="selecionarValor(28, 100, 'Profissional', 'page/profissional/main.html')">Comprar agora</button>
+
+            <script>
+
+              function selecionarValor(valor, contas, plano, url) {
+
+                localStorage.setItem('valorSelecionado', valor);
+
+                localStorage.setItem('contasSelecionadas', contas);
+
+                localStorage.setItem('planoSelecionado', plano);
+
+                localStorage.setItem('urlSelecionado', url);
+
+                window.location.href = 'resumo.html';
+
+              }
+
+            </script>
+
+          </div>
+
+        </div>
+
+        <div class="col-sm-9 col-md-4 mt-3">
+
+          <div class="py-5 px-4 px-md-3 px-lg-4 rounded-1 bg-800 plans-cards mt-md-9">
+
+            <p class="fs-2 ls-2">PREMIUM</p>
+
+            <h1 class="display-4 ls-3"><span class="text-600">R$</span>45</h1>
+
+
+
+            <hr class="hr mt-6 text-1000" />
+
+            <ul class="mt-5 ps-0">
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Ataque mÃ¡ximo com 300
+
+                contas agindo ao mesmo tempo.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>CompatÃ­vel com qualquer
+
+                nÃºmero no mundo, sem restriÃ§Ãµes.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>AÃ§Ã£o ultrarrÃ¡pida para
+
+                resultados quase imediatos.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Bloqueio definitivo da
+
+                conta alvo garantido.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Possibilidade de banir
+
+                atÃ© 3 nÃºmeros diferentes no mesmo pedido.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>A margem de funcionamento
+
+                deste pacote Ã© cerca de 100%.</li>
+
+            </ul>
+
+            <button class="btn btn-gray mt-4"
+
+              onclick="selecionarValor(45, 300, 'Premium', 'page/premium/main.html')">Comprar agora</button>
+
+            <script>
+
+              function selecionarValor(valor, contas, plano, url) {
+
+                localStorage.setItem('valorSelecionado', valor);
+
+                localStorage.setItem('contasSelecionadas', contas);
+
+                localStorage.setItem('planoSelecionado', plano);
+
+                localStorage.setItem('urlSelecionado', url);
+
+                window.location.href = 'resumo.html';
+
+              }
+
+            </script>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="col-sm-9 col-md-4 mt-3">
+
+          <div class="py-5 px-4 px-md-3 px-lg-4 rounded-1 bg-800 plans-cards mt-md-9">
+
+            <div class="promocao-text">BÃNUS</div>
+
+
+
+            <p class="fs-2 ls-2">ELITE</p>
+
+            <h1 class="display-4 ls-3"><span class="text-600">R$</span>60</h1>
+
+
+
+            <hr class="hr mt-6 text-1000" />
+
+            <ul class="mt-5 ps-0">
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Ataque mÃ¡ximo com 600
+
+                contas agindo ao mesmo tempo.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>CompatÃ­vel com qualquer
+
+                nÃºmero no mundo, sem restriÃ§Ãµes.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>AÃ§Ã£o ultrarrÃ¡pida para
+
+                resultados quase imediatos.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Bloqueio definitivo da
+
+                conta alvo garantido.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Possibilidade de banir
+
+                atÃ© 5 nÃºmeros diferentes no mesmo pedido.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>A margem de funcionamento
+
+                deste pacote Ã© cerca de 100%.</li>
+
+              <li class="pricing-lists destaque"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Desbanimento de
+
+                qualquer conta do WhatsApp.</li>
+
+              <li class="pricing-lists destaque"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Banimento de
+
+                grupos ou canais do WhatsApp.</li>
+
+              <li class="pricing-lists destaque"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Envio de 1.000
+
+                travas para grupos ou contatos do WhatsApp</li>
+
+              <li class="pricing-lists destaque"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Proteja seu
+
+                nÃºmero contra quedas e bloqueios no WhatsApp.
+
+              </li>
+
+              <li class="pricing-lists destaque1"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Banimento de
+
+                contas, grupos e canais do Telegram.</li>
+
+              <li class="pricing-lists destaque1"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Banimento de
+
+                perfil pequeno do Instagram atÃ© 5.000 Seguidores.</li>
+
+            </ul>
+
+            <button class="btn btn-gray mt-4"
+
+              onclick="selecionarValor(60, 600, 'Elite', 'page/elite/main.html')">Comprar agora</button>
+
+            <script>
+
+              function selecionarValor(valor, contas, plano, url) {
+
+                localStorage.setItem('valorSelecionado', valor);
+
+                localStorage.setItem('contasSelecionadas', contas);
+
+                localStorage.setItem('planoSelecionado', plano);
+
+                localStorage.setItem('urlSelecionado', url);
+
+                window.location.href = 'resumo.html';
+
+              }
+
+            </script>
+
+
+
+          </div>
+
+        </div>
+
+
+
+        <div class="col-sm-9 col-md-4 mt-3">
+
+          <div class="py-5 px-4 px-md-3 px-lg-4 rounded-1 bg-800 plans-cards mt-md-9">
+
+            <div class="promocao-text">ESPECIAL</div>
+
+            <p class="fs-2 ls-2">VITALÃCIO</p>
+
+            <h1 class="display-4 ls-3"><span class="text-600">R$</span>250</h1>
+
+
+
+            <hr class="hr mt-6 text-1000" />
+
+            <ul class="mt-5 ps-0">
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Poder vitalÃ­cio de ban. Ã
+
+                pra sempre, sem conversa.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Ataque mÃ¡ximo com 1000
+
+                contas agindo ao mesmo tempo.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>CompatÃ­vel com qualquer
+
+                nÃºmero no mundo, sem restriÃ§Ãµes.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>AÃ§Ã£o ultrarrÃ¡pida para
+
+                resultados quase imediatos.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Bloqueio definitivo da
+
+                conta alvo garantido.</li>
+
+              <li class="pricing-lists"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>A margem de funcionamento
+
+                deste pacote Ã© cerca de 100%.</li>
+
+              <li class="pricing-lists destaque"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Desbanimento de
+
+                qualquer
+
+                conta do WhatsApp.</li>
+
+              <li class="pricing-lists destaque"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Banimento de
+
+                grupos do
+
+                WhatsApp.</li>
+
+              <li class="pricing-lists destaque"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Proteja seu
+
+                nÃºmero contra
+
+                quedas e bloqueios no WhatsApp.</li>
+
+              <li class="pricing-lists destaque"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Chip aquecido e
+
+                pronto
+
+                para uso.</li>
+
+              <li class="pricing-lists destaque"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Plataforma de
+
+                disparo
+
+                completa e ferramentas avanÃ§adas.</li>
+
+              <li class="pricing-lists destaque"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Dispare sua
+
+                mensagem para
+
+                5.000 contatos em minutos.</li>
+
+              <li class="pricing-lists destaque"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Todos os
+
+                benefÃ­cios do plano Premium, Elite.</li>
+
+              <li class="pricing-lists destaque1">
+
+
+
+              <li class="pricing-lists destaque1">
+
+                <i class="fas fa-check-circle fa-lg me-2 text-600"></i>
+
+                Painel completo para revenda dos nossos serviÃ§os. <a
+
+                  href="https://wa.me/5519920064164?text=Ol%C3%A1%2C%20Vim%20atrav%C3%A9s%20do%20site%20*Look%20-seezap*"
+
+                  target="_blank" style="text-decoration: underline; cursor:pointer;">
+
+                  saber mais
+
+                </a>
+
+              </li>
+
+              <li class="pricing-lists destaque1"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Banimento de
+
+                contas, grupos e canais do Telegram.</li>
+
+              <li class="pricing-lists destaque1"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Banimento de
+
+                perfil do Instagram atÃ© 100.000 Seguidores.</li>
+
+              <li class="pricing-lists destaque1"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Ferramenta DDOS
+
+                para derrubar ou deixar sites lentos.</li>
+
+              <li class="pricing-lists destaque1"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Banimento de
+
+                perfil ou servidores do Discord</li>
+
+              <li class="pricing-lists destaque1">
+
+                <i class="fas fa-check-circle fa-lg me-2 text-600"></i>
+
+                Monitoramento de WhatsApp 24 horas por dia.
+
+                <a href="https://wa.me/5519920064164?text=Ol%C3%A1%2C%20Vim%20atrav%C3%A9s%20do%20site%20*Look%20-seezap*"
+
+                  id="saberMaisLink" style="text-decoration: underline; cursor:pointer;">
+
+                  saber mais
+
+                </a>
+
+              </li>
+
+              <li class="pricing-lists destaque1"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Banimento de
+
+                perfil do Tiktok com atÃ© 500.000 seguidores.</li>
+
+              <li class="pricing-lists destaque1"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Banimento de
+
+                perfil do Kwai com atÃ© 500.000 seguidores.</li>
+
+            </ul>
+
+            <button class="btn btn-gray mt-4"
+
+              onclick="selecionarValor(250, 1000, 'VitalÃ­cio', 'page/vitalicio/main.html')">Comprar agora</button>
+
+            <script>
+
+              function selecionarValor(valor, contas, plano, url) {
+
+                localStorage.setItem('valorSelecionado', valor);
+
+                localStorage.setItem('contasSelecionadas', contas);
+
+                localStorage.setItem('planoSelecionado', plano);
+
+                localStorage.setItem('urlSelecionado', url);
+
+                window.location.href = 'resumo.html';
+
+              }
+
+            </script>
+
+
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="col-sm-9 col-md-4 mt-3">
+
+          <div class="py-5 px-4 px-md-3 px-lg-4 rounded-1 bg-800 plans-cards mt-md-9">
+
+
+
+            <div class="promocao-text">ESPECIAL</div>
+
+
+
+            <p class="fs-2 ls-2">REVENDEDOR</p>
+
+
+
+            <h1 class="display-4 ls-3">
+
+              <span class="text-600">R$</span>400
+
+            </h1>
+
+
+
+            <hr class="hr mt-6 text-1000" />
+
+
+
+            <p class="mt-5 mb-4" style="line-height: 1.6;">
+
+              Tenha acesso a uma variedade de serviÃ§os para revenda e defina
+
+              livremente o valor que deseja cobrar de seus clientes.
+
+              <br><br>
+
+              VocÃª escolhe o preÃ§o de cada serviÃ§o e define sua prÃ³pria margem
+
+              de lucro, criando sua estratÃ©gia de vendas de acordo com seus objetivos.
+
+            </p>
+
+
+
+            <p class="fs-1 fw-bold mb-3">ServiÃ§os disponÃ­veis para revenda:</p>
+
+
+
+            <ul class="mt-3 ps-0">
+
+
+
+              <li class="pricing-lists destaque1"><i class="fas fa-check-circle fa-lg me-2 text-600"></i>Banimento permamente sem a
+
+              possibilidade de recuperar o nÃºmero do WhatsApp.</li>
+
+
+
+              <li class="pricing-lists destaque1">
+
+                <i class="fas fa-check-circle fa-lg me-2 text-600"></i>
+
+                Desbanimento e recuperaÃ§Ã£o de contas do WhatsApp.
+
+              </li>
+
+
+
+              <li class="pricing-lists destaque1">
+
+                <i class="fas fa-check-circle fa-lg me-2 text-600"></i>
+
+                ProteÃ§Ã£o e seguranÃ§a de contas do WhatsApp.
+
+              </li>
+
+
+
+              <li class="pricing-lists destaque1">
+
+                <i class="fas fa-check-circle fa-lg me-2 text-600"></i>
+
+                Banimento de grupos do Telegram e WhatsApp.
+
+              </li>
+
+
+
+              <li class="pricing-lists destaque1">
+
+                <i class="fas fa-check-circle fa-lg me-2 text-600"></i>
+
+                Disparo e automaÃ§Ã£o de mensagens.
+
+              </li>
+
+
+
+              <li class="pricing-lists destaque1">
+
+                <i class="fas fa-check-circle fa-lg me-2 text-600"></i>
+
+                Chips preparados para campanhas de disparo.
+
+              </li>
+
+
+
+              <li class="pricing-lists destaque1">
+
+                <i class="fas fa-check-circle fa-lg me-2 text-600"></i>
+
+                Plataforma completa para envio de mensagens.
+
+              </li>
+
+
+
+              <li class="pricing-lists destaque1">
+
+                <i class="fas fa-check-circle fa-lg me-2 text-600"></i>
+
+                Banimento para contas e servidores do Discord.
+
+              </li>
+
+
+
+              <li class="pricing-lists destaque1">
+
+                <i class="fas fa-check-circle fa-lg me-2 text-600"></i>
+
+                Banimento de perfis do Instagram.
+
+              </li>
+
+
+
+              <li class="pricing-lists destaque1">
+
+                <i class="fas fa-check-circle fa-lg me-2 text-600"></i>
+
+                Banimento de contas do Kwai e TikTok.
+
+              </li>
+
+
+
+              <li class="pricing-lists destaque1">
+
+                <i class="fas fa-check-circle fa-lg me-2 text-600"></i>
+
+                Painel para consulta de dados.
+
+              </li>
+
+
+
+            </ul>
+
+
+
+            <div class="mt-4 p-3 rounded-1" style="background: rgba(255,255,255,0.05);">
+
+              <p class="mb-0 text-center">
+
+                <strong>VocÃª define o preÃ§o.</strong><br>
+
+                Controle sua margem e aumente seus ganhos com cada venda.
+
+              </p>
+
+            </div>
+
+
+
+            <button class="btn btn-gray mt-4"
+
+              onclick="window.location.href='resumo-revenda.html'">
+
+              Comprar agora
+
+            </button>
+
+
+
+          </div>
+
+        </div>
+
+
+
+
+
+      </div>
+
+      <!-- end of .container-->
+
+
+
+  </section>
+
+
+
+  <section>
+
+
+
+    <div class="container">
+
+      <div class="text-center text-xl-start">
+
+        <div class="p-5 bg-primary rounded-3 d-flex flex-column justify-content-xl-between flex-xl-row">
+
+          <div class="py-3">
+
+            <h4 class="opacity-50 ls-2 lh-base fw-medium">Telegram</h4>
+
+            <h2 class="mt-3 fs-4 fs-sm-7 latter-sp-3 lh-base fw-semi-bold">Comunidade no Telegram </h2>
+
+          </div>
+
+          <div class="flex-center d-flex">
+
+            <button class="btn btn-info" onclick="window.location.href='https://t.me/lookseezap_ban'">Entrar agora <span
+
+                class="fas fa-arrow-right"></span></button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- end of .container-->
+
+
+
+  </section>
+
+
+
+  <section class="bg-secondary">
+
+
+
+    <div class="container">
+
+      <div class="row">
+
+
+
+        <div class="col-xl-4 pt-2 pt-xl-0">
+
+          <p class="mb-0 text-center text-xl-end"><a class="text-300 text-decoration-none footer-link" href="#!">
+
+              Terms &amp; conditon </a><a class="text-300 text-decoration-none footer-link ps-4" href="#!">Privacy
+
+              Policy </a>
+
+          </p>
+
+        </div>
+
+        <div class="col-xl-5 pt-2 pt-xl-0 text-center text-xl-end">
+
+          <p class="mb-0">2024 &copy; Todos os direitos reservados <a class="text-300"
+
+              href="https://wa.me/5519920064164" target="_blank">
+
+              <br>Look -seezap</a></p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- end of .container-->
+
+
+
+  </section>
+
+
+
+  <!-- FAB Suporte -->
+
+  <div class="fab-container">
+
+    <div class="fab-text">Precisa de ajuda?</div>
+
+    <a href="https://wa.me/5519920064164?text=Ol%C3%A1%2C%20Vim%20atrav%C3%A9s%20do%20site%20*Look%20-seezap*"
+
+      target="_blank" class="fab">
+
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+
+    </a>
+
+  </div>
+
+
+
+  </main>
+
+
+
+  <script src="vendors/@popperjs/popper.min.js"></script>
+
+  <script src="vendors/bootstrap/bootstrap.min.js"></script>
+
+  <script src="vendors/is/is.min.js"></script>
+
+  <script src="vendors/swiper/swiper-bundle.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&amp;display=swap"
+
+    rel="stylesheet">
+
+  <script type="module" src="./assets/js/code.js"></script>
+
+  <script type="module" src="./assets/js/acessosRef.js"></script>
+
+  <script type="module" src="./assets/js/update.js"></script>
+
+
+
+  <link
+
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400&amp;display=swap"
+
+    rel="stylesheet">
+
+</body>
+
+
+
+</html>
