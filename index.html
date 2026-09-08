@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xzhero UI</title>
+    <title>ZRX</title>
     <style>
         :root {
             --primary-color: #3b82f6;
@@ -49,9 +49,9 @@
 
         .app-title {
             font-size: 0.95rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            opacity: 0.8;
+            font-weight: 600;
+            letter-spacing: 1px;
+            opacity: 0.9;
         }
 
         .header-right {
@@ -193,7 +193,7 @@
             opacity: 0.9;
         }
 
-        /* Anime Banner Container (Swipeable) */
+        /* Banner Container (Swipeable) - Aceita Imagem ou Vídeo */
         .banner-container {
             position: relative;
             width: 100%;
@@ -220,9 +220,11 @@
             overflow: hidden;
             border: 1px solid var(--border-color);
             position: relative;
+            cursor: pointer;
+            background-color: #000;
         }
 
-        .anime-banner img {
+        .anime-banner img, .anime-banner video {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -250,7 +252,7 @@
             border-radius: 4px;
         }
 
-        /* Grid 2x2 for Quick Access (Lightning Bullets) */
+        /* Grid 2x2 for Quick Access (Lightning Bullets with symbols instead of emojis) */
         .quick-access-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -288,7 +290,9 @@
             align-items: center;
             justify-content: center;
             font-size: 1rem;
+            font-weight: bold;
             flex-shrink: 0;
+            color: #fff;
         }
 
         .qa-info h4 {
@@ -435,10 +439,10 @@
     <!-- Top Bar -->
     <header>
         <button class="icon-btn" id="menuBtn">&#9776;</button>
-        <span class="app-title">Xzhero-v15.0.0</span>
+        <span class="app-title">ZRX</span>
         <div class="header-right">
             <button class="icon-btn" id="settingsBtn">&#9881;</button>
-            <button class="icon-btn">&#127911;</button>
+            <button class="icon-btn">&#9835;</button>
             <button class="icon-btn" id="topProfileBtn">&#128100;</button>
         </div>
     </header>
@@ -449,7 +453,7 @@
             <div class="profile-top">
                 <div class="profile-info">
                     <div class="avatar" id="profileAvatar">
-                        👤
+                        &#128100;
                     </div>
                     <div class="user-details">
                         <span>Welcome back!</span>
@@ -465,32 +469,32 @@
 
             <div class="profile-stats">
                 <div class="stat-item">
-                    <span style="opacity: 0.6;">⚡ ONLINE</span>
+                    <span style="opacity: 0.6;">[ON]</span>
                     <span>ON</span>
                 </div>
                 <div class="stat-item">
-                    <span style="opacity: 0.6;">⏳ SISA HARI</span>
+                    <span style="opacity: 0.6;">[DAYS]</span>
                     <span>99740</span>
                 </div>
                 <div class="stat-item">
-                    <span style="opacity: 0.6;">🔗 SESSIONS</span>
+                    <span style="opacity: 0.6;">[SESS]</span>
                     <span>...</span>
                 </div>
             </div>
         </div>
 
-        <!-- Anime Banner Slider (Com o olho estilo Gojo azul brilhante) -->
+        <!-- Banner Slider (Permite carregar imagem ou vídeo do meio) -->
         <div>
-            <div class="section-header" style="margin-bottom: 0.75rem;">
-                <span>🔲</span> LATEST NEWS
+            <div class="section-header" style="margin-bottom: 0.75rem;" id="bannerHeader">
+                <span>[&#9632;]</span> MEDIA DISPLAY (TOQUE PARA ALTERAR)
             </div>
             
             <div class="banner-container">
                 <div class="banner-slider" id="bannerSlider">
-                    <div class="anime-banner">
+                    <div class="anime-banner" id="bannerUpload1">
                         <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&auto=format&fit=crop&q=80" alt="Anime Art">
                     </div>
-                    <div class="anime-banner">
+                    <div class="anime-banner" id="bannerUpload2">
                         <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&auto=format&fit=crop&q=80" alt="Anime Art 2">
                     </div>
                 </div>
@@ -502,16 +506,16 @@
             </div>
         </div>
 
-        <!-- Quick Access (2x2 Grid com Raios e Balões de Pesquisa) -->
+        <!-- Quick Access (2x2 Grid com Raios e Balões de Pesquisa - Símbolos sem emoji) -->
         <div>
             <div class="section-header" style="margin-bottom: 0.75rem;">
-                <span>⚡</span> QUICK ACCESS
+                <span>[&#9889;]</span> QUICK ACCESS
             </div>
             
             <div class="quick-access-grid">
                 <div class="quick-access-card" onclick="openSearchModal('NOME')">
                     <div class="qa-top">
-                        <div class="qa-icon">⚡</div>
+                        <div class="qa-icon">&#9889;</div>
                         <div class="qa-info">
                             <h4>NOME</h4>
                         </div>
@@ -521,7 +525,7 @@
 
                 <div class="quick-access-card" onclick="openSearchModal('CPF')">
                     <div class="qa-top">
-                        <div class="qa-icon">⚡</div>
+                        <div class="qa-icon">&#9889;</div>
                         <div class="qa-info">
                             <h4>CPF</h4>
                         </div>
@@ -531,7 +535,7 @@
 
                 <div class="quick-access-card" onclick="openSearchModal('TELEFONE')">
                     <div class="qa-top">
-                        <div class="qa-icon">⚡</div>
+                        <div class="qa-icon">&#9889;</div>
                         <div class="qa-info">
                             <h4>TELEFONE</h4>
                         </div>
@@ -541,7 +545,7 @@
 
                 <div class="quick-access-card" onclick="openSearchModal('RG')">
                     <div class="qa-top">
-                        <div class="qa-icon">⚡</div>
+                        <div class="qa-icon">&#9889;</div>
                         <div class="qa-info">
                             <h4>RG</h4>
                         </div>
@@ -551,7 +555,7 @@
 
                 <div class="quick-access-card" onclick="openSearchModal('E-MAIL')" style="grid-column: span 2;">
                     <div class="qa-top">
-                        <div class="qa-icon">⚡</div>
+                        <div class="qa-icon">&#9889;</div>
                         <div class="qa-info">
                             <h4>E-MAIL</h4>
                         </div>
@@ -563,7 +567,7 @@
 
         <!-- Bottom Button -->
         <button class="footer-btn">
-            <span>✈️</span> DEVELOPER
+            <span>[&gt;]</span> ZRX DEVELOPER
         </button>
     </main>
 
@@ -577,19 +581,19 @@
         <h4 style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 0.75rem;">TEMAS PRONTOS</h4>
         <div class="theme-list">
             <div class="theme-option" onclick="applyTheme('#f59e0b', '#0b1120', '#131c31')">
-                <span>💛 Dourado</span>
+                <span>[+] Dourado</span>
                 <span>&gt;</span>
             </div>
             <div class="theme-option" onclick="applyTheme('#8b5cf6', '#090514', '#130b26')">
-                <span>💜 Roxo</span>
+                <span>[+] Roxo</span>
                 <span>&gt;</span>
             </div>
             <div class="theme-option" onclick="applyTheme('#06b6d4', '#020617', '#090d16')">
-                <span>🖤 Dark Neon</span>
+                <span>[+] Dark Neon</span>
                 <span>&gt;</span>
             </div>
             <div class="theme-option" onclick="applyTheme('#ef4444', '#110202', '#1f0707')">
-                <span>❤️ Vermelho Carmesim</span>
+                <span>[+] Vermelho Carmesim</span>
                 <span>&gt;</span>
             </div>
         </div>
@@ -620,10 +624,43 @@
         </div>
     </div>
 
-    <!-- Input Oculto para carregar foto da galeria -->
+    <!-- Inputs Ocultos para carregar arquivos -->
     <input type="file" id="galleryInput" accept="image/*" style="display: none;">
+    <input type="file" id="mediaInput" accept="image/*,video/*" style="display: none;">
 
     <script>
+        // --- PERSISTÊNCIA DE DADOS (LOCALSTORAGE) ---
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedPrimary = localStorage.getItem('zrx_primary');
+            const savedBg = localStorage.getItem('zrx_bg');
+            const savedCard = localStorage.getItem('zrx_card');
+            const savedName = localStorage.getItem('zrx_name');
+            const savedAvatar = localStorage.getItem('zrx_avatar');
+            const savedBanner1 = localStorage.getItem('zrx_banner1');
+
+            if (savedPrimary) {
+                document.documentElement.style.setProperty('--primary-color', savedPrimary);
+                document.getElementById('customColorInput').value = savedPrimary;
+            }
+            if (savedBg) document.documentElement.style.setProperty('--bg-color', savedBg);
+            if (savedCard) document.documentElement.style.setProperty('--card-bg', savedCard);
+            
+            if (savedName) {
+                document.getElementById('profileName').innerHTML = `${savedName} &#10004;`;
+            }
+            if (savedAvatar) {
+                document.getElementById('profileAvatar').innerHTML = `<img src="${savedAvatar}" alt="Avatar">`;
+            }
+            if (savedBanner1) {
+                const b1 = document.getElementById('bannerUpload1');
+                if (savedBanner1.startsWith('data:video')) {
+                    b1.innerHTML = `<video src="${savedBanner1}" autoplay loop muted playsinline></video>`;
+                } else {
+                    b1.innerHTML = `<img src="${savedBanner1}" alt="Custom Media">`;
+                }
+            }
+        });
+
         // Slider dots logic
         const slider = document.getElementById('bannerSlider');
         const dots = document.querySelectorAll('.dot');
@@ -639,25 +676,30 @@
         const menuModal = document.getElementById('menuModal');
         document.getElementById('menuBtn').addEventListener('click', () => menuModal.classList.add('open'));
         document.getElementById('closeMenuModal').addEventListener('click', () => menuModal.classList.remove('open'));
-
-        // Settings / Gear Button also opens menu
         document.getElementById('settingsBtn').addEventListener('click', () => menuModal.classList.add('open'));
 
-        // Temas Prontos
+        // Temas Prontos com salvamento
         function applyTheme(primary, bg, card) {
             document.documentElement.style.setProperty('--primary-color', primary);
             document.documentElement.style.setProperty('--bg-color', bg);
             document.documentElement.style.setProperty('--card-bg', card);
             document.getElementById('customColorInput').value = primary;
+
+            localStorage.setItem('zrx_primary', primary);
+            localStorage.setItem('zrx_bg', bg);
+            localStorage.setItem('zrx_card', card);
+
             menuModal.classList.remove('open');
         }
 
-        // Edição livre de cores
+        // Edição livre de cores com salvamento
         document.getElementById('customColorInput').addEventListener('input', (e) => {
-            document.documentElement.style.setProperty('--primary-color', e.target.value);
+            const val = e.target.value;
+            document.documentElement.style.setProperty('--primary-color', val);
+            localStorage.setItem('zrx_primary', val);
         });
 
-        // Trocar Foto e Nome diretamente da galeria/input
+        // Trocar Foto e Nome diretamente da galeria com salvamento
         const galleryInput = document.getElementById('galleryInput');
         const profileAvatar = document.getElementById('profileAvatar');
         const profileName = document.getElementById('profileName');
@@ -670,16 +712,43 @@
             if (file) {
                 const reader = new FileReader();
                 reader.onload = function(event) {
-                    profileAvatar.innerHTML = `<img src="${event.target.result}" alt="Avatar">`;
+                    const res = event.target.result;
+                    profileAvatar.innerHTML = `<img src="${res}" alt="Avatar">`;
+                    localStorage.setItem('zrx_avatar', res);
                 }
                 reader.readAsDataURL(file);
             }
         });
 
         profileName.addEventListener('click', () => {
-            const newName = prompt("Digite o seu novo nome:", profileName.innerText.replace('✔', '').trim());
+            const currentText = profileName.innerText.replace('✔', '').trim();
+            const newName = prompt("Digite o seu novo nome:", currentText);
             if (newName) {
                 profileName.innerHTML = `${newName} &#10004;`;
+                localStorage.setItem('zrx_name', newName);
+            }
+        });
+
+        // Trocar Banner do Meio (Imagem ou Vídeo) com salvamento
+        const mediaInput = document.getElementById('mediaInput');
+        const bannerUpload1 = document.getElementById('bannerUpload1');
+
+        bannerUpload1.addEventListener('click', () => mediaInput.click());
+
+        mediaInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const res = event.target.result;
+                    if (file.type.startsWith('video/')) {
+                        bannerUpload1.innerHTML = `<video src="${res}" autoplay loop muted playsinline></video>`;
+                    } else {
+                        bannerUpload1.innerHTML = `<img src="${res}" alt="Custom Media">`;
+                    }
+                    localStorage.setItem('zrx_banner1', res);
+                }
+                reader.readAsDataURL(file);
             }
         });
 
