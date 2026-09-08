@@ -216,7 +216,7 @@
             object-fit: cover;
         }
 
-        /* Grid 2x2 for Quick Access - Símbolos sem emoji (igual à referência enviada) */
+        /* Grid Quick Access - Ajustado para caber todos os balões perfeitamente */
         .quick-access-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -261,7 +261,7 @@
         }
 
         .qa-info h4 {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             text-transform: uppercase;
         }
@@ -394,8 +394,18 @@
             padding: 1rem;
             flex: 1;
             min-height: 200px;
+            max-height: 50vh;
+            overflow-y: auto;
             font-size: 0.9rem;
-            opacity: 0.8;
+            word-break: break-all;
+        }
+        
+        .search-results-box iframe {
+            width: 100%;
+            height: 350px;
+            border: none;
+            border-radius: 8px;
+            background: #fff;
         }
     </style>
 </head>
@@ -448,7 +458,7 @@
             </div>
         </div>
 
-        <!-- Banner Gigante do Meio (Aceita Imagem ou Vídeo Personalizado e Fica Salvo) -->
+        <!-- Banner Gigante do Meio -->
         <div>
             <div class="section-header" style="margin-bottom: 0.75rem;">
                 <span>[&#9632;]</span> MEDIA DISPLAY (TOQUE PARA ALTERAR)
@@ -461,58 +471,140 @@
             </div>
         </div>
 
-        <!-- Quick Access (2x2 Grid com Símbolos em vez de Emojis) -->
+        <!-- Quick Access (Balões Integrados com as APIs reais fornecidas) -->
         <div>
             <div class="section-header" style="margin-bottom: 0.75rem;">
-                <span>[&#9889;]</span> QUICK ACCESS
+                <span>[&#9889;]</span> QUICK ACCESS - APIS
             </div>
             
             <div class="quick-access-grid">
-                <div class="quick-access-card" onclick="openSearchModal('NOME')">
+                <!-- 1. CPF (Serasa) -->
+                <div class="quick-access-card" onclick="openSearchModal('CPF (Serasa)', 'http://apisbrasilpro.site/consulta_serasa.php?cpf=', '60235209872')">
                     <div class="qa-top">
                         <div class="qa-icon">&#9889;</div>
                         <div class="qa-info">
-                            <h4>NOME</h4>
+                            <h4>CPF SERASA</h4>
                         </div>
                     </div>
                     <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
                 </div>
 
-                <div class="quick-access-card" onclick="openSearchModal('CPF')">
+                <!-- 2. TELEFONE (Serasa) -->
+                <div class="quick-access-card" onclick="openSearchModal('TELEFONE (Serasa)', 'http://apisbrasilpro.site/consulta_serasa.php?telefone=', '42984138233')">
                     <div class="qa-top">
                         <div class="qa-icon">&#9889;</div>
                         <div class="qa-info">
-                            <h4>CPF</h4>
+                            <h4>TEL SERASA</h4>
                         </div>
                     </div>
                     <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
                 </div>
 
-                <div class="quick-access-card" onclick="openSearchModal('TELEFONE')">
+                <!-- 3. E-MAIL (Serasa) -->
+                <div class="quick-access-card" onclick="openSearchModal('E-MAIL (Serasa)', 'http://apisbrasilpro.site/consulta_serasa.php?email=', 'valdambroski@hotmail.com')">
                     <div class="qa-top">
                         <div class="qa-icon">&#9889;</div>
                         <div class="qa-info">
-                            <h4>TELEFONE</h4>
+                            <h4>E-MAIL SERASA</h4>
                         </div>
                     </div>
                     <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
                 </div>
 
-                <div class="quick-access-card" onclick="openSearchModal('RG')">
+                <!-- 4. RG (Serasa) -->
+                <div class="quick-access-card" onclick="openSearchModal('RG (Serasa)', 'http://apisbrasilpro.site/consulta_serasa.php?rg=', '132629306')">
                     <div class="qa-top">
                         <div class="qa-icon">&#9889;</div>
                         <div class="qa-info">
-                            <h4>RG</h4>
+                            <h4>RG SERASA</h4>
                         </div>
                     </div>
                     <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
                 </div>
 
-                <div class="quick-access-card" onclick="openSearchModal('E-MAIL')" style="grid-column: span 2;">
+                <!-- 5. SPC DOC -->
+                <div class="quick-access-card" onclick="openSearchModal('SPC (Doc)', 'http://apisbrasilpro.site/spc1.php?doc=', '00021775176215')">
                     <div class="qa-top">
                         <div class="qa-icon">&#9889;</div>
                         <div class="qa-info">
-                            <h4>E-MAIL</h4>
+                            <h4>SPC DOC</h4>
+                        </div>
+                    </div>
+                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
+                </div>
+
+                <!-- 6. SPC NOME -->
+                <div class="quick-access-card" onclick="openSearchModal('SPC (Nome)', 'http://apisbrasilpro.site/spc1.php?nome=', 'FRANCISCO DE SOUZA')">
+                    <div class="qa-top">
+                        <div class="qa-icon">&#9889;</div>
+                        <div class="qa-info">
+                            <h4>SPC NOME</h4>
+                        </div>
+                    </div>
+                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
+                </div>
+
+                <!-- 7. SPC TELEFONE -->
+                <div class="quick-access-card" onclick="openSearchModal('SPC (Telefone)', 'http://apisbrasilpro.site/spc1.php?telefone=', '6899712632')">
+                    <div class="qa-top">
+                        <div class="qa-icon">&#9889;</div>
+                        <div class="qa-info">
+                            <h4>SPC TEL</h4>
+                        </div>
+                    </div>
+                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
+                </div>
+
+                <!-- 8. SERASA CPF PARENTE -->
+                <div class="quick-access-card" onclick="openSearchModal('Serasa (CPF Parente)', 'http://apisbrasilpro.site/consulta_serasa.php?cpf_parente=', '5111264680')">
+                    <div class="qa-top">
+                        <div class="qa-icon">&#9889;</div>
+                        <div class="qa-info">
+                            <h4>CPF PARENTE</h4>
+                        </div>
+                    </div>
+                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
+                </div>
+
+                <!-- 9. SERASA NOME E PARENTE -->
+                <div class="quick-access-card" onclick="openSearchModal('Serasa (Nome/Parente)', 'http://apisbrasilpro.site/consulta_serasa.php?nome=', 'MARIA HELENA DE OLIVEIRA LEMOS')">
+                    <div class="qa-top">
+                        <div class="qa-icon">&#9889;</div>
+                        <div class="qa-info">
+                            <h4>SERASA NOME</h4>
+                        </div>
+                    </div>
+                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
+                </div>
+
+                <!-- 10. TELEFONE0.DB - CPF -->
+                <div class="quick-access-card" onclick="openSearchModal('DB Telefone (CPF)', 'http://apisbrasilpro.site/telefone0.php?cpf=', '07388292853')">
+                    <div class="qa-top">
+                        <div class="qa-icon">&#9889;</div>
+                        <div class="qa-info">
+                            <h4>DB CPF</h4>
+                        </div>
+                    </div>
+                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
+                </div>
+
+                <!-- 11. TELEFONE0.DB - CEP -->
+                <div class="quick-access-card" onclick="openSearchModal('DB Telefone (CEP)', 'http://apisbrasilpro.site/telefone0.php?cep=', '13405188')">
+                    <div class="qa-top">
+                        <div class="qa-icon">&#9889;</div>
+                        <div class="qa-info">
+                            <h4>DB CEP</h4>
+                        </div>
+                    </div>
+                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
+                </div>
+
+                <!-- 12. TELEFONE0.DB - TELEFONE -->
+                <div class="quick-access-card" onclick="openSearchModal('DB Telefone (Tel)', 'http://apisbrasilpro.site/telefone0.php?telefone=', '19996101067')">
+                    <div class="qa-top">
+                        <div class="qa-icon">&#9889;</div>
+                        <div class="qa-info">
+                            <h4>DB TEL</h4>
                         </div>
                     </div>
                     <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
@@ -560,7 +652,7 @@
         </div>
     </div>
 
-    <!-- Modal de Tela Cheia para Pesquisa Individual (Balões) -->
+    <!-- Modal de Tela Cheia para Pesquisa Individual (Balões Integrados) -->
     <div class="fullscreen-modal" id="searchModal">
         <div class="modal-header">
             <h3 id="searchModalTitle">Pesquisa</h3>
@@ -584,6 +676,9 @@
     <input type="file" id="mediaInput" accept="image/*,video/*" style="display: none;">
 
     <script>
+        // Variáveis globais para controlar a API ativa no modal
+        let currentApiBase = '';
+
         // --- PERSISTÊNCIA DE DADOS (LOCALSTORAGE) ---
         window.addEventListener('DOMContentLoaded', () => {
             const savedPrimary = localStorage.getItem('zrx_primary');
@@ -696,17 +791,18 @@
             }
         });
 
-        // Modais de Pesquisa (Balões em Tela Cheia)
+        // Modais de Pesquisa Integrada com as APIs REAIS
         const searchModal = document.getElementById('searchModal');
         const searchModalTitle = document.getElementById('searchModalTitle');
         const searchInputField = document.getElementById('searchInputField');
         const searchResultsBox = document.getElementById('searchResultsBox');
 
-        function openSearchModal(type) {
-            searchModalTitle.innerText = `Consulta por ${type}`;
-            searchInputField.placeholder = `Digite o ${type} aqui...`;
+        function openSearchModal(title, apiUrl, placeholderExample) {
+            searchModalTitle.innerText = `Consulta: ${title}`;
+            currentApiBase = apiUrl;
+            searchInputField.placeholder = `Ex: ${placeholderExample}`;
             searchInputField.value = '';
-            searchResultsBox.innerText = 'Aguardando consulta...';
+            searchResultsBox.innerHTML = 'Aguardando consulta... Insira os dados acima e clique em Buscar.';
             searchModal.classList.add('open');
         }
 
@@ -720,10 +816,11 @@
                 alert('Digite algum valor para pesquisar!');
                 return;
             }
-            searchResultsBox.innerHTML = `Buscando por: <b>${query}</b>...<br><br>[+] Processando requisição no sistema...`;
-            setTimeout(() => {
-                searchResultsBox.innerHTML += `<br><br>[✓] Dados obtidos com sucesso para: ${query}`;
-            }, 1000);
+
+            // Monta a URL exata com o parâmetro codificado corretamente
+            const finalUrl = currentApiBase + encodeURIComponent(query);
+
+            searchResultsBox.innerHTML = `Buscando dados via API...<br><br><iframe src="${finalUrl}"></iframe>`;
         }
     </script>
 </body>
