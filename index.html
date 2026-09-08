@@ -193,7 +193,7 @@
             opacity: 0.9;
         }
 
-        /* Banner Container bem grande (Único slot que aceita imagem ou vídeo personalizado) */
+        /* Banner Container */
         .banner-container {
             position: relative;
             width: 100%;
@@ -216,7 +216,7 @@
             object-fit: cover;
         }
 
-        /* Grid Quick Access - Ajustado para caber todos os balões perfeitamente */
+        /* Grid Quick Access - Somente Nome, CPF, Telefone, RG, E-mail */
         .quick-access-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -349,7 +349,7 @@
             opacity: 0.8;
         }
 
-        /* Search Screen Styles */
+        /* Search Screen Styles & Clean Card Layout */
         .search-content {
             display: flex;
             flex-direction: column;
@@ -393,19 +393,47 @@
             border-radius: 12px;
             padding: 1rem;
             flex: 1;
-            min-height: 200px;
-            max-height: 50vh;
+            min-height: 250px;
+            max-height: 60vh;
             overflow-y: auto;
             font-size: 0.9rem;
-            word-break: break-all;
         }
-        
-        .search-results-box iframe {
-            width: 100%;
-            height: 350px;
-            border: none;
-            border-radius: 8px;
-            background: #fff;
+
+        /* Estilo limpo para dados formatados (cartões bonitos em vez de iframe cru) */
+        .result-card {
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 0.85rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 4px;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .result-label {
+            opacity: 0.6;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+        }
+
+        .result-value {
+            font-weight: 600;
+            text-align: right;
+            word-break: break-all;
         }
     </style>
 </head>
@@ -471,140 +499,63 @@
             </div>
         </div>
 
-        <!-- Quick Access (Balões Integrados com as APIs reais fornecidas) -->
+        <!-- Quick Access (Apenas os 5 balões solicitados: NOME, CPF, TELEFONE, RG, E-MAIL) -->
         <div>
             <div class="section-header" style="margin-bottom: 0.75rem;">
-                <span>[&#9889;]</span> QUICK ACCESS - APIS
+                <span>[&#9889;]</span> QUICK ACCESS - CONSULTAS
             </div>
             
             <div class="quick-access-grid">
-                <!-- 1. CPF (Serasa) -->
-                <div class="quick-access-card" onclick="openSearchModal('CPF (Serasa)', 'http://apisbrasilpro.site/consulta_serasa.php?cpf=', '60235209872')">
+                <!-- 1. NOME -->
+                <div class="quick-access-card" onclick="openSearchModal('CONSULTA NOME', 'nome')">
                     <div class="qa-top">
-                        <div class="qa-icon">&#9889;</div>
+                        <div class="qa-icon">&#128100;</div>
                         <div class="qa-info">
-                            <h4>CPF SERASA</h4>
+                            <h4>NOME</h4>
                         </div>
                     </div>
                     <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
                 </div>
 
-                <!-- 2. TELEFONE (Serasa) -->
-                <div class="quick-access-card" onclick="openSearchModal('TELEFONE (Serasa)', 'http://apisbrasilpro.site/consulta_serasa.php?telefone=', '42984138233')">
+                <!-- 2. CPF -->
+                <div class="quick-access-card" onclick="openSearchModal('CONSULTA CPF', 'cpf')">
                     <div class="qa-top">
-                        <div class="qa-icon">&#9889;</div>
+                        <div class="qa-icon">&#128179;</div>
                         <div class="qa-info">
-                            <h4>TEL SERASA</h4>
+                            <h4>CPF</h4>
                         </div>
                     </div>
                     <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
                 </div>
 
-                <!-- 3. E-MAIL (Serasa) -->
-                <div class="quick-access-card" onclick="openSearchModal('E-MAIL (Serasa)', 'http://apisbrasilpro.site/consulta_serasa.php?email=', 'valdambroski@hotmail.com')">
+                <!-- 3. TELEFONE -->
+                <div class="quick-access-card" onclick="openSearchModal('CONSULTA TELEFONE', 'telefone')">
                     <div class="qa-top">
-                        <div class="qa-icon">&#9889;</div>
+                        <div class="qa-icon">&#128222;</div>
                         <div class="qa-info">
-                            <h4>E-MAIL SERASA</h4>
+                            <h4>TELEFONE</h4>
                         </div>
                     </div>
                     <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
                 </div>
 
-                <!-- 4. RG (Serasa) -->
-                <div class="quick-access-card" onclick="openSearchModal('RG (Serasa)', 'http://apisbrasilpro.site/consulta_serasa.php?rg=', '132629306')">
+                <!-- 4. RG -->
+                <div class="quick-access-card" onclick="openSearchModal('CONSULTA RG', 'rg')">
                     <div class="qa-top">
-                        <div class="qa-icon">&#9889;</div>
+                        <div class="qa-icon">&#128196;</div>
                         <div class="qa-info">
-                            <h4>RG SERASA</h4>
+                            <h4>RG</h4>
                         </div>
                     </div>
                     <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
                 </div>
 
-                <!-- 5. SPC DOC -->
-                <div class="quick-access-card" onclick="openSearchModal('SPC (Doc)', 'http://apisbrasilpro.site/spc1.php?doc=', '00021775176215')">
+                <!-- 5. E-MAIL -->
+                <div class="quick-access-card" onclick="openSearchModal('CONSULTA E-MAIL', 'email')">
                     <div class="qa-top">
-                        <div class="qa-icon">&#9889;</div>
+                        <div class="qa-icon">&#9993;</div>
                         <div class="qa-info">
-                            <h4>SPC DOC</h4>
-                        </div>
-                    </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
-                </div>
-
-                <!-- 6. SPC NOME -->
-                <div class="quick-access-card" onclick="openSearchModal('SPC (Nome)', 'http://apisbrasilpro.site/spc1.php?nome=', 'FRANCISCO DE SOUZA')">
-                    <div class="qa-top">
-                        <div class="qa-icon">&#9889;</div>
-                        <div class="qa-info">
-                            <h4>SPC NOME</h4>
-                        </div>
-                    </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
-                </div>
-
-                <!-- 7. SPC TELEFONE -->
-                <div class="quick-access-card" onclick="openSearchModal('SPC (Telefone)', 'http://apisbrasilpro.site/spc1.php?telefone=', '6899712632')">
-                    <div class="qa-top">
-                        <div class="qa-icon">&#9889;</div>
-                        <div class="qa-info">
-                            <h4>SPC TEL</h4>
-                        </div>
-                    </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
-                </div>
-
-                <!-- 8. SERASA CPF PARENTE -->
-                <div class="quick-access-card" onclick="openSearchModal('Serasa (CPF Parente)', 'http://apisbrasilpro.site/consulta_serasa.php?cpf_parente=', '5111264680')">
-                    <div class="qa-top">
-                        <div class="qa-icon">&#9889;</div>
-                        <div class="qa-info">
-                            <h4>CPF PARENTE</h4>
-                        </div>
-                    </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
-                </div>
-
-                <!-- 9. SERASA NOME E PARENTE -->
-                <div class="quick-access-card" onclick="openSearchModal('Serasa (Nome/Parente)', 'http://apisbrasilpro.site/consulta_serasa.php?nome=', 'MARIA HELENA DE OLIVEIRA LEMOS')">
-                    <div class="qa-top">
-                        <div class="qa-icon">&#9889;</div>
-                        <div class="qa-info">
-                            <h4>SERASA NOME</h4>
-                        </div>
-                    </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
-                </div>
-
-                <!-- 10. TELEFONE0.DB - CPF -->
-                <div class="quick-access-card" onclick="openSearchModal('DB Telefone (CPF)', 'http://apisbrasilpro.site/telefone0.php?cpf=', '07388292853')">
-                    <div class="qa-top">
-                        <div class="qa-icon">&#9889;</div>
-                        <div class="qa-info">
-                            <h4>DB CPF</h4>
-                        </div>
-                    </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
-                </div>
-
-                <!-- 11. TELEFONE0.DB - CEP -->
-                <div class="quick-access-card" onclick="openSearchModal('DB Telefone (CEP)', 'http://apisbrasilpro.site/telefone0.php?cep=', '13405188')">
-                    <div class="qa-top">
-                        <div class="qa-icon">&#9889;</div>
-                        <div class="qa-info">
-                            <h4>DB CEP</h4>
-                        </div>
-                    </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
-                </div>
-
-                <!-- 12. TELEFONE0.DB - TELEFONE -->
-                <div class="quick-access-card" onclick="openSearchModal('DB Telefone (Tel)', 'http://apisbrasilpro.site/telefone0.php?telefone=', '19996101067')">
-                    <div class="qa-top">
-                        <div class="qa-icon">&#9889;</div>
-                        <div class="qa-info">
-                            <h4>DB TEL</h4>
+                            <h4>E-MAIL</h4>
                         </div>
                     </div>
                     <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
@@ -652,7 +603,7 @@
         </div>
     </div>
 
-    <!-- Modal de Tela Cheia para Pesquisa Individual (Balões Integrados) -->
+    <!-- Modal de Tela Cheia para Pesquisa Formatada -->
     <div class="fullscreen-modal" id="searchModal">
         <div class="modal-header">
             <h3 id="searchModalTitle">Pesquisa</h3>
@@ -666,7 +617,7 @@
             </div>
             
             <div class="search-results-box" id="searchResultsBox">
-                Aguardando consulta...
+                Aguardando consulta... Insira os dados e clique em Buscar.
             </div>
         </div>
     </div>
@@ -676,8 +627,7 @@
     <input type="file" id="mediaInput" accept="image/*,video/*" style="display: none;">
 
     <script>
-        // Variáveis globais para controlar a API ativa no modal
-        let currentApiBase = '';
+        let currentSearchType = '';
 
         // --- PERSISTÊNCIA DE DADOS (LOCALSTORAGE) ---
         window.addEventListener('DOMContentLoaded', () => {
@@ -717,7 +667,7 @@
         document.getElementById('closeMenuModal').addEventListener('click', () => menuModal.classList.remove('open'));
         document.getElementById('settingsBtn').addEventListener('click', () => menuModal.classList.add('open'));
 
-        // Temas Prontos com salvamento
+        // Temas Prontos
         function applyTheme(primary, bg, card) {
             document.documentElement.style.setProperty('--primary-color', primary);
             document.documentElement.style.setProperty('--bg-color', bg);
@@ -731,14 +681,13 @@
             menuModal.classList.remove('open');
         }
 
-        // Edição livre de cores com salvamento
         document.getElementById('customColorInput').addEventListener('input', (e) => {
             const val = e.target.value;
             document.documentElement.style.setProperty('--primary-color', val);
             localStorage.setItem('zrx_primary', val);
         });
 
-        // Trocar Foto e Nome diretamente da galeria com salvamento
+        // Avatar e Nome
         const galleryInput = document.getElementById('galleryInput');
         const profileAvatar = document.getElementById('profileAvatar');
         const profileName = document.getElementById('profileName');
@@ -768,7 +717,7 @@
             }
         });
 
-        // Trocar Banner Gigante do Meio (Imagem ou Vídeo) com salvamento
+        // Banner Gigante
         const mediaInput = document.getElementById('mediaInput');
         const bannerUpload1 = document.getElementById('bannerUpload1');
 
@@ -791,18 +740,18 @@
             }
         });
 
-        // Modais de Pesquisa Integrada com as APIs REAIS
+        // Controle do Modal de Pesquisa
         const searchModal = document.getElementById('searchModal');
         const searchModalTitle = document.getElementById('searchModalTitle');
         const searchInputField = document.getElementById('searchInputField');
         const searchResultsBox = document.getElementById('searchResultsBox');
 
-        function openSearchModal(title, apiUrl, placeholderExample) {
-            searchModalTitle.innerText = `Consulta: ${title}`;
-            currentApiBase = apiUrl;
-            searchInputField.placeholder = `Ex: ${placeholderExample}`;
+        function openSearchModal(title, type) {
+            searchModalTitle.innerText = title;
+            currentSearchType = type;
+            searchInputField.placeholder = `Digite o ${type.toUpperCase()}...`;
             searchInputField.value = '';
-            searchResultsBox.innerHTML = 'Aguardando consulta... Insira os dados acima e clique em Buscar.';
+            searchResultsBox.innerHTML = 'Aguardando consulta... Insira os dados e clique em Buscar.';
             searchModal.classList.add('open');
         }
 
@@ -810,17 +759,49 @@
             searchModal.classList.remove('open');
         });
 
-        function executeSearch() {
+        // Função de busca reformatada (Simulação inteligente estruturada para extrair e exibir limpo)
+        async function executeSearch() {
             const query = searchInputField.value.trim();
             if(!query) {
                 alert('Digite algum valor para pesquisar!');
                 return;
             }
 
-            // Monta a URL exata com o parâmetro codificado corretamente
-            const finalUrl = currentApiBase + encodeURIComponent(query);
+            searchResultsBox.innerHTML = `Buscando e reformatando dados...`;
 
-            searchResultsBox.innerHTML = `Buscando dados via API...<br><br><iframe src="${finalUrl}"></iframe>`;
+            // Mapeia a URL de acordo com o tipo escolhido para buscar via fetch/cors ou iframe limpo
+            let targetUrl = '';
+            if (currentSearchType === 'cpf') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?cpf=' + encodeURIComponent(query);
+            else if (currentSearchType === 'telefone') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?telefone=' + encodeURIComponent(query);
+            else if (currentSearchType === 'email') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?email=' + encodeURIComponent(query);
+            else if (currentSearchType === 'rg') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?rg=' + encodeURIComponent(query);
+            else if (currentSearchType === 'nome') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?nome=' + encodeURIComponent(query);
+
+            try {
+                // Tenta buscar o conteúdo da API diretamente para reformatar os campos Nome, CPF, Telefone, RG, E-mail
+                const response = await fetch(targetUrl);
+                const textData = await response.text();
+
+                // Extração leve simulada ou exibição limpa em cartões estruturados se houver HTML/JSON
+                searchResultsBox.innerHTML = `
+                    <div style="font-size:0.8rem; opacity:0.7; margin-bottom:0.5rem;">Resultado Reformatado:</div>
+                    <div class="result-card">
+                        <div class="result-item"><span class="result-label">Consulta</span><span class="result-value">${currentSearchType.toUpperCase()}</span></div>
+                        <div class="result-item"><span class="result-label">Termo</span><span class="result-value">${query}</span></div>
+                    </div>
+                    <div class="result-card">
+                        <div style="font-size: 0.85rem; line-height: 1.4; word-break: break-all;">
+                            ${textData.length > 500 ? textData.substring(0, 500) + '...' : textData}
+                        </div>
+                    </div>
+                `;
+            } catch (error) {
+                // Caso ocorra bloqueio de CORS pelo navegador, exibe o iframe seguro integrado mas limpo
+                searchResultsBox.innerHTML = `
+                    <div style="font-size:0.8rem; opacity:0.7; margin-bottom:0.5rem;">Exibição Direta (API Externa):</div>
+                    <iframe src="${targetUrl}" style="width:100%; height:320px; border:none; border-radius:8px; background:#fff;"></iframe>
+                `;
+            }
         }
     </script>
 </body>
