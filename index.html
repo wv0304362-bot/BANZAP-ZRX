@@ -402,7 +402,6 @@
             gap: 0.5rem;
         }
 
-        /* Estilo limpo empilhado (um embaixo do outro) para os dados reformatados sem emojis */
         .result-row {
             background: rgba(0, 0, 0, 0.25);
             border: 1px solid var(--border-color);
@@ -432,12 +431,12 @@
 
     <!-- Top Bar -->
     <header>
-        <button class="icon-btn" id="menuBtn">[#]</button>
+        <button class="icon-btn" id="menuBtn">☰</button>
         <span class="app-title">ZRX</span>
         <div class="header-right">
-            <button class="icon-btn" id="settingsBtn">[*] </button>
-            <button class="icon-btn">[~]</button>
-            <button class="icon-btn" id="topProfileBtn">[&bull;]</button>
+            <button class="icon-btn" id="settingsBtn">⚙️</button>
+            <button class="icon-btn">🔄</button>
+            <button class="icon-btn" id="topProfileBtn">👤</button>
         </div>
     </header>
 
@@ -447,11 +446,11 @@
             <div class="profile-top">
                 <div class="profile-info">
                     <div class="avatar" id="profileAvatar">
-                        [+]
+                        ➕
                     </div>
                     <div class="user-details">
                         <span>Welcome back!</span>
-                        <div class="user-name" id="profileName">ZRX [V]</div>
+                        <div class="user-name" id="profileName">ZRX ⚡</div>
                         <span class="badge-dev">DEVELOPER</span>
                     </div>
                 </div>
@@ -463,15 +462,15 @@
 
             <div class="profile-stats">
                 <div class="stat-item">
-                    <span style="opacity: 0.6;">[ON]</span>
+                    <span style="opacity: 0.6;">⚡</span>
                     <span>ON</span>
                 </div>
                 <div class="stat-item">
-                    <span style="opacity: 0.6;">[DAYS]</span>
+                    <span style="opacity: 0.6;">📅</span>
                     <span>99740</span>
                 </div>
                 <div class="stat-item">
-                    <span style="opacity: 0.6;">[SESS]</span>
+                    <span style="opacity: 0.6;">💻</span>
                     <span>...</span>
                 </div>
             </div>
@@ -480,7 +479,7 @@
         <!-- Banner Gigante do Meio -->
         <div>
             <div class="section-header" style="margin-bottom: 0.75rem;">
-                <span>[&#9632;]</span> MEDIA DISPLAY (TOQUE PARA ALTERAR)
+                <span>■</span> MEDIA DISPLAY (TOQUE PARA ALTERAR)
             </div>
             
             <div class="banner-container">
@@ -493,14 +492,14 @@
         <!-- Quick Access -->
         <div>
             <div class="section-header" style="margin-bottom: 0.75rem;">
-                <span>[&#9889;]</span> QUICK ACCESS - CONSULTAS
+                <span>⚡</span> QUICK ACCESS - CONSULTAS
             </div>
             
             <div class="quick-access-grid">
                 <!-- 1. NOME -->
                 <div class="quick-access-card" onclick="openSearchModal('CONSULTA NOME', 'nome')">
                     <div class="qa-top">
-                        <div class="qa-icon">[&gt;]</div>
+                        <div class="qa-icon">🔍</div>
                         <div class="qa-info">
                             <h4>NOME</h4>
                         </div>
@@ -511,7 +510,7 @@
                 <!-- 2. CPF -->
                 <div class="quick-access-card" onclick="openSearchModal('CONSULTA CPF', 'cpf')">
                     <div class="qa-top">
-                        <div class="qa-icon">[#]</div>
+                        <div class="qa-icon">🆔</div>
                         <div class="qa-info">
                             <h4>CPF</h4>
                         </div>
@@ -522,7 +521,7 @@
                 <!-- 3. TELEFONE -->
                 <div class="quick-access-card" onclick="openSearchModal('CONSULTA TELEFONE', 'telefone')">
                     <div class="qa-top">
-                        <div class="qa-icon">[@]</div>
+                        <div class="qa-icon">📞</div>
                         <div class="qa-info">
                             <h4>TELEFONE</h4>
                         </div>
@@ -533,7 +532,7 @@
                 <!-- 4. RG -->
                 <div class="quick-access-card" onclick="openSearchModal('CONSULTA RG', 'rg')">
                     <div class="qa-top">
-                        <div class="qa-icon">[-]</div>
+                        <div class="qa-icon">🪪</div>
                         <div class="qa-info">
                             <h4>RG</h4>
                         </div>
@@ -544,9 +543,42 @@
                 <!-- 5. E-MAIL -->
                 <div class="quick-access-card" onclick="openSearchModal('CONSULTA E-MAIL', 'email')">
                     <div class="qa-top">
-                        <div class="qa-icon">[$]</div>
+                        <div class="qa-icon">📧</div>
                         <div class="qa-info">
                             <h4>E-MAIL</h4>
+                        </div>
+                    </div>
+                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
+                </div>
+
+                <!-- 6. SPC -->
+                <div class="quick-access-card" onclick="openSearchModal('CONSULTA SPC', 'spc')">
+                    <div class="qa-top">
+                        <div class="qa-icon">📊</div>
+                        <div class="qa-info">
+                            <h4>SPC</h4>
+                        </div>
+                    </div>
+                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
+                </div>
+
+                <!-- 7. CPF PARENTE -->
+                <div class="quick-access-card" onclick="openSearchModal('CONSULTA CPF PARENTE', 'cpf_parente')">
+                    <div class="qa-top">
+                        <div class="qa-icon">👥</div>
+                        <div class="qa-info">
+                            <h4>CPF PARENTE</h4>
+                        </div>
+                    </div>
+                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
+                </div>
+
+                <!-- 8. CEP -->
+                <div class="quick-access-card" onclick="openSearchModal('CONSULTA CEP', 'cep')">
+                    <div class="qa-top">
+                        <div class="qa-icon">📍</div>
+                        <div class="qa-info">
+                            <h4>CEP</h4>
                         </div>
                     </div>
                     <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar &gt;</span>
@@ -556,7 +588,7 @@
 
         <!-- Bottom Button -->
         <button class="footer-btn">
-            <span>[&gt;]</span> ZRX DEVELOPER
+            <span>⚡</span> ZRX DEVELOPER
         </button>
     </main>
 
@@ -570,19 +602,19 @@
         <h4 style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 0.75rem;">TEMAS PRONTOS</h4>
         <div class="theme-list">
             <div class="theme-option" onclick="applyTheme('#f59e0b', '#0b1120', '#131c31')">
-                <span>[+] Dourado</span>
+                <span>⭐ Dourado</span>
                 <span>&gt;</span>
             </div>
             <div class="theme-option" onclick="applyTheme('#8b5cf6', '#090514', '#130b26')">
-                <span>[+] Roxo</span>
+                <span>🔮 Roxo</span>
                 <span>&gt;</span>
             </div>
             <div class="theme-option" onclick="applyTheme('#06b6d4', '#020617', '#090d16')">
-                <span>[+] Dark Neon</span>
+                <span>💻 Dark Neon</span>
                 <span>&gt;</span>
             </div>
             <div class="theme-option" onclick="applyTheme('#ef4444', '#110202', '#1f0707')">
-                <span>[+] Vermelho Carmesim</span>
+                <span>⚡ Vermelho Carmesim</span>
                 <span>&gt;</span>
             </div>
         </div>
@@ -637,7 +669,7 @@
             if (savedCard) document.documentElement.style.setProperty('--card-bg', savedCard);
             
             if (savedName) {
-                document.getElementById('profileName').innerHTML = `${savedName} [V]`;
+                document.getElementById('profileName').innerHTML = `${savedName} ⚡`;
             }
             if (savedAvatar) {
                 document.getElementById('profileAvatar').innerHTML = `<img src="${savedAvatar}" alt="Avatar">`;
@@ -700,10 +732,10 @@
         });
 
         profileName.addEventListener('click', () => {
-            const currentText = profileName.innerText.replace('[V]', '').trim();
+            const currentText = profileName.innerText.replace('⚡', '').trim();
             const newName = prompt("Digite o seu novo nome:", currentText);
             if (newName) {
-                profileName.innerHTML = `${newName} [V]`;
+                profileName.innerHTML = `${newName} ⚡`;
                 localStorage.setItem('zrx_name', newName);
             }
         });
@@ -750,7 +782,7 @@
             searchModal.classList.remove('open');
         });
 
-        // Função de busca reformatada (Exibindo todos os dados um embaixo do outro no formato estilo lista)
+        // Função de busca dinâmica conectada às APIs reais informadas
         async function executeSearch() {
             const query = searchInputField.value.trim();
             if(!query) {
@@ -758,7 +790,7 @@
                 return;
             }
 
-            searchResultsBox.innerHTML = `Buscando e reformatando dados...`;
+            searchResultsBox.innerHTML = `Buscando dados na API...`;
 
             let targetUrl = '';
             if (currentSearchType === 'cpf') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?cpf=' + encodeURIComponent(query);
@@ -766,35 +798,48 @@
             else if (currentSearchType === 'email') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?email=' + encodeURIComponent(query);
             else if (currentSearchType === 'rg') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?rg=' + encodeURIComponent(query);
             else if (currentSearchType === 'nome') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?nome=' + encodeURIComponent(query);
+            else if (currentSearchType === 'spc') targetUrl = 'http://apisbrasilpro.site/spc1.php?doc=' + encodeURIComponent(query);
+            else if (currentSearchType === 'cpf_parente') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?cpf_parente=' + encodeURIComponent(query);
+            else if (currentSearchType === 'cep') targetUrl = 'http://apisbrasilpro.site/telefone0.php?cep=' + encodeURIComponent(query);
 
             try {
                 const response = await fetch(targetUrl);
                 const textData = await response.text();
 
-                // Exemplo estruturado imitando o layout de lista vertical solicitado (um embaixo do outro)
-                searchResultsBox.innerHTML = `
-                    <div class="result-row"><span class="result-label">Cpf</span><span class="result-value">Não informado</span></div>
-                    <div class="result-row"><span class="result-label">Nome</span><span class="result-value">BRUNA THALLYA PEREIRA CARDOSO</span></div>
-                    <div class="result-row"><span class="result-label">Tipo Endereço</span><span class="result-value">RUA</span></div>
-                    <div class="result-row"><span class="result-label">Logradouro</span><span class="result-value">Não informado</span></div>
-                    <div class="result-row"><span class="result-label">Numero</span><span class="result-value">Não informado</span></div>
-                    <div class="result-row"><span class="result-label">Complemento</span><span class="result-value">Não informado</span></div>
-                    <div class="result-row"><span class="result-label">Bairro</span><span class="result-value">Não informado</span></div>
-                    <div class="result-row"><span class="result-label">Cidade</span><span class="result-value">Não informado</span></div>
-                    <div class="result-row"><span class="result-label">Estado</span><span class="result-value">Não informado</span></div>
-                    <div class="result-row"><span class="result-label">Uf</span><span class="result-value">Não informado</span></div>
-                    <div class="result-row"><span class="result-label">Cep</span><span class="result-value">Não informado</span></div>
-                    <div class="result-row"><span class="result-label">Dt Nascimento</span><span class="result-value">24/06/2012</span></div>
-                    <div class="result-row"><span class="result-label">Nome Mae</span><span class="result-value">KATRI LETICIA SOUSA PEREIRA</span></div>
-                    <div class="result-row"><span class="result-label">Sexo</span><span class="result-value">F</span></div>
-                    <div class="result-row"><span class="result-label">Email</span><span class="result-value">Não informado</span></div>
-                    <div class="result-row"><span class="result-label">Flag Obito</span><span class="result-value">0</span></div>
-                    <div class="result-row"><span class="result-label">Dt Obito</span><span class="result-value">Não informado</span></div>
-                    <div class="result-row"><span class="result-label">Status Receita Federal</span><span class="result-value">REGULAR</span></div>
-                `;
+                // Tenta fazer o parse se for JSON para renderizar reformatado verticalmente, senão exibe via iframe seguro
+                try {
+                    const jsonData = JSON.parse(textData);
+                    let htmlContent = '';
+                    const renderObject = (obj) => {
+                        for (const key in obj) {
+                            if (typeof obj[key] === 'object' && obj[key] !== null) {
+                                renderObject(obj[key]);
+                            } else {
+                                htmlContent += `
+                                    <div class="result-row">
+                                        <span class="result-label">${key}</span>
+                                        <span class="result-value">${obj[key]}</span>
+                                    </div>
+                                `;
+                            }
+                        }
+                    };
+                    if (Array.isArray(jsonData)) {
+                        jsonData.forEach(item => renderObject(item));
+                    } else {
+                        renderObject(jsonData);
+                    }
+                    searchResultsBox.innerHTML = htmlContent || `<div class="result-row"><span class="result-label">Resultado</span><span class="result-value">${textData}</span></div>`;
+                } catch (e) {
+                    // Se a API retornar HTML bruto, exibe integrando com iframe responsivo para garantir visualização perfeita
+                    searchResultsBox.innerHTML = `
+                        <div style="font-size:0.8rem; opacity:0.7; margin-bottom:0.5rem;">Resultado da API Externa:</div>
+                        <iframe src="${targetUrl}" style="width:100%; height:320px; border:none; border-radius:8px; background:#fff;"></iframe>
+                    `;
+                }
             } catch (error) {
                 searchResultsBox.innerHTML = `
-                    <div style="font-size:0.8rem; opacity:0.7; margin-bottom:0.5rem;">Exibição Direta (API Externa):</div>
+                    <div style="font-size:0.8rem; opacity:0.7; margin-bottom:0.5rem;">Erro na requisição direta (CORS/Rede). Exibição por Iframe:</div>
                     <iframe src="${targetUrl}" style="width:100%; height:320px; border:none; border-radius:8px; background:#fff;"></iframe>
                 `;
             }
