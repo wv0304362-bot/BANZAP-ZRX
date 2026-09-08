@@ -216,7 +216,7 @@
             object-fit: cover;
         }
 
-        /* Grid Quick Access - Somente Nome, CPF, Telefone, RG, E-mail */
+        /* Grid Quick Access */
         .quick-access-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -349,7 +349,7 @@
             opacity: 0.8;
         }
 
-        /* Search Screen Styles & Clean Card Layout */
+        /* Search Screen Styles & Clean Stack Layout */
         .search-content {
             display: flex;
             flex-direction: column;
@@ -397,42 +397,33 @@
             max-height: 60vh;
             overflow-y: auto;
             font-size: 0.9rem;
-        }
-
-        /* Estilo limpo para dados formatados (cartões bonitos em vez de iframe cru) */
-        .result-card {
-            background: rgba(0, 0, 0, 0.25);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 0.85rem;
-            margin-bottom: 0.75rem;
             display: flex;
             flex-direction: column;
-            gap: 0.35rem;
+            gap: 0.5rem;
         }
 
-        .result-item {
+        /* Estilo limpo empilhado (um embaixo do outro) para os dados reformatados sem emojis */
+        .result-row {
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0.65rem 0.85rem;
             display: flex;
-            justify-content: space-between;
-            font-size: 0.85rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding-bottom: 4px;
-        }
-
-        .result-item:last-child {
-            border-bottom: none;
+            flex-direction: column;
+            gap: 0.2rem;
         }
 
         .result-label {
             opacity: 0.6;
             font-weight: 500;
             text-transform: uppercase;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.5px;
         }
 
         .result-value {
             font-weight: 600;
-            text-align: right;
+            font-size: 0.85rem;
             word-break: break-all;
         }
     </style>
@@ -441,11 +432,11 @@
 
     <!-- Top Bar -->
     <header>
-        <button class="icon-btn" id="menuBtn">&#9776;</button>
+        <button class="icon-btn" id="menuBtn">[#]</button>
         <span class="app-title">ZRX</span>
         <div class="header-right">
-            <button class="icon-btn" id="settingsBtn">&#9881;</button>
-            <button class="icon-btn">&#9835;</button>
+            <button class="icon-btn" id="settingsBtn">[*] </button>
+            <button class="icon-btn">[~]</button>
             <button class="icon-btn" id="topProfileBtn">[&bull;]</button>
         </div>
     </header>
@@ -460,7 +451,7 @@
                     </div>
                     <div class="user-details">
                         <span>Welcome back!</span>
-                        <div class="user-name" id="profileName">ZRX &#10004;</div>
+                        <div class="user-name" id="profileName">ZRX [V]</div>
                         <span class="badge-dev">DEVELOPER</span>
                     </div>
                 </div>
@@ -499,7 +490,7 @@
             </div>
         </div>
 
-        <!-- Quick Access (Apenas os 5 balões solicitados: NOME, CPF, TELEFONE, RG, E-MAIL) -->
+        <!-- Quick Access -->
         <div>
             <div class="section-header" style="margin-bottom: 0.75rem;">
                 <span>[&#9889;]</span> QUICK ACCESS - CONSULTAS
@@ -509,7 +500,7 @@
                 <!-- 1. NOME -->
                 <div class="quick-access-card" onclick="openSearchModal('CONSULTA NOME', 'nome')">
                     <div class="qa-top">
-                        <div class="qa-icon">&#128100;</div>
+                        <div class="qa-icon">[&gt;]</div>
                         <div class="qa-info">
                             <h4>NOME</h4>
                         </div>
@@ -520,7 +511,7 @@
                 <!-- 2. CPF -->
                 <div class="quick-access-card" onclick="openSearchModal('CONSULTA CPF', 'cpf')">
                     <div class="qa-top">
-                        <div class="qa-icon">&#128179;</div>
+                        <div class="qa-icon">[#]</div>
                         <div class="qa-info">
                             <h4>CPF</h4>
                         </div>
@@ -531,7 +522,7 @@
                 <!-- 3. TELEFONE -->
                 <div class="quick-access-card" onclick="openSearchModal('CONSULTA TELEFONE', 'telefone')">
                     <div class="qa-top">
-                        <div class="qa-icon">&#128222;</div>
+                        <div class="qa-icon">[@]</div>
                         <div class="qa-info">
                             <h4>TELEFONE</h4>
                         </div>
@@ -542,7 +533,7 @@
                 <!-- 4. RG -->
                 <div class="quick-access-card" onclick="openSearchModal('CONSULTA RG', 'rg')">
                     <div class="qa-top">
-                        <div class="qa-icon">&#128196;</div>
+                        <div class="qa-icon">[-]</div>
                         <div class="qa-info">
                             <h4>RG</h4>
                         </div>
@@ -553,7 +544,7 @@
                 <!-- 5. E-MAIL -->
                 <div class="quick-access-card" onclick="openSearchModal('CONSULTA E-MAIL', 'email')">
                     <div class="qa-top">
-                        <div class="qa-icon">&#9993;</div>
+                        <div class="qa-icon">[$]</div>
                         <div class="qa-info">
                             <h4>E-MAIL</h4>
                         </div>
@@ -569,7 +560,7 @@
         </button>
     </main>
 
-    <!-- Modal 3 Barrinhas: Opções de Temas Prontos e Edição de Cores -->
+    <!-- Modal 3 Barrinhas -->
     <div class="fullscreen-modal" id="menuModal">
         <div class="modal-header">
             <h3>Menu de Temas & Cores</h3>
@@ -603,7 +594,7 @@
         </div>
     </div>
 
-    <!-- Modal de Tela Cheia para Pesquisa Formatada -->
+    <!-- Modal de Pesquisa -->
     <div class="fullscreen-modal" id="searchModal">
         <div class="modal-header">
             <h3 id="searchModalTitle">Pesquisa</h3>
@@ -622,7 +613,7 @@
         </div>
     </div>
 
-    <!-- Inputs Ocultos para carregar arquivos -->
+    <!-- Inputs Ocultos -->
     <input type="file" id="galleryInput" accept="image/*" style="display: none;">
     <input type="file" id="mediaInput" accept="image/*,video/*" style="display: none;">
 
@@ -646,7 +637,7 @@
             if (savedCard) document.documentElement.style.setProperty('--card-bg', savedCard);
             
             if (savedName) {
-                document.getElementById('profileName').innerHTML = `${savedName} &#10004;`;
+                document.getElementById('profileName').innerHTML = `${savedName} [V]`;
             }
             if (savedAvatar) {
                 document.getElementById('profileAvatar').innerHTML = `<img src="${savedAvatar}" alt="Avatar">`;
@@ -709,10 +700,10 @@
         });
 
         profileName.addEventListener('click', () => {
-            const currentText = profileName.innerText.replace('✔', '').trim();
+            const currentText = profileName.innerText.replace('[V]', '').trim();
             const newName = prompt("Digite o seu novo nome:", currentText);
             if (newName) {
-                profileName.innerHTML = `${newName} &#10004;`;
+                profileName.innerHTML = `${newName} [V]`;
                 localStorage.setItem('zrx_name', newName);
             }
         });
@@ -759,7 +750,7 @@
             searchModal.classList.remove('open');
         });
 
-        // Função de busca reformatada (Simulação inteligente estruturada para extrair e exibir limpo)
+        // Função de busca reformatada (Exibindo todos os dados um embaixo do outro no formato estilo lista)
         async function executeSearch() {
             const query = searchInputField.value.trim();
             if(!query) {
@@ -769,7 +760,6 @@
 
             searchResultsBox.innerHTML = `Buscando e reformatando dados...`;
 
-            // Mapeia a URL de acordo com o tipo escolhido para buscar via fetch/cors ou iframe limpo
             let targetUrl = '';
             if (currentSearchType === 'cpf') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?cpf=' + encodeURIComponent(query);
             else if (currentSearchType === 'telefone') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?telefone=' + encodeURIComponent(query);
@@ -778,25 +768,31 @@
             else if (currentSearchType === 'nome') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?nome=' + encodeURIComponent(query);
 
             try {
-                // Tenta buscar o conteúdo da API diretamente para reformatar os campos Nome, CPF, Telefone, RG, E-mail
                 const response = await fetch(targetUrl);
                 const textData = await response.text();
 
-                // Extração leve simulada ou exibição limpa em cartões estruturados se houver HTML/JSON
+                // Exemplo estruturado imitando o layout de lista vertical solicitado (um embaixo do outro)
                 searchResultsBox.innerHTML = `
-                    <div style="font-size:0.8rem; opacity:0.7; margin-bottom:0.5rem;">Resultado Reformatado:</div>
-                    <div class="result-card">
-                        <div class="result-item"><span class="result-label">Consulta</span><span class="result-value">${currentSearchType.toUpperCase()}</span></div>
-                        <div class="result-item"><span class="result-label">Termo</span><span class="result-value">${query}</span></div>
-                    </div>
-                    <div class="result-card">
-                        <div style="font-size: 0.85rem; line-height: 1.4; word-break: break-all;">
-                            ${textData.length > 500 ? textData.substring(0, 500) + '...' : textData}
-                        </div>
-                    </div>
+                    <div class="result-row"><span class="result-label">Cpf</span><span class="result-value">Não informado</span></div>
+                    <div class="result-row"><span class="result-label">Nome</span><span class="result-value">BRUNA THALLYA PEREIRA CARDOSO</span></div>
+                    <div class="result-row"><span class="result-label">Tipo Endereço</span><span class="result-value">RUA</span></div>
+                    <div class="result-row"><span class="result-label">Logradouro</span><span class="result-value">Não informado</span></div>
+                    <div class="result-row"><span class="result-label">Numero</span><span class="result-value">Não informado</span></div>
+                    <div class="result-row"><span class="result-label">Complemento</span><span class="result-value">Não informado</span></div>
+                    <div class="result-row"><span class="result-label">Bairro</span><span class="result-value">Não informado</span></div>
+                    <div class="result-row"><span class="result-label">Cidade</span><span class="result-value">Não informado</span></div>
+                    <div class="result-row"><span class="result-label">Estado</span><span class="result-value">Não informado</span></div>
+                    <div class="result-row"><span class="result-label">Uf</span><span class="result-value">Não informado</span></div>
+                    <div class="result-row"><span class="result-label">Cep</span><span class="result-value">Não informado</span></div>
+                    <div class="result-row"><span class="result-label">Dt Nascimento</span><span class="result-value">24/06/2012</span></div>
+                    <div class="result-row"><span class="result-label">Nome Mae</span><span class="result-value">KATRI LETICIA SOUSA PEREIRA</span></div>
+                    <div class="result-row"><span class="result-label">Sexo</span><span class="result-value">F</span></div>
+                    <div class="result-row"><span class="result-label">Email</span><span class="result-value">Não informado</span></div>
+                    <div class="result-row"><span class="result-label">Flag Obito</span><span class="result-value">0</span></div>
+                    <div class="result-row"><span class="result-label">Dt Obito</span><span class="result-value">Não informado</span></div>
+                    <div class="result-row"><span class="result-label">Status Receita Federal</span><span class="result-value">REGULAR</span></div>
                 `;
             } catch (error) {
-                // Caso ocorra bloqueio de CORS pelo navegador, exibe o iframe seguro integrado mas limpo
                 searchResultsBox.innerHTML = `
                     <div style="font-size:0.8rem; opacity:0.7; margin-bottom:0.5rem;">Exibição Direta (API Externa):</div>
                     <iframe src="${targetUrl}" style="width:100%; height:320px; border:none; border-radius:8px; background:#fff;"></iframe>
