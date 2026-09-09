@@ -808,7 +808,7 @@
             searchModal.classList.remove('open');
         });
 
-        // Função de busca inteligente com varredura profunda (recursiva) corrigida
+        // Função de busca inteligente com Proxy CORS para contornar o bloqueio do navegador
         async function executeSearch() {
             const query = searchInputField.value.trim();
             if(!query) {
@@ -828,12 +828,15 @@
             else if (currentSearchType === 'cpf_parente') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?cpf_parente=' + encodeURIComponent(query);
             else if (currentSearchType === 'cep') targetUrl = 'http://apisbrasilpro.site/telefone0.php?cep=' + encodeURIComponent(query);
 
+            // Usando proxy público para evitar bloqueio de CORS do navegador
+            const proxyUrl = 'https://api.allorigins.win/get?url=' + encodeURIComponent(targetUrl);
+
             try {
-                const response = await fetch(targetUrl);
-                const textData = await response.text();
+                const response = await fetch(proxyUrl);
+                const wrapperData = await response.json();
+                const textData = wrapperData.contents;
 
                 try {
-                    // Limpa créditos do dev colados antes do JSON se houver
                     let jsonStartIndex = textData.indexOf('{');
                     let jsonString = jsonStartIndex !== -1 ? textData.substring(jsonStartIndex) : textData;
                     
@@ -844,13 +847,13 @@
                 }
             } catch (error) {
                 searchResultsBox.innerHTML = `
-                    <div style="font-size:0.8rem; opacity:0.7; margin-bottom:0.5rem;">[!] Erro de conexão direta (CORS). Carregando visualização segura:</div>
+                    <div style="font-size:0.8rem; opacity:0.7; margin-bottom:0.5rem;">[!] Erro de conexão direta. Carregando visualização segura:</div>
                     <iframe src="${targetUrl}" style="width:100%; height:320px; border:none; border-radius:8px; background:#fff;"></iframe>
                 `;
             }
         }
 
-        // Renderização recursiva limpa e profunda para abrir todos os objetos e arrays sem dar [object Object]
+        // Renderização recursiva profunda para exibir dados estruturados sem [object Object]
         function renderStructuredData(data) {
             if (!data) {
                 searchResultsBox.innerHTML = 'Nenhum dado encontrado.';
