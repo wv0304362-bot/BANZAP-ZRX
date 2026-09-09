@@ -399,7 +399,7 @@
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            gap: 0.6rem;
+            gap: 0.75rem;
         }
 
         /* Linhas Estilizadas Um Embaixo do Outro */
@@ -410,7 +410,7 @@
             padding: 0.75rem;
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            gap: 0.5rem;
         }
 
         .result-line {
@@ -418,7 +418,7 @@
             flex-direction: column;
             gap: 0.15rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding-bottom: 0.35rem;
+            padding-bottom: 0.4rem;
         }
 
         .result-line:last-child {
@@ -427,7 +427,7 @@
         }
 
         .result-key {
-            font-size: 0.68rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             color: var(--primary-color);
@@ -440,6 +440,16 @@
             font-weight: 600;
             word-break: break-all;
             color: var(--text-color);
+        }
+
+        .sub-section-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            border-left: 3px solid var(--primary-color);
+            padding-left: 6px;
         }
     </style>
 </head>
@@ -798,7 +808,7 @@
             searchModal.classList.remove('open');
         });
 
-        // Função de busca inteligente com renderização estruturada linha por linha (reformatada para mostrar tudo)
+        // Função de busca inteligente com tratamento de texto colado e JSON embutido
         async function executeSearch() {
             const query = searchInputField.value.trim();
             if(!query) {
@@ -823,10 +833,13 @@
                 const textData = await response.text();
 
                 try {
-                    const jsonData = JSON.parse(textData);
+                    // Tenta achar onde o JSON começa se houver texto solto na frente (ex: "api desenvolvida por...")
+                    let jsonStartIndex = textData.indexOf('{');
+                    let jsonString = jsonStartIndex !== -1 ? textData.substring(jsonStartIndex) : textData;
+                    
+                    const jsonData = JSON.parse(jsonString);
                     renderStructuredData(jsonData);
                 } catch (e) {
-                    // Caso venha texto puro ou HTML que não seja JSON direto
                     searchResultsBox.innerHTML = `<div class="result-item-card"><div class="result-line"><span class="result-key">RESPOSTA DO SERVIDOR</span><span class="result-val">${textData}</span></div></div>`;
                 }
             } catch (error) {
@@ -837,7 +850,7 @@
             }
         }
 
-        // Função auxiliar para varrer e reformatar recursivamente qualquer JSON em blocos limpos um embaixo do outro
+        // Renderização recursiva limpa, transformando chaves/valores em linhas empilhadas
         function renderStructuredData(data) {
             if (!data) {
                 searchResultsBox.innerHTML = 'Nenhum dado encontrado.';
@@ -846,7 +859,6 @@
 
             let htmlContent = '';
 
-            // Se for array (vários registros/pessoas/telefones)
             if (Array.isArray(data)) {
                 if (data.length === 0) {
                     searchResultsBox.innerHTML = 'Nenhum registro retornado.';
@@ -869,16 +881,47 @@
             let cardHtml = '<div class="result-item-card">';
             for (const [key, value] of Object.entries(obj)) {
                 if (value !== null && value !== undefined && value !== '') {
-                    let displayVal = value;
                     if (typeof value === 'object') {
-                        displayVal = JSON.stringify(value);
+                        // Se for um objeto aninhado (ex: "dados", "email", "endereco")
+                        cardHtml += `<div class="sub-section-title">${key}</div>`;
+                        if (Array.isArray(value)) {
+                            value.forEach((subItem, idx) => {
+                                cardHtml += `<div style="font-size:0.7rem; opacity:0.6; margin-top:4px;"># Item ${idx + 1}</div>`;
+                                if (typeof subItem === 'object') {
+                                    for (const [subKey, subVal] of Object.entries(subItem)) {
+                                        if (subVal !== null && subVal !== undefined && subVal !== '') {
+                                            cardHtml += `
+                                                <div class="result-line" style="margin-left: 8px;">
+                                                    <span class="result-key">${subKey}</span>
+                                                    <span class="result-val">${subVal}</span>
+                                                </div>
+                                            `;
+                                        }
+                                    }
+                                } else {
+                                    cardHtml += `<div class="result-line"><span class="result-val">${subItem}</span></div>`;
+                                }
+                            });
+                        } else {
+                            for (const [subKey, subVal] of Object.entries(value)) {
+                                if (subVal !== null && subVal !== undefined && subVal !== '') {
+                                    cardHtml += `
+                                        <div class="result-line" style="margin-left: 8px;">
+                                            <span class="result-key">${subKey}</span>
+                                            <span class="result-val">${subVal}</span>
+                                        </div>
+                                    `;
+                                }
+                            }
+                        }
+                    } else {
+                        cardHtml += `
+                            <div class="result-line">
+                                <span class="result-key">${key}</span>
+                                <span class="result-val">${value}</span>
+                            </div>
+                        `;
                     }
-                    cardHtml += `
-                        <div class="result-line">
-                            <span class="result-key">${key}</span>
-                            <span class="result-val">${displayVal}</span>
-                        </div>
-                    `;
                 }
             }
             cardHtml += '</div>';
