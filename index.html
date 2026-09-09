@@ -616,15 +616,15 @@
                     <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
                 </div>
 
-                <!-- BRASILAPI - BANCO DE DADOS COMPLETO -->
-                <div class="quick-access-card" onclick="openSearchModal('BRASILAPI - BANCO DE DADOS', 'brasilapi')" style="grid-column: span 2;">
+                <!-- BRASILAPI - VARREDURA COMPLETA AUTOMÁTICA -->
+                <div class="quick-access-card" onclick="openSearchModal('BRASILAPI - VARREDURA TOTAL', 'brasilapi')" style="grid-column: span 2;">
                     <div class="qa-top">
                         <div class="qa-icon">🌐</div>
                         <div class="qa-info">
-                            <h4>BRASILAPI (TODOS OS DADOS)</h4>
+                            <h4>BRASILAPI (VARREDURA TOTAL AUTOMÁTICA)</h4>
                         </div>
                     </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Selecionar Módulo e Consultar ></span>
+                    <span style="font-size: 0.75rem; opacity: 0.5;">Busca simultânea em todas as rotas compatíveis ></span>
                 </div>
             </div>
         </div>
@@ -818,39 +818,10 @@
             
             if (type === 'brasilapi') {
                 searchBoxContainer.innerHTML = `
-                    <select class="search-input" id="apiEndpointSelect" onchange="updateApiInputPlaceholder()" style="width:100%;">
-                        <option value="cep_v1">CEP v1 (/cep/v1/{cep})</option>
-                        <option value="cep_v2">CEP v2 (/cep/v2/{cep})</option>
-                        <option value="cnpj">CNPJ (/cnpj/v1/{cnpj})</option>
-                        <option value="banks">Bancos - Lista Completa (/banks/v1)</option>
-                        <option value="bank_code">Banco Específico (/banks/v1/{code})</option>
-                        <option value="ddd_v1">DDD v1 (/ddd/v1/{ddd})</option>
-                        <option value="ddd_v2">DDD v2 (/ddd/v2/{ddd})</option>
-                        <option value="fipe_tabelas">FIPE - Tabelas (/fipe/tabelas/v1)</option>
-                        <option value="fipe_marcas">FIPE - Marcas (/fipe/marcas/v1/{tipo})</option>
-                        <option value="fipe_preco">FIPE - Preço (/fipe/preco/v1/{fipeCode})</option>
-                        <option value="ibge_uf">IBGE - Estados (/ibge/uf/v1)</option>
-                        <option value="ibge_uf_sigla">IBGE - Estado por Sigla (/ibge/uf/v1/{sigla})</option>
-                        <option value="ibge_municipios">IBGE - Municípios (/ibge/municipios/v1/{sigla})</option>
-                        <option value="feriados">Feriados Nacionais (/feriados/v1/{ano})</option>
-                        <option value="corretoras">Corretoras CVM - Lista (/corretoras/v1)</option>
-                        <option value="corretora_cnpj">Corretora CVM por CNPJ (/corretoras/v1/{cnpj})</option>
-                        <option value="isbn">ISBN Livro (/isbn/v1/{isbn})</option>
-                        <option value="ncm_list">NCM - Lista (/ncm/v1)</option>
-                        <option value="ncm_code">NCM Específico (/ncm/v1/{code})</option>
-                        <option value="taxas">Taxas B3 / Indicadores (/taxas/v1)</option>
-                        <option value="taxa_sigla">Taxa Específica (/taxas/v1/{sigla})</option>
-                        <option value="cptec_cidade_list">CPTEC - Cidades (/cptec/v1/cidade)</option>
-                        <option value="cptec_cidade_name">CPTEC - Cidade por Nome (/cptec/v1/cidade/{name})</option>
-                        <option value="cptec_capital">CPTEC - Clima Capitais (/cptec/v1/clima/capital)</option>
-                        <option value="cptec_aeroporto">CPTEC - Clima Aeroporto (/cptec/v1/clima/aeroporto/{airport})</option>
-                        <option value="cptec_previsao">CPTEC - Previsão 1 Dia (/cptec/v1/clima/previsao/{cityCode})</option>
-                        <option value="cptec_previsao_days">CPTEC - Previsão Dias (/cptec/v1/clima/previsao/{cityCode}/{days})</option>
-                        <option value="cptec_ondas">CPTEC - Ondas (/cptec/v1/ondas/{cityCode})</option>
-                    </select>
+                    <div style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 4px;">Insira o termo (ex: CEP, CNPJ, DDD, Feriado ou Ano) para varredura completa simultânea:</div>
                     <div class="search-input-row">
-                        <input type="text" class="search-input" id="searchInputField" placeholder="Digite o CEP...">
-                        <button class="search-submit-btn" onclick="executeSearch()">Buscar</button>
+                        <input type="text" class="search-input" id="searchInputField" placeholder="Digite o parâmetro (CEP, CNPJ, etc)...">
+                        <button class="search-submit-btn" onclick="executeSearch()">Varredura Total</button>
                     </div>
                 `;
             } else {
@@ -864,77 +835,86 @@
             searchModal.classList.add('open');
         }
 
-        function updateApiInputPlaceholder() {
-            const select = document.getElementById('apiEndpointSelect');
-            const input = document.getElementById('searchInputField');
-            const val = select.value;
-
-            if (val.includes('list') || val === 'banks' || val === 'ibge_uf' || val === 'corretoras' || val === 'ncm_list' || val === 'taxas' || val === 'cptec_cidade_list' || val === 'cptec_capital' || val === 'fipe_tabelas') {
-                input.placeholder = 'Nenhum parâmetro necessário. Clique em Buscar.';
-                input.value = '';
-                input.disabled = true;
-            } else {
-                input.disabled = false;
-                input.placeholder = `Digite o parâmetro para ${val}...`;
-            }
-        }
-
         document.getElementById('closeSearchModal').addEventListener('click', () => {
             searchModal.classList.remove('open');
         });
 
-        // Função de busca direta tratada com Iframe Seguro em caso de restrições
+        // Função de execução de busca principal e varredura total na BrasilAPI
         async function executeSearch() {
             const searchInputField = document.getElementById('searchInputField');
             const query = searchInputField ? searchInputField.value.trim() : '';
             
-            if(currentSearchType !== 'brasilapi' && !query && !searchInputField.disabled) {
+            if(currentSearchType !== 'brasilapi' && !query) {
                 alert('Digite algum valor para pesquisar!');
                 return;
             }
 
             searchResultsBox.innerHTML = `Buscando dados no servidor...`;
 
-            let targetUrl = '';
-
             if (currentSearchType === 'brasilapi') {
-                const apiType = document.getElementById('apiEndpointSelect').value;
+                // Varredura automática simultânea em todas as principais rotas da BrasilAPI
                 const base = 'https://brasilapi.com.br/api';
+                const endpoints = [
+                    { name: 'CEP v1', url: `${base}/cep/v1/${encodeURIComponent(query)}` },
+                    { name: 'CEP v2', url: `${base}/cep/v2/${encodeURIComponent(query)}` },
+                    { name: 'CNPJ', url: `${base}/cnpj/v1/${encodeURIComponent(query)}` },
+                    { name: 'DDD', url: `${base}/ddd/v1/${encodeURIComponent(query)}` },
+                    { name: 'Feriados Nacionais', url: `${base}/feriados/v1/${encodeURIComponent(query)}` },
+                    { name: 'ISBN Livro', url: `${base}/isbn/v1/${encodeURIComponent(query)}` },
+                    { name: 'Corretoras CVM', url: `${base}/corretoras/v1/${encodeURIComponent(query)}` },
+                    { name: 'Taxas B3', url: `${base}/taxas/v1/${encodeURIComponent(query)}` },
+                    { name: 'IBGE Estado', url: `${base}/ibge/uf/v1/${encodeURIComponent(query)}` },
+                    { name: 'IBGE Municípios', url: `${base}/ibge/municipios/v1/${encodeURIComponent(query)}` },
+                    { name: 'Banco Específico', url: `${base}/banks/v1/${encodeURIComponent(query)}` },
+                    { name: 'FIPE Preço', url: `${base}/fipe/preco/v1/${encodeURIComponent(query)}` }
+                ];
 
-                switch(apiType) {
-                    case 'cep_v1': targetUrl = `${base}/cep/v1/${encodeURIComponent(query)}`; break;
-                    case 'cep_v2': targetUrl = `${base}/cep/v2/${encodeURIComponent(query)}`; break;
-                    case 'cnpj': targetUrl = `${base}/cnpj/v1/${encodeURIComponent(query)}`; break;
-                    case 'banks': targetUrl = `${base}/banks/v1`; break;
-                    case 'bank_code': targetUrl = `${base}/banks/v1/${encodeURIComponent(query)}`; break;
-                    case 'ddd_v1': targetUrl = `${base}/ddd/v1/${encodeURIComponent(query)}`; break;
-                    case 'ddd_v2': targetUrl = `${base}/ddd/v2/${encodeURIComponent(query)}`; break;
-                    case 'fipe_tabelas': targetUrl = `${base}/fipe/tabelas/v1`; break;
-                    case 'fipe_marcas': targetUrl = `${base}/fipe/marcas/v1/${encodeURIComponent(query)}`; break;
-                    case 'fipe_preco': targetUrl = `${base}/fipe/preco/v1/${encodeURIComponent(query)}`; break;
-                    case 'ibge_uf': targetUrl = `${base}/ibge/uf/v1`; break;
-                    case 'ibge_uf_sigla': targetUrl = `${base}/ibge/uf/v1/${encodeURIComponent(query)}`; break;
-                    case 'ibge_municipios': targetUrl = `${base}/ibge/municipios/v1/${encodeURIComponent(query)}`; break;
-                    case 'feriados': targetUrl = `${base}/feriados/v1/${encodeURIComponent(query)}`; break;
-                    case 'corretoras': targetUrl = `${base}/corretoras/v1`; break;
-                    case 'corretora_cnpj': targetUrl = `${base}/corretoras/v1/${encodeURIComponent(query)}`; break;
-                    case 'isbn': targetUrl = `${base}/isbn/v1/${encodeURIComponent(query)}`; break;
-                    case 'ncm_list': targetUrl = `${base}/ncm/v1`; break;
-                    case 'ncm_code': targetUrl = `${base}/ncm/v1/${encodeURIComponent(query)}`; break;
-                    case 'taxas': targetUrl = `${base}/taxas/v1`; break;
-                    case 'taxa_sigla': targetUrl = `${base}/taxas/v1/${encodeURIComponent(query)}`; break;
-                    case 'cptec_cidade_list': targetUrl = `${base}/cptec/v1/cidade`; break;
-                    case 'cptec_cidade_name': targetUrl = `${base}/cptec/v1/cidade/${encodeURIComponent(query)}`; break;
-                    case 'cptec_capital': targetUrl = `${base}/cptec/v1/clima/capital`; break;
-                    case 'cptec_aeroporto': targetUrl = `${base}/cptec/v1/clima/aeroporto/${encodeURIComponent(query)}`; break;
-                    case 'cptec_previsao': targetUrl = `${base}/cptec/v1/clima/previsao/${encodeURIComponent(query)}`; break;
-                    case 'cptec_previsao_days': 
-                        const parts = query.split(',');
-                        targetUrl = `${base}/cptec/v1/clima/previsao/${encodeURIComponent(parts[0].trim())}/${encodeURIComponent(parts[1] ? parts[1].trim() : '1')}`; 
-                        break;
-                    case 'cptec_ondas': targetUrl = `${base}/cptec/v1/ondas/${encodeURIComponent(query)}`; break;
+                searchResultsBox.innerHTML = `Executando varredura simultânea em todas as rotas da BrasilAPI...`;
+                
+                let aggregatedHtml = '';
+                let successCount = 0;
+
+                // Executa todas as requisições em paralelo usando Promise.allSettled
+                const promises = endpoints.map(async (ep) => {
+                    try {
+                        const res = await fetch(ep.url);
+                        if (res.ok) {
+                            const data = await res.json();
+                            return { name: ep.name, data: data };
+                        }
+                    } catch (err) {
+                        // Ignora falhas individuais de rotas que não possuem o termo buscado
+                    }
+                    return null;
+                });
+
+                const results = await Promise.all(promises);
+
+                results.forEach((result) => {
+                    if (result && result.data) {
+                        successCount++;
+                        aggregatedHtml += `<div class="sub-section-title">FONTE: ${result.name}</div>`;
+                        if (Array.isArray(result.data)) {
+                            result.data.forEach((item, idx) => {
+                                aggregatedHtml += `<div style="font-size:0.7rem; opacity:0.6; margin-top:2px;">Registro #${idx + 1}</div>`;
+                                aggregatedHtml += buildItemCard(item);
+                            });
+                        } else if (typeof result.data === 'object') {
+                            aggregatedHtml += buildItemCard(result.data);
+                        } else {
+                            aggregatedHtml += `<div class="result-item-card"><div class="result-line"><span class="result-val">${result.data}</span></div></div>`;
+                        }
+                    }
+                });
+
+                if (successCount === 0) {
+                    searchResultsBox.innerHTML = `<div class="result-item-card"><div class="result-line"><span class="result-key">AVISO</span><span class="result-val">Nenhum dado retornado para "${query}" nas rotas da BrasilAPI. Verifique o formato do parâmetro (ex: CEP com 8 dígitos, CNPJ, etc).</span></div></div>`;
+                } else {
+                    searchResultsBox.innerHTML = aggregatedHtml;
                 }
+
             } else {
+                let targetUrl = '';
                 if (currentSearchType === 'cpf') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?cpf=' + encodeURIComponent(query);
                 else if (currentSearchType === 'telefone') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?telefone=' + encodeURIComponent(query);
                 else if (currentSearchType === 'email') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?email=' + encodeURIComponent(query);
@@ -943,34 +923,33 @@
                 else if (currentSearchType === 'spc') targetUrl = 'http://apisbrasilpro.site/spc1.php?doc=' + encodeURIComponent(query);
                 else if (currentSearchType === 'cpf_parente') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?cpf_parente=' + encodeURIComponent(query);
                 else if (currentSearchType === 'cep') targetUrl = 'http://apisbrasilpro.site/telefone0.php?cep=' + encodeURIComponent(query);
-            }
-
-            try {
-                const response = await fetch(targetUrl);
-                const textData = await response.text();
 
                 try {
-                    let jsonStartIndex = textData.indexOf('{');
-                    let jsonArrayStartIndex = textData.indexOf('[');
-                    
-                    let parseTarget = textData;
-                    if (jsonArrayStartIndex !== -1 && (jsonStartIndex === -1 || jsonArrayStartIndex < jsonStartIndex)) {
-                        parseTarget = textData.substring(jsonArrayStartIndex);
-                    } else if (jsonStartIndex !== -1) {
-                        parseTarget = textData.substring(jsonStartIndex);
+                    const response = await fetch(targetUrl);
+                    const textData = await response.text();
+
+                    try {
+                        let jsonStartIndex = textData.indexOf('{');
+                        let jsonArrayStartIndex = textData.indexOf('[');
+                        
+                        let parseTarget = textData;
+                        if (jsonArrayStartIndex !== -1 && (jsonStartIndex === -1 || jsonArrayStartIndex < jsonStartIndex)) {
+                            parseTarget = textData.substring(jsonArrayStartIndex);
+                        } else if (jsonStartIndex !== -1) {
+                            parseTarget = textData.substring(jsonStartIndex);
+                        }
+                        
+                        const jsonData = JSON.parse(parseTarget);
+                        renderStructuredData(jsonData);
+                    } catch (e) {
+                        searchResultsBox.innerHTML = `<div class="result-item-card"><div class="result-line"><span class="result-key">RESPOSTA DO SERVIDOR</span><span class="result-val">${textData}</span></div></div>`;
                     }
-                    
-                    const jsonData = JSON.parse(parseTarget);
-                    renderStructuredData(jsonData);
-                } catch (e) {
-                    searchResultsBox.innerHTML = `<div class="result-item-card"><div class="result-line"><span class="result-key">RESPOSTA DO SERVIDOR</span><span class="result-val">${textData}</span></div></div>`;
+                } catch (error) {
+                    searchResultsBox.innerHTML = `
+                        <div style="font-size:0.8rem; opacity:0.8; margin-bottom:0.5rem; color:var(--primary-color);">[i] Exibindo via visualização integrada (Segura contra bloqueios):</div>
+                        <iframe src="${targetUrl}" style="width:100%; height:320px; border:1px solid var(--border-color); border-radius:10px; background:#fff;"></iframe>
+                    `;
                 }
-            } catch (error) {
-                // Fallback inteligente para garantir exibição correta e evitar tela branca por bloqueio de conexão/CORS
-                searchResultsBox.innerHTML = `
-                    <div style="font-size:0.8rem; opacity:0.8; margin-bottom:0.5rem; color:var(--primary-color);">[i] Exibindo via visualização integrada (Segura contra bloqueios):</div>
-                    <iframe src="${targetUrl}" style="width:100%; height:320px; border:1px solid var(--border-color); border-radius:10px; background:#fff;"></iframe>
-                `;
             }
         }
 
@@ -1047,6 +1026,7 @@
                     }
                 }
             }
+            cardHtml += 'end';
             cardHtml += '</div>';
             return cardHtml;
         }
