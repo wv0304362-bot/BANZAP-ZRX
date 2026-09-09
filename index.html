@@ -397,34 +397,49 @@
             min-height: 250px;
             max-height: 60vh;
             overflow-y: auto;
-            font-size: 0.9rem;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0.6rem;
         }
 
-        .result-row {
-            background: rgba(0, 0, 0, 0.25);
+        /* Linhas Estilizadas Um Embaixo do Outro */
+        .result-item-card {
+            background: rgba(0, 0, 0, 0.3);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 0.65rem 0.85rem;
+            border-radius: 10px;
+            padding: 0.75rem;
             display: flex;
             flex-direction: column;
-            gap: 0.2rem;
+            gap: 0.4rem;
         }
 
-        .result-label {
-            opacity: 0.6;
-            font-weight: 500;
+        .result-line {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 0.35rem;
+        }
+
+        .result-line:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .result-key {
+            font-size: 0.68rem;
             text-transform: uppercase;
-            font-size: 0.7rem;
             letter-spacing: 0.5px;
+            color: var(--primary-color);
+            font-weight: 700;
+            opacity: 0.9;
         }
 
-        .result-value {
-            font-weight: 600;
+        .result-val {
             font-size: 0.85rem;
+            font-weight: 600;
             word-break: break-all;
+            color: var(--text-color);
         }
     </style>
 </head>
@@ -783,7 +798,7 @@
             searchModal.classList.remove('open');
         });
 
-        // Função de busca dinâmica com renderização escrita estruturada e limpa (sem imagens/cards visuais pesados na resposta)
+        // Função de busca inteligente com renderização estruturada linha por linha (reformatada para mostrar tudo)
         async function executeSearch() {
             const query = searchInputField.value.trim();
             if(!query) {
@@ -791,7 +806,7 @@
                 return;
             }
 
-            searchResultsBox.innerHTML = `Buscando dados na API...`;
+            searchResultsBox.innerHTML = `Buscando dados no banco...`;
 
             let targetUrl = '';
             if (currentSearchType === 'cpf') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?cpf=' + encodeURIComponent(query);
@@ -809,17 +824,65 @@
 
                 try {
                     const jsonData = JSON.parse(textData);
-                    let formattedText = JSON.stringify(jsonData, null, 2);
-                    searchResultsBox.innerHTML = `<pre style="white-space: pre-wrap; word-break: break-all; font-family: monospace; font-size: 0.85rem; line-height: 1.4; color: var(--text-color);">${formattedText}</pre>`;
+                    renderStructuredData(jsonData);
                 } catch (e) {
-                    searchResultsBox.innerHTML = `<pre style="white-space: pre-wrap; word-break: break-all; font-family: monospace; font-size: 0.85rem; line-height: 1.4; color: var(--text-color);">${textData}</pre>`;
+                    // Caso venha texto puro ou HTML que não seja JSON direto
+                    searchResultsBox.innerHTML = `<div class="result-item-card"><div class="result-line"><span class="result-key">RESPOSTA DO SERVIDOR</span><span class="result-val">${textData}</span></div></div>`;
                 }
             } catch (error) {
                 searchResultsBox.innerHTML = `
-                    <div style="font-size:0.8rem; opacity:0.7; margin-bottom:0.5rem;">[!] Erro na requisição direta (CORS). Exibindo via container seguro:</div>
+                    <div style="font-size:0.8rem; opacity:0.7; margin-bottom:0.5rem;">[!] Erro de conexão direta (CORS). Carregando visualização segura:</div>
                     <iframe src="${targetUrl}" style="width:100%; height:320px; border:none; border-radius:8px; background:#fff;"></iframe>
                 `;
             }
+        }
+
+        // Função auxiliar para varrer e reformatar recursivamente qualquer JSON em blocos limpos um embaixo do outro
+        function renderStructuredData(data) {
+            if (!data) {
+                searchResultsBox.innerHTML = 'Nenhum dado encontrado.';
+                return;
+            }
+
+            let htmlContent = '';
+
+            // Se for array (vários registros/pessoas/telefones)
+            if (Array.isArray(data)) {
+                if (data.length === 0) {
+                    searchResultsBox.innerHTML = 'Nenhum registro retornado.';
+                    return;
+                }
+                data.forEach((item, index) => {
+                    htmlContent += `<div style="font-size: 0.75rem; opacity: 0.7; margin-top: 5px;">--- Registro #${index + 1} ---</div>`;
+                    htmlContent += buildItemCard(item);
+                });
+            } else if (typeof data === 'object') {
+                htmlContent += buildItemCard(data);
+            } else {
+                htmlContent += `<div class="result-item-card"><div class="result-line"><span class="result-key">VALOR</span><span class="result-val">${data}</span></div></div>`;
+            }
+
+            searchResultsBox.innerHTML = htmlContent;
+        }
+
+        function buildItemCard(obj) {
+            let cardHtml = '<div class="result-item-card">';
+            for (const [key, value] of Object.entries(obj)) {
+                if (value !== null && value !== undefined && value !== '') {
+                    let displayVal = value;
+                    if (typeof value === 'object') {
+                        displayVal = JSON.stringify(value);
+                    }
+                    cardHtml += `
+                        <div class="result-line">
+                            <span class="result-key">${key}</span>
+                            <span class="result-val">${displayVal}</span>
+                        </div>
+                    `;
+                }
+            }
+            cardHtml += '</div>';
+            return cardHtml;
         }
     </script>
 </body>
