@@ -808,7 +808,7 @@
             searchModal.classList.remove('open');
         });
 
-        // Função de busca inteligente com tratamento de texto colado e JSON embutido
+        // Função de busca inteligente com varredura profunda (recursiva) corrigida
         async function executeSearch() {
             const query = searchInputField.value.trim();
             if(!query) {
@@ -833,7 +833,7 @@
                 const textData = await response.text();
 
                 try {
-                    // Tenta achar onde o JSON começa se houver texto solto na frente (ex: "api desenvolvida por...")
+                    // Limpa créditos do dev colados antes do JSON se houver
                     let jsonStartIndex = textData.indexOf('{');
                     let jsonString = jsonStartIndex !== -1 ? textData.substring(jsonStartIndex) : textData;
                     
@@ -850,7 +850,7 @@
             }
         }
 
-        // Renderização recursiva limpa, transformando chaves/valores em linhas empilhadas
+        // Renderização recursiva limpa e profunda para abrir todos os objetos e arrays sem dar [object Object]
         function renderStructuredData(data) {
             if (!data) {
                 searchResultsBox.innerHTML = 'Nenhum dado encontrado.';
@@ -882,12 +882,11 @@
             for (const [key, value] of Object.entries(obj)) {
                 if (value !== null && value !== undefined && value !== '') {
                     if (typeof value === 'object') {
-                        // Se for um objeto aninhado (ex: "dados", "email", "endereco")
                         cardHtml += `<div class="sub-section-title">${key}</div>`;
                         if (Array.isArray(value)) {
                             value.forEach((subItem, idx) => {
                                 cardHtml += `<div style="font-size:0.7rem; opacity:0.6; margin-top:4px;"># Item ${idx + 1}</div>`;
-                                if (typeof subItem === 'object') {
+                                if (subItem !== null && typeof subItem === 'object') {
                                     for (const [subKey, subVal] of Object.entries(subItem)) {
                                         if (subVal !== null && subVal !== undefined && subVal !== '') {
                                             cardHtml += `
