@@ -408,7 +408,22 @@
             gap: 0.75rem;
         }
 
-        /* Linhas Estilizadas Um Embaixo do Outro */
+        /* Estilo de Script / Terminal para os resultados normais */
+        .script-output {
+            background-color: #05070c;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.8rem;
+            color: #38ef7d;
+            white-space: pre-wrap;
+            word-break: break-all;
+            max-height: 50vh;
+            overflow-y: auto;
+        }
+
+        /* Linhas Estilizadas Um Embaixo do Outro (BrasilAPI) */
         .result-item-card {
             background: rgba(0, 0, 0, 0.3);
             border: 1px solid var(--border-color);
@@ -874,7 +889,6 @@
                 let aggregatedHtml = '';
                 let successCount = 0;
 
-                // Executa todas as requisições em paralelo usando Promise.allSettled
                 const promises = endpoints.map(async (ep) => {
                     try {
                         const res = await fetch(ep.url);
@@ -882,9 +896,7 @@
                             const data = await res.json();
                             return { name: ep.name, data: data };
                         }
-                    } catch (err) {
-                        // Ignora falhas individuais de rotas que não possuem o termo buscado
-                    }
+                    } catch (err) {}
                     return null;
                 });
 
@@ -940,46 +952,19 @@
                         }
                         
                         const jsonData = JSON.parse(parseTarget);
-                        renderStructuredData(jsonData);
+                        // Exibe em formato de script (texto puro estruturado) sem fundo branco
+                        searchResultsBox.innerHTML = `<div class="script-output">${JSON.stringify(jsonData, null, 2)}</div>`;
                     } catch (e) {
-                        searchResultsBox.innerHTML = `<div class="result-item-card"><div class="result-line"><span class="result-key">RESPOSTA DO SERVIDOR</span><span class="result-val">${textData}</span></div></div>`;
+                        searchResultsBox.innerHTML = `<div class="script-output">${textData}</div>`;
                     }
                 } catch (error) {
-                    searchResultsBox.innerHTML = `
-                        <div style="font-size:0.8rem; opacity:0.8; margin-bottom:0.5rem; color:var(--primary-color);">[i] Exibindo via visualização integrada (Segura contra bloqueios):</div>
-                        <iframe src="${targetUrl}" style="width:100%; height:320px; border:1px solid var(--border-color); border-radius:10px; background:#fff;"></iframe>
-                    `;
+                    // Fallback direto em script caso ocorra erro de CORS/fetch, exibindo a URL ou mensagem de erro em formato terminal
+                    searchResultsBox.innerHTML = `<div class="script-output">[ERRO/CORS] Falha ao requisitar diretamente. URL Alvo: ${targetUrl}\nDetalhes: ${error.message}</div>`;
                 }
             }
         }
 
-        // Renderização recursiva estruturada vertical (um dado embaixo do outro)
-        function renderStructuredData(data) {
-            if (!data) {
-                searchResultsBox.innerHTML = 'Nenhum dado encontrado.';
-                return;
-            }
-
-            let htmlContent = '';
-
-            if (Array.isArray(data)) {
-                if (data.length === 0) {
-                    searchResultsBox.innerHTML = 'Nenhum registro retornado.';
-                    return;
-                }
-                data.forEach((item, index) => {
-                    htmlContent += `<div style="font-size: 0.75rem; opacity: 0.7; margin-top: 5px;">--- Registro #${index + 1} ---</div>`;
-                    htmlContent += buildItemCard(item);
-                });
-            } else if (typeof data === 'object') {
-                htmlContent += buildItemCard(data);
-            } else {
-                htmlContent += `<div class="result-item-card"><div class="result-line"><span class="result-key">VALOR</span><span class="result-val">${data}</span></div></div>`;
-            }
-
-            searchResultsBox.innerHTML = htmlContent;
-        }
-
+        // Renderização para BrasilAPI (mantida estruturada)
         function buildItemCard(obj) {
             let cardHtml = '<div class="result-item-card">';
             for (const [key, value] of Object.entries(obj)) {
@@ -1026,7 +1011,6 @@
                     }
                 }
             }
-            cardHtml += 'end';
             cardHtml += '</div>';
             return cardHtml;
         }
