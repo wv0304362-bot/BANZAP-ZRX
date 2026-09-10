@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZRX</title>
+    <title>ZRX - Autenticação</title>
     <style>
         :root {
             --primary-color: #3b82f6;
@@ -69,6 +69,103 @@
             width: 100%;
             margin: 0 auto;
             flex: 1;
+        }
+
+        /* Tela de Bloqueio / Senha */
+        #lockScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .lock-container {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2rem 1.5rem;
+            width: 100%;
+            max-width: 380px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        .lock-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: 2px;
+        }
+
+        .lock-error-msg {
+            font-size: 0.8rem;
+            color: #ef4444;
+            min-height: 2.4rem;
+            line-height: 1.2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            padding: 0 0.5rem;
+        }
+
+        /* 6 Quadradinhos de Senha */
+        .pin-inputs {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .pin-box {
+            width: 42px;
+            height: 52px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-align: center;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .pin-box:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+        }
+
+        .telegram-link-box {
+            margin-top: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .telegram-link-box a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .telegram-link-box a:hover {
+            text-decoration: underline;
         }
 
         /* Profile Card */
@@ -408,7 +505,6 @@
             gap: 0.75rem;
         }
 
-        /* Estilo de Script / Terminal para os resultados normais */
         .script-output {
             background-color: #05070c;
             border: 1px solid var(--border-color);
@@ -423,7 +519,6 @@
             overflow-y: auto;
         }
 
-        /* Linhas Estilizadas Um Embaixo do Outro (BrasilAPI) */
         .result-item-card {
             background: rgba(0, 0, 0, 0.3);
             border: 1px solid var(--border-color);
@@ -475,6 +570,29 @@
     </style>
 </head>
 <body>
+
+    <!-- TELA DE BLOQUEIO / SENHA (6 QUADRADINHOS) -->
+    <div id="lockScreen">
+        <div class="lock-container">
+            <div class="lock-logo">ZRX</div>
+            
+            <div class="lock-error-msg" id="lockErrorMsg"></div>
+
+            <div class="pin-inputs">
+                <input type="text" maxlength="1" class="pin-box" autocomplete="off">
+                <input type="text" maxlength="1" class="pin-box" autocomplete="off">
+                <input type="text" maxlength="1" class="pin-box" autocomplete="off">
+                <input type="text" maxlength="1" class="pin-box" autocomplete="off">
+                <input type="text" maxlength="1" class="pin-box" autocomplete="off">
+                <input type="text" maxlength="1" class="pin-box" autocomplete="off">
+            </div>
+
+            <div class="telegram-link-box">
+                <span>Telegram para liberação:</span>
+                <a href="https://t.me/Zenithzrx" target="_blank">@Zenithzrx</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Top Bar -->
     <header>
@@ -709,8 +827,21 @@
     <script>
         let currentSearchType = '';
 
-        // --- PERSISTÊNCIA DE DADOS (LOCALSTORAGE) ---
+        // --- SISTEMA DE SENHA & SESSÃO ---
+        const CORRECT_PIN = "ZRXV57"; // Senha configurada (6 caracteres: Z, R, X, V, 5, 7)
+        const pinBoxes = document.querySelectorAll('.pin-box');
+        const lockErrorMsg = document.getElementById('lockErrorMsg');
+        const lockScreen = document.getElementById('lockScreen');
+
+        // Checar se já foi autenticado anteriormente na sessão
         window.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('zrx_authenticated') === 'true') {
+                lockScreen.style.display = 'none';
+            } else {
+                pinBoxes[0].focus();
+            }
+
+            // Carregamento de temas e personalizações anteriores
             const savedPrimary = localStorage.getItem('zrx_primary');
             const savedBg = localStorage.getItem('zrx_bg');
             const savedCard = localStorage.getItem('zrx_card');
@@ -740,6 +871,56 @@
                 }
             }
         });
+
+        // Manipulação dos 6 quadradinhos de senha
+        pinBoxes.forEach((box, index) => {
+            box.addEventListener('input', (e) => {
+                const val = e.target.value.toUpperCase();
+                e.target.value = val;
+
+                if (val && index < pinBoxes.length - 1) {
+                    pinBoxes[index + 1].focus();
+                }
+
+                checkPinCompletion();
+            });
+
+            box.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && !box.value && index > 0) {
+                    pinBoxes[index - 1].focus();
+                }
+            });
+        });
+
+        function checkPinCompletion() {
+            let enteredPin = '';
+            pinBoxes.forEach(box => {
+                enteredPin += box.value;
+            });
+
+            if (enteredPin.length === 6) {
+                if (enteredPin === CORRECT_PIN) {
+                    lockErrorMsg.innerText = '';
+                    localStorage.setItem('zrx_authenticated', 'true');
+                    lockScreen.style.opacity = '0';
+                    setTimeout(() => {
+                        lockScreen.style.display = 'none';
+                    }, 300);
+                } else {
+                    lockErrorMsg.innerText = "Olá! Você ainda não fez o plano de R$ 15 para acessar o painel. Por favor, converse com o desenvolvedor para fazer o plano, pegar a senha e liberar.";
+                    pinBoxes.forEach(box => {
+                        box.value = '';
+                        box.style.borderColor = '#ef4444';
+                    });
+                    setTimeout(() => {
+                        pinBoxes.forEach(box => {
+                            box.style.borderColor = 'var(--border-color)';
+                        });
+                    }, 1000);
+                    pinBoxes[0].focus();
+                }
+            }
+        }
 
         // 3 Barrinhas Modal
         const menuModal = document.getElementById('menuModal');
@@ -867,7 +1048,6 @@
             searchResultsBox.innerHTML = `Buscando dados no servidor...`;
 
             if (currentSearchType === 'brasilapi') {
-                // Varredura automática simultânea em todas as principais rotas da BrasilAPI
                 const base = 'https://brasilapi.com.br/api';
                 const endpoints = [
                     { name: 'CEP v1', url: `${base}/cep/v1/${encodeURIComponent(query)}` },
@@ -920,7 +1100,7 @@
                 });
 
                 if (successCount === 0) {
-                    searchResultsBox.innerHTML = `<div class="result-item-card"><div class="result-line"><span class="result-key">AVISO</span><span class="result-val">Nenhum dado retornado para "${query}" nas rotas da BrasilAPI. Verifique o formato do parâmetro (ex: CEP com 8 dígitos, CNPJ, etc).</span></div></div>`;
+                    searchResultsBox.innerHTML = `<div class="result-item-card"><div class="result-line"><span class="result-key">AVISO</span><span class="result-val">Nenhum dado retornado para "${query}" nas rotas da BrasilAPI. Verifique o formato do parâmetro.</span></div></div>`;
                 } else {
                     searchResultsBox.innerHTML = aggregatedHtml;
                 }
@@ -952,19 +1132,16 @@
                         }
                         
                         const jsonData = JSON.parse(parseTarget);
-                        // Exibe em formato de script (texto puro estruturado) sem fundo branco
                         searchResultsBox.innerHTML = `<div class="script-output">${JSON.stringify(jsonData, null, 2)}</div>`;
                     } catch (e) {
                         searchResultsBox.innerHTML = `<div class="script-output">${textData}</div>`;
                     }
                 } catch (error) {
-                    // Fallback direto em script caso ocorra erro de CORS/fetch, exibindo a URL ou mensagem de erro em formato terminal
                     searchResultsBox.innerHTML = `<div class="script-output">[ERRO/CORS] Falha ao requisitar diretamente. URL Alvo: ${targetUrl}\nDetalhes: ${error.message}</div>`;
                 }
             }
         }
 
-        // Renderização para BrasilAPI (mantida estruturada)
         function buildItemCard(obj) {
             let cardHtml = '<div class="result-item-card">';
             for (const [key, value] of Object.entries(obj)) {
