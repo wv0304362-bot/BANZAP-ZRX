@@ -140,7 +140,7 @@
             color: var(--text-color);
             text-align: center;
             outline: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
 
         .pin-box:focus {
@@ -148,43 +148,24 @@
             box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
         }
 
-        /* Animação de sucesso nos quadradinhos (Verde com transição suave) */
-        .pin-box.success-anim {
-            background-color: #22c55e !important;
-            border-color: #16a34a !important;
-            color: #ffffff !important;
-            transform: scale(1.08);
-            box-shadow: 0 0 15px rgba(34, 197, 94, 0.6);
-        }
-
         .telegram-link-box {
             margin-top: 0.5rem;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0.3rem;
             font-size: 0.85rem;
-            opacity: 0.9;
-            width: 100%;
-            align-items: center;
+            opacity: 0.8;
         }
 
-        .telegram-btn-link {
-            background-color: #3b82f6;
-            color: #ffffff !important;
+        .telegram-link-box a {
+            color: var(--primary-color);
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.9rem;
-            padding: 0.75rem 1rem;
-            border-radius: 12px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-            transition: opacity 0.2s, transform 0.1s;
-            display: inline-block;
+            font-size: 0.95rem;
         }
 
-        .telegram-btn-link:active {
-            transform: scale(0.98);
+        .telegram-link-box a:hover {
+            text-decoration: underline;
         }
 
         /* Profile Card */
@@ -608,7 +589,7 @@
 
             <div class="telegram-link-box">
                 <span>Telegram para liberação:</span>
-                <a href="https://t.me/Zenithzrx" target="_blank" class="telegram-btn-link">@Zenithzrx</a>
+                <a href="https://t.me/Zenithzrx" target="_blank">@Zenithzrx</a>
             </div>
         </div>
     </div>
@@ -812,19 +793,6 @@
                 <span>💬 Vermelho Carmesim</span>
                 <span>></span>
             </div>
-            <!-- NOVOS TEMAS SOLICITADOS -->
-            <div class="theme-option" onclick="applyTheme('#ef4444', '#080202', '#140505')">
-                <span>🔴 Preto com Detalhes Vermelhos</span>
-                <span>></span>
-            </div>
-            <div class="theme-option" onclick="applyTheme('#22c55e', '#020d06', '#061a0e')">
-                <span>🟢 Verde Hacker</span>
-                <span>></span>
-            </div>
-            <div class="theme-option" onclick="applyTheme('#94a3b8', '#0f172a', '#1e293b')">
-                <span>⚪ Preto Misturado com Prateado</span>
-                <span>></span>
-            </div>
         </div>
 
         <h4 style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 0.75rem;">EDITAR CORES LIVREMENTE</h4>
@@ -933,22 +901,11 @@
             if (enteredPin.length === 6) {
                 if (enteredPin === CORRECT_PIN) {
                     lockErrorMsg.innerText = '';
-                    
-                    // Animação de sucesso em cascata nos 6 quadradinhos ficando verdes
-                    pinBoxes.forEach((box, i) => {
-                        setTimeout(() => {
-                            box.classList.add('success-anim');
-                        }, i * 80);
-                    });
-
                     localStorage.setItem('zrx_authenticated', 'true');
-                    
+                    lockScreen.style.opacity = '0';
                     setTimeout(() => {
-                        lockScreen.style.opacity = '0';
-                        setTimeout(() => {
-                            lockScreen.style.display = 'none';
-                        }, 300);
-                    }, 800);
+                        lockScreen.style.display = 'none';
+                    }, 300);
                 } else {
                     lockErrorMsg.innerText = "Olá! Você ainda não fez o plano de R$ 15 para acessar o painel. Por favor, converse com o desenvolvedor para fazer o plano, pegar a senha e liberar.";
                     pinBoxes.forEach(box => {
