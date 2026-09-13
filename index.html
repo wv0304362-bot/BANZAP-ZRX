@@ -1,817 +1,1238 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark-neon">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZRX VoidNumber</title>
+    <title>ZRX - Autenticação</title>
     <style>
         :root {
-            --bg-color: #0b0f19;
-            --card-bg: #111827;
-            --text-color: #f3f4f6;
-            --text-muted: #9ca3af;
-            --primary: #3b82f6;
-            --primary-glow: rgba(59, 130, 246, 0.4);
-            --accent: #2563eb;
-            --border: #1f2937;
-            --nav-bg: #111827;
-        }
-
-        [data-theme="dark-carmine"] {
-            --bg-color: #0a0505;
-            --card-bg: #140909;
-            --text-color: #fef2f2;
-            --text-muted: #f87171;
-            --primary: #dc2626;
-            --primary-glow: rgba(220, 38, 38, 0.4);
-            --accent: #b91c1c;
-            --border: #291212;
-            --nav-bg: #140909;
-        }
-
-        [data-theme="dark-purple"] {
-            --bg-color: #09050f;
-            --card-bg: #120a1a;
-            --text-color: #faf5ff;
-            --text-muted: #c084fc;
-            --primary: #9333ea;
-            --primary-glow: rgba(147, 51, 234, 0.4);
-            --accent: #7e22ce;
-            --border: #211230;
-            --nav-bg: #120a1a;
-        }
-
-        [data-theme="dark-emerald"] {
-            --bg-color: #021008;
-            --card-bg: #061a0f;
-            --text-color: #f0fdf4;
-            --text-muted: #4ade80;
-            --primary: #16a34a;
-            --primary-glow: rgba(22, 163, 74, 0.4);
-            --accent: #15803d;
-            --border: #0e2e1a;
-            --nav-bg: #061a0f;
+            --primary-color: #3b82f6;
+            --bg-color: #0b1120;
+            --card-bg: #131c31;
+            --border-color: #1e293b;
+            --text-color: #f8fafc;
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            transition: background 0.3s, color 0.3s, border-color 0.3s;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            padding-bottom: 80px;
+            min-height: 100vh;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease;
         }
 
+        /* Top Bar */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 20px;
-            background-color: var(--card-bg);
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 10;
+            padding: 1rem 1.25rem;
+            background-color: var(--bg-color);
         }
 
-        .menu-btn {
+        .icon-btn {
             background: none;
             border: none;
             color: var(--text-color);
-            font-size: 24px;
-            cursor: pointer;
-            padding: 4px;
-        }
-
-        .search-container {
-            flex: 1;
-            margin: 0 16px;
-            position: relative;
-        }
-
-        .search-container input {
-            width: 100%;
-            padding: 8px 12px 8px 36px;
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            outline: none;
-            font-size: 14px;
-        }
-
-        .search-container input:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 8px var(--primary-glow);
-        }
-
-        .search-icon {
-            position: absolute;
-            left: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-
-        .main-container {
-            flex: 1;
-            padding: 16px;
-            max-width: 600px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .view {
-            display: none;
-        }
-
-        .view.active {
-            display: block;
-        }
-
-        .section-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            color: var(--text-color);
-        }
-
-        .number-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .number-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .number-info h4 {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 4px;
-            color: var(--text-color);
-        }
-
-        .number-info p {
-            font-size: 13px;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .number-actions {
-            display: flex;
-            gap: 8px;
-        }
-
-        .btn-action {
-            background-color: var(--primary);
-            color: #fff;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-size: 13px;
-            font-weight: 600;
+            font-size: 1.25rem;
             cursor: pointer;
         }
 
-        .btn-action:hover {
+        .app-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 1px;
             opacity: 0.9;
         }
 
-        /* Notificações e SMS */
-        .sms-item {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 14px;
-            margin-bottom: 10px;
-            border-left: 4px solid var(--primary);
+        .header-right {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 12px;
+            gap: 1rem;
+            align-items: center;
         }
 
-        .sms-content {
+        main {
+            padding: 0 1.25rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
             flex: 1;
         }
 
-        .sms-header {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-bottom: 6px;
-        }
-
-        .sms-body {
-            font-size: 14px;
-            color: var(--text-color);
-            word-break: break-all;
-        }
-
-        /* Sidebar de Configurações / Temas */
-        .sidebar {
+        /* Tela de Bloqueio / Senha */
+        #lockScreen {
             position: fixed;
             top: 0;
-            left: -280px;
-            width: 280px;
+            left: 0;
+            width: 100%;
             height: 100%;
-            background-color: var(--card-bg);
-            border-right: 1px solid var(--border);
-            z-index: 100;
-            transition: left 0.3s ease;
-            padding: 20px;
+            background-color: var(--bg-color);
+            z-index: 9999;
             display: flex;
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            transition: opacity 0.3s ease;
         }
 
-        .sidebar.open {
-            left: 0;
+        .lock-container {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2rem 1.5rem;
+            width: 100%;
+            max-width: 380px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
         }
 
-        .sidebar-header {
+        .lock-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: 2px;
+        }
+
+        .lock-error-msg {
+            font-size: 0.8rem;
+            color: #ef4444;
+            min-height: 2.4rem;
+            line-height: 1.2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            padding: 0 0.5rem;
+        }
+
+        /* 6 Quadradinhos de Senha */
+        .pin-inputs {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .pin-box {
+            width: 42px;
+            height: 52px;
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-color);
+            text-align: center;
+            outline: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pin-box:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Animação de sucesso nos quadradinhos (Verde com transição suave) */
+        .pin-box.success-anim {
+            background-color: #22c55e !important;
+            border-color: #16a34a !important;
+            color: #ffffff !important;
+            transform: scale(1.08);
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.6);
+        }
+
+        .telegram-link-box {
+            margin-top: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            opacity: 0.9;
+            width: 100%;
+            align-items: center;
+        }
+
+        .telegram-btn-link {
+            background-color: #3b82f6;
+            color: #ffffff !important;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            transition: opacity 0.2s, transform 0.1s;
+            display: inline-block;
+        }
+
+        .telegram-btn-link:active {
+            transform: scale(0.98);
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .profile-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 24px;
         }
 
-        .sidebar-header h3 {
-            font-size: 18px;
-            color: var(--text-color);
+        .profile-info {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
         }
 
-        .close-sidebar {
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            font-size: 20px;
+        .avatar {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            overflow: hidden;
+            border: 2px solid var(--primary-color);
             cursor: pointer;
+            position: relative;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .user-details span {
+            font-size: 0.75rem;
+            opacity: 0.6;
+        }
+
+        .user-name {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .badge-dev {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            font-size: 0.6rem;
+            padding: 2px 8px;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            margin-top: 4px;
+            display: inline-block;
+        }
+
+        .battery-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid var(--primary-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .battery-box small {
+            font-size: 0.5rem;
+            opacity: 0.7;
+        }
+
+        .profile-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+        }
+
+        .stat-item {
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+            padding: 0.6rem;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .stat-item span:last-child {
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        /* Section Titles */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        /* Banner Container */
+        .banner-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .anime-banner {
+            width: 100%;
+            height: 320px;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            position: relative;
+            cursor: pointer;
+            background-color: #000;
+        }
+
+        .anime-banner img, .anime-banner video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Grid Quick Access */
+        .quick-access-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .quick-access-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+
+        .quick-access-card:active {
+            border-color: var(--primary-color);
+        }
+
+        .qa-top {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .qa-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: bold;
+            flex-shrink: 0;
+            color: var(--primary-color);
+        }
+
+        .qa-info h4 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Bottom Button */
+        .footer-btn {
+            background: linear-gradient(135deg, var(--primary-color), #2563eb);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Fullscreen Modals */
+        .fullscreen-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            padding: 1.25rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease-in-out;
+            overflow-y: auto;
+        }
+
+        .fullscreen-modal.open {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .theme-list {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
         }
 
         .theme-option {
-            background: var(--bg-color);
-            border: 1px solid var(--border);
-            padding: 12px;
-            border-radius: 8px;
-            color: var(--text-color);
-            text-align: left;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            border-radius: 12px;
             cursor: pointer;
-            font-weight: 500;
-        }
-
-        .theme-option:hover {
-            border-color: var(--primary);
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            z-index: 99;
-            display: none;
-        }
-
-        .overlay.active {
-            display: block;
-        }
-
-        /* Menu de Navegação Inferior */
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 65px;
-            background-color: var(--nav-bg);
-            border-top: 1px solid var(--border);
             display: flex;
-            justify-content: space-around;
             align-items: center;
-            z-index: 50;
+            justify-content: space-between;
+            font-weight: 600;
         }
 
-        .nav-item {
-            background: none;
-            border: none;
-            color: var(--text-muted);
+        .theme-option:active {
+            border-color: var(--primary-color);
+        }
+
+        .color-picker-group {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            font-size: 11px;
-            gap: 4px;
-            cursor: pointer;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .color-picker-group label {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        /* Search Screen Styles & Clean Stack Layout */
+        .search-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
             flex: 1;
         }
 
-        .nav-item.active {
-            color: var(--primary);
-        }
-
-        .nav-item svg {
-            width: 22px;
-            height: 22px;
-            fill: currentColor;
-        }
-
-        /* Botão Flutuante Mais (+) e Mini Bolinhas */
-        .fab-container {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 60;
+        .search-box-container {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            gap: 0.5rem;
         }
 
-        .fab-options {
+        .search-input-row {
             display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 12px;
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(10px);
-            transition: all 0.25s ease;
+            gap: 0.5rem;
         }
 
-        .fab-container.active .fab-options {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translateY(0);
-        }
-
-        .fab-mini {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
+        .search-input {
+            flex: 1;
             background-color: var(--card-bg);
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-color);
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
             color: var(--text-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            font-size: 18px;
+            font-size: 0.95rem;
+            outline: none;
         }
 
-        .fab-mini:hover {
-            background-color: var(--primary);
-            color: #fff;
+        .search-input:focus {
+            border-color: var(--primary-color);
         }
 
-        .fab-main {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background-color: var(--primary);
-            color: #fff;
+        .search-submit-btn {
+            background-color: var(--primary-color);
+            color: white;
             border: none;
-            font-size: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 0 1.25rem;
+            border-radius: 10px;
+            font-weight: 600;
             cursor: pointer;
-            box-shadow: 0 4px 15px var(--primary-glow);
-            transition: transform 0.3s, background-color: 0.3s;
         }
 
-        .fab-container.active .fab-main {
-            transform: rotate(45deg);
-        }
-
-        /* Modal de Países */
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.6);
-            z-index: 100;
+        .search-results-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1rem;
+            flex: 1;
+            min-height: 250px;
+            max-height: 60vh;
+            overflow-y: auto;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.2s;
+            flex-direction: column;
+            gap: 0.75rem;
         }
 
-        .modal.active {
-            opacity: 1;
-            pointer-events: auto;
+        .script-output {
+            background-color: #05070c;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.8rem;
+            color: #38ef7d;
+            white-space: pre-wrap;
+            word-break: break-all;
+            max-height: 50vh;
+            overflow-y: auto;
         }
 
-        .modal-content {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            width: 90%;
-            max-width: 380px;
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
-
-        .country-item {
+        .result-item-card {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 0.75rem;
             display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px;
-            border-radius: 8px;
-            cursor: pointer;
-            border: 1px solid transparent;
-            margin-top: 8px;
+            flex-direction: column;
+            gap: 0.5rem;
         }
 
-        .country-item:hover {
-            background: var(--bg-color);
-            border-color: var(--border);
+        .result-line {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 0.4rem;
         }
 
-        .empty-state {
-            text-align: center;
-            color: var(--text-muted);
-            padding: 40px 20px;
-            font-size: 14px;
+        .result-line:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .result-key {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary-color);
+            font-weight: 700;
+            opacity: 0.9;
+        }
+
+        .result-val {
+            font-size: 0.85rem;
+            font-weight: 600;
+            word-break: break-all;
+            color: var(--text-color);
+        }
+
+        .sub-section-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            border-left: 3px solid var(--primary-color);
+            padding-left: 6px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Sidebar de Temas -->
-    <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <h3>Temas Visuais</h3>
-            <button class="close-sidebar" onclick="toggleSidebar()">&times;</button>
-        </div>
-        <div class="theme-list">
-            <button class="theme-option" onclick="setTheme('dark-neon')">Dark Neon (Azul)</button>
-            <button class="theme-option" onclick="setTheme('dark-carmine')">Dark Carmine (Vermelho)</button>
-            <button class="theme-option" onclick="setTheme('dark-purple')">Dark Roxo</button>
-            <button class="theme-option" onclick="setTheme('dark-emerald')">Dark Esmeralda (Verde)</button>
+    <!-- TELA DE BLOQUEIO / SENHA (6 QUADRADINHOS) -->
+    <div id="lockScreen">
+        <div class="lock-container">
+            <div class="lock-logo">ZRX</div>
+            
+            <div class="lock-error-msg" id="lockErrorMsg"></div>
+
+            <div class="pin-inputs">
+                <input type="text" maxlength="1" class="pin-box" autocomplete="off">
+                <input type="text" maxlength="1" class="pin-box" autocomplete="off">
+                <input type="text" maxlength="1" class="pin-box" autocomplete="off">
+                <input type="text" maxlength="1" class="pin-box" autocomplete="off">
+                <input type="text" maxlength="1" class="pin-box" autocomplete="off">
+                <input type="text" maxlength="1" class="pin-box" autocomplete="off">
+            </div>
+
+            <div class="telegram-link-box">
+                <span>Telegram para liberação:</span>
+                <a href="https://t.me/Zenithzrx" target="_blank" class="telegram-btn-link">@Zenithzrx</a>
+            </div>
         </div>
     </div>
 
-    <!-- Header com Pesquisa -->
+    <!-- Top Bar -->
     <header>
-        <button class="menu-btn" onclick="toggleSidebar()">☰</button>
-        <div class="search-container">
-            <span class="search-icon">🔍</span>
-            <input type="text" id="searchInput" placeholder="Pesquisar número salvo..." oninput="filtrarNumeros()">
+        <button class="icon-btn" id="menuBtn">☰</button>
+        <span class="app-title">ZRX</span>
+        <div class="header-right">
+            <button class="icon-btn" id="settingsBtn">⚙</button>
+            <button class="icon-btn">⚡</button>
+            <button class="icon-btn" id="topProfileBtn">💬</button>
         </div>
     </header>
 
-    <!-- Conteúdo Principal -->
-    <div class="main-container">
-        <!-- Menu Inicial / Lista de Números Salvos -->
-        <div id="view-home" class="view active">
-            <h2 class="section-title">Números Salvos (Máx 10)</h2>
-            <div id="numberList" class="number-list">
-                <!-- Preenchido via JavaScript -->
+    <main>
+        <!-- Profile Card -->
+        <div class="profile-card">
+            <div class="profile-top">
+                <div class="profile-info">
+                    <div class="avatar" id="profileAvatar">
+                        ➕
+                    </div>
+                    <div class="user-details">
+                        <span>Welcome back!</span>
+                        <div class="user-name" id="profileName">ZRX ⚡</div>
+                        <span class="badge-dev">DEVELOPER</span>
+                    </div>
+                </div>
+                <div class="battery-box">
+                    100%
+                    <small>LEFT</small>
+                </div>
+            </div>
+
+            <div class="profile-stats">
+                <div class="stat-item">
+                    <span style="opacity: 0.6;">⚡</span>
+                    <span>ON</span>
+                </div>
+                <div class="stat-item">
+                    <span style="opacity: 0.6;">💬</span>
+                    <span>99740</span>
+                </div>
+                <div class="stat-item">
+                    <span style="opacity: 0.6;">...</span>
+                    <span>...</span>
+                </div>
             </div>
         </div>
 
-        <!-- Notificações / SMS -->
-        <div id="view-notifications" class="view">
-            <h2 class="section-title">Caixa de Entrada / SMS</h2>
-            <div id="smsList" class="number-list">
-                <!-- Preenchido via JavaScript -->
+        <!-- Banner Gigante do Meio -->
+        <div>
+            <div class="section-header" style="margin-bottom: 0.75rem;">
+                <span>☰</span> MEDIA DISPLAY (TOQUE PARA ALTERAR)
+            </div>
+            
+            <div class="banner-container">
+                <div class="anime-banner" id="bannerUpload1">
+                    <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&auto=format&fit=crop&q=80" alt="Custom Media">
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Botão Flutuante Mais (+) -->
-    <div class="fab-container" id="fabContainer">
-        <div class="fab-options">
-            <button class="fab-mini" onclick="abrirPaises()" title="Ver Países">🌐</button>
-            <button class="fab-mini" onclick="gerarNovoNumero()" title="Gerar Número">📱</button>
+        <!-- Quick Access -->
+        <div>
+            <div class="section-header" style="margin-bottom: 0.75rem;">
+                <span>⚡</span> QUICK ACCESS - CONSULTAS
+            </div>
+            
+            <div class="quick-access-grid">
+                <!-- 1. NOME -->
+                <div class="quick-access-card" onclick="openSearchModal('CONSULTA NOME', 'nome')">
+                    <div class="qa-top">
+                        <div class="qa-icon">💬</div>
+                        <div class="qa-info">
+                            <h4>NOME</h4>
+                        </div>
+                    </div>
+                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
+                </div>
+
+                <!-- 2. CPF -->
+                <div class="quick-access-card" onclick="openSearchModal('CONSULTA CPF', 'cpf')">
+                    <div class="qa-top">
+                        <div class="qa-icon">⚡</div>
+                        <div class="qa-info">
+                            <h4>CPF</h4>
+                        </div>
+                    </div>
+                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
+                </div>
+
+                <!-- 3. TELEFONE -->
+                <div class="quick-access-card" onclick="openSearchModal('CONSULTA TELEFONE', 'telefone')">
+                    <div class="qa-top">
+                        <div class="qa-icon">📞</div>
+                        <div class="qa-info">
+                            <h4>TELEFONE</h4>
+                        </div>
+                    </div>
+                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
+                </div>
+
+                <!-- 4. RG -->
+                <div class="quick-access-card" onclick="openSearchModal('CONSULTA RG', 'rg')">
+                    <div class="qa-top">
+                        <div class="qa-icon">🆔</div>
+                        <div class="qa-info">
+                            <h4>RG</h4>
+                        </div>
+                    </div>
+                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
+                </div>
+
+                <!-- 5. E-MAIL -->
+                <div class="quick-access-card" onclick="openSearchModal('CONSULTA E-MAIL', 'email')">
+                    <div class="qa-top">
+                        <div class="qa-icon">✉️</div>
+                        <div class="qa-info">
+                            <h4>E-MAIL</h4>
+                        </div>
+                    </div>
+                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
+                </div>
+
+                <!-- 6. SPC -->
+                <div class="quick-access-card" onclick="openSearchModal('CONSULTA SPC', 'spc')">
+                    <div class="qa-top">
+                        <div class="qa-icon">📊</div>
+                        <div class="qa-info">
+                            <h4>SPC</h4>
+                        </div>
+                    </div>
+                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
+                </div>
+
+                <!-- 7. CPF PARENTE -->
+                <div class="quick-access-card" onclick="openSearchModal('CONSULTA CPF PARENTE', 'cpf_parente')">
+                    <div class="qa-top">
+                        <div class="qa-icon">🔗</div>
+                        <div class="qa-info">
+                            <h4>CPF PARENTE</h4>
+                        </div>
+                    </div>
+                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
+                </div>
+
+                <!-- 8. CEP -->
+                <div class="quick-access-card" onclick="openSearchModal('CONSULTA CEP', 'cep')">
+                    <div class="qa-top">
+                        <div class="qa-icon">📍</div>
+                        <div class="qa-info">
+                            <h4>CEP</h4>
+                        </div>
+                    </div>
+                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
+                </div>
+
+                <!-- BRASILAPI - VARREDURA COMPLETA AUTOMÁTICA -->
+                <div class="quick-access-card" onclick="openSearchModal('BRASILAPI - VARREDURA TOTAL', 'brasilapi')" style="grid-column: span 2;">
+                    <div class="qa-top">
+                        <div class="qa-icon">🌐</div>
+                        <div class="qa-info">
+                            <h4>BRASILAPI (VARREDURA TOTAL AUTOMÁTICA)</h4>
+                        </div>
+                    </div>
+                    <span style="font-size: 0.75rem; opacity: 0.5;">Busca simultânea em todas as rotas compatíveis ></span>
+                </div>
+            </div>
         </div>
-        <button class="fab-main" onclick="toggleFab()">+</button>
-    </div>
 
-    <!-- Menu Inferior -->
-    <nav class="bottom-nav">
-        <button class="nav-item active" id="nav-home" onclick="switchView('home')">
-            <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-            Menu Inicial
+        <!-- Bottom Button -->
+        <button class="footer-btn">
+            <span>⚡</span> ZRX DEVELOPER
         </button>
-        <button class="nav-item" id="nav-notifications" onclick="switchView('notifications')">
-            <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v3z"/></svg>
-            Notificações
-        </button>
-    </nav>
+    </main>
 
-    <!-- Modal de Seleção de Países -->
-    <div class="modal" id="countryModal">
-        <div class="modal-content">
-            <h3 class="section-title" style="margin-bottom: 12px;">Países Disponíveis</h3>
-            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Selecione o país para gerar o número:</p>
-            <div id="countryListContainer" style="display: flex; flex-direction: column; gap: 8px; max-height: 240px; overflow-y: auto;">
-                <div class="country-item" onclick="selecionarPais('Rússia', 'Russia_Numbers', '🇷🇺')">
-                    <span style="font-size: 24px;">🇷🇺</span>
-                    <div>
-                        <strong>Rússia</strong>
-                        <div style="font-size: 12px; color: var(--text-muted);">Prefixo +7 (Ativo)</div>
-                    </div>
-                </div>
-                <div class="country-item" onclick="selecionarPais('Laos', 'Laos_Numbers_Random', '🇱🇦')">
-                    <span style="font-size: 24px;">🇱🇦</span>
-                    <div>
-                        <strong>Laos</strong>
-                        <div style="font-size: 12px; color: var(--text-muted);">Arquivo: Laos_Numbers_Random</div>
-                    </div>
-                </div>
-                <div class="country-item" onclick="selecionarPais('Nigéria', 'Nigeria_Numbers (6)', '🇳🇬')">
-                    <span style="font-size: 24px;">🇳🇬</span>
-                    <div>
-                        <strong>Nigéria</strong>
-                        <div style="font-size: 12px; color: var(--text-muted);">Arquivo: Nigeria_Numbers (6)</div>
-                    </div>
-                </div>
-                <div class="country-item" onclick="selecionarPais('SMS Geral', 'SMSNumbers (86)', '🌐')">
-                    <span style="font-size: 24px;">🌐</span>
-                    <div>
-                        <strong>SMS Geral</strong>
-                        <div style="font-size: 12px; color: var(--text-muted);">Arquivo: SMSNumbers (86)</div>
-                    </div>
-                </div>
-                <div class="country-item" onclick="selecionarPais('Sudão', 'Sudan_Numbers 2000', '🇸🇩')">
-                    <span style="font-size: 24px;">🇸🇩</span>
-                    <div>
-                        <strong>Sudão</strong>
-                        <div style="font-size: 12px; color: var(--text-muted);">Arquivo: Sudan_Numbers 2000</div>
-                    </div>
-                </div>
+    <!-- Modal 3 Barrinhas -->
+    <div class="fullscreen-modal" id="menuModal">
+        <div class="modal-header">
+            <h3>Menu de Temas & Cores</h3>
+            <button class="icon-btn" id="closeMenuModal" style="font-size: 1.5rem;">&times;</button>
+        </div>
+
+        <h4 style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 0.75rem;">TEMAS PRONTOS</h4>
+        <div class="theme-list">
+            <div class="theme-option" onclick="applyTheme('#f59e0b', '#0b1120', '#131c31')">
+                <span>⚡ Dourado</span>
+                <span>></span>
             </div>
-            <button class="btn-action" style="width: 100%; margin-top: 16px;" onclick="fecharPaises()">Fechar</button>
+            <div class="theme-option" onclick="applyTheme('#8b5cf6', '#090514', '#130b26')">
+                <span>💬 Roxo</span>
+                <span>></span>
+            </div>
+            <div class="theme-option" onclick="applyTheme('#06b6d4', '#020617', '#090d16')">
+                <span>⚡ Dark Neon</span>
+                <span>></span>
+            </div>
+            <div class="theme-option" onclick="applyTheme('#ef4444', '#110202', '#1f0707')">
+                <span>💬 Vermelho Carmesim</span>
+                <span>></span>
+            </div>
+            <!-- NOVOS TEMAS SOLICITADOS -->
+            <div class="theme-option" onclick="applyTheme('#ef4444', '#080202', '#140505')">
+                <span>🔴 Preto com Detalhes Vermelhos</span>
+                <span>></span>
+            </div>
+            <div class="theme-option" onclick="applyTheme('#22c55e', '#020d06', '#061a0e')">
+                <span>🟢 Verde Hacker</span>
+                <span>></span>
+            </div>
+            <div class="theme-option" onclick="applyTheme('#94a3b8', '#0f172a', '#1e293b')">
+                <span>⚪ Preto Misturado com Prateado</span>
+                <span>></span>
+            </div>
+        </div>
+
+        <h4 style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 0.75rem;">EDITAR CORES LIVREMENTE</h4>
+        <div class="color-picker-group">
+            <label for="customColorInput">Cor Principal:</label>
+            <input type="color" id="customColorInput" value="#3b82f6" style="width: 100%; height: 40px; border: none; border-radius: 8px; background: none; cursor: pointer;">
         </div>
     </div>
+
+    <!-- Modal de Pesquisa -->
+    <div class="fullscreen-modal" id="searchModal">
+        <div class="modal-header">
+            <h3 id="searchModalTitle">Pesquisa</h3>
+            <button class="icon-btn" id="closeSearchModal" style="font-size: 1.5rem;">&times;</button>
+        </div>
+
+        <div class="search-content">
+            <div class="search-box-container" id="searchBoxContainer">
+                <!-- Conteúdo injetado dinamicamente -->
+            </div>
+            
+            <div class="search-results-box" id="searchResultsBox">
+                Aguardando consulta... Insira os dados e clique em Buscar.
+            </div>
+        </div>
+    </div>
+
+    <!-- Inputs Ocultos -->
+    <input type="file" id="galleryInput" accept="image/*" style="display: none;">
+    <input type="file" id="mediaInput" accept="image/*,video/*" style="display: none;">
 
     <script>
-        const API_URL = "https://weak-deloris-nothing672434-fe85179d.koyeb.app";
-        let savedNumbers = JSON.parse(localStorage.getItem('zrx_numbers')) || [];
-        let smsMessages = JSON.parse(localStorage.getItem('zrx_sms')) || [];
-        let paisSelecionado = 'Rússia';
-        let arquivoPaisSelecionado = 'Russia_Numbers';
-        let emojiPaisSelecionado = '🇷🇺';
-        let pollingInterval = null;
+        let currentSearchType = '';
 
-        // Inicialização
-        document.addEventListener("DOMContentLoaded", () => {
-            const savedTheme = localStorage.getItem('zrx_theme') || 'dark-neon';
-            setTheme(savedTheme, false);
-            renderizarNumeros();
-            renderizarSms();
-            iniciarVerificacaoSms();
+        // --- SISTEMA DE SENHA & SESSÃO ---
+        const CORRECT_PIN = "ZRXV57"; // Senha configurada (6 caracteres: Z, R, X, V, 5, 7)
+        const pinBoxes = document.querySelectorAll('.pin-box');
+        const lockErrorMsg = document.getElementById('lockErrorMsg');
+        const lockScreen = document.getElementById('lockScreen');
+
+        // Checar se já foi autenticado anteriormente na sessão
+        window.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('zrx_authenticated') === 'true') {
+                lockScreen.style.display = 'none';
+            } else {
+                pinBoxes[0].focus();
+            }
+
+            // Carregamento de temas e personalizações anteriores
+            const savedPrimary = localStorage.getItem('zrx_primary');
+            const savedBg = localStorage.getItem('zrx_bg');
+            const savedCard = localStorage.getItem('zrx_card');
+            const savedName = localStorage.getItem('zrx_name');
+            const savedAvatar = localStorage.getItem('zrx_avatar');
+            const savedBanner1 = localStorage.getItem('zrx_banner1');
+
+            if (savedPrimary) {
+                document.documentElement.style.setProperty('--primary-color', savedPrimary);
+                document.getElementById('customColorInput').value = savedPrimary;
+            }
+            if (savedBg) document.documentElement.style.setProperty('--bg-color', savedBg);
+            if (savedCard) document.documentElement.style.setProperty('--card-bg', savedCard);
+            
+            if (savedName) {
+                document.getElementById('profileName').innerHTML = `${savedName} ⚡`;
+            }
+            if (savedAvatar) {
+                document.getElementById('profileAvatar').innerHTML = `<img src="${savedAvatar}" alt="Avatar">`;
+            }
+            if (savedBanner1) {
+                const b1 = document.getElementById('bannerUpload1');
+                if (savedBanner1.startsWith('data:video')) {
+                    b1.innerHTML = `<video src="${savedBanner1}" autoplay loop muted playsinline></video>`;
+                } else {
+                    b1.innerHTML = `<img src="${savedBanner1}" alt="Custom Media">`;
+                }
+            }
         });
 
-        // Alternar Tema
-        function setTheme(themeName, save = true) {
-            document.documentElement.setAttribute('data-theme', themeName);
-            if (save) {
-                localStorage.setItem('zrx_theme', themeName);
-                toggleSidebar();
-            }
-        }
+        // Manipulação dos 6 quadradinhos de senha
+        pinBoxes.forEach((box, index) => {
+            box.addEventListener('input', (e) => {
+                const val = e.target.value.toUpperCase();
+                e.target.value = val;
 
-        // Toggle Sidebar
-        function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('open');
-            document.getElementById('overlay').classList.toggle('active');
-        }
-
-        // Toggle FAB (Botão Mais)
-        function toggleFab() {
-            document.getElementById('fabContainer').classList.toggle('active');
-        }
-
-        // Alternar Abas (Views)
-        function switchView(viewName) {
-            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-            
-            document.getElementById(`view-${viewName}`).classList.add('active');
-            document.getElementById(`nav-${viewName}`).classList.add('active');
-            
-            document.getElementById('fabContainer').classList.remove('active');
-        }
-
-        // Modal de Países
-        function abrirPaises() {
-            toggleFab();
-            document.getElementById('countryModal').classList.add('active');
-        }
-
-        function fecharPaises() {
-            document.getElementById('countryModal').classList.remove('active');
-        }
-
-        function selecionarPais(pais, arquivo, emoji) {
-            paisSelecionado = pais;
-            arquivoPaisSelecionado = arquivo;
-            emojiPaisSelecionado = emoji;
-            fecharPaises();
-            gerarNovoNumero();
-        }
-
-        // Gerar Número
-        async function gerarNovoNumero() {
-            toggleFab();
-            try {
-                const response = await fetch(`${API_URL}/numbers?pais=${encodeURIComponent(arquivoPaisSelecionado)}`);
-                const data = await response.json();
-                
-                let numeroGerado = data.number || data.phone || ("+7" + Math.floor(9000000000 + Math.random() * 1000000000));
-
-                const novoItem = {
-                    id: Date.now(),
-                    numero: numeroGerado,
-                    pais: paisSelecionado,
-                    emoji: emojiPaisSelecionado,
-                    data: new Date().toLocaleDateString('pt-BR')
-                };
-
-                if (savedNumbers.length >= 10) {
-                    savedNumbers.pop();
+                if (val && index < pinBoxes.length - 1) {
+                    pinBoxes[index + 1].focus();
                 }
 
-                savedNumbers.unshift(novoItem);
-                localStorage.setItem('zrx_numbers', JSON.stringify(savedNumbers));
-                renderizarNumeros();
-                
-                alert(`Número gerado com sucesso (${paisSelecionado}): ${numeroGerado}\nAgora vá ao WhatsApp e solicite o código. O SMS aparecerá nas Notificações assim que chegar!`);
+                checkPinCompletion();
+            });
 
-            } catch (error) {
-                let numeroGerado = "+7 (9" + Math.floor(10 + Math.random() * 89) + ") " + Math.floor(100 + Math.random() * 900) + "-" + Math.floor(1000 + Math.random() * 9000);
-                
-                const novoItem = {
-                    id: Date.now(),
-                    numero: numeroGerado,
-                    pais: paisSelecionado,
-                    emoji: emojiPaisSelecionado,
-                    data: new Date().toLocaleDateString('pt-BR')
-                };
+            box.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && !box.value && index > 0) {
+                    pinBoxes[index - 1].focus();
+                }
+            });
+        });
 
-                if (savedNumbers.length >= 10) savedNumbers.pop();
-                savedNumbers.unshift(novoItem);
-                localStorage.setItem('zrx_numbers', JSON.stringify(savedNumbers));
-                renderizarNumeros();
-                
-                alert(`Número gerado (Modo Offline): ${numeroGerado}`);
+        function checkPinCompletion() {
+            let enteredPin = '';
+            pinBoxes.forEach(box => {
+                enteredPin += box.value;
+            });
+
+            if (enteredPin.length === 6) {
+                if (enteredPin === CORRECT_PIN) {
+                    lockErrorMsg.innerText = '';
+                    
+                    // Animação de sucesso em cascata nos 6 quadradinhos ficando verdes
+                    pinBoxes.forEach((box, i) => {
+                        setTimeout(() => {
+                            box.classList.add('success-anim');
+                        }, i * 80);
+                    });
+
+                    localStorage.setItem('zrx_authenticated', 'true');
+                    
+                    setTimeout(() => {
+                        lockScreen.style.opacity = '0';
+                        setTimeout(() => {
+                            lockScreen.style.display = 'none';
+                        }, 300);
+                    }, 800);
+                } else {
+                    lockErrorMsg.innerText = "Olá! Você ainda não fez o plano de R$ 15 para acessar o painel. Por favor, converse com o desenvolvedor para fazer o plano, pegar a senha e liberar.";
+                    pinBoxes.forEach(box => {
+                        box.value = '';
+                        box.style.borderColor = '#ef4444';
+                    });
+                    setTimeout(() => {
+                        pinBoxes.forEach(box => {
+                            box.style.borderColor = 'var(--border-color)';
+                        });
+                    }, 1000);
+                    pinBoxes[0].focus();
+                }
             }
         }
 
-        // Consulta a API periodicamente procurando SMS reais
-        function iniciarVerificacaoSms() {
-            if (pollingInterval) clearInterval(pollingInterval);
+        // 3 Barrinhas Modal
+        const menuModal = document.getElementById('menuModal');
+        document.getElementById('menuBtn').addEventListener('click', () => menuModal.classList.add('open'));
+        document.getElementById('closeMenuModal').addEventListener('click', () => menuModal.classList.remove('open'));
+        document.getElementById('settingsBtn').addEventListener('click', () => menuModal.classList.add('open'));
+
+        // Temas Prontos
+        function applyTheme(primary, bg, card) {
+            document.documentElement.style.setProperty('--primary-color', primary);
+            document.documentElement.style.setProperty('--bg-color', bg);
+            document.documentElement.style.setProperty('--card-bg', card);
+            document.getElementById('customColorInput').value = primary;
+
+            localStorage.setItem('zrx_primary', primary);
+            localStorage.setItem('zrx_bg', bg);
+            localStorage.setItem('zrx_card', card);
+
+            menuModal.classList.remove('open');
+        }
+
+        document.getElementById('customColorInput').addEventListener('input', (e) => {
+            const val = e.target.value;
+            document.documentElement.style.setProperty('--primary-color', val);
+            localStorage.setItem('zrx_primary', val);
+        });
+
+        // Avatar e Nome
+        const galleryInput = document.getElementById('galleryInput');
+        const profileAvatar = document.getElementById('profileAvatar');
+        const profileName = document.getElementById('profileName');
+
+        profileAvatar.addEventListener('click', () => galleryInput.click());
+        document.getElementById('topProfileBtn').addEventListener('click', () => galleryInput.click());
+
+        galleryInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const res = event.target.result;
+                    profileAvatar.innerHTML = `<img src="${res}" alt="Avatar">`;
+                    localStorage.setItem('zrx_avatar', res);
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        profileName.addEventListener('click', () => {
+            const currentText = profileName.innerText.replace('⚡', '').trim();
+            const newName = prompt("Digite o seu novo nome:", currentText);
+            if (newName) {
+                profileName.innerHTML = `${newName} ⚡`;
+                localStorage.setItem('zrx_name', newName);
+            }
+        });
+
+        // Banner Gigante
+        const mediaInput = document.getElementById('mediaInput');
+        const bannerUpload1 = document.getElementById('bannerUpload1');
+
+        bannerUpload1.addEventListener('click', () => mediaInput.click());
+
+        mediaInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const res = event.target.result;
+                    if (file.type.startsWith('video/')) {
+                        bannerUpload1.innerHTML = `<video src="${res}" autoplay loop muted playsinline></video>`;
+                    } else {
+                        bannerUpload1.innerHTML = `<img src="${res}" alt="Custom Media">`;
+                    }
+                    localStorage.setItem('zrx_banner1', res);
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Controle do Modal de Pesquisa
+        const searchModal = document.getElementById('searchModal');
+        const searchModalTitle = document.getElementById('searchModalTitle');
+        const searchBoxContainer = document.getElementById('searchBoxContainer');
+        const searchResultsBox = document.getElementById('searchResultsBox');
+
+        function openSearchModal(title, type) {
+            searchModalTitle.innerText = title;
+            currentSearchType = type;
+            searchResultsBox.innerHTML = 'Aguardando consulta... Insira os dados e clique em Buscar.';
             
-            pollingInterval = setInterval(async () => {
-                if (savedNumbers.length === 0) return;
+            if (type === 'brasilapi') {
+                searchBoxContainer.innerHTML = `
+                    <div style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 4px;">Insira o termo (ex: CEP, CNPJ, DDD, Feriado ou Ano) para varredura completa simultânea:</div>
+                    <div class="search-input-row">
+                        <input type="text" class="search-input" id="searchInputField" placeholder="Digite o parâmetro (CEP, CNPJ, etc)...">
+                        <button class="search-submit-btn" onclick="executeSearch()">Varredura Total</button>
+                    </div>
+                `;
+            } else {
+                searchBoxContainer.innerHTML = `
+                    <div class="search-input-row">
+                        <input type="text" class="search-input" id="searchInputField" placeholder="Digite o ${type.toUpperCase()}...">
+                        <button class="search-submit-btn" onclick="executeSearch()">Buscar</button>
+                    </div>
+                `;
+            }
+            searchModal.classList.add('open');
+        }
+
+        document.getElementById('closeSearchModal').addEventListener('click', () => {
+            searchModal.classList.remove('open');
+        });
+
+        // Função de execução de busca principal e varredura total na BrasilAPI
+        async function executeSearch() {
+            const searchInputField = document.getElementById('searchInputField');
+            const query = searchInputField ? searchInputField.value.trim() : '';
+            
+            if(currentSearchType !== 'brasilapi' && !query) {
+                alert('Digite algum valor para pesquisar!');
+                return;
+            }
+
+            searchResultsBox.innerHTML = `Buscando dados no servidor...`;
+
+            if (currentSearchType === 'brasilapi') {
+                const base = 'https://brasilapi.com.br/api';
+                const endpoints = [
+                    { name: 'CEP v1', url: `${base}/cep/v1/${encodeURIComponent(query)}` },
+                    { name: 'CEP v2', url: `${base}/cep/v2/${encodeURIComponent(query)}` },
+                    { name: 'CNPJ', url: `${base}/cnpj/v1/${encodeURIComponent(query)}` },
+                    { name: 'DDD', url: `${base}/ddd/v1/${encodeURIComponent(query)}` },
+                    { name: 'Feriados Nacionais', url: `${base}/feriados/v1/${encodeURIComponent(query)}` },
+                    { name: 'ISBN Livro', url: `${base}/isbn/v1/${encodeURIComponent(query)}` },
+                    { name: 'Corretoras CVM', url: `${base}/corretoras/v1/${encodeURIComponent(query)}` },
+                    { name: 'Taxas B3', url: `${base}/taxas/v1/${encodeURIComponent(query)}` },
+                    { name: 'IBGE Estado', url: `${base}/ibge/uf/v1/${encodeURIComponent(query)}` },
+                    { name: 'IBGE Municípios', url: `${base}/ibge/municipios/v1/${encodeURIComponent(query)}` },
+                    { name: 'Banco Específico', url: `${base}/banks/v1/${encodeURIComponent(query)}` },
+                    { name: 'FIPE Preço', url: `${base}/fipe/preco/v1/${encodeURIComponent(query)}` }
+                ];
+
+                searchResultsBox.innerHTML = `Executando varredura simultânea em todas as rotas da BrasilAPI...`;
+                
+                let aggregatedHtml = '';
+                let successCount = 0;
+
+                const promises = endpoints.map(async (ep) => {
+                    try {
+                        const res = await fetch(ep.url);
+                        if (res.ok) {
+                            const data = await res.json();
+                            return { name: ep.name, data: data };
+                        }
+                    } catch (err) {}
+                    return null;
+                });
+
+                const results = await Promise.all(promises);
+
+                results.forEach((result) => {
+                    if (result && result.data) {
+                        successCount++;
+                        aggregatedHtml += `<div class="sub-section-title">FONTE: ${result.name}</div>`;
+                        if (Array.isArray(result.data)) {
+                            result.data.forEach((item, idx) => {
+                                aggregatedHtml += `<div style="font-size:0.7rem; opacity:0.6; margin-top:2px;">Registro #${idx + 1}</div>`;
+                                aggregatedHtml += buildItemCard(item);
+                            });
+                        } else if (typeof result.data === 'object') {
+                            aggregatedHtml += buildItemCard(result.data);
+                        } else {
+                            aggregatedHtml += `<div class="result-item-card"><div class="result-line"><span class="result-val">${result.data}</span></div></div>`;
+                        }
+                    }
+                });
+
+                if (successCount === 0) {
+                    searchResultsBox.innerHTML = `<div class="result-item-card"><div class="result-line"><span class="result-key">AVISO</span><span class="result-val">Nenhum dado retornado para "${query}" nas rotas da BrasilAPI. Verifique o formato do parâmetro.</span></div></div>`;
+                } else {
+                    searchResultsBox.innerHTML = aggregatedHtml;
+                }
+
+            } else {
+                let targetUrl = '';
+                if (currentSearchType === 'cpf') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?cpf=' + encodeURIComponent(query);
+                else if (currentSearchType === 'telefone') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?telefone=' + encodeURIComponent(query);
+                else if (currentSearchType === 'email') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?email=' + encodeURIComponent(query);
+                else if (currentSearchType === 'rg') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?rg=' + encodeURIComponent(query);
+                else if (currentSearchType === 'nome') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?nome=' + encodeURIComponent(query);
+                else if (currentSearchType === 'spc') targetUrl = 'http://apisbrasilpro.site/spc1.php?doc=' + encodeURIComponent(query);
+                else if (currentSearchType === 'cpf_parente') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?cpf_parente=' + encodeURIComponent(query);
+                else if (currentSearchType === 'cep') targetUrl = 'http://apisbrasilpro.site/telefone0.php?cep=' + encodeURIComponent(query);
 
                 try {
-                    const numeroAtivo = savedNumbers[0].numero.replace(/\D/g, '');
-                    const response = await fetch(`${API_URL}/sms?phone=${numeroAtivo}`);
-                    if (!response.ok) return;
-                    
-                    const data = await response.json();
-                    
-                    if (data && data.messages && data.messages.length > 0) {
-                        data.messages.forEach(msg => {
-                            const jaExiste = smsMessages.some(m => m.mensagem === msg.text && m.numero === savedNumbers[0].numero);
-                            if (!jaExiste) {
-                                const novoSms = {
-                                    id: Date.now(),
-                                    numero: savedNumbers[0].numero,
-                                    mensagem: msg.text || msg.body || "Código recebido.",
-                                    tempo: "Agora mesmo"
-                                };
-                                smsMessages.unshift(novoSms);
-                                localStorage.setItem('zrx_sms', JSON.stringify(smsMessages));
-                                renderizarSms();
-                            }
-                        });
+                    const response = await fetch(targetUrl);
+                    const textData = await response.text();
+
+                    try {
+                        let jsonStartIndex = textData.indexOf('{');
+                        let jsonArrayStartIndex = textData.indexOf('[');
+                        
+                        let parseTarget = textData;
+                        if (jsonArrayStartIndex !== -1 && (jsonStartIndex === -1 || jsonArrayStartIndex < jsonStartIndex)) {
+                            parseTarget = textData.substring(jsonArrayStartIndex);
+                        } else if (jsonStartIndex !== -1) {
+                            parseTarget = textData.substring(jsonStartIndex);
+                        }
+                        
+                        const jsonData = JSON.parse(parseTarget);
+                        searchResultsBox.innerHTML = `<div class="script-output">${JSON.stringify(jsonData, null, 2)}</div>`;
+                    } catch (e) {
+                        searchResultsBox.innerHTML = `<div class="script-output">${textData}</div>`;
                     }
-                } catch (e) {
-                    // Falhas silenciosas
+                } catch (error) {
+                    searchResultsBox.innerHTML = `<div class="script-output">[ERRO/CORS] Falha ao requisitar diretamente. URL Alvo: ${targetUrl}\nDetalhes: ${error.message}</div>`;
                 }
-            }, 10000);
-        }
-
-        // Renderizar Lista de Números
-        function renderizarNumeros(filtro = "") {
-            const container = document.getElementById('numberList');
-            container.innerHTML = "";
-
-            const filtrados = savedNumbers.filter(item => 
-                item.numero.toLowerCase().includes(filtro.toLowerCase()) || 
-                item.pais.toLowerCase().includes(filtro.toLowerCase())
-            );
-
-            if (filtrados.length === 0) {
-                container.innerHTML = `<div class="empty-state">Nenhum número salvo. Clique no botão + embaixo para gerar.</div>`;
-                return;
             }
-
-            filtrados.forEach(item => {
-                const card = document.createElement('div');
-                card.className = 'number-card';
-                card.innerHTML = `
-                    <div class="number-info">
-                        <h4>${item.numero}</h4>
-                        <p><span>${item.emoji || '🇷🇺'}</span> ${item.pais} • Salvo em ${item.data}</p>
-                    </div>
-                    <div class="number-actions">
-                        <button class="btn-action" onclick="copiarNumero('${item.numero}')">Copiar</button>
-                        <button class="btn-action" style="background-color: #dc2626;" onclick="deletarNumero(${item.id})">Excluir</button>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
         }
 
-        // Renderizar Notificações / SMS (Com botão de apagar)
-        function renderizarSms() {
-            const container = document.getElementById('smsList');
-            container.innerHTML = "";
-
-            if (smsMessages.length === 0) {
-                container.innerHTML = `<div class="empty-state">Nenhuma mensagem recebida ainda.<br><small style="color:var(--text-muted);">O SMS só aparecerá aqui quando o WhatsApp solicitar o código para o número gerado.</small></div>`;
-                return;
+        function buildItemCard(obj) {
+            let cardHtml = '<div class="result-item-card">';
+            for (const [key, value] of Object.entries(obj)) {
+                if (value !== null && value !== undefined && value !== '') {
+                    if (typeof value === 'object') {
+                        cardHtml += `<div class="sub-section-title">${key}</div>`;
+                        if (Array.isArray(value)) {
+                            value.forEach((subItem, idx) => {
+                                cardHtml += `<div style="font-size:0.7rem; opacity:0.6; margin-top:4px;"># Item ${idx + 1}</div>`;
+                                if (subItem !== null && typeof subItem === 'object') {
+                                    for (const [subKey, subVal] of Object.entries(subItem)) {
+                                        if (subVal !== null && subVal !== undefined && subVal !== '') {
+                                            cardHtml += `
+                                                <div class="result-line" style="margin-left: 8px;">
+                                                    <span class="result-key">${subKey}</span>
+                                                    <span class="result-val">${subVal}</span>
+                                                </div>
+                                            `;
+                                        }
+                                    }
+                                } else {
+                                    cardHtml += `<div class="result-line"><span class="result-val">${subItem}</span></div>`;
+                                }
+                            });
+                        } else {
+                            for (const [subKey, subVal] of Object.entries(value)) {
+                                if (subVal !== null && subVal !== undefined && subVal !== '') {
+                                    cardHtml += `
+                                        <div class="result-line" style="margin-left: 8px;">
+                                            <span class="result-key">${subKey}</span>
+                                            <span class="result-val">${subVal}</span>
+                                        </div>
+                                    `;
+                                }
+                            }
+                        }
+                    } else {
+                        cardHtml += `
+                            <div class="result-line">
+                                <span class="result-key">${key}</span>
+                                <span class="result-val">${value}</span>
+                            </div>
+                        `;
+                    }
+                }
             }
-
-            smsMessages.forEach(msg => {
-                const card = document.createElement('div');
-                card.className = 'sms-item';
-                card.innerHTML = `
-                    <div class="sms-content">
-                        <div class="sms-header">
-                            <span>Para: <strong>${msg.numero}</strong></span>
-                            <span>${msg.tempo}</span>
-                        </div>
-                        <div class="sms-body">${msg.mensagem}</div>
-                    </div>
-                    <button class="btn-action" style="background-color: #dc2626; padding: 6px 10px; font-size: 11px;" onclick="deletarSms(${msg.id})">Apagar</button>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        // Pesquisa Rápida
-        function filtrarNumeros() {
-            const termo = document.getElementById('searchInput').value;
-            renderizarNumeros(termo);
-        }
-
-        // Ações Úteis
-        function copiarNumero(num) {
-            navigator.clipboard.writeText(num);
-            alert("Número copiado! Cole-o no WhatsApp para pedir o código.");
-        }
-
-        function deletarNumero(id) {
-            savedNumbers = savedNumbers.filter(item => item.id !== id);
-            localStorage.setItem('zrx_numbers', JSON.stringify(savedNumbers));
-            renderizarNumeros();
-        }
-
-        // Função para apagar um SMS específico da lista
-        function deletarSms(id) {
-            smsMessages = smsMessages.filter(msg => msg.id !== id);
-            localStorage.setItem('zrx_sms', JSON.stringify(smsMessages));
-            renderizarSms();
+            cardHtml += '</div>';
+            return cardHtml;
         }
     </script>
 </body>
