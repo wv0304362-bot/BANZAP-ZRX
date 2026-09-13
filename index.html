@@ -539,7 +539,7 @@
         <div class="modal-content">
             <h3 class="section-title" style="margin-bottom: 12px;">Países Disponíveis</h3>
             <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">Selecione o país para gerar o número:</p>
-            <div id="countryListContainer" style="display: flex; flex-direction: column; gap: 8px; max-height: 220px; overflow-y: auto;">
+            <div id="countryListContainer" style="display: flex; flex-direction: column; gap: 8px; max-height: 240px; overflow-y: auto;">
                 <div class="country-item" onclick="selecionarPais('Rússia', 'Russia_Numbers', '🇷🇺')">
                     <span style="font-size: 24px;">🇷🇺</span>
                     <div>
@@ -584,9 +584,9 @@
         const API_URL = "https://weak-deloris-nothing672434-fe85179d.koyeb.app";
         let savedNumbers = JSON.parse(localStorage.getItem('zrx_numbers')) || [];
         let smsMessages = JSON.parse(localStorage.getItem('zrx_sms')) || [];
-        let paisSelecionado = 'SMS Geral';
-        let arquivoPaisSelecionado = 'SMSNumbers (86)';
-        let emojiPaisSelecionado = '🌐';
+        let paisSelecionado = 'Rússia';
+        let arquivoPaisSelecionado = 'Russia_Numbers';
+        let emojiPaisSelecionado = '🇷🇺';
         let pollingInterval = null;
 
         // Inicialização
@@ -654,7 +654,7 @@
                 const response = await fetch(`${API_URL}/numbers?pais=${encodeURIComponent(arquivoPaisSelecionado)}`);
                 const data = await response.json();
                 
-                let numeroGerado = data.number || data.phone || ("+" + "25772265392");
+                let numeroGerado = data.number || data.phone || ("+7" + Math.floor(9000000000 + Math.random() * 1000000000));
 
                 const novoItem = {
                     id: Date.now(),
@@ -672,10 +672,10 @@
                 localStorage.setItem('zrx_numbers', JSON.stringify(savedNumbers));
                 renderizarNumeros();
                 
-                alert(`Número gerado com sucesso: ${numeroGerado}\nAgora vá ao WhatsApp e solicite o código. O SMS aparecerá nas Notificações assim que chegar!`);
+                alert(`Número gerado com sucesso (${paisSelecionado}): ${numeroGerado}\nAgora vá ao WhatsApp e solicite o código. O SMS aparecerá nas Notificações assim que chegar!`);
 
             } catch (error) {
-                let numeroGerado = "+25772265392";
+                let numeroGerado = "+7 (9" + Math.floor(10 + Math.random() * 89) + ") " + Math.floor(100 + Math.random() * 900) + "-" + Math.floor(1000 + Math.random() * 9000);
                 
                 const novoItem = {
                     id: Date.now(),
@@ -751,7 +751,7 @@
                 card.innerHTML = `
                     <div class="number-info">
                         <h4>${item.numero}</h4>
-                        <p><span>${item.emoji || '🌐'}</span> ${item.pais} • Salvo em ${item.data}</p>
+                        <p><span>${item.emoji || '🇷🇺'}</span> ${item.pais} • Salvo em ${item.data}</p>
                     </div>
                     <div class="number-actions">
                         <button class="btn-action" onclick="copiarNumero('${item.numero}')">Copiar</button>
