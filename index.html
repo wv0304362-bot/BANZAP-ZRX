@@ -84,6 +84,7 @@
             align-items: center;
             justify-content: center;
             padding: 1.5rem;
+            overflow-y: auto;
         }
 
         .payment-container {
@@ -96,9 +97,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1.25rem;
+            gap: 1rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             text-align: center;
+            margin: auto;
         }
 
         .pix-box-input {
@@ -112,6 +114,21 @@
             word-break: break-all;
             text-align: center;
             user-select: all;
+        }
+
+        .upload-receipt-box {
+            border: 2px dashed var(--border-color);
+            padding: 1rem;
+            border-radius: 12px;
+            width: 100%;
+            cursor: pointer;
+            background: rgba(0,0,0,0.2);
+            font-size: 0.8rem;
+            transition: 0.2s;
+        }
+
+        .upload-receipt-box:hover {
+            border-color: var(--primary-color);
         }
 
         /* TELA DE SENHA / ACESSO */
@@ -182,7 +199,7 @@
             border-color: var(--primary-color);
         }
 
-        /* TELA OBRIGATÓRIA DE CADASTRO / PERFIL (NÃO PODE SAIR) */
+        /* TELA OBRIGATÓRIA DE CADASTRO / PERFIL */
         #mandatoryProfileScreen {
             position: fixed;
             top: 0;
@@ -564,64 +581,42 @@
             overflow-y: auto;
         }
 
-        .result-item-card {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 0.75rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .result-line {
-            display: flex;
-            flex-direction: column;
-            gap: 0.15rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding-bottom: 0.4rem;
-        }
-
-        .result-key {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-
-        .result-val {
-            font-size: 0.85rem;
-            font-weight: 600;
-            word-break: break-all;
-        }
-
-        /* Estilos do Painel Admin */
         .admin-user-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: rgba(0,0,0,0.2);
             border: 1px solid var(--border-color);
-            padding: 10px;
-            border-radius: 10px;
+            padding: 12px;
+            border-radius: 12px;
             margin-bottom: 8px;
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. TELA DE PAGAMENTO PIX -->
+    <!-- 1. TELA DE PAGAMENTO PIX & COMPROVANTE -->
     <div id="paymentScreen">
         <div class="payment-container">
             <h2 style="font-size: 1.25rem; font-weight: 800; color: var(--primary-color);">ZRX - PAGAMENTO</h2>
             <p style="font-size: 0.850rem; line-height: 1.4; opacity: 0.9;">
-                Olá prezado usuário, bem-vindo ao painel de consulta. Para poder acessar o painel pague apenas:
+                Olá prezado usuário, faça o Pix de <b>R$ 25,00</b> e envie o comprovante abaixo para análise do admin:
             </p>
             <div style="font-size: 1.5rem; font-weight: 800; color: #22c55e;">R$ 25,00</div>
-            <div style="font-size: 0.75rem; opacity: 0.7;">Copie a chave Pix abaixo (o dinheiro cai direto na conta com total segurança):</div>
             <div class="pix-box-input" id="pixKeyText">12a00a2d-8fe5-42db-bf95-cadd67117284</div>
             <button class="search-submit-btn" style="width:150px; padding: 0.6rem;" onclick="copyPixKey()">Copiar Chave</button>
-            <button class="search-submit-btn" style="width: 100%; background: #22c55e; margin-top: 5px;" onclick="proceedToPin()">Já Fiz o Pagamento (Inserir Senha)</button>
+
+            <!-- Área para enviar comprovante -->
+            <div style="width: 100%; display: flex; flex-direction: column; gap: 8px; margin-top: 5px;">
+                <input type="text" id="buyerNameInput" class="mandatory-input" placeholder="Seu Nome / ID para liberação">
+                <div class="upload-receipt-box" id="uploadReceiptBtn">
+                    <span id="receiptLabel">📷 Clique aqui para anexar o Comprovante</span>
+                </div>
+                <input type="file" id="receiptFile" accept="image/*" style="display:none;">
+            </div>
+
+            <button class="search-submit-btn" style="width: 100%; background: #22c55e; margin-top: 5px; padding: 0.75rem;" onclick="submitReceipt()">Enviar Comprovante para Análise</button>
+            <button style="background:none; border:none; color: var(--primary-color); cursor:pointer; font-size:0.8rem; margin-top: 5px;" onclick="goToPinScreen()">Já tenho a senha / Sou Admin (ZRX WCT)</button>
         </div>
     </div>
 
@@ -629,7 +624,7 @@
     <div id="lockScreen">
         <div class="lock-container">
             <div class="lock-logo">ZRX</div>
-            <div class="lock-error-msg" id="lockErrorMsg">Digite a senha liberada após o pagamento:</div>
+            <div class="lock-error-msg" id="lockErrorMsg">Digite a senha de Admin (ZRX WCT):</div>
             <div class="pin-inputs">
                 <input type="text" maxlength="1" class="pin-box" autocomplete="off">
                 <input type="text" maxlength="1" class="pin-box" autocomplete="off">
@@ -642,11 +637,11 @@
         </div>
     </div>
 
-    <!-- 3. TELA OBRIGATÓRIA DE PERFIL / CADASTRO -->
+    <!-- 3. TELA OBRIGATÓRIA DE PERFIL -->
     <div id="mandatoryProfileScreen">
         <div class="mandatory-card">
             <h3 style="font-size: 1.1rem;">Configure seu Perfil</h3>
-            <p style="font-size: 0.75rem; opacity: 0.7;">Insira suas informações obrigatórias para continuar:</p>
+            <p style="font-size: 0.75rem; opacity: 0.7;">Insira suas informações obrigatórias:</p>
             
             <div class="mandatory-avatar" id="mandAvatarBtn">
                 <span>➕</span>
@@ -655,10 +650,10 @@
 
             <div class="mandatory-inputs">
                 <input type="text" id="mandNameInput" class="mandatory-input" placeholder="Seu Nome">
-                <input type="text" id="mandIdInput" class="mandatory-input" placeholder="Seu ID em minúsculo (ex: meuuser)">
+                <input type="text" id="mandIdInput" class="mandatory-input" placeholder="Seu ID em minúsculo">
             </div>
 
-            <button class="search-submit-btn" style="width: 100%; padding: 0.8rem;" onclick="saveMandatoryProfile()">Salvar & Entrar no Painel</button>
+            <button class="search-submit-btn" style="width: 100%; padding: 0.8rem;" onclick="saveMandatoryProfile()">Salvar & Entrar</button>
         </div>
     </div>
 
@@ -685,12 +680,8 @@
                         <span class="badge-dev" id="profileBadge">USER</span>
                     </div>
                 </div>
-                <div class="battery-box">
-                    100%
-                    <small>LEFT</small>
-                </div>
+                <div class="battery-box">100%<small>LEFT</small></div>
             </div>
-
             <div class="profile-stats">
                 <div class="stat-item"><span style="opacity: 0.6;">⚡</span><span>ON</span></div>
                 <div class="stat-item"><span style="opacity: 0.6;">💬</span><span>99740</span></div>
@@ -700,21 +691,17 @@
 
         <!-- Banner -->
         <div>
-            <div class="section-header" style="margin-bottom: 0.75rem;">
-                <span>☰</span> MEDIA DISPLAY (TOQUE PARA ALTERAR)
-            </div>
+            <div class="section-header" style="margin-bottom: 0.75rem;"><span>☰</span> MEDIA DISPLAY</div>
             <div class="banner-container">
-                <div class="anime-banner" id="bannerUpload1">
-                    <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&auto=format&fit=crop&q=80" alt="Custom Media">
+                <div class="anime-banner">
+                    <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&auto=format&fit=crop&q=80" alt="Banner">
                 </div>
             </div>
         </div>
 
         <!-- Quick Access -->
         <div>
-            <div class="section-header" style="margin-bottom: 0.75rem;">
-                <span>⚡</span> QUICK ACCESS - CONSULTAS
-            </div>
+            <div class="section-header" style="margin-bottom: 0.75rem;"><span>⚡</span> QUICK ACCESS - CONSULTAS</div>
             <div class="quick-access-grid">
                 <div class="quick-access-card" onclick="openSearchModal('CONSULTA NOME', 'nome')">
                     <div class="qa-top"><div class="qa-icon">💬</div><div class="qa-info"><h4>NOME</h4></div></div>
@@ -732,41 +719,26 @@
                     <div class="qa-top"><div class="qa-icon">🆔</div><div class="qa-info"><h4>RG</h4></div></div>
                     <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
                 </div>
-                <div class="quick-access-card" onclick="openSearchModal('CONSULTA E-MAIL', 'email')">
-                    <div class="qa-top"><div class="qa-icon">✉️</div><div class="qa-info"><h4>E-MAIL</h4></div></div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
-                </div>
-                <div class="quick-access-card" onclick="openSearchModal('CONSULTA SPC', 'spc')">
-                    <div class="qa-top"><div class="qa-icon">📊</div><div class="qa-info"><h4>SPC</h4></div></div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
-                </div>
-                <div class="quick-access-card" onclick="openSearchModal('CONSULTA CPF PARENTE', 'cpf_parente')">
-                    <div class="qa-top"><div class="qa-icon">🔗</div><div class="qa-info"><h4>CPF PARENTE</h4></div></div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
-                </div>
-                <div class="quick-access-card" onclick="openSearchModal('CONSULTA CEP', 'cep')">
-                    <div class="qa-top"><div class="qa-icon">📍</div><div class="qa-info"><h4>CEP</h4></div></div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
-                </div>
-                <div class="quick-access-card" onclick="openSearchModal('BRASILAPI - VARREDURA TOTAL', 'brasilapi')" style="grid-column: span 2;">
-                    <div class="qa-top"><div class="qa-icon">🌐</div><div class="qa-info"><h4>BRASILAPI (VARREDURA TOTAL AUTOMÁTICA)</h4></div></div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Busca simultânea em todas as rotas compatíveis ></span>
-                </div>
             </div>
         </div>
 
         <button class="footer-btn"><span>⚡</span> ZRX DEVELOPER</button>
     </main>
 
-    <!-- Modal Admin -->
+    <!-- Modal Admin Exclusivo para Comprovantes e Usuários -->
     <div class="fullscreen-modal" id="adminModal">
         <div class="modal-header">
-            <h3>Painel de Administração (LOTUX@ZRX)</h3>
+            <h3>Painel Admin (ZRX WCT)</h3>
             <button class="icon-btn" id="closeAdminModal" style="font-size: 1.5rem;">&times;</button>
         </div>
-        <div style="font-size: 0.8rem; margin-bottom: 1rem; opacity: 0.8;">Lista de todos os IDs cadastrados (nada some do banco de dados):</div>
+        <div style="font-size: 0.85rem; font-weight: bold; color: var(--primary-color); margin-bottom: 5px;">📥 Comprovantes Pendentes para Análise:</div>
+        <div id="adminReceiptsList" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px;">
+            <!-- Carregado via Firebase -->
+        </div>
+
+        <div style="font-size: 0.85rem; font-weight: bold; color: var(--primary-color); margin-bottom: 5px;">👥 Gerenciar Usuários do Sistema:</div>
         <div id="adminUserList" style="display: flex; flex-direction: column; gap: 8px;">
-            <!-- Carregado via script -->
+            <!-- Carregado via Firebase -->
         </div>
     </div>
 
@@ -779,8 +751,6 @@
         <div class="theme-list">
             <div class="theme-option" onclick="applyTheme('#f59e0b', '#0b1120', '#131c31')"><span>⚡ Dourado</span><span>></span></div>
             <div class="theme-option" onclick="applyTheme('#8b5cf6', '#090514', '#130b26')"><span>💬 Roxo</span><span>></span></div>
-            <div class="theme-option" onclick="applyTheme('#06b6d4', '#020617', '#090d16')"><span>⚡ Dark Neon</span><span>></span></div>
-            <div class="theme-option" onclick="applyTheme('#ef4444', '#110202', '#1f0707')"><span>💬 Vermelho Carmesim</span><span>></span></div>
         </div>
     </div>
 
@@ -791,17 +761,14 @@
         </div>
         <div class="search-content">
             <div class="search-box-container" id="searchBoxContainer"></div>
-            <div class="search-results-box" id="searchResultsBox">Aguardando consulta... Insira os dados e clique em Buscar.</div>
+            <div class="search-results-box" id="searchResultsBox">Aguardando consulta...</div>
         </div>
     </div>
-
-    <input type="file" id="galleryInput" accept="image/*" style="display: none;">
-    <input type="file" id="mediaInput" accept="image/*,video/*" style="display: none;">
 
     <!-- Firebase SDKs -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { getDatabase, ref, set, get, update, child } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+        import { getDatabase, ref, set, get, update, remove, child } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyDdRu51vlC9wOo5Bu6GoR5PMYvSdW1XPfA",
@@ -816,7 +783,8 @@
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
 
-        const CORRECT_PIN = "ZRXWCT"; // Senha do Dono / Admin
+        const CORRECT_ADMIN_PIN = "ZRXWCT"; // Senha exigida para logar como Admin
+        let tempReceiptBase64 = "";
         let tempAvatarData = "";
 
         window.copyPixKey = function() {
@@ -825,7 +793,7 @@
             alert("Chave Pix copiada com sucesso!");
         }
 
-        window.proceedToPin = function() {
+        window.goToPinScreen = function() {
             document.getElementById('paymentScreen').style.display = 'none';
             document.getElementById('lockScreen').style.display = 'flex';
             document.querySelectorAll('.pin-box')[0].focus();
@@ -836,44 +804,84 @@
             document.getElementById('paymentScreen').style.display = 'flex';
         }
 
-        // Manipulação da Senha
+        // Upload do Comprovante na Tela de Pagamento
+        const uploadBox = document.getElementById('uploadReceiptBtn');
+        const receiptFile = document.getElementById('receiptFile');
+        uploadBox.addEventListener('click', () => receiptFile.click());
+        receiptFile.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if(file) {
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    tempReceiptBase64 = evt.target.result;
+                    document.getElementById('receiptLabel').innerText = "✅ Comprovante Anexado com Sucesso!";
+                    uploadBox.style.borderColor = "#22c55e";
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        window.submitReceipt = async function() {
+            const buyerName = document.getElementById('buyerNameInput').value.trim();
+            if(!buyerName) {
+                alert("Digite seu Nome ou ID para que o admin saiba quem pagou!");
+                return;
+            }
+            if(!tempReceiptBase64) {
+                alert("Você precisa anexar a foto do comprovante do Pix para enviar!");
+                return;
+            }
+
+            const receiptId = 'rec_' + Date.now();
+            const receiptData = {
+                id: receiptId,
+                nome: buyerName,
+                comprovante: tempReceiptBase64,
+                data: new Date().toLocaleString()
+            };
+
+            await set(ref(db, 'comprovantes/' + receiptId), receiptData);
+            alert("Comprovante enviado com sucesso para o Admin! Aguarde a liberação.");
+            location.reload();
+        }
+
+        // Lógica da Senha do Admin (ZRX WCT)
         const pinBoxes = document.querySelectorAll('.pin-box');
         pinBoxes.forEach((box, index) => {
             box.addEventListener('input', (e) => {
                 const val = e.target.value.toUpperCase();
                 e.target.value = val;
-                if (val && index < pinBoxes.length - 1) pinBoxes[index + 1].focus();
-                checkPin();
+                if(val && index < pinBoxes.length - 1) pinBoxes[index + 1].focus();
+                checkAdminPin();
             });
             box.addEventListener('keydown', (e) => {
-                if (e.key === 'Backspace' && !box.value && index > 0) pinBoxes[index - 1].focus();
+                if(e.key === 'Backspace' && !box.value && index > 0) pinBoxes[index - 1].focus();
             });
         });
 
-        function checkPin() {
+        async function checkAdminPin() {
             let entered = '';
             pinBoxes.forEach(b => entered += b.value);
-            if (entered.length === 6) {
-                if (entered === CORRECT_PIN) {
-                    // Senha correta -> abre tela obrigatória de perfil e registra login Admin LOTUX@ZRX
+            if(entered.length === 6) {
+                if(entered === CORRECT_ADMIN_PIN) {
                     document.getElementById('lockScreen').style.display = 'none';
-                    checkOrCreateUser("LOTUX@ZRX", true);
+                    localStorage.setItem('zrx_current_id', 'LOTUX@ZRX');
+                    checkOrCreateUser('LOTUX@ZRX', true);
                 } else {
-                    // Senha comum / usuário
-                    // Vamos aceitar também qualquer senha ou verificar se já está cadastrado
-                    document.getElementById('lockScreen').style.display = 'none';
-                    document.getElementById('mandatoryProfileScreen').style.display = 'flex';
+                    document.getElementById('lockErrorMsg').innerText = "Senha incorreta! Digite ZRX WCT";
+                    pinBoxes.forEach(b => b.value = '');
+                    pinBoxes[0].focus();
                 }
             }
         }
 
-        // Upload de avatar na tela obrigatória
+        // Avatar na tela obrigatória
         const mandAvatarBtn = document.getElementById('mandAvatarBtn');
         const mandFile = document.getElementById('mandFile');
         mandAvatarBtn.addEventListener('click', () => mandFile.click());
         mandFile.addEventListener('change', (e) => {
             const file = e.target.files[0];
-            if (file) {
+            if(file) {
                 const reader = new FileReader();
                 reader.onload = function(evt) {
                     tempAvatarData = evt.target.result;
@@ -892,18 +900,12 @@
                 return;
             }
 
-            if(idVal === 'lotux@zrx') {
-                alert("Este ID é reservado para o administrador.");
-                return;
-            }
-
-            // Salvar no Firebase (nunca some, fica persistente)
             const userRef = ref(db, 'usuarios/' + idVal);
             const userData = {
                 id: idVal,
                 nome: name,
                 avatar: tempAvatarData || '',
-                status: 'liberado', // padrão liberado após senha
+                status: 'liberado',
                 criadoEm: new Date().toISOString()
             };
 
@@ -923,7 +925,7 @@
             if(snapshot.exists()) {
                 const data = snapshot.val();
                 if(data.status === 'banido') {
-                    alert("Sua conta foi banida pelo administrador.");
+                    alert("Sua conta foi banida.");
                     location.reload();
                     return;
                 }
@@ -939,7 +941,6 @@
                         criadoEm: new Date().toISOString()
                     };
                     await set(userRef, adminData);
-                    localStorage.setItem('zrx_current_id', 'LOTUX@ZRX');
                     initPanel('LOTUX@ZRX', 'LOTUX (Dono)', true);
                 } else {
                     document.getElementById('mandatoryProfileScreen').style.display = 'flex';
@@ -960,70 +961,102 @@
             if(savedAvatar) {
                 document.getElementById('profileAvatar').innerHTML = `<img src="${savedAvatar}" alt="Avatar">`;
             }
+            document.getElementById('paymentScreen').style.display = 'none';
         }
 
-        // Carregar Painel Admin
+        // Abrir Painel de Administração (Comprovantes e Usuários)
         document.getElementById('adminPanelBtn').addEventListener('click', async () => {
             const adminModal = document.getElementById('adminModal');
             adminModal.classList.add('open');
-            const userListContainer = document.getElementById('adminUserList');
-            userListContainer.innerHTML = "Carregando usuários do Firebase...";
-
-            const usersRef = ref(db, 'usuarios');
-            const snapshot = await get(usersRef);
-            if(snapshot.exists()) {
-                userListContainer.innerHTML = "";
-                snapshot.forEach((childSnap) => {
-                    const u = childSnap.val();
+            
+            // Carregar Comprovantes Pendentes
+            const receiptsListContainer = document.getElementById('adminReceiptsList');
+            receiptsListContainer.innerHTML = "Carregando comprovantes...";
+            const recSnap = await get(ref(db, 'comprovantes'));
+            if(recSnap.exists()) {
+                receiptsListContainer.innerHTML = "";
+                recSnap.forEach((childSnap) => {
+                    const r = childSnap.val();
                     const row = document.createElement('div');
                     row.className = 'admin-user-row';
                     row.innerHTML = `
                         <div style="display:flex; align-items:center; gap:10px;">
-                            <div style="width:35px; height:35px; border-radius:50%; background:#3b82f6; overflow:hidden; display:flex; align-items:center; justify-content:center;">
-                                ${u.avatar ? `<img src="${u.avatar}" style="width:100%;height:100%;object-fit:cover;">` : '👤'}
-                            </div>
+                            <a href="${r.comprovante}" target="_blank">
+                                <img src="${r.comprovante}" style="width:45px;height:45px;object-fit:cover;border-radius:8px;border:1px solid var(--primary-color);">
+                            </a>
                             <div>
-                                <div style="font-weight:700; font-size:0.85rem;">${u.nome}</div>
-                                <div style="font-size:0.7rem; opacity:0.6;">ID: ${u.id} | Status: <b>${u.status}</b></div>
+                                <div style="font-weight:700; font-size:0.85rem;">${r.nome}</div>
+                                <div style="font-size:0.65rem; opacity:0.6;">Enviado em: ${r.data}</div>
                             </div>
                         </div>
-                        <div style="display:flex; gap:5px;">
-                            <button class="search-submit-btn" style="background:#22c55e; padding:4px 8px; font-size:0.7rem;" onclick="updateStatus('${u.id}', 'liberado')">Liberar</button>
-                            <button class="search-submit-btn" style="background:#ef4444; padding:4px 8px; font-size:0.7rem;" onclick="updateStatus('${u.id}', 'banido')">Banir</button>
+                        <button class="search-submit-btn" style="background:#22c55e; padding:6px 12px; font-size:0.75rem;" onclick="approveReceipt('${r.id}', '${r.nome}')">Liberar Acesso</button>
+                    `;
+                    receiptsListContainer.appendChild(row);
+                });
+            } else {
+                receiptsListContainer.innerHTML = "<div style='font-size:0.75rem; opacity:0.6;'>Nenhum comprovante pendente no momento.</div>";
+            }
+
+            // Carregar Usuários
+            const userListContainer = document.getElementById('adminUserList');
+            userListContainer.innerHTML = "Carregando usuários...";
+            const userSnap = await get(ref(db, 'usuarios'));
+            if(userSnap.exists()) {
+                userListContainer.innerHTML = "";
+                userSnap.forEach((childSnap) => {
+                    const u = childSnap.val();
+                    const row = document.createElement('div');
+                    row.className = 'admin-user-row';
+                    row.innerHTML = `
+                        <div>
+                            <div style="font-weight:700; font-size:0.85rem;">${u.nome}</div>
+                            <div style="font-size:0.7rem; opacity:0.6;">ID: ${u.id} | Status: <b>${u.status}</b></div>
                         </div>
+                        <button class="search-submit-btn" style="background:#ef4444; padding:4px 8px; font-size:0.7rem;" onclick="banUser('${u.id}')">Banir</button>
                     `;
                     userListContainer.appendChild(row);
                 });
-            } else {
-                userListContainer.innerHTML = "Nenhum usuário cadastrado ainda.";
             }
         });
 
-        window.updateStatus = async function(userId, newStatus) {
-            const userRef = ref(db, 'usuarios/' + userId);
-            await update(userRef, { status: newStatus });
-            alert(`Usuário ${userId} atualizado para: ${newStatus}`);
-            document.getElementById('adminPanelBtn').click(); // Recarrega lista
+        window.approveReceipt = async function(receiptId, userName) {
+            // Cria o usuário liberado automaticamente ao aprovar o comprovante
+            const cleanId = userName.toLowerCase().replace(/\s+/g, '');
+            await set(ref(db, 'usuarios/' + cleanId), {
+                id: cleanId,
+                nome: userName,
+                avatar: '',
+                status: 'liberado',
+                criadoEm: new Date().toISOString()
+            });
+            // Remove o comprovante da lista de pendentes
+            await remove(ref(db, 'comprovantes/' + receiptId));
+            alert(`Acesso liberado para ${userName}!`);
+            document.getElementById('adminPanelBtn').click();
+        }
+
+        window.banUser = async function(userId) {
+            await update(ref(db, 'usuarios/' + userId), { status: 'banido' });
+            alert(`Usuário ${userId} banido com sucesso.`);
+            document.getElementById('adminPanelBtn').click();
         }
 
         document.getElementById('closeAdminModal').addEventListener('click', () => {
             document.getElementById('adminModal').classList.remove('open');
         });
 
-        // Verificar sessão ao iniciar
+        // Inicialização ao carregar a página
         window.addEventListener('DOMContentLoaded', async () => {
             const activeId = localStorage.getItem('zrx_current_id');
             if(activeId) {
-                document.getElementById('paymentScreen').style.display = 'none';
                 checkOrCreateUser(activeId, activeId === 'LOTUX@ZRX');
             } else {
-                // Começa na tela de pagamento conforme o fluxo pedido
                 document.getElementById('paymentScreen').style.display = 'flex';
             }
         });
     </script>
 
-    <!-- Outros scripts de UI e Consulta -->
+    <!-- Outros scripts de UI -->
     <script>
         let currentSearchType = '';
         const menuModal = document.getElementById('menuModal');
@@ -1046,24 +1079,13 @@
         function openSearchModal(title, type) {
             searchModalTitle.innerText = title;
             currentSearchType = type;
-            searchResultsBox.innerHTML = 'Aguardando consulta... Insira os dados e clique em Buscar.';
-            
-            if (type === 'brasilapi') {
-                searchBoxContainer.innerHTML = `
-                    <div style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 4px;">Insira o termo para varredura completa:</div>
-                    <div class="search-input-row">
-                        <input type="text" class="search-input" id="searchInputField" placeholder="Digite o parâmetro...">
-                        <button class="search-submit-btn" onclick="executeSearch()">Varredura Total</button>
-                    </div>
-                `;
-            } else {
-                searchBoxContainer.innerHTML = `
-                    <div class="search-input-row">
-                        <input type="text" class="search-input" id="searchInputField" placeholder="Digite o ${type.toUpperCase()}...">
-                        <button class="search-submit-btn" onclick="executeSearch()">Buscar</button>
-                    </div>
-                `;
-            }
+            searchResultsBox.innerHTML = 'Aguardando consulta...';
+            searchBoxContainer.innerHTML = `
+                <div class="search-input-row">
+                    <input type="text" class="search-input" id="searchInputField" placeholder="Digite o ${type.toUpperCase()}...">
+                    <button class="search-submit-btn" onclick="executeSearch()">Buscar</button>
+                </div>
+            `;
             searchModal.classList.add('open');
         }
 
@@ -1071,36 +1093,16 @@
 
         async function executeSearch() {
             const query = document.getElementById('searchInputField').value.trim();
-            if(!query && currentSearchType !== 'brasilapi') return alert('Digite algum valor!');
+            if(!query) return alert('Digite algum valor!');
             searchResultsBox.innerHTML = `Buscando dados...`;
 
-            if(currentSearchType === 'brasilapi') {
-                const base = 'https://brasilapi.com.br/api';
-                const endpoints = [
-                    { name: 'CEP v1', url: `${base}/cep/v1/${encodeURIComponent(query)}` },
-                    { name: 'CNPJ', url: `${base}/cnpj/v1/${encodeURIComponent(query)}` },
-                    { name: 'DDD', url: `${base}/ddd/v1/${encodeURIComponent(query)}` }
-                ];
-                let html = '';
-                for(let ep of endpoints) {
-                    try {
-                        const res = await fetch(ep.url);
-                        if(res.ok) {
-                            const data = await res.json();
-                            html += `<div style="color:var(--primary-color); font-weight:700; margin-top:5px;">${ep.name}</div><div class="script-output">${JSON.stringify(data, null, 2)}</div>`;
-                        }
-                    } catch(e){}
-                }
-                searchResultsBox.innerHTML = html || 'Nenhum resultado encontrado.';
-            } else {
-                let url = `http://apisbrasilpro.site/consulta_serasa.php?${currentSearchType}=` + encodeURIComponent(query);
-                try {
-                    const res = await fetch(url);
-                    const text = await res.text();
-                    searchResultsBox.innerHTML = `<div class="script-output">${text}</div>`;
-                } catch(e) {
-                    searchResultsBox.innerHTML = `<div class="script-output">Erro na requisição: ${e.message}</div>`;
-                }
+            let url = `http://apisbrasilpro.site/consulta_serasa.php?${currentSearchType}=` + encodeURIComponent(query);
+            try {
+                const res = await fetch(url);
+                const text = await res.text();
+                searchResultsBox.innerHTML = `<div class="script-output">${text}</div>`;
+            } catch(e) {
+                searchResultsBox.innerHTML = `<div class="script-output">Erro na requisição: ${e.message}</div>`;
             }
         }
     </script>
