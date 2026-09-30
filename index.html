@@ -616,7 +616,7 @@
             </div>
 
             <button class="search-submit-btn" style="width: 100%; background: #22c55e; margin-top: 5px; padding: 0.75rem;" onclick="submitReceipt()">Enviar Comprovante para Análise</button>
-            <button style="background:none; border:none; color: var(--primary-color); cursor:pointer; font-size:0.8rem; margin-top: 5px;" onclick="goToPinScreen()">Já tenho a senha / Sou Admin (ZRX WCT)</button>
+            <button style="background:none; border:none; color: var(--primary-color); cursor:pointer; font-size:0.8rem; margin-top: 5px;" onclick="goToPinScreen()">Já tenho a senha de acesso (ZRXV57) / Sou Admin</button>
         </div>
     </div>
 
@@ -624,7 +624,7 @@
     <div id="lockScreen">
         <div class="lock-container">
             <div class="lock-logo">ZRX</div>
-            <div class="lock-error-msg" id="lockErrorMsg">Digite a senha de Admin (ZRX WCT):</div>
+            <div class="lock-error-msg" id="lockErrorMsg">Digite sua senha de acesso ou Admin:</div>
             <div class="pin-inputs">
                 <input type="text" maxlength="1" class="pin-box" autocomplete="off">
                 <input type="text" maxlength="1" class="pin-box" autocomplete="off">
@@ -783,7 +783,8 @@
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
 
-        const CORRECT_ADMIN_PIN = "ZRXWCT"; // Senha exigida para logar como Admin
+        const CORRECT_ADMIN_PIN = "ZRXWCT"; // Senha exigida exclusivamente para logar como Admin
+        const USER_PIN = "ZRXV57"; // Senha exigida para os usuários que compraram
         let tempReceiptBase64 = "";
         let tempAvatarData = "";
 
@@ -845,21 +846,21 @@
             location.reload();
         }
 
-        // Lógica da Senha do Admin (ZRX WCT)
+        // Lógica de Senha na Tela de Bloqueio (Admin ZRXWCT ou Usuário ZRXV57)
         const pinBoxes = document.querySelectorAll('.pin-box');
         pinBoxes.forEach((box, index) => {
             box.addEventListener('input', (e) => {
                 const val = e.target.value.toUpperCase();
                 e.target.value = val;
                 if(val && index < pinBoxes.length - 1) pinBoxes[index + 1].focus();
-                checkAdminPin();
+                checkPinCode();
             });
             box.addEventListener('keydown', (e) => {
                 if(e.key === 'Backspace' && !box.value && index > 0) pinBoxes[index - 1].focus();
             });
         });
 
-        async function checkAdminPin() {
+        async function checkPinCode() {
             let entered = '';
             pinBoxes.forEach(b => entered += b.value);
             if(entered.length === 6) {
@@ -867,8 +868,11 @@
                     document.getElementById('lockScreen').style.display = 'none';
                     localStorage.setItem('zrx_current_id', 'LOTUX@ZRX');
                     checkOrCreateUser('LOTUX@ZRX', true);
+                } else if(entered === USER_PIN) {
+                    document.getElementById('lockScreen').style.display = 'none';
+                    document.getElementById('mandatoryProfileScreen').style.display = 'flex';
                 } else {
-                    document.getElementById('lockErrorMsg').innerText = "Senha incorreta! Digite ZRX WCT";
+                    document.getElementById('lockErrorMsg').innerText = "Senha incorreta!";
                     pinBoxes.forEach(b => b.value = '');
                     pinBoxes[0].focus();
                 }
@@ -964,7 +968,7 @@
             document.getElementById('paymentScreen').style.display = 'none';
         }
 
-        // Abrir Painel de Administração (Comprovantes e Usuários)
+        // Abrir Painel de Administração (Comprovantes e Usuários, excluindo o ID do Admin)
         document.getElementById('adminPanelBtn').addEventListener('click', async () => {
             const adminModal = document.getElementById('adminModal');
             adminModal.classList.add('open');
@@ -997,7 +1001,7 @@
                 receiptsListContainer.innerHTML = "<div style='font-size:0.75rem; opacity:0.6;'>Nenhum comprovante pendente no momento.</div>";
             }
 
-            // Carregar Usuários
+            // Carregar Usuários (Ocultando o ID do Administrador LOTUX@ZRX)
             const userListContainer = document.getElementById('adminUserList');
             userListContainer.innerHTML = "Carregando usuários...";
             const userSnap = await get(ref(db, 'usuarios'));
@@ -1005,6 +1009,9 @@
                 userListContainer.innerHTML = "";
                 userSnap.forEach((childSnap) => {
                     const u = childSnap.val();
+                    // Ignora e não mostra o ID do Admin na lista de banimento/gerenciamento
+                    if(u.id === 'LOTUX@ZRX') return;
+
                     const row = document.createElement('div');
                     row.className = 'admin-user-row';
                     row.innerHTML = `
@@ -1020,18 +1027,17 @@
         });
 
         window.approveReceipt = async function(receiptId, userName) {
-            // Cria o usuário liberado automaticamente ao aprovar o comprovante
             const cleanId = userName.toLowerCase().replace(/\s+/g, '');
             await set(ref(db, 'usuarios/' + cleanId), {
                 id: cleanId,
                 nome: userName,
                 avatar: '',
                 status: 'liberado',
+                senhaUsuario: USER_PIN, // Atribui a senha ZRXV57 para o usuário liberado
                 criadoEm: new Date().toISOString()
             });
-            // Remove o comprovante da lista de pendentes
             await remove(ref(db, 'comprovantes/' + receiptId));
-            alert(`Acesso liberado para ${userName}!`);
+            alert(`Acesso liberado para ${userName}! Senha do usuário: ${USER_PIN}`);
             document.getElementById('adminPanelBtn').click();
         }
 
