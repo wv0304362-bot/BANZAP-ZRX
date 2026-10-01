@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZRX - Autenticação</title>
+    <title>ZRX - Autenticação & Pagamento</title>
     <style>
         :root {
             --primary-color: #3b82f6;
@@ -71,7 +71,7 @@
             flex: 1;
         }
 
-        /* Tela de Bloqueio / Senha */
+        /* Tela de Pagamento Inicial / Bloqueio */
         #lockScreen {
             position: fixed;
             top: 0;
@@ -86,6 +86,7 @@
             justify-content: center;
             padding: 1.5rem;
             transition: opacity 0.3s ease;
+            overflow-y: auto;
         }
 
         .lock-container {
@@ -94,13 +95,14 @@
             border-radius: 24px;
             padding: 2rem 1.5rem;
             width: 100%;
-            max-width: 380px;
+            max-width: 400px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1.2rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             text-align: center;
+            margin: auto;
         }
 
         .lock-logo {
@@ -110,80 +112,175 @@
             letter-spacing: 2px;
         }
 
+        .payment-text {
+            font-size: 0.88rem;
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+
+        .payment-price {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #22c55e;
+            margin: 0.2rem 0;
+        }
+
+        .pix-box-bar {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+            padding: 0.75rem;
+            border-radius: 12px;
+            width: 100%;
+            font-size: 0.78rem;
+            color: var(--text-color);
+            word-break: break-all;
+            text-align: center;
+            user-select: all;
+        }
+
+        .copy-pix-btn, .submit-receipt-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            width: 100%;
+            transition: opacity 0.2s;
+        }
+
+        .submit-receipt-btn {
+            background: #22c55e;
+        }
+
+        .payment-input {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+            padding: 0.8rem 1rem;
+            border-radius: 12px;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            outline: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .payment-input:focus {
+            border-color: var(--primary-color);
+        }
+
+        .upload-box-receipt {
+            border: 2px dashed var(--border-color);
+            padding: 0.8rem;
+            border-radius: 12px;
+            width: 100%;
+            cursor: pointer;
+            background: rgba(0,0,0,0.2);
+            font-size: 0.8rem;
+            transition: 0.2s;
+        }
+
+        .upload-box-receipt:hover {
+            border-color: var(--primary-color);
+        }
+
         .lock-error-msg {
             font-size: 0.8rem;
             color: #ef4444;
-            min-height: 2.4rem;
-            line-height: 1.2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            min-height: 1.5rem;
             font-weight: 600;
-            padding: 0 0.5rem;
         }
 
-        /* 6 Quadradinhos de Senha */
-        .pin-inputs {
+        /* Painel Admin Modal Exclusivo */
+        .admin-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 10000;
+            display: none;
+            flex-direction: column;
+            padding: 1.25rem;
+            overflow-y: auto;
+        }
+
+        .admin-slider-container {
             display: flex;
-            gap: 0.5rem;
-            justify-content: center;
+            width: 200%;
+            flex: 1;
+            transition: transform 0.3s ease;
         }
 
-        .pin-box {
-            width: 42px;
-            height: 52px;
-            background-color: rgba(0, 0, 0, 0.3);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-color);
-            text-align: center;
-            outline: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .pin-box:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
-        }
-
-        .pin-box.success-anim {
-            background-color: #22c55e !important;
-            border-color: #16a34a !important;
-            color: #ffffff !important;
-            transform: scale(1.08);
-            box-shadow: 0 0 15px rgba(34, 197, 94, 0.6);
-        }
-
-        .telegram-link-box {
-            margin-top: 0.5rem;
+        .admin-slide-page {
+            width: 50%;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
-            font-size: 0.85rem;
-            opacity: 0.9;
-            width: 100%;
+            gap: 1rem;
+            padding-right: 1rem;
+        }
+
+        .admin-card-item {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            border-radius: 14px;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
         }
 
-        .telegram-btn-link {
-            background-color: #3b82f6;
-            color: #ffffff !important;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
-            padding: 0.75rem 1rem;
-            border-radius: 12px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-            transition: opacity 0.2s, transform 0.1s;
-            display: inline-block;
+        .admin-user-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
         }
 
-        .telegram-btn-link:active {
-            transform: scale(0.98);
+        .admin-user-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+            background: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Tela de Banimento Visual */
+        #bannedScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0b1120;
+            z-index: 10001;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .banned-box {
+            background-color: #131c31;
+            border: 2px solid #ef4444;
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            max-width: 400px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);
         }
 
         /* Profile Card */
@@ -449,10 +546,6 @@
             font-weight: 600;
         }
 
-        .theme-option:active {
-            border-color: var(--primary-color);
-        }
-
         .color-picker-group {
             display: flex;
             flex-direction: column;
@@ -465,7 +558,6 @@
             opacity: 0.8;
         }
 
-        /* Search Screen Styles & Clean Stack Layout */
         .search-content {
             display: flex;
             flex-direction: column;
@@ -493,10 +585,6 @@
             color: var(--text-color);
             font-size: 0.95rem;
             outline: none;
-        }
-
-        .search-input:focus {
-            border-color: var(--primary-color);
         }
 
         .search-submit-btn {
@@ -587,158 +675,94 @@
         }
 
         /* Ícones Desenhados em CSS (Sem Emojis) */
-        .icon-draw-bolt {
-            width: 14px;
-            height: 18px;
-            display: inline-block;
-            background: currentColor;
-            clip-path: polygon(50% 0%, 0% 60%, 40% 60%, 20% 100%, 100% 40%, 60% 40%);
-        }
-
-        .icon-draw-chat {
-            width: 16px;
-            height: 14px;
-            display: inline-block;
-            border: 2px solid currentColor;
-            border-radius: 4px;
-            position: relative;
-        }
-        .icon-draw-chat::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 3px;
-            border-width: 4px 4px 0;
-            border-style: solid;
-            border-color: currentColor transparent;
-            display: block;
-            width: 0;
-        }
-
-        .icon-draw-phone {
-            width: 14px;
-            height: 14px;
-            border: 2px solid currentColor;
-            border-radius: 3px;
-            display: inline-block;
-        }
-
-        .icon-draw-id {
-            width: 16px;
-            height: 12px;
-            border: 2px solid currentColor;
-            border-radius: 2px;
-            display: inline-block;
-        }
-
-        .icon-draw-mail {
-            width: 16px;
-            height: 12px;
-            border: 2px solid currentColor;
-            border-radius: 2px;
-            display: inline-block;
-        }
-
-        .icon-draw-chart {
-            width: 14px;
-            height: 14px;
-            border-left: 2px solid currentColor;
-            border-bottom: 2px solid currentColor;
-            display: inline-block;
-            position: relative;
-        }
-        .icon-draw-chart::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 3px;
-            width: 3px;
-            height: 8px;
-            background: currentColor;
-        }
-        .icon-draw-chart::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 8px;
-            width: 3px;
-            height: 12px;
-            background: currentColor;
-        }
-
-        .icon-draw-link {
-            width: 14px;
-            height: 14px;
-            border: 2px solid currentColor;
-            border-radius: 50%;
-            display: inline-block;
-        }
-
-        .icon-draw-map {
-            width: 14px;
-            height: 14px;
-            border: 2px solid currentColor;
-            border-radius: 50% 50% 50% 0;
-            transform: rotate(-45deg);
-            display: inline-block;
-        }
-
-        .icon-draw-globe {
-            width: 16px;
-            height: 16px;
-            border: 2px solid currentColor;
-            border-radius: 50%;
-            display: inline-block;
-        }
-
-        .icon-draw-menu {
-            width: 16px;
-            height: 12px;
-            border-top: 2px solid currentColor;
-            border-bottom: 2px solid currentColor;
-            display: inline-block;
-            position: relative;
-        }
-        .icon-draw-menu::after {
-            content: '';
-            position: absolute;
-            top: 4px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: currentColor;
-        }
-
-        .icon-draw-gear {
-            width: 14px;
-            height: 14px;
-            border: 3px double currentColor;
-            border-radius: 50%;
-            display: inline-block;
-        }
+        .icon-draw-bolt { width: 14px; height: 18px; display: inline-block; background: currentColor; clip-path: polygon(50% 0%, 0% 60%, 40% 60%, 20% 100%, 100% 40%, 60% 40%); }
+        .icon-draw-chat { width: 16px; height: 14px; display: inline-block; border: 2px solid currentColor; border-radius: 4px; position: relative; }
+        .icon-draw-chat::after { content: ''; position: absolute; bottom: -5px; left: 3px; border-width: 4px 4px 0; border-style: solid; border-color: currentColor transparent; display: block; width: 0; }
+        .icon-draw-phone { width: 14px; height: 14px; border: 2px solid currentColor; border-radius: 3px; display: inline-block; }
+        .icon-draw-id { width: 16px; height: 12px; border: 2px solid currentColor; border-radius: 2px; display: inline-block; }
+        .icon-draw-mail { width: 16px; height: 12px; border: 2px solid currentColor; border-radius: 2px; display: inline-block; }
+        .icon-draw-chart { width: 14px; height: 14px; border-left: 2px solid currentColor; border-bottom: 2px solid currentColor; display: inline-block; position: relative; }
+        .icon-draw-chart::after { content: ''; position: absolute; bottom: 0; left: 3px; width: 3px; height: 8px; background: currentColor; }
+        .icon-draw-chart::before { content: ''; position: absolute; bottom: 0; left: 8px; width: 3px; height: 12px; background: currentColor; }
+        .icon-draw-link { width: 14px; height: 14px; border: 2px solid currentColor; border-radius: 50%; display: inline-block; }
+        .icon-draw-map { width: 14px; height: 14px; border: 2px solid currentColor; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); display: inline-block; }
+        .icon-draw-globe { width: 16px; height: 16px; border: 2px solid currentColor; border-radius: 50%; display: inline-block; }
+        .icon-draw-menu { width: 16px; height: 12px; border-top: 2px solid currentColor; border-bottom: 2px solid currentColor; display: inline-block; position: relative; }
+        .icon-draw-menu::after { content: ''; position: absolute; top: 4px; left: 0; width: 100%; height: 2px; background: currentColor; }
+        .icon-draw-gear { width: 14px; height: 14px; border: 3px double currentColor; border-radius: 50%; display: inline-block; }
     </style>
 </head>
 <body>
 
-    <!-- TELA DE BLOQUEIO / SENHA (6 QUADRADINHOS) -->
+    <!-- TELA DE PAGAMENTO / BLOQUEIO INICIAL -->
     <div id="lockScreen">
         <div class="lock-container">
             <div class="lock-logo">ZRX</div>
             
+            <div class="payment-text">
+                Olá prezado usuário para você ter acesso ao painel de puxar dados pague apenas
+            </div>
+            
+            <div class="payment-price">R$25,00</div>
+
+            <div class="pix-box-bar" id="pixKeyText">12a00a2d-8fe5-42db-bf95-cadd67117284</div>
+            
+            <button class="copy-pix-btn" onclick="copyPixKey()">Copiar Chave Pix</button>
+
+            <input type="text" id="userInputId" class="payment-input" placeholder="Digite seu ID (ex: seu_nome)">
+
+            <div class="upload-box-receipt" id="uploadReceiptBox">
+                <span id="receiptLabel" style="font-size: 0.8rem; opacity: 0.8;">Enviar foto do comprovante</span>
+            </div>
+            <input type="file" id="receiptFileInput" accept="image/*" style="display: none;">
+
+            <button class="submit-receipt-btn" onclick="submitPaymentReceipt()">Enviar Comprovante</button>
+
             <div class="lock-error-msg" id="lockErrorMsg"></div>
 
-            <div class="pin-inputs">
-                <input type="text" maxlength="1" class="pin-box" autocomplete="off">
-                <input type="text" maxlength="1" class="pin-box" autocomplete="off">
-                <input type="text" maxlength="1" class="pin-box" autocomplete="off">
-                <input type="text" maxlength="1" class="pin-box" autocomplete="off">
-                <input type="text" maxlength="1" class="pin-box" autocomplete="off">
-                <input type="text" maxlength="1" class="pin-box" autocomplete="off">
-            </div>
+            <button style="background:none; border:none; color: var(--primary-color); cursor:pointer; font-size: 0.8rem; margin-top: 5px;" onclick="openAdminModalDirect()">Painel Admin (LOTUX@ZRX)</button>
+        </div>
+    </div>
 
-            <div class="telegram-link-box">
-                <span>Telegram para liberação:</span>
-                <a href="https://t.me/Zenithzrx" target="_blank" class="telegram-btn-link">@Zenithzrx</a>
+    <!-- TELA DE BANIMENTO VISUAL -->
+    <div id="bannedScreen">
+        <div class="banned-box">
+            <div style="font-size: 2.5rem; color: #ef4444; font-weight: bold;">!</div>
+            <h2 style="font-size: 1.2rem; color: #ef4444;">CONTA BANIDA</h2>
+            <p style="font-size: 0.9rem; line-height: 1.5; opacity: 0.9;">
+                Olá você violou as diretrizes do aplicativo por isso tua conta foi banida permanentemente
+            </p>
+        </div>
+    </div>
+
+    <!-- MODAL DE ADMINISTRADOR (LOTUX@ZRX / ZRX WCT) -->
+    <div class="admin-modal-overlay" id="adminModalOverlay">
+        <div class="modal-header">
+            <h3>Painel Administrativo</h3>
+            <div style="display:flex; gap:10px; align-items:center;">
+                <button class="search-submit-btn" style="padding: 4px 8px; font-size:0.75rem;" onclick="switchAdminSlide(0)">Usuários</button>
+                <button class="search-submit-btn" style="padding: 4px 8px; font-size:0.75rem;" onclick="switchAdminSlide(1)">Comprovantes</button>
+                <button class="icon-btn" onclick="closeAdminModal()" style="font-size: 1.5rem;">&times;</button>
+            </div>
+        </div>
+
+        <div style="overflow: hidden; width: 100%; flex: 1; display:flex;">
+            <div class="admin-slider-container" id="adminSliderContainer">
+                <!-- Página 1: Usuários (Liberar e Banir) -->
+                <div class="admin-slide-page">
+                    <h4 style="font-size:0.85rem; color: var(--primary-color);">Gerenciar Usuários (Nome, Foto e ID)</h4>
+                    <div id="adminUsersList" style="display:flex; flex-direction:column; gap:10px; overflow-y:auto; max-height: 65vh;">
+                        <!-- Preenchido via Firebase -->
+                    </div>
+                </div>
+
+                <!-- Página 2: Comprovantes e ID -->
+                <div class="admin-slide-page">
+                    <h4 style="font-size:0.85rem; color: var(--primary-color);">Lista de Comprovantes & IDs</h4>
+                    <div id="adminReceiptsList" style="display:flex; flex-direction:column; gap:10px; overflow-y:auto; max-height: 65vh;">
+                        <!-- Preenchido via Firebase -->
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -926,34 +950,13 @@
 
         <h4 style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 0.75rem;">TEMAS PRONTOS</h4>
         <div class="theme-list">
-            <div class="theme-option" onclick="applyTheme('#f59e0b', '#0b1120', '#131c31')">
-                <span>Dourado</span>
-                <span>></span>
-            </div>
-            <div class="theme-option" onclick="applyTheme('#8b5cf6', '#090514', '#130b26')">
-                <span>Roxo</span>
-                <span>></span>
-            </div>
-            <div class="theme-option" onclick="applyTheme('#06b6d4', '#020617', '#090d16')">
-                <span>Dark Neon</span>
-                <span>></span>
-            </div>
-            <div class="theme-option" onclick="applyTheme('#ef4444', '#110202', '#1f0707')">
-                <span>Vermelho Carmesim</span>
-                <span>></span>
-            </div>
-            <div class="theme-option" onclick="applyTheme('#ef4444', '#080202', '#140505')">
-                <span>Preto com Detalhes Vermelhos</span>
-                <span>></span>
-            </div>
-            <div class="theme-option" onclick="applyTheme('#22c55e', '#020d06', '#061a0e')">
-                <span>Verde Hacker</span>
-                <span>></span>
-            </div>
-            <div class="theme-option" onclick="applyTheme('#94a3b8', '#0f172a', '#1e293b')">
-                <span>Preto Misturado com Prateado</span>
-                <span>></span>
-            </div>
+            <div class="theme-option" onclick="applyTheme('#f59e0b', '#0b1120', '#131c31')"><span>Dourado</span><span>></span></div>
+            <div class="theme-option" onclick="applyTheme('#8b5cf6', '#090514', '#130b26')"><span>Roxo</span><span>></span></div>
+            <div class="theme-option" onclick="applyTheme('#06b6d4', '#020617', '#090d16')"><span>Dark Neon</span><span>></span></div>
+            <div class="theme-option" onclick="applyTheme('#ef4444', '#110202', '#1f0707')"><span>Vermelho Carmesim</span><span>></span></div>
+            <div class="theme-option" onclick="applyTheme('#ef4444', '#080202', '#140505')"><span>Preto com Detalhes Vermelhos</span><span>></span></div>
+            <div class="theme-option" onclick="applyTheme('#22c55e', '#020d06', '#061a0e')"><span>Verde Hacker</span><span>></span></div>
+            <div class="theme-option" onclick="applyTheme('#94a3b8', '#0f172a', '#1e293b')"><span>Preto Misturado com Prateado</span><span>></span></div>
         </div>
 
         <h4 style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 0.75rem;">EDITAR CORES LIVREMENTE</h4>
@@ -971,10 +974,7 @@
         </div>
 
         <div class="search-content">
-            <div class="search-box-container" id="searchBoxContainer">
-                <!-- Conteúdo injetado dinamicamente -->
-            </div>
-            
+            <div class="search-box-container" id="searchBoxContainer"></div>
             <div class="search-results-box" id="searchResultsBox">
                 Aguardando consulta... Insira os dados e clique em Buscar.
             </div>
@@ -985,114 +985,200 @@
     <input type="file" id="galleryInput" accept="image/*" style="display: none;">
     <input type="file" id="mediaInput" accept="image/*,video/*" style="display: none;">
 
-    <script>
-        let currentSearchType = '';
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getDatabase, ref, set, get, update, remove } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
-        // --- SISTEMA DE SENHA & SESSÃO ---
-        const CORRECT_PIN = "ZRXV57"; // Senha exigida apenas ao apertar o botão de liberar / preencher os 6 dígitos
-        const pinBoxes = document.querySelectorAll('.pin-box');
-        const lockErrorMsg = document.getElementById('lockErrorMsg');
-        const lockScreen = document.getElementById('lockScreen');
+        const firebaseConfig = {
+            apiKey: "AIzaSyDdRu51vlC9wOo5Bu6GoR5PMYvSdW1XPfA",
+            authDomain: "puxa-dds.firebaseapp.com",
+            projectId: "puxa-dds",
+            storageBucket: "puxa-dds.firebasestorage.app",
+            messagingSenderId: "406155185543",
+            appId: "1:406155185543:web:bf1b4373d859ced1169722",
+            measurementId: "G-8J2LNJMS00"
+        };
 
-        // Checar se já foi autenticado anteriormente na sessão
-        window.addEventListener('DOMContentLoaded', () => {
-            if (localStorage.getItem('zrx_authenticated') === 'true') {
-                lockScreen.style.display = 'none';
-            } else {
-                pinBoxes[0].focus();
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        const ADMIN_ID = "LOTUX@ZRX";
+        const ADMIN_PASS = "ZRX WCT";
+        let tempReceiptBase64 = "";
+
+        window.copyPixKey = function() {
+            const key = document.getElementById('pixKeyText').innerText;
+            navigator.clipboard.writeText(key);
+            alert("Chave Pix copiada com sucesso!");
+        }
+
+        const uploadBox = document.getElementById('uploadReceiptBox');
+        const receiptInput = document.getElementById('receiptFileInput');
+        uploadBox.addEventListener('click', () => receiptInput.click());
+        receiptInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if(file) {
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    tempReceiptBase64 = evt.target.result;
+                    document.getElementById('receiptLabel').innerText = "Comprovante anexado com sucesso!";
+                    uploadBox.style.borderColor = "#22c55e";
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        window.submitPaymentReceipt = async function() {
+            const userId = document.getElementById('userInputId').value.trim();
+            if(!userId) {
+                alert("Por favor, digite o seu ID!");
+                return;
+            }
+            if(!tempReceiptBase64) {
+                alert("Por favor, envie a foto do comprovante!");
+                return;
             }
 
-            // Carregamento de temas e personalizações anteriores
-            const savedPrimary = localStorage.getItem('zrx_primary');
-            const savedBg = localStorage.getItem('zrx_bg');
-            const savedCard = localStorage.getItem('zrx_card');
-            const savedName = localStorage.getItem('zrx_name');
-            const savedAvatar = localStorage.getItem('zrx_avatar');
-            const savedBanner1 = localStorage.getItem('zrx_banner1');
+            const receiptId = 'rec_' + Date.now();
+            const receiptData = {
+                id: receiptId,
+                userId: userId,
+                comprovante: tempReceiptBase64,
+                data: new Date().toLocaleString()
+            };
 
-            if (savedPrimary) {
-                document.documentElement.style.setProperty('--primary-color', savedPrimary);
-                document.getElementById('customColorInput').value = savedPrimary;
-            }
-            if (savedBg) document.documentElement.style.setProperty('--bg-color', savedBg);
-            if (savedCard) document.documentElement.style.setProperty('--card-bg', savedCard);
+            await set(ref(db, 'comprovantes/' + receiptId), receiptData);
             
-            if (savedName) {
-                document.getElementById('profileName').innerHTML = `${savedName} <span class="icon-draw-bolt" style="width:10px; height:12px; margin-left:4px;"></span>`;
-            }
-            if (savedAvatar) {
-                document.getElementById('profileAvatar').innerHTML = `<img src="${savedAvatar}" alt="Avatar">`;
-            }
-            if (savedBanner1) {
-                const b1 = document.getElementById('bannerUpload1');
-                if (savedBanner1.startsWith('data:video')) {
-                    b1.innerHTML = `<video src="${savedBanner1}" autoplay loop muted playsinline></video>`;
-                } else {
-                    b1.innerHTML = `<img src="${savedBanner1}" alt="Custom Media">`;
-                }
-            }
-        });
-
-        // Manipulação dos 6 quadradinhos de senha
-        pinBoxes.forEach((box, index) => {
-            box.addEventListener('input', (e) => {
-                const val = e.target.value.toUpperCase();
-                e.target.value = val;
-
-                if (val && index < pinBoxes.length - 1) {
-                    pinBoxes[index + 1].focus();
-                }
-
-                checkPinCompletion();
+            // Salvar usuario pendente/criado
+            await set(ref(db, 'usuarios/' + userId), {
+                id: userId,
+                nome: userId,
+                avatar: localStorage.getItem('zrx_avatar') || '',
+                status: 'pendente',
+                criadoEm: new Date().toISOString()
             });
 
-            box.addEventListener('keydown', (e) => {
-                if (e.key === 'Backspace' && !box.value && index > 0) {
-                    pinBoxes[index - 1].focus();
-                }
-            });
-        });
+            alert("Comprovante enviado com sucesso! Aguarde o administrador liberar.");
+            location.reload();
+        }
 
-        function checkPinCompletion() {
-            let enteredPin = '';
-            pinBoxes.forEach(box => {
-                enteredPin += box.value;
-            });
-
-            if (enteredPin.length === 6) {
-                if (enteredPin === CORRECT_PIN) {
-                    lockErrorMsg.innerText = '';
-                    
-                    // Animação de sucesso em cada quadradinho em cascata/sequência
-                    pinBoxes.forEach((box, i) => {
-                        setTimeout(() => {
-                            box.classList.add('success-anim');
-                        }, i * 80);
-                    });
-
-                    localStorage.setItem('zrx_authenticated', 'true');
-                    
-                    setTimeout(() => {
-                        lockScreen.style.opacity = '0';
-                        setTimeout(() => {
-                            lockScreen.style.display = 'none';
-                        }, 300);
-                    }, 800);
-                } else {
-                    lockErrorMsg.innerText = "Senha incorreta!";
-                    pinBoxes.forEach(box => {
-                        box.value = '';
-                        box.style.borderColor = '#ef4444';
-                    });
-                    setTimeout(() => {
-                        pinBoxes.forEach(box => {
-                            box.style.borderColor = 'var(--border-color)';
-                        });
-                    }, 1000);
-                    pinBoxes[0].focus();
-                }
+        window.openAdminModalDirect = function() {
+            const pass = prompt("Digite a senha de administrador:");
+            if(pass === ADMIN_PASS) {
+                document.getElementById('adminModalOverlay').style.display = 'flex';
+                loadAdminData();
+            } else {
+                alert("Senha incorreta!");
             }
         }
+
+        window.closeAdminModal = function() {
+            document.getElementById('adminModalOverlay').style.display = 'none';
+        }
+
+        window.switchAdminSlide = function(index) {
+            const container = document.getElementById('adminSliderContainer');
+            container.style.transform = index === 1 ? 'translateX(-50%)' : 'translateX(0)';
+        }
+
+        async function loadAdminData() {
+            // Carregar usuários
+            const userContainer = document.getElementById('adminUsersList');
+            userContainer.innerHTML = "Carregando usuários...";
+            const userSnap = await get(ref(db, 'usuarios'));
+            if(userSnap.exists()) {
+                userContainer.innerHTML = "";
+                userSnap.forEach((child) => {
+                    const u = child.val();
+                    if(u.id === ADMIN_ID) return;
+                    const row = document.createElement('div');
+                    row.className = 'admin-card-item';
+                    row.innerHTML = `
+                        <div class="admin-user-info">
+                            <img src="${u.avatar || 'https://via.placeholder.com/45'}" class="admin-user-avatar">
+                            <div>
+                                <div style="font-weight:700; font-size:0.85rem;">${u.nome}</div>
+                                <div style="font-size:0.7rem; opacity:0.6;">ID: ${u.id} | Status: <b>${u.status}</b></div>
+                            </div>
+                        </div>
+                        <div style="display:flex; gap:5px;">
+                            <button class="search-submit-btn" style="background:#22c55e; padding:5px 10px; font-size:0.75rem;" onclick="updateUserStatus('${u.id}', 'liberado')">Liberar</button>
+                            <button class="search-submit-btn" style="background:#ef4444; padding:5px 10px; font-size:0.75rem;" onclick="updateUserStatus('${u.id}', 'banido')">Banir</button>
+                        </div>
+                    `;
+                    userContainer.appendChild(row);
+                });
+            } else {
+                userContainer.innerHTML = "Nenhum usuário cadastrado.";
+            }
+
+            // Carregar comprovantes
+            const receiptContainer = document.getElementById('adminReceiptsList');
+            receiptContainer.innerHTML = "Carregando comprovantes...";
+            const recSnap = await get(ref(db, 'comprovantes'));
+            if(recSnap.exists()) {
+                receiptContainer.innerHTML = "";
+                recSnap.forEach((child) => {
+                    const r = child.val();
+                    const row = document.createElement('div');
+                    row.className = 'admin-card-item';
+                    row.innerHTML = `
+                        <div class="admin-user-info">
+                            <a href="${r.comprovante}" target="_blank">
+                                <img src="${r.comprovante}" style="width:45px; height:45px; object-fit:cover; border-radius:8px; border:1px solid var(--primary-color);">
+                            </a>
+                            <div>
+                                <div style="font-weight:700; font-size:0.85rem;">ID: ${r.userId}</div>
+                                <div style="font-size:0.65rem; opacity:0.6;">Data: ${r.data}</div>
+                            </div>
+                        </div>
+                        <button class="search-submit-btn" style="background:#22c55e; padding:5px 10px; font-size:0.75rem;" onclick="approveUserFromReceipt('${r.userId}', '${r.id}')">Aprovar & Liberar</button>
+                    `;
+                    receiptContainer.appendChild(row);
+                });
+            } else {
+                receiptContainer.innerHTML = "Nenhum comprovante pendente.";
+            }
+        }
+
+        window.updateUserStatus = async function(userId, status) {
+            await update(ref(db, 'usuarios/' + userId), { status: status });
+            alert(`Status do usuário ${userId} atualizado para: ${status}`);
+            loadAdminData();
+        }
+
+        window.approveUserFromReceipt = async function(userId, receiptId) {
+            await update(ref(db, 'usuarios/' + userId), { status: 'liberado' });
+            await remove(ref(db, 'comprovantes/' + receiptId));
+            alert(`Usuário ${userId} liberado com sucesso!`);
+            loadAdminData();
+        }
+
+        // Checar autenticação e status do usuário atual ao carregar
+        window.addEventListener('DOMContentLoaded', async () => {
+            const savedId = localStorage.getItem('zrx_current_user_id');
+            if(savedId) {
+                if(savedId === ADMIN_ID) {
+                    document.getElementById('lockScreen').style.display = 'none';
+                    return;
+                }
+                const userSnap = await get(ref(db, 'usuarios/' + savedId));
+                if(userSnap.exists()) {
+                    const uData = userSnap.val();
+                    if(uData.status === 'banido') {
+                        document.getElementById('lockScreen').style.display = 'none';
+                        document.getElementById('bannedScreen').style.display = 'flex';
+                    } else if(uData.status === 'liberado') {
+                        document.getElementById('lockScreen').style.display = 'none';
+                    }
+                }
+            }
+        });
+    </script>
+
+    <script>
+        let currentSearchType = '';
 
         // 3 Barrinhas Modal
         const menuModal = document.getElementById('menuModal');
@@ -1100,7 +1186,6 @@
         document.getElementById('closeMenuModal').addEventListener('click', () => menuModal.classList.remove('open'));
         document.getElementById('settingsBtn').addEventListener('click', () => menuModal.classList.add('open'));
 
-        // Temas Prontos
         function applyTheme(primary, bg, card) {
             document.documentElement.style.setProperty('--primary-color', primary);
             document.documentElement.style.setProperty('--bg-color', bg);
@@ -1143,10 +1228,11 @@
 
         profileName.addEventListener('click', () => {
             const currentText = profileName.innerText.trim();
-            const newName = prompt("Digite o seu novo nome:", currentText);
+            const newName = prompt("Digite o seu novo ID / Nome:", currentText);
             if (newName) {
                 profileName.innerHTML = `${newName} <span class="icon-draw-bolt" style="width:10px; height:12px; margin-left:4px;"></span>`;
                 localStorage.setItem('zrx_name', newName);
+                localStorage.setItem('zrx_current_user_id', newName);
             }
         });
 
@@ -1207,7 +1293,6 @@
             searchModal.classList.remove('open');
         });
 
-        // Função de execução de busca principal e varredura total na BrasilAPI
         async function executeSearch() {
             const searchInputField = document.getElementById('searchInputField');
             const query = searchInputField ? searchInputField.value.trim() : '';
