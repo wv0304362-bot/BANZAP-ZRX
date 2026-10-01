@@ -706,6 +706,7 @@
 
         /* Ícones Desenhados em CSS (Sem Emojis) */
         .icon-draw-bolt { width: 14px; height: 18px; display: inline-block; background: currentColor; clip-path: polygon(50% 0%, 0% 60%, 40% 60%, 20% 100%, 100% 40%, 60% 40%); }
+        .icon-draw-shield { width: 14px; height: 16px; display: inline-block; background: currentColor; clip-path: polygon(50% 100%, 0% 20%, 20% 0%, 80% 0%, 100% 20%); }
         .icon-draw-chat { width: 16px; height: 14px; display: inline-block; border: 2px solid currentColor; border-radius: 4px; position: relative; }
         .icon-draw-chat::after { content: ''; position: absolute; bottom: -5px; left: 3px; border-width: 4px 4px 0; border-style: solid; border-color: currentColor transparent; display: block; width: 0; }
         .icon-draw-phone { width: 14px; height: 14px; border: 2px solid currentColor; border-radius: 3px; display: inline-block; }
@@ -811,8 +812,8 @@
         <button class="icon-btn" id="menuBtn"><span class="icon-draw-menu"></span></button>
         <span class="app-title">ZRX</span>
         <div class="header-right">
+            <button class="icon-btn" id="adminShortcutBtn" title="Painel Admin"><span class="icon-draw-shield"></span></button>
             <button class="icon-btn" id="settingsBtn"><span class="icon-draw-gear"></span></button>
-            <button class="icon-btn"><span class="icon-draw-bolt"></span></button>
             <button class="icon-btn" id="topProfileBtn"><span class="icon-draw-chat"></span></button>
         </div>
     </header>
@@ -1075,12 +1076,6 @@
                 return;
             }
 
-            // Se o ID digitado for o do administrador, exibe modal de senha secreta sem revelar ID/Senha na tela normal
-            if(userId === ADMIN_ID) {
-                document.getElementById('adminPassModal').style.display = 'flex';
-                return;
-            }
-
             if(!tempReceiptBase64) {
                 alert("Por favor, envie a foto do comprovante!");
                 return;
@@ -1108,6 +1103,11 @@
             alert("Comprovante enviado com sucesso! Aguarde o administrador liberar.");
             location.reload();
         }
+
+        // Atalho de Administrador no Topo
+        document.getElementById('adminShortcutBtn').addEventListener('click', () => {
+            document.getElementById('adminPassModal').style.display = 'flex';
+        });
 
         window.verifyAdminPassword = function() {
             const passInput = document.getElementById('adminPasswordInput').value;
