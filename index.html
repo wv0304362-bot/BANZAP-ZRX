@@ -193,6 +193,35 @@
             font-weight: 600;
         }
 
+        /* Modal de Senha Admin */
+        .admin-pass-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: 10005;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .admin-pass-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            max-width: 340px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+        }
+
         /* Painel Admin Modal Exclusivo */
         .admin-modal-overlay {
             position: fixed;
@@ -221,6 +250,7 @@
             flex-direction: column;
             gap: 1rem;
             padding-right: 1rem;
+            overflow-y: auto;
         }
 
         .admin-card-item {
@@ -252,7 +282,7 @@
             font-weight: bold;
         }
 
-        /* Tela de Banimento Visual */
+        /* Tela de Banimento Visual Estrita */
         #bannedScreen {
             position: fixed;
             top: 0;
@@ -719,8 +749,6 @@
             <button class="submit-receipt-btn" onclick="submitPaymentReceipt()">Enviar Comprovante</button>
 
             <div class="lock-error-msg" id="lockErrorMsg"></div>
-
-            <button style="background:none; border:none; color: var(--primary-color); cursor:pointer; font-size: 0.8rem; margin-top: 5px;" onclick="openAdminModalDirect()">Painel Admin (LOTUX@ZRX)</button>
         </div>
     </div>
 
@@ -732,6 +760,17 @@
             <p style="font-size: 0.9rem; line-height: 1.5; opacity: 0.9;">
                 Olá você violou as diretrizes do aplicativo por isso tua conta foi banida permanentemente
             </p>
+        </div>
+    </div>
+
+    <!-- MODAL DE SENHA PARA ADMIN (ZRX WCT) -->
+    <div class="admin-pass-modal" id="adminPassModal">
+        <div class="admin-pass-box">
+            <h3>Área Administrativa</h3>
+            <p style="font-size: 0.8rem; opacity: 0.8;">Insira a senha de acesso:</p>
+            <input type="password" id="adminPasswordInput" class="payment-input" placeholder="Senha...">
+            <button class="search-submit-btn" style="width:100%; padding: 0.75rem;" onclick="verifyAdminPassword()">Entrar</button>
+            <button style="background:none; border:none; color:var(--text-color); opacity:0.6; cursor:pointer; font-size:0.8rem;" onclick="closeAdminPassModal()">Cancelar</button>
         </div>
     </div>
 
@@ -1035,6 +1074,13 @@
                 alert("Por favor, digite o seu ID!");
                 return;
             }
+
+            // Se o ID digitado for o do administrador, exibe modal de senha secreta sem revelar ID/Senha na tela normal
+            if(userId === ADMIN_ID) {
+                document.getElementById('adminPassModal').style.display = 'flex';
+                return;
+            }
+
             if(!tempReceiptBase64) {
                 alert("Por favor, envie a foto do comprovante!");
                 return;
@@ -1050,7 +1096,6 @@
 
             await set(ref(db, 'comprovantes/' + receiptId), receiptData);
             
-            // Salvar usuario pendente/criado
             await set(ref(db, 'usuarios/' + userId), {
                 id: userId,
                 nome: userId,
@@ -1059,18 +1104,25 @@
                 criadoEm: new Date().toISOString()
             });
 
+            localStorage.setItem('zrx_current_user_id', userId);
             alert("Comprovante enviado com sucesso! Aguarde o administrador liberar.");
             location.reload();
         }
 
-        window.openAdminModalDirect = function() {
-            const pass = prompt("Digite a senha de administrador:");
-            if(pass === ADMIN_PASS) {
+        window.verifyAdminPassword = function() {
+            const passInput = document.getElementById('adminPasswordInput').value;
+            if(passInput === ADMIN_PASS) {
+                document.getElementById('adminPassModal').style.display = 'none';
                 document.getElementById('adminModalOverlay').style.display = 'flex';
+                document.getElementById('adminPasswordInput').value = '';
                 loadAdminData();
             } else {
                 alert("Senha incorreta!");
             }
+        }
+
+        window.closeAdminPassModal = function() {
+            document.getElementById('adminPassModal').style.display = 'none';
         }
 
         window.closeAdminModal = function() {
@@ -1083,7 +1135,6 @@
         }
 
         async function loadAdminData() {
-            // Carregar usuários
             const userContainer = document.getElementById('adminUsersList');
             userContainer.innerHTML = "Carregando usuários...";
             const userSnap = await get(ref(db, 'usuarios'));
@@ -1113,7 +1164,6 @@
                 userContainer.innerHTML = "Nenhum usuário cadastrado.";
             }
 
-            // Carregar comprovantes
             const receiptContainer = document.getElementById('adminReceiptsList');
             receiptContainer.innerHTML = "Carregando comprovantes...";
             const recSnap = await get(ref(db, 'comprovantes'));
@@ -1155,14 +1205,9 @@
             loadAdminData();
         }
 
-        // Checar autenticação e status do usuário atual ao carregar
         window.addEventListener('DOMContentLoaded', async () => {
             const savedId = localStorage.getItem('zrx_current_user_id');
-            if(savedId) {
-                if(savedId === ADMIN_ID) {
-                    document.getElementById('lockScreen').style.display = 'none';
-                    return;
-                }
+            if(savedId && savedId !== ADMIN_ID) {
                 const userSnap = await get(ref(db, 'usuarios/' + savedId));
                 if(userSnap.exists()) {
                     const uData = userSnap.val();
@@ -1180,7 +1225,6 @@
     <script>
         let currentSearchType = '';
 
-        // 3 Barrinhas Modal
         const menuModal = document.getElementById('menuModal');
         document.getElementById('menuBtn').addEventListener('click', () => menuModal.classList.add('open'));
         document.getElementById('closeMenuModal').addEventListener('click', () => menuModal.classList.remove('open'));
@@ -1205,7 +1249,6 @@
             localStorage.setItem('zrx_primary', val);
         });
 
-        // Avatar e Nome
         const galleryInput = document.getElementById('galleryInput');
         const profileAvatar = document.getElementById('profileAvatar');
         const profileName = document.getElementById('profileName');
@@ -1236,7 +1279,6 @@
             }
         });
 
-        // Banner Gigante
         const mediaInput = document.getElementById('mediaInput');
         const bannerUpload1 = document.getElementById('bannerUpload1');
 
@@ -1259,7 +1301,6 @@
             }
         });
 
-        // Controle do Modal de Pesquisa
         const searchModal = document.getElementById('searchModal');
         const searchModalTitle = document.getElementById('searchModalTitle');
         const searchBoxContainer = document.getElementById('searchBoxContainer');
@@ -1428,7 +1469,7 @@
                                 if (subVal !== null && subVal !== undefined && subVal !== '') {
                                     cardHtml += `
                                         <div class="result-line" style="margin-left: 8px;">
-                                            <span class="result-key">${subKey}</span>
+                                                <span class="result-key">${subKey}</span>
                                             <span class="result-val">${subVal}</span>
                                         </div>
                                     `;
