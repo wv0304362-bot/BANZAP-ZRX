@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZRX - Autenticação</title>
+    <title>ZRX - Painel de Consulta</title>
     <style>
         :root {
             --primary-color: #3b82f6;
@@ -30,7 +30,6 @@
             transition: background-color 0.3s ease;
         }
 
-        /* Top Bar */
         header {
             display: flex;
             justify-content: space-between;
@@ -71,8 +70,7 @@
             flex: 1;
         }
 
-        /* Tela de Bloqueio / Senha */
-        #lockScreen {
+        #paymentScreen {
             position: fixed;
             top: 0;
             left: 0;
@@ -85,7 +83,66 @@
             align-items: center;
             justify-content: center;
             padding: 1.5rem;
-            transition: opacity 0.3s ease;
+            overflow-y: auto;
+        }
+
+        .payment-container {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2rem 1.5rem;
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+            margin: auto;
+        }
+
+        .pix-box-input {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+            padding: 0.75rem;
+            border-radius: 12px;
+            width: 100%;
+            font-size: 0.8rem;
+            color: var(--text-color);
+            word-break: break-all;
+            text-align: center;
+            user-select: all;
+        }
+
+        .upload-receipt-box {
+            border: 2px dashed var(--border-color);
+            padding: 1rem;
+            border-radius: 12px;
+            width: 100%;
+            cursor: pointer;
+            background: rgba(0,0,0,0.2);
+            font-size: 0.8rem;
+            transition: 0.2s;
+        }
+
+        .upload-receipt-box:hover {
+            border-color: var(--primary-color);
+        }
+
+        #lockScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 9998;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
         }
 
         .lock-container {
@@ -113,16 +170,10 @@
         .lock-error-msg {
             font-size: 0.8rem;
             color: #ef4444;
-            min-height: 2.4rem;
-            line-height: 1.2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            min-height: 2rem;
             font-weight: 600;
-            padding: 0 0.5rem;
         }
 
-        /* 6 Quadradinhos de Senha */
         .pin-inputs {
             display: flex;
             gap: 0.5rem;
@@ -140,54 +191,85 @@
             color: var(--text-color);
             text-align: center;
             outline: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .pin-box:focus {
             border-color: var(--primary-color);
-            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
         }
 
-        /* Animação de sucesso nos quadradinhos */
-        .pin-box.success-anim {
-            background-color: #22c55e !important;
-            border-color: #16a34a !important;
-            color: #ffffff !important;
-            transform: scale(1.08);
-            box-shadow: 0 0 15px rgba(34, 197, 94, 0.6);
+        #mandatoryProfileScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 9997;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
         }
 
-        .telegram-link-box {
-            margin-top: 0.5rem;
+        .mandatory-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 380px;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
-            font-size: 0.85rem;
-            opacity: 0.9;
-            width: 100%;
             align-items: center;
-        }
-
-        .telegram-btn-link {
-            background-color: #3b82f6;
-            color: #ffffff !important;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
-            padding: 0.75rem 1rem;
-            border-radius: 12px;
-            width: 100%;
+            gap: 1.25rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             text-align: center;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-            transition: opacity 0.2s, transform 0.1s;
-            display: inline-block;
         }
 
-        .telegram-btn-link:active {
-            transform: scale(0.98);
+        .mandatory-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            overflow: hidden;
+            border: 3px solid var(--primary-color);
+            cursor: pointer;
+            position: relative;
         }
 
-        /* Profile Card */
+        .mandatory-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .mandatory-inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            width: 100%;
+        }
+
+        .mandatory-input {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+            padding: 0.85rem 1rem;
+            border-radius: 12px;
+            color: var(--text-color);
+            font-size: 0.95rem;
+            outline: none;
+            text-align: center;
+        }
+
+        .mandatory-input:focus {
+            border-color: var(--primary-color);
+        }
+
         .profile-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -223,7 +305,6 @@
             overflow: hidden;
             border: 2px solid var(--primary-color);
             cursor: pointer;
-            position: relative;
         }
 
         .avatar img {
@@ -238,12 +319,8 @@
         }
 
         .user-name {
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
             font-size: 1.1rem;
             font-weight: 700;
-            cursor: pointer;
         }
 
         .badge-dev {
@@ -294,12 +371,6 @@
             gap: 2px;
         }
 
-        .stat-item span:last-child {
-            font-weight: 600;
-            font-size: 0.8rem;
-        }
-
-        /* Section Titles */
         .section-header {
             display: flex;
             align-items: center;
@@ -310,7 +381,6 @@
             opacity: 0.9;
         }
 
-        /* Banner Container */
         .banner-container {
             position: relative;
             width: 100%;
@@ -333,7 +403,6 @@
             object-fit: cover;
         }
 
-        /* Grid Quick Access */
         .quick-access-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -349,11 +418,6 @@
             flex-direction: column;
             gap: 0.75rem;
             cursor: pointer;
-            transition: border-color 0.2s;
-        }
-
-        .quick-access-card:active {
-            border-color: var(--primary-color);
         }
 
         .qa-top {
@@ -373,7 +437,6 @@
             justify-content: center;
             font-size: 1rem;
             font-weight: bold;
-            flex-shrink: 0;
             color: var(--primary-color);
         }
 
@@ -383,7 +446,6 @@
             text-transform: uppercase;
         }
 
-        /* Bottom Button */
         .footer-btn {
             background: linear-gradient(135deg, var(--primary-color), #2563eb);
             color: white;
@@ -398,10 +460,8 @@
             justify-content: center;
             gap: 0.5rem;
             width: 100%;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
         }
 
-        /* Fullscreen Modals */
         .fullscreen-modal {
             position: fixed;
             top: 0;
@@ -450,23 +510,6 @@
             font-weight: 600;
         }
 
-        .theme-option:active {
-            border-color: var(--primary-color);
-        }
-
-        .color-picker-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .color-picker-group label {
-            font-size: 0.85rem;
-            opacity: 0.8;
-        }
-
-        /* Search Screen Styles & Clean Stack Layout */
         .search-content {
             display: flex;
             flex-direction: column;
@@ -494,10 +537,6 @@
             color: var(--text-color);
             font-size: 0.95rem;
             outline: none;
-        }
-
-        .search-input:focus {
-            border-color: var(--primary-color);
         }
 
         .search-submit-btn {
@@ -538,65 +577,50 @@
             overflow-y: auto;
         }
 
-        .result-item-card {
-            background: rgba(0, 0, 0, 0.3);
+        .admin-user-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0,0,0,0.2);
             border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 0.75rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .result-line {
-            display: flex;
-            flex-direction: column;
-            gap: 0.15rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding-bottom: 0.4rem;
-        }
-
-        .result-line:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .result-key {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--primary-color);
-            font-weight: 700;
-            opacity: 0.9;
-        }
-
-        .result-val {
-            font-size: 0.85rem;
-            font-weight: 600;
-            word-break: break-all;
-            color: var(--text-color);
-        }
-
-        .sub-section-title {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-top: 0.5rem;
-            text-transform: uppercase;
-            border-left: 3px solid var(--primary-color);
-            padding-left: 6px;
+            padding: 12px;
+            border-radius: 12px;
+            margin-bottom: 8px;
         }
     </style>
 </head>
 <body>
 
-    <!-- TELA DE BLOQUEIO / SENHA (6 QUADRADINHOS) -->
+    <!-- 1. TELA DE PAGAMENTO PIX & COMPROVANTE -->
+    <div id="paymentScreen">
+        <div class="payment-container">
+            <h2 style="font-size: 1.25rem; font-weight: 800; color: var(--primary-color);">ZRX - PAGAMENTO</h2>
+            <p style="font-size: 0.850rem; line-height: 1.4; opacity: 0.9;">
+                Ola prezado usuario, faca o Pix de R$ 25,00 e envie o comprovante abaixo para analise do admin:
+            </p>
+            <div style="font-size: 1.5rem; font-weight: 800; color: #22c55e;">R$ 25,00</div>
+            <div class="pix-box-input" id="pixKeyText">12a00a2d-8fe5-42db-bf95-cadd67117284</div>
+            <button class="search-submit-btn" style="width:150px; padding: 0.6rem;" onclick="copyPixKey()">Copiar Chave</button>
+
+            <!-- Area para enviar comprovante -->
+            <div style="width: 100%; display: flex; flex-direction: column; gap: 8px; margin-top: 5px;">
+                <input type="text" id="buyerNameInput" class="mandatory-input" placeholder="Seu Nome / ID para liberacao">
+                <div class="upload-receipt-box" id="uploadReceiptBtn">
+                    <span id="receiptLabel">Clique aqui para anexar o Comprovante</span>
+                </div>
+                <input type="file" id="receiptFile" accept="image/*" style="display:none;">
+            </div>
+
+            <button class="search-submit-btn" style="width: 100%; background: #22c55e; margin-top: 5px; padding: 0.75rem;" onclick="submitReceipt()">Enviar Comprovante para Analise</button>
+            <button style="background:none; border:none; color: var(--primary-color); cursor:pointer; font-size:0.8rem; margin-top: 5px;" onclick="goToPinScreen()">Ja tenho a senha / Sou Admin</button>
+        </div>
+    </div>
+
+    <!-- 2. TELA DE SENHA -->
     <div id="lockScreen">
         <div class="lock-container">
             <div class="lock-logo">ZRX</div>
-            
-            <div class="lock-error-msg" id="lockErrorMsg"></div>
-
+            <div class="lock-error-msg" id="lockErrorMsg">Digite a senha de acesso ou Admin:</div>
             <div class="pin-inputs">
                 <input type="text" maxlength="1" class="pin-box" autocomplete="off">
                 <input type="text" maxlength="1" class="pin-box" autocomplete="off">
@@ -605,11 +629,27 @@
                 <input type="text" maxlength="1" class="pin-box" autocomplete="off">
                 <input type="text" maxlength="1" class="pin-box" autocomplete="off">
             </div>
+            <button style="background:none; border:none; color: var(--primary-color); cursor:pointer; font-size:0.8rem;" onclick="backToPayment()">Voltar ao Pagamento</button>
+        </div>
+    </div>
 
-            <div class="telegram-link-box">
-                <span>Telegram para liberação:</span>
-                <a href="https://t.me/Zenithzrx" target="_blank" class="telegram-btn-link">@Zenithzrx</a>
+    <!-- 3. TELA OBRIGATORIA DE PERFIL -->
+    <div id="mandatoryProfileScreen">
+        <div class="mandatory-card">
+            <h3 style="font-size: 1.1rem;">Configure seu Perfil</h3>
+            <p style="font-size: 0.75rem; opacity: 0.7;">Insira suas informacoes obrigatorias:</p>
+            
+            <div class="mandatory-avatar" id="mandAvatarBtn">
+                <span>+</span>
+                <input type="file" id="mandFile" accept="image/*" style="display:none;">
             </div>
+
+            <div class="mandatory-inputs">
+                <input type="text" id="mandNameInput" class="mandatory-input" placeholder="Seu Nome">
+                <input type="text" id="mandIdInput" class="mandatory-input" placeholder="Seu ID em minusculo">
+            </div>
+
+            <button class="search-submit-btn" style="width: 100%; padding: 0.8rem;" onclick="saveMandatoryProfile()">Salvar & Entrar</button>
         </div>
     </div>
 
@@ -619,8 +659,8 @@
         <span class="app-title">ZRX</span>
         <div class="header-right">
             <button class="icon-btn" id="settingsBtn">⚙</button>
-            <button class="icon-btn">⚡</button>
-            <button class="icon-btn" id="topProfileBtn">💬</button>
+            <button class="icon-btn" id="adminPanelBtn" style="display:none; color:#22c55e;" title="Painel Admin">Admin</button>
+            <button class="icon-btn" id="topProfileBtn">Perfil</button>
         </div>
     </header>
 
@@ -629,422 +669,401 @@
         <div class="profile-card">
             <div class="profile-top">
                 <div class="profile-info">
-                    <div class="avatar" id="profileAvatar">
-                        ➕
-                    </div>
+                    <div class="avatar" id="profileAvatar">+</div>
                     <div class="user-details">
                         <span>Welcome back!</span>
-                        <div class="user-name" id="profileName">ZRX ⚡</div>
-                        <span class="badge-dev">DEVELOPER</span>
+                        <div class="user-name" id="profileName">ZRX</div>
+                        <span class="badge-dev" id="profileBadge">USER</span>
                     </div>
                 </div>
-                <div class="battery-box">
-                    100%
-                    <small>LEFT</small>
-                </div>
+                <div class="battery-box">100%<small>LEFT</small></div>
             </div>
-
             <div class="profile-stats">
-                <div class="stat-item">
-                    <span style="opacity: 0.6;">⚡</span>
-                    <span>ON</span>
-                </div>
-                <div class="stat-item">
-                    <span style="opacity: 0.6;">💬</span>
-                    <span>99740</span>
-                </div>
-                <div class="stat-item">
-                    <span style="opacity: 0.6;">...</span>
-                    <span>...</span>
-                </div>
+                <div class="stat-item"><span style="opacity: 0.6;">Status</span><span>ON</span></div>
+                <div class="stat-item"><span style="opacity: 0.6;">Msg</span><span>99740</span></div>
+                <div class="stat-item"><span style="opacity: 0.6;">Info</span><span>...</span></div>
             </div>
         </div>
 
-        <!-- Banner Gigante do Meio -->
+        <!-- Banner -->
         <div>
-            <div class="section-header" style="margin-bottom: 0.75rem;">
-                <span>☰</span> MEDIA DISPLAY (TOQUE PARA ALTERAR)
-            </div>
-            
+            <div class="section-header" style="margin-bottom: 0.75rem;"><span>☰</span> MEDIA DISPLAY</div>
             <div class="banner-container">
-                <div class="anime-banner" id="bannerUpload1">
-                    <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&auto=format&fit=crop&q=80" alt="Custom Media">
+                <div class="anime-banner">
+                    <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&auto=format&fit=crop&q=80" alt="Banner">
                 </div>
             </div>
         </div>
 
         <!-- Quick Access -->
         <div>
-            <div class="section-header" style="margin-bottom: 0.75rem;">
-                <span>⚡</span> QUICK ACCESS - CONSULTAS
-            </div>
-            
+            <div class="section-header" style="margin-bottom: 0.75rem;"><span>⚡</span> QUICK ACCESS - CONSULTAS</div>
             <div class="quick-access-grid">
-                <!-- 1. NOME -->
                 <div class="quick-access-card" onclick="openSearchModal('CONSULTA NOME', 'nome')">
-                    <div class="qa-top">
-                        <div class="qa-icon">💬</div>
-                        <div class="qa-info">
-                            <h4>NOME</h4>
-                        </div>
-                    </div>
+                    <div class="qa-top"><div class="qa-icon">N</div><div class="qa-info"><h4>NOME</h4></div></div>
                     <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
                 </div>
-
-                <!-- 2. CPF -->
                 <div class="quick-access-card" onclick="openSearchModal('CONSULTA CPF', 'cpf')">
-                    <div class="qa-top">
-                        <div class="qa-icon">⚡</div>
-                        <div class="qa-info">
-                            <h4>CPF</h4>
-                        </div>
-                    </div>
+                    <div class="qa-top"><div class="qa-icon">C</div><div class="qa-info"><h4>CPF</h4></div></div>
                     <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
                 </div>
-
-                <!-- 3. TELEFONE -->
                 <div class="quick-access-card" onclick="openSearchModal('CONSULTA TELEFONE', 'telefone')">
-                    <div class="qa-top">
-                        <div class="qa-icon">📞</div>
-                        <div class="qa-info">
-                            <h4>TELEFONE</h4>
-                        </div>
-                    </div>
+                    <div class="qa-top"><div class="qa-icon">T</div><div class="qa-info"><h4>TELEFONE</h4></div></div>
                     <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
                 </div>
-
-                <!-- 4. RG -->
                 <div class="quick-access-card" onclick="openSearchModal('CONSULTA RG', 'rg')">
-                    <div class="qa-top">
-                        <div class="qa-icon">🆔</div>
-                        <div class="qa-info">
-                            <h4>RG</h4>
-                        </div>
-                    </div>
+                    <div class="qa-top"><div class="qa-icon">R</div><div class="qa-info"><h4>RG</h4></div></div>
                     <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
-                </div>
-
-                <!-- 5. E-MAIL -->
-                <div class="quick-access-card" onclick="openSearchModal('CONSULTA E-MAIL', 'email')">
-                    <div class="qa-top">
-                        <div class="qa-icon">✉️</div>
-                        <div class="qa-info">
-                            <h4>E-MAIL</h4>
-                        </div>
-                    </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
-                </div>
-
-                <!-- 6. SPC -->
-                <div class="quick-access-card" onclick="openSearchModal('CONSULTA SPC', 'spc')">
-                    <div class="qa-top">
-                        <div class="qa-icon">📊</div>
-                        <div class="qa-info">
-                            <h4>SPC</h4>
-                        </div>
-                    </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
-                </div>
-
-                <!-- 7. CPF PARENTE -->
-                <div class="quick-access-card" onclick="openSearchModal('CONSULTA CPF PARENTE', 'cpf_parente')">
-                    <div class="qa-top">
-                        <div class="qa-icon">🔗</div>
-                        <div class="qa-info">
-                            <h4>CPF PARENTE</h4>
-                        </div>
-                    </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
-                </div>
-
-                <!-- 8. CEP -->
-                <div class="quick-access-card" onclick="openSearchModal('CONSULTA CEP', 'cep')">
-                    <div class="qa-top">
-                        <div class="qa-icon">📍</div>
-                        <div class="qa-info">
-                            <h4>CEP</h4>
-                        </div>
-                    </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
-                </div>
-
-                <!-- BRASILAPI - VARREDURA COMPLETA AUTOMÁTICA -->
-                <div class="quick-access-card" onclick="openSearchModal('BRASILAPI - VARREDURA TOTAL', 'brasilapi')" style="grid-column: span 2;">
-                    <div class="qa-top">
-                        <div class="qa-icon">🌐</div>
-                        <div class="qa-info">
-                            <h4>BRASILAPI (VARREDURA TOTAL AUTOMÁTICA)</h4>
-                        </div>
-                    </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Busca simultânea em todas as rotas compatíveis ></span>
                 </div>
             </div>
         </div>
 
-        <!-- Bottom Button -->
-        <button class="footer-btn">
-            <span>⚡</span> ZRX DEVELOPER
-        </button>
+        <button class="footer-btn"><span>⚡</span> ZRX DEVELOPER</button>
     </main>
 
-    <!-- Modal 3 Barrinhas -->
+    <!-- Modal Admin Exclusivo para Comprovantes e Usuarios -->
+    <div class="fullscreen-modal" id="adminModal">
+        <div class="modal-header">
+            <h3>Painel Admin (ZRX WCT)</h3>
+            <button class="icon-btn" id="closeAdminModal" style="font-size: 1.5rem;">&times;</button>
+        </div>
+        <div style="font-size: 0.85rem; font-weight: bold; color: var(--primary-color); margin-bottom: 5px;">Comprovantes Pendentes para Analise:</div>
+        <div id="adminReceiptsList" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px;">
+            <!-- Carregado via Firebase -->
+        </div>
+
+        <div style="font-size: 0.85rem; font-weight: bold; color: var(--primary-color); margin-bottom: 5px;">Gerenciar Usuarios do Sistema:</div>
+        <div id="adminUserList" style="display: flex; flex-direction: column; gap: 8px;">
+            <!-- Carregado via Firebase -->
+        </div>
+    </div>
+
+    <!-- Modais Padrao -->
     <div class="fullscreen-modal" id="menuModal">
         <div class="modal-header">
             <h3>Menu de Temas & Cores</h3>
             <button class="icon-btn" id="closeMenuModal" style="font-size: 1.5rem;">&times;</button>
         </div>
-
-        <h4 style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 0.75rem;">TEMAS PRONTOS</h4>
         <div class="theme-list">
-            <div class="theme-option" onclick="applyTheme('#f59e0b', '#0b1120', '#131c31')">
-                <span>⚡ Dourado</span>
-                <span>></span>
-            </div>
-            <div class="theme-option" onclick="applyTheme('#8b5cf6', '#090514', '#130b26')">
-                <span>💬 Roxo</span>
-                <span>></span>
-            </div>
-            <div class="theme-option" onclick="applyTheme('#06b6d4', '#020617', '#090d16')">
-                <span>⚡ Dark Neon</span>
-                <span>></span>
-            </div>
-            <div class="theme-option" onclick="applyTheme('#ef4444', '#110202', '#1f0707')">
-                <span>💬 Vermelho Carmesim</span>
-                <span>></span>
-            </div>
-            <!-- NOVOS TEMAS ADICIONADOS -->
-            <div class="theme-option" onclick="applyTheme('#ef4444', '#080202', '#140505')">
-                <span>🔴 Preto com Detalhes Vermelhos</span>
-                <span>></span>
-            </div>
-            <div class="theme-option" onclick="applyTheme('#22c55e', '#020d06', '#061a0e')">
-                <span>🟢 Verde Hacker</span>
-                <span>></span>
-            </div>
-            <div class="theme-option" onclick="applyTheme('#94a3b8', '#0f172a', '#1e293b')">
-                <span>⚪ Preto Misturado com Prateado</span>
-                <span>></span>
-            </div>
-        </div>
-
-        <h4 style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 0.75rem;">EDITAR CORES LIVREMENTE</h4>
-        <div class="color-picker-group">
-            <label for="customColorInput">Cor Principal:</label>
-            <input type="color" id="customColorInput" value="#3b82f6" style="width: 100%; height: 40px; border: none; border-radius: 8px; background: none; cursor: pointer;">
+            <div class="theme-option" onclick="applyTheme('#f59e0b', '#0b1120', '#131c31')"><span>Dourado</span><span>></span></div>
+            <div class="theme-option" onclick="applyTheme('#8b5cf6', '#090514', '#130b26')"><span>Roxo</span><span>></span></div>
         </div>
     </div>
 
-    <!-- Modal de Pesquisa -->
     <div class="fullscreen-modal" id="searchModal">
         <div class="modal-header">
             <h3 id="searchModalTitle">Pesquisa</h3>
             <button class="icon-btn" id="closeSearchModal" style="font-size: 1.5rem;">&times;</button>
         </div>
-
         <div class="search-content">
-            <div class="search-box-container" id="searchBoxContainer">
-                <!-- Conteúdo injetado dinamicamente -->
-            </div>
-            
-            <div class="search-results-box" id="searchResultsBox">
-                Aguardando consulta... Insira os dados e clique em Buscar.
-            </div>
+            <div class="search-box-container" id="searchBoxContainer"></div>
+            <div class="search-results-box" id="searchResultsBox">Aguardando consulta...</div>
         </div>
     </div>
 
-    <!-- Inputs Ocultos -->
-    <input type="file" id="galleryInput" accept="image/*" style="display: none;">
-    <input type="file" id="mediaInput" accept="image/*,video/*" style="display: none;">
+    <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getDatabase, ref, set, get, update, remove, child } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
-    <script>
-        let currentSearchType = '';
+        const firebaseConfig = {
+            apiKey: "AIzaSyDdRu51vlC9wOo5Bu6GoR5PMYvSdW1XPfA",
+            authDomain: "puxa-dds.firebaseapp.com",
+            projectId: "puxa-dds",
+            storageBucket: "puxa-dds.firebasestorage.app",
+            messagingSenderId: "406155185543",
+            appId: "1:406155185543:web:bf1b4373d859ced1169722",
+            measurementId: "G-8J2LNJMS00"
+        };
 
-        // --- SISTEMA DE SENHA & SESSÃO ---
-        const CORRECT_PIN = "ZRXV57"; // Senha configurada (6 caracteres: Z, R, X, V, 5, 7)
-        const pinBoxes = document.querySelectorAll('.pin-box');
-        const lockErrorMsg = document.getElementById('lockErrorMsg');
-        const lockScreen = document.getElementById('lockScreen');
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
 
-        // Checar se já foi autenticado anteriormente na sessão
-        window.addEventListener('DOMContentLoaded', () => {
-            if (localStorage.getItem('zrx_authenticated') === 'true') {
-                lockScreen.style.display = 'none';
-            } else {
-                pinBoxes[0].focus();
-            }
+        const CORRECT_ADMIN_PIN = "ZRXWCT"; // Senha exclusiva do Administrador
+        const USER_PIN = "ZRXV57"; // Senha fornecida aos usuarios apos compra/liberacao
+        let tempReceiptBase64 = "";
+        let tempAvatarData = "";
 
-            // Carregamento de temas e personalizações anteriores
-            const savedPrimary = localStorage.getItem('zrx_primary');
-            const savedBg = localStorage.getItem('zrx_bg');
-            const savedCard = localStorage.getItem('zrx_card');
-            const savedName = localStorage.getItem('zrx_name');
-            const savedAvatar = localStorage.getItem('zrx_avatar');
-            const savedBanner1 = localStorage.getItem('zrx_banner1');
+        window.copyPixKey = function() {
+            const key = document.getElementById('pixKeyText').innerText;
+            navigator.clipboard.writeText(key);
+            alert("Chave Pix copiada com sucesso!");
+        }
 
-            if (savedPrimary) {
-                document.documentElement.style.setProperty('--primary-color', savedPrimary);
-                document.getElementById('customColorInput').value = savedPrimary;
-            }
-            if (savedBg) document.documentElement.style.setProperty('--bg-color', savedBg);
-            if (savedCard) document.documentElement.style.setProperty('--card-bg', savedCard);
-            
-            if (savedName) {
-                document.getElementById('profileName').innerHTML = `${savedName} ⚡`;
-            }
-            if (savedAvatar) {
-                document.getElementById('profileAvatar').innerHTML = `<img src="${savedAvatar}" alt="Avatar">`;
-            }
-            if (savedBanner1) {
-                const b1 = document.getElementById('bannerUpload1');
-                if (savedBanner1.startsWith('data:video')) {
-                    b1.innerHTML = `<video src="${savedBanner1}" autoplay loop muted playsinline></video>`;
-                } else {
-                    b1.innerHTML = `<img src="${savedBanner1}" alt="Custom Media">`;
+        window.goToPinScreen = function() {
+            document.getElementById('paymentScreen').style.display = 'none';
+            document.getElementById('lockScreen').style.display = 'flex';
+            document.querySelectorAll('.pin-box')[0].focus();
+        }
+
+        window.backToPayment = function() {
+            document.getElementById('lockScreen').style.display = 'none';
+            document.getElementById('paymentScreen').style.display = 'flex';
+        }
+
+        const uploadBox = document.getElementById('uploadReceiptBtn');
+        const receiptFile = document.getElementById('receiptFile');
+        uploadBox.addEventListener('click', () => receiptFile.click());
+        receiptFile.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if(file) {
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    tempReceiptBase64 = evt.target.result;
+                    document.getElementById('receiptLabel').innerText = "Comprovante Anexado com Sucesso!";
+                    uploadBox.style.borderColor = "#22c55e";
                 }
+                reader.readAsDataURL(file);
             }
         });
 
-        // Manipulação dos 6 quadradinhos de senha
+        window.submitReceipt = async function() {
+            const buyerName = document.getElementById('buyerNameInput').value.trim();
+            if(!buyerName) {
+                alert("Digite seu Nome ou ID para que o admin saiba quem pagou!");
+                return;
+            }
+            if(!tempReceiptBase64) {
+                alert("Voce precisa anexar a foto do comprovante do Pix para enviar!");
+                return;
+            }
+
+            const receiptId = 'rec_' + Date.now();
+            const receiptData = {
+                id: receiptId,
+                nome: buyerName,
+                comprovante: tempReceiptBase64,
+                data: new Date().toLocaleString()
+            };
+
+            await set(ref(db, 'comprovantes/' + receiptId), receiptData);
+            alert("Comprovante enviado com sucesso para o Admin! Aguarde a liberacao.");
+            location.reload();
+        }
+
+        const pinBoxes = document.querySelectorAll('.pin-box');
         pinBoxes.forEach((box, index) => {
             box.addEventListener('input', (e) => {
                 const val = e.target.value.toUpperCase();
                 e.target.value = val;
-
-                if (val && index < pinBoxes.length - 1) {
-                    pinBoxes[index + 1].focus();
-                }
-
-                checkPinCompletion();
+                if(val && index < pinBoxes.length - 1) pinBoxes[index + 1].focus();
+                checkPinCode();
             });
-
             box.addEventListener('keydown', (e) => {
-                if (e.key === 'Backspace' && !box.value && index > 0) {
-                    pinBoxes[index - 1].focus();
-                }
+                if(e.key === 'Backspace' && !box.value && index > 0) pinBoxes[index - 1].focus();
             });
         });
 
-        function checkPinCompletion() {
-            let enteredPin = '';
-            pinBoxes.forEach(box => {
-                enteredPin += box.value;
-            });
-
-            if (enteredPin.length === 6) {
-                if (enteredPin === CORRECT_PIN) {
-                    lockErrorMsg.innerText = '';
-                    
-                    // Animação de sucesso em cada quadradinho em cascata/sequência
-                    pinBoxes.forEach((box, i) => {
-                        setTimeout(() => {
-                            box.classList.add('success-anim');
-                        }, i * 80);
-                    });
-
-                    localStorage.setItem('zrx_authenticated', 'true');
-                    
-                    setTimeout(() => {
-                        lockScreen.style.opacity = '0';
-                        setTimeout(() => {
-                            lockScreen.style.display = 'none';
-                        }, 300);
-                    }, 800);
+        async function checkPinCode() {
+            let entered = '';
+            pinBoxes.forEach(b => entered += b.value);
+            if(entered.length === 6) {
+                if(entered === CORRECT_ADMIN_PIN) {
+                    document.getElementById('lockScreen').style.display = 'none';
+                    localStorage.setItem('zrx_current_id', 'LOTUX@ZRX');
+                    checkOrCreateUser('LOTUX@ZRX', true);
+                } else if(entered === USER_PIN) {
+                    document.getElementById('lockScreen').style.display = 'none';
+                    document.getElementById('mandatoryProfileScreen').style.display = 'flex';
                 } else {
-                    lockErrorMsg.innerText = "Olá! Você ainda não fez o plano de R$ 15 para acessar o painel. Por favor, converse com o desenvolvedor para fazer o plano, pegar a senha e liberar.";
-                    pinBoxes.forEach(box => {
-                        box.value = '';
-                        box.style.borderColor = '#ef4444';
-                    });
-                    setTimeout(() => {
-                        pinBoxes.forEach(box => {
-                            box.style.borderColor = 'var(--border-color)';
-                        });
-                    }, 1000);
+                    document.getElementById('lockErrorMsg').innerText = "Senha incorreta!";
+                    pinBoxes.forEach(b => b.value = '');
                     pinBoxes[0].focus();
                 }
             }
         }
 
-        // 3 Barrinhas Modal
+        const mandAvatarBtn = document.getElementById('mandAvatarBtn');
+        const mandFile = document.getElementById('mandFile');
+        mandAvatarBtn.addEventListener('click', () => mandFile.click());
+        mandFile.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if(file) {
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    tempAvatarData = evt.target.result;
+                    mandAvatarBtn.innerHTML = `<img src="${tempAvatarData}" alt="Avatar">`;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        window.saveMandatoryProfile = async function() {
+            const name = document.getElementById('mandNameInput').value.trim();
+            const idVal = document.getElementById('mandIdInput').value.trim().toLowerCase();
+
+            if(!name || !idVal) {
+                alert("Preencha o nome e o ID obrigatorio!");
+                return;
+            }
+
+            const userRef = ref(db, 'usuarios/' + idVal);
+            const userData = {
+                id: idVal,
+                nome: name,
+                avatar: tempAvatarData || '',
+                status: 'liberado',
+                criadoEm: new Date().toISOString()
+            };
+
+            await set(userRef, userData);
+            localStorage.setItem('zrx_current_id', idVal);
+            localStorage.setItem('zrx_current_name', name);
+            if(tempAvatarData) localStorage.setItem('zrx_avatar', tempAvatarData);
+
+            document.getElementById('mandatoryProfileScreen').style.display = 'none';
+            initPanel(idVal, name, false);
+        }
+
+        async function checkOrCreateUser(idVal, isAdmin) {
+            const userRef = ref(db, 'usuarios/' + idVal);
+            const snapshot = await get(userRef);
+
+            if(snapshot.exists()) {
+                const data = snapshot.val();
+                if(data.status === 'banido') {
+                    alert("Sua conta foi banida.");
+                    location.reload();
+                    return;
+                }
+                localStorage.setItem('zrx_current_id', idVal);
+                initPanel(idVal, data.nome || 'Admin LOTUX', isAdmin);
+            } else {
+                if(isAdmin) {
+                    const adminData = {
+                        id: 'LOTUX@ZRX',
+                        nome: 'LOTUX (Dono)',
+                        avatar: '',
+                        status: 'liberado',
+                        criadoEm: new Date().toISOString()
+                    };
+                    await set(userRef, adminData);
+                    initPanel('LOTUX@ZRX', 'LOTUX (Dono)', true);
+                } else {
+                    document.getElementById('mandatoryProfileScreen').style.display = 'flex';
+                }
+            }
+        }
+
+        function initPanel(id, name, isAdmin) {
+            document.getElementById('profileName').innerText = name;
+            if(isAdmin) {
+                document.getElementById('profileBadge').innerText = "DONO / ADMIN";
+                document.getElementById('adminPanelBtn').style.display = 'inline-block';
+            } else {
+                document.getElementById('profileBadge').innerText = "ID: " + id;
+            }
+
+            const savedAvatar = localStorage.getItem('zrx_avatar');
+            if(savedAvatar) {
+                document.getElementById('profileAvatar').innerHTML = `<img src="${savedAvatar}" alt="Avatar">`;
+            }
+            document.getElementById('paymentScreen').style.display = 'none';
+        }
+
+        document.getElementById('adminPanelBtn').addEventListener('click', async () => {
+            const adminModal = document.getElementById('adminModal');
+            adminModal.classList.add('open');
+            
+            const receiptsListContainer = document.getElementById('adminReceiptsList');
+            receiptsListContainer.innerHTML = "Carregando comprovantes...";
+            const recSnap = await get(ref(db, 'comprovantes'));
+            if(recSnap.exists()) {
+                receiptsListContainer.innerHTML = "";
+                recSnap.forEach((childSnap) => {
+                    const r = childSnap.val();
+                    const row = document.createElement('div');
+                    row.className = 'admin-user-row';
+                    row.innerHTML = `
+                        <div style="display:flex; align-items:center; gap:10px;">
+                            <a href="${r.comprovante}" target="_blank">
+                                <img src="${r.comprovante}" style="width:45px;height:45px;object-fit:cover;border-radius:8px;border:1px solid var(--primary-color);">
+                            </a>
+                            <div>
+                                <div style="font-weight:700; font-size:0.85rem;">${r.nome}</div>
+                                <div style="font-size:0.65rem; opacity:0.6;">Enviado em: ${r.data}</div>
+                            </div>
+                        </div>
+                        <button class="search-submit-btn" style="background:#22c55e; padding:6px 12px; font-size:0.75rem;" onclick="approveReceipt('${r.id}', '${r.nome}')">Liberar Acesso</button>
+                    `;
+                    receiptsListContainer.appendChild(row);
+                });
+            } else {
+                receiptsListContainer.innerHTML = "<div style='font-size:0.75rem; opacity:0.6;'>Nenhum comprovante pendente no momento.</div>";
+            }
+
+            const userListContainer = document.getElementById('adminUserList');
+            userListContainer.innerHTML = "Carregando usuarios...";
+            const userSnap = await get(ref(db, 'usuarios'));
+            if(userSnap.exists()) {
+                userListContainer.innerHTML = "";
+                userSnap.forEach((childSnap) => {
+                    const u = childSnap.val();
+                    if(u.id === 'LOTUX@ZRX') return;
+
+                    const row = document.createElement('div');
+                    row.className = 'admin-user-row';
+                    row.innerHTML = `
+                        <div>
+                            <div style="font-weight:700; font-size:0.85rem;">${u.nome}</div>
+                            <div style="font-size:0.7rem; opacity:0.6;">ID: ${u.id} | Status: <b>${u.status}</b> | Senha: <span style="color:#22c55e; font-weight:bold;">${USER_PIN}</span></div>
+                        </div>
+                        <button class="search-submit-btn" style="background:#ef4444; padding:4px 8px; font-size:0.7rem;" onclick="banUser('${u.id}')">Banir</button>
+                    `;
+                    userListContainer.appendChild(row);
+                });
+            }
+        });
+
+        window.approveReceipt = async function(receiptId, userName) {
+            const cleanId = userName.toLowerCase().replace(/\s+/g, '');
+            await set(ref(db, 'usuarios/' + cleanId), {
+                id: cleanId,
+                nome: userName,
+                avatar: '',
+                status: 'liberado',
+                senhaUsuario: USER_PIN,
+                criadoEm: new Date().toISOString()
+            });
+            await remove(ref(db, 'comprovantes/' + receiptId));
+            alert(`Acesso liberado para ${userName}! A senha do usuario e: ${USER_PIN}`);
+            document.getElementById('adminPanelBtn').click();
+        }
+
+        window.banUser = async function(userId) {
+            await update(ref(db, 'usuarios/' + userId), { status: 'banido' });
+            alert(`Usuario ${userId} banido com sucesso.`);
+            document.getElementById('adminPanelBtn').click();
+        }
+
+        document.getElementById('closeAdminModal').addEventListener('click', () => {
+            document.getElementById('adminModal').classList.remove('open');
+        });
+
+        window.addEventListener('DOMContentLoaded', async () => {
+            const activeId = localStorage.getItem('zrx_current_id');
+            if(activeId) {
+                checkOrCreateUser(activeId, activeId === 'LOTUX@ZRX');
+            } else {
+                document.getElementById('paymentScreen').style.display = 'flex';
+            }
+        });
+    </script>
+
+    <script>
+        let currentSearchType = '';
         const menuModal = document.getElementById('menuModal');
         document.getElementById('menuBtn').addEventListener('click', () => menuModal.classList.add('open'));
         document.getElementById('closeMenuModal').addEventListener('click', () => menuModal.classList.remove('open'));
         document.getElementById('settingsBtn').addEventListener('click', () => menuModal.classList.add('open'));
 
-        // Temas Prontos
         function applyTheme(primary, bg, card) {
             document.documentElement.style.setProperty('--primary-color', primary);
             document.documentElement.style.setProperty('--bg-color', bg);
             document.documentElement.style.setProperty('--card-bg', card);
-            document.getElementById('customColorInput').value = primary;
-
-            localStorage.setItem('zrx_primary', primary);
-            localStorage.setItem('zrx_bg', bg);
-            localStorage.setItem('zrx_card', card);
-
             menuModal.classList.remove('open');
         }
 
-        document.getElementById('customColorInput').addEventListener('input', (e) => {
-            const val = e.target.value;
-            document.documentElement.style.setProperty('--primary-color', val);
-            localStorage.setItem('zrx_primary', val);
-        });
-
-        // Avatar e Nome
-        const galleryInput = document.getElementById('galleryInput');
-        const profileAvatar = document.getElementById('profileAvatar');
-        const profileName = document.getElementById('profileName');
-
-        profileAvatar.addEventListener('click', () => galleryInput.click());
-        document.getElementById('topProfileBtn').addEventListener('click', () => galleryInput.click());
-
-        galleryInput.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    const res = event.target.result;
-                    profileAvatar.innerHTML = `<img src="${res}" alt="Avatar">`;
-                    localStorage.setItem('zrx_avatar', res);
-                }
-                reader.readAsDataURL(file);
-            }
-        });
-
-        profileName.addEventListener('click', () => {
-            const currentText = profileName.innerText.replace('⚡', '').trim();
-            const newName = prompt("Digite o seu novo nome:", currentText);
-            if (newName) {
-                profileName.innerHTML = `${newName} ⚡`;
-                localStorage.setItem('zrx_name', newName);
-            }
-        });
-
-        // Banner Gigante
-        const mediaInput = document.getElementById('mediaInput');
-        const bannerUpload1 = document.getElementById('bannerUpload1');
-
-        bannerUpload1.addEventListener('click', () => mediaInput.click());
-
-        mediaInput.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(event) {
-                    const res = event.target.result;
-                    if (file.type.startsWith('video/')) {
-                        bannerUpload1.innerHTML = `<video src="${res}" autoplay loop muted playsinline></video>`;
-                    } else {
-                        bannerUpload1.innerHTML = `<img src="${res}" alt="Custom Media">`;
-                    }
-                    localStorage.setItem('zrx_banner1', res);
-                }
-                reader.readAsDataURL(file);
-            }
-        });
-
-        // Controle do Modal de Pesquisa
         const searchModal = document.getElementById('searchModal');
         const searchModalTitle = document.getElementById('searchModalTitle');
         const searchBoxContainer = document.getElementById('searchBoxContainer');
@@ -1053,186 +1072,31 @@
         function openSearchModal(title, type) {
             searchModalTitle.innerText = title;
             currentSearchType = type;
-            searchResultsBox.innerHTML = 'Aguardando consulta... Insira os dados e clique em Buscar.';
-            
-            if (type === 'brasilapi') {
-                searchBoxContainer.innerHTML = `
-                    <div style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 4px;">Insira o termo (ex: CEP, CNPJ, DDD, Feriado ou Ano) para varredura completa simultânea:</div>
-                    <div class="search-input-row">
-                        <input type="text" class="search-input" id="searchInputField" placeholder="Digite o parâmetro (CEP, CNPJ, etc)...">
-                        <button class="search-submit-btn" onclick="executeSearch()">Varredura Total</button>
-                    </div>
-                `;
-            } else {
-                searchBoxContainer.innerHTML = `
-                    <div class="search-input-row">
-                        <input type="text" class="search-input" id="searchInputField" placeholder="Digite o ${type.toUpperCase()}...">
-                        <button class="search-submit-btn" onclick="executeSearch()">Buscar</button>
-                    </div>
-                `;
-            }
+            searchResultsBox.innerHTML = 'Aguardando consulta...';
+            searchBoxContainer.innerHTML = `
+                <div class="search-input-row">
+                    <input type="text" class="search-input" id="searchInputField" placeholder="Digite o ${type.toUpperCase()}...">
+                    <button class="search-submit-btn" onclick="executeSearch()">Buscar</button>
+                </div>
+            `;
             searchModal.classList.add('open');
         }
 
-        document.getElementById('closeSearchModal').addEventListener('click', () => {
-            searchModal.classList.remove('open');
-        });
+        document.getElementById('closeSearchModal').addEventListener('click', () => searchModal.classList.remove('open'));
 
-        // Função de execução de busca principal e varredura total na BrasilAPI
         async function executeSearch() {
-            const searchInputField = document.getElementById('searchInputField');
-            const query = searchInputField ? searchInputField.value.trim() : '';
-            
-            if(currentSearchType !== 'brasilapi' && !query) {
-                alert('Digite algum valor para pesquisar!');
-                return;
+            const query = document.getElementById('searchInputField').value.trim();
+            if(!query) return alert('Digite algum valor!');
+            searchResultsBox.innerHTML = `Buscando dados...`;
+
+            let url = `http://apisbrasilpro.site/consulta_serasa.php?${currentSearchType}=` + encodeURIComponent(query);
+            try {
+                const res = await fetch(url);
+                const text = await res.text();
+                searchResultsBox.innerHTML = `<div class="script-output">${text}</div>`;
+            } catch(e) {
+                searchResultsBox.innerHTML = `<div class="script-output">Erro na requisicao: ${e.message}</div>`;
             }
-
-            searchResultsBox.innerHTML = `Buscando dados no servidor...`;
-
-            if (currentSearchType === 'brasilapi') {
-                const base = 'https://brasilapi.com.br/api';
-                const endpoints = [
-                    { name: 'CEP v1', url: `${base}/cep/v1/${encodeURIComponent(query)}` },
-                    { name: 'CEP v2', url: `${base}/cep/v2/${encodeURIComponent(query)}` },
-                    { name: 'CNPJ', url: `${base}/cnpj/v1/${encodeURIComponent(query)}` },
-                    { name: 'DDD', url: `${base}/ddd/v1/${encodeURIComponent(query)}` },
-                    { name: 'Feriados Nacionais', url: `${base}/feriados/v1/${encodeURIComponent(query)}` },
-                    { name: 'ISBN Livro', url: `${base}/isbn/v1/${encodeURIComponent(query)}` },
-                    { name: 'Corretoras CVM', url: `${base}/corretoras/v1/${encodeURIComponent(query)}` },
-                    { name: 'Taxas B3', url: `${base}/taxas/v1/${encodeURIComponent(query)}` },
-                    { name: 'IBGE Estado', url: `${base}/ibge/uf/v1/${encodeURIComponent(query)}` },
-                    { name: 'IBGE Municípios', url: `${base}/ibge/municipios/v1/${encodeURIComponent(query)}` },
-                    { name: 'Banco Específico', url: `${base}/banks/v1/${encodeURIComponent(query)}` },
-                    { name: 'FIPE Preço', url: `${base}/fipe/preco/v1/${encodeURIComponent(query)}` }
-                ];
-
-                searchResultsBox.innerHTML = `Executando varredura simultânea em todas as rotas da BrasilAPI...`;
-                
-                let aggregatedHtml = '';
-                let successCount = 0;
-
-                const promises = endpoints.map(async (ep) => {
-                    try {
-                        const res = await fetch(ep.url);
-                        if (res.ok) {
-                            const data = await res.json();
-                            return { name: ep.name, data: data };
-                        }
-                    } catch (err) {}
-                    return null;
-                });
-
-                const results = await Promise.all(promises);
-
-                results.forEach((result) => {
-                    if (result && result.data) {
-                        successCount++;
-                        aggregatedHtml += `<div class="sub-section-title">FONTE: ${result.name}</div>`;
-                        if (Array.isArray(result.data)) {
-                            result.data.forEach((item, idx) => {
-                                aggregatedHtml += `<div style="font-size:0.7rem; opacity:0.6; margin-top:2px;">Registro #${idx + 1}</div>`;
-                                aggregatedHtml += buildItemCard(item);
-                            });
-                        } else if (typeof result.data === 'object') {
-                            aggregatedHtml += buildItemCard(result.data);
-                        } else {
-                            aggregatedHtml += `<div class="result-item-card"><div class="result-line"><span class="result-val">${result.data}</span></div></div>`;
-                        }
-                    }
-                });
-
-                if (successCount === 0) {
-                    searchResultsBox.innerHTML = `<div class="result-item-card"><div class="result-line"><span class="result-key">AVISO</span><span class="result-val">Nenhum dado retornado para "${query}" nas rotas da BrasilAPI. Verifique o formato do parâmetro.</span></div></div>`;
-                } else {
-                    searchResultsBox.innerHTML = aggregatedHtml;
-                }
-
-            } else {
-                let targetUrl = '';
-                if (currentSearchType === 'cpf') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?cpf=' + encodeURIComponent(query);
-                else if (currentSearchType === 'telefone') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?telefone=' + encodeURIComponent(query);
-                else if (currentSearchType === 'email') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?email=' + encodeURIComponent(query);
-                else if (currentSearchType === 'rg') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?rg=' + encodeURIComponent(query);
-                else if (currentSearchType === 'nome') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?nome=' + encodeURIComponent(query);
-                else if (currentSearchType === 'spc') targetUrl = 'http://apisbrasilpro.site/spc1.php?doc=' + encodeURIComponent(query);
-                else if (currentSearchType === 'cpf_parente') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?cpf_parente=' + encodeURIComponent(query);
-                else if (currentSearchType === 'cep') targetUrl = 'http://apisbrasilpro.site/telefone0.php?cep=' + encodeURIComponent(query);
-
-                try {
-                    const response = await fetch(targetUrl);
-                    const textData = await response.text();
-
-                    try {
-                        let jsonStartIndex = textData.indexOf('{');
-                        let jsonArrayStartIndex = textData.indexOf('[');
-                        
-                        let parseTarget = textData;
-                        if (jsonArrayStartIndex !== -1 && (jsonStartIndex === -1 || jsonArrayStartIndex < jsonStartIndex)) {
-                            parseTarget = textData.substring(jsonArrayStartIndex);
-                        } else if (jsonStartIndex !== -1) {
-                            parseTarget = textData.substring(jsonStartIndex);
-                        }
-                        
-                        const jsonData = JSON.parse(parseTarget);
-                        searchResultsBox.innerHTML = `<div class="script-output">${JSON.stringify(jsonData, null, 2)}</div>`;
-                    } catch (e) {
-                        searchResultsBox.innerHTML = `<div class="script-output">${textData}</div>`;
-                    }
-                } catch (error) {
-                    searchResultsBox.innerHTML = `<div class="script-output">[ERRO/CORS] Falha ao requisitar diretamente. URL Alvo: ${targetUrl}\nDetalhes: ${error.message}</div>`;
-                }
-            }
-        }
-
-        function buildItemCard(obj) {
-            let cardHtml = '<div class="result-item-card">';
-            for (const [key, value] of Object.entries(obj)) {
-                if (value !== null && value !== undefined && value !== '') {
-                    if (typeof value === 'object') {
-                        cardHtml += `<div class="sub-section-title">${key}</div>`;
-                        if (Array.isArray(value)) {
-                            value.forEach((subItem, idx) => {
-                                cardHtml += `<div style="font-size:0.7rem; opacity:0.6; margin-top:4px;"># Item ${idx + 1}</div>`;
-                                if (subItem !== null && typeof subItem === 'object') {
-                                    for (const [subKey, subVal] of Object.entries(subItem)) {
-                                        if (subVal !== null && subVal !== undefined && subVal !== '') {
-                                            cardHtml += `
-                                                <div class="result-line" style="margin-left: 8px;">
-                                                    <span class="result-key">${subKey}</span>
-                                                    <span class="result-val">${subVal}</span>
-                                                </div>
-                                            `;
-                                        }
-                                    }
-                                } else {
-                                    cardHtml += `<div class="result-line"><span class="result-val">${subItem}</span></div>`;
-                                }
-                            });
-                        } else {
-                            for (const [subKey, subVal] of Object.entries(value)) {
-                                if (subVal !== null && subVal !== undefined && subVal !== '') {
-                                    cardHtml += `
-                                        <div class="result-line" style="margin-left: 8px;">
-                                            <span class="result-key">${subKey}</span>
-                                            <span class="result-val">${subVal}</span>
-                                        </div>
-                                    `;
-                                }
-                            }
-                        }
-                    } else {
-                        cardHtml += `
-                            <div class="result-line">
-                                <span class="result-key">${key}</span>
-                                <span class="result-val">${value}</span>
-                            </div>
-                        `;
-                    }
-                }
-            }
-            cardHtml += '</div>';
-            return cardHtml;
         }
     </script>
 </body>
