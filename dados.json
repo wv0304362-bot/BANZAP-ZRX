@@ -1005,7 +1005,7 @@
       "codigo_poder_aquisitivo": "1",
       "poder_aquisitivo": "MUITO BAIXO",
       "renda_poder_aquisitivo": "R$ 375,49218210410163",
-      "faixa_poder_aquisitivo": "De R$ 112 at? R$ 630",
+      "faixa_poder_aquisitivo": "De R$ 112 até R$ 630",
       "score_csba": "150",
       "faixa_de_risco_csba": "ALTISSIMO"
     },
@@ -1160,7 +1160,7 @@
       "codigo_poder_aquisitivo": "1",
       "poder_aquisitivo": "MUITO BAIXO",
       "renda_poder_aquisitivo": "R$ 406,86089907203484",
-      "faixa_poder_aquisitivo": "De R$ 112 at? R$ 630",
+      "faixa_poder_aquisitivo": "De R$ 112 até R$ 630",
       "score_csba": "220",
       "faixa_de_risco_csba": "ALTO"
     },
@@ -1399,6 +1399,262 @@
         "cpf": "22730206191",
         "parentesco": "CUNHADO"
       }
+    ]
+  },
+  {
+    "cpf": "71180449460",
+    "nome": "ELLEN LAVINIA DA SILVA RODRIGUES",
+    "telefone": "(84)988160682",
+    "dados_pessoais": {
+      "nome": "ELLEN LAVINIA DA SILVA RODRIGUES",
+      "cpf": "71180449460",
+      "cns_definitivo": "705602420471911",
+      "cns_provisorio": "SEM INFORMAÇÃO",
+      "raca_cor": "PARDO(A)",
+      "nacionalidade": "SEM INFORMAÇÃO",
+      "desaparecido": false,
+      "naturalidade": "SEM INFORMAÇÃO"
+    },
+    "biometria": {
+      "cor_olhos": "Indisponível",
+      "cor_cabelo": "Indisponível",
+      "altura": "Indisponível"
+    },
+    "filiacao": {
+      "mae": "EDNA RODRIGUES DA SILVA",
+      "pai": "LEOMARQUES RODRIGUES DA SILVA"
+    },
+    "informacoes_adicionais": {
+      "nome_social": "SEM INFORMAÇÃO",
+      "sexo": "F",
+      "nascimento": "2011-07-22",
+      "signo": "CÂNCER",
+      "tipo_sanguineo": "SEM INFORMAÇÃO"
+    },
+    "renda_e_status": {
+      "escolaridade": "SEM INFORMAÇÃO",
+      "empresario": "Não",
+      "aposentado": "Não",
+      "servidor_publico": "Não",
+      "renda_atual": "225",
+      "score_spc": "SEM INFORMAÇÃO"
+    },
+    "enderecos": [
+      {
+        "logradouro": "ERONILDES SOARES BENTO",
+        "numero": "89",
+        "bairro": "CENTRO",
+        "complemento": "CASA",
+        "cidade": "240620/RN",
+        "cep": "59227000"
+      }
+    ],
+    "telefones": [
+      { "telefone": "(84)988160682", "tipo": "MÓVEL" }
+    ],
+    "parentes": [
+      { "nome": "LEOMARQUES RODRIGUES DA SILVA", "cpf": "01731814496", "parentesco": "PAI" },
+      { "nome": "CECILIA RODRIGUES DE LIMA", "cpf": "14570986447", "parentesco": "IRMÃ" },
+      { "nome": "MARIA DE DEUS FERNANDES DE LIMA", "cpf": "05509754460", "parentesco": "MADRASTA" }
+    ],
+    "vacinas": [
+      {
+        "vacina": "COVID-19 PEDIÁTRICA - PFIZER COMIRNATY",
+        "dose": "2ª DOSE",
+        "lote": "FN5988",
+        "fabricante": "PENDENTE IDENTIFICAÇÃO",
+        "estabelecimento": "UBS II",
+        "data_aplicacao": "2022-03-24"
+      },
+      {
+        "vacina": "COVID-19 PEDIÁTRICA - PFIZER COMIRNATY",
+        "dose": "1ª DOSE",
+        "lote": "FP1176",
+        "fabricante": "PENDENTE IDENTIFICAÇÃO",
+        "estabelecimento": "UBS II",
+        "data_aplicacao": "2022-01-25"
+      }
+    ]
+  },
+  {
+    "cpf": "91724015400",
+    "nome": "NOEL PEREIRA DOS SANTOS",
+    "telefone": "(84)988432533",
+    "dados_pessoais": {
+      "nome": "NOEL PEREIRA DOS SANTOS",
+      "cpf": "91724015400",
+      "cns_definitivo": "706408116836080",
+      "cns_provisorio": "126611756460005",
+      "raca_cor": "PARDO(A)",
+      "nacionalidade": "SEM INFORMAÇÃO",
+      "desaparecido": false,
+      "naturalidade": "SEM INFORMAÇÃO"
+    },
+    "biometria": {
+      "cor_olhos": "Indisponível",
+      "cor_cabelo": "Indisponível",
+      "altura": "Indisponível"
+    },
+    "filiacao": {
+      "mae": "MARIA DO VALE DOS SANTOS",
+      "pai": "FRACICO PEREIRA DOS SANTOS"
+    },
+    "informacoes_adicionais": {
+      "nome_social": "SEM INFORMAÇÃO",
+      "sexo": "M",
+      "nascimento": "1968-01-03",
+      "signo": "CAPRICÓRNIO",
+      "tipo_sanguineo": "SEM INFORMAÇÃO"
+    },
+    "renda_e_status": {
+      "escolaridade": "SEM INFORMAÇÃO",
+      "empresario": "Não",
+      "aposentado": "Não",
+      "servidor_publico": "Não",
+      "renda_atual": "1200",
+      "score_spc": "588"
+    },
+    "registro_geral": {
+      "numero_rg": "1375185",
+      "orgao_emissor": "SSP - SSP - SECRETARIA DE SEGURANCA PUBLICA",
+      "estado_emissao": "RN"
+    },
+    "veiculos": [
+      {
+        "marca_modelo": "CELTA",
+        "placa": "MYF6I59",
+        "chassis": "9BGRD08Z01G176669",
+        "renavam": "00765989948",
+        "ano_fabricacao": "2001",
+        "ano_modelo": "2001"
+      },
+      {
+        "marca_modelo": "HONDA/CG 125 TITAN",
+        "placa": "MXI4G58",
+        "chassis": "9C2JC2500YR018227",
+        "renavam": "00722340095",
+        "ano_fabricacao": "1999",
+        "ano_modelo": "2000"
+      }
+    ],
+    "enderecos": [
+      {
+        "logradouro": "LGA DO CHICO",
+        "numero": "SEM INFORMAÇÃO",
+        "bairro": "SEM INFORMAÇÃO",
+        "cidade": "LAGOA D ANTA/RN",
+        "cep": "SEM INFORMAÇÃO"
+      },
+      {
+        "logradouro": "LAGOA DO CHICO",
+        "numero": "S/N",
+        "bairro": "ZONA RURAL",
+        "cidade": "240620/RN",
+        "cep": "59227000"
+      }
+    ],
+    "telefones": [
+      { "telefone": "(84)988432533", "tipo": "MÓVEL" },
+      { "telefone": "(84)988588921", "tipo": "MÓVEL" },
+      { "telefone": "(84)987913987", "tipo": "MÓVEL" },
+      { "telefone": "(84)32870121", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(84)32123139", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(84)32870142", "tipo": "FIXO" }
+    ],
+    "vacinas": [
+      {
+        "vacina": "COVID-19 ASTRAZENECA/FIOCRUZ - COVISHIELD",
+        "dose": "1ª DOSE",
+        "data_aplicacao": "2021-06-15"
+      },
+      {
+        "vacina": "COVID-19 ASTRAZENECA/FIOCRUZ - COVISHIELD",
+        "dose": "2ª DOSE",
+        "data_aplicacao": "2021-09-14"
+      },
+      {
+        "vacina": "COVID-19 PFIZER - COMIRNATY",
+        "dose": "REFORÇO",
+        "data_aplicacao": "2022-01-21"
+      }
+    ]
+  },
+  {
+    "cpf": "07819227397",
+    "nome": "LUANY DA SILVA ARAUJO",
+    "telefone": "(85)981431118",
+    "dados_pessoais": {
+      "nome": "LUANY DA SILVA ARAUJO",
+      "cpf": "07819227397",
+      "cns_definitivo": "700502388614651",
+      "cns_provisorio": "898004835121521",
+      "raca_cor": "BRANCO(A)",
+      "nacionalidade": "SEM INFORMAÇÃO",
+      "desaparecido": false,
+      "naturalidade": "SEM INFORMAÇÃO"
+    },
+    "biometria": {
+      "cor_olhos": "Indisponível",
+      "cor_cabelo": "Indisponível",
+      "altura": "Indisponível"
+    },
+    "filiacao": {
+      "mae": "LUZANIRA MENDES DA SILVA ARAUJO",
+      "pai": "MANOEL NICODEMOS DE ARAUJO"
+    },
+    "informacoes_adicionais": {
+      "nome_social": "SEM INFORMAÇÃO",
+      "sexo": "F",
+      "nascimento": "1999-04-23",
+      "signo": "TOURO",
+      "tipo_sanguineo": "SEM INFORMAÇÃO"
+    },
+    "renda_e_status": {
+      "escolaridade": "SEM INFORMAÇÃO",
+      "empresario": "Não",
+      "aposentado": "Não",
+      "servidor_publico": "Não",
+      "renda_atual": "550",
+      "score_spc": "SEM INFORMAÇÃO"
+    },
+    "enderecos": [
+      {
+        "logradouro": "SAMUEL BEDE",
+        "numero": "2556",
+        "bairro": "CENTRO",
+        "cidade": "230350/CE",
+        "cep": "62850000"
+      },
+      {
+        "logradouro": "SAMUEL BEDE",
+        "numero": "SEM INFORMAÇÃO",
+        "bairro": "CENTRO",
+        "cidade": "CASCAVEL/CE",
+        "cep": "62850000"
+      },
+      {
+        "logradouro": "R SAMUEL BEDE",
+        "numero": "2559",
+        "bairro": "SEM INFORMAÇÃO",
+        "cidade": "CASCAVEL/CE",
+        "cep": "62850000"
+      }
+    ],
+    "telefones": [
+      { "telefone": "(85)981431118", "tipo": "MÓVEL" },
+      { "telefone": "(85)33341069", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(85)989092726", "tipo": "MÓVEL" },
+      { "telefone": "(85)985510845", "tipo": "MÓVEL" },
+      { "telefone": "(85)989747250", "tipo": "MÓVEL" },
+      { "telefone": "(85)988445246", "tipo": "MÓVEL" },
+      { "telefone": "(85)991742901", "tipo": "MÓVEL" },
+      { "telefone": "(85)985902194", "tipo": "MÓVEL" },
+      { "telefone": "(85)992453826", "tipo": "MÓVEL" },
+      { "telefone": "(85)992121191", "tipo": "SEM INFORMAÇÃO" }
+    ],
+    "parentes": [
+      { "nome": "MANOEL NICODEMOS DE ARAUJO", "cpf": "03444996268", "parentesco": "PAI" },
+      { "nome": "LUZIANE DA SILVA ARAUJO", "cpf": "94267294372", "parentesco": "IRMÃ" }
     ]
   }
 ]
