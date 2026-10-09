@@ -1230,3 +1230,179 @@
       "placa": "PCL3519"
     }
   }
+[
+  {
+    "cpf": "12711829200",
+    "nome": "RUTH DAVI DE GOIS",
+    "dados_pessoais": {
+      "cpf": "12711829200",
+      "nome": "RUTH DAVI DE GOIS",
+      "cns_definitivo": "703005846247074",
+      "cns_provisorio": "201562582040009",
+      "raca_cor": "BRANCO(A)",
+      "nacionalidade": "SEM INFORMAÇÃO",
+      "desaparecido": false,
+      "naturalidade": "SEM INFORMAÇÃO",
+      "sexo": "F",
+      "nascimento": "1959-02-22",
+      "signo": "PEIXES",
+      "estado_civil": "DIVORCIADO(A)"
+    },
+    "filiacao": {
+      "mae": "MARIA ZILDA DAVI",
+      "pai": "RAIMUNDO NONATO GOIS"
+    },
+    "informacoes_profissionais_e_status": {
+      "escolaridade": "ENSINO SUPERIOR",
+      "empresario": "Não",
+      "aposentado": "Não",
+      "servidor_publico": "Sim",
+      "renda_atual": 12550,
+      "score_spc": 575,
+      "profissao": "ENFERMEIRO"
+    },
+    "situacao_cadastral": {
+      "descricao": "REGULAR",
+      "data_situacao": "2023-09-26 21:53:39",
+      "obito": "Não"
+    },
+    "veiculo": {
+      "marca_modelo": "FIAT/TORO FREEDOM AT6",
+      "placa": "QVB1B89",
+      "chassis": "98822611BLKC82770",
+      "renavam": "01211542537",
+      "ano_fabricacao": 2019,
+      "ano_modelo": 2020
+    },
+    "telefones": [
+      "(91)996267615",
+      "(91)999815106",
+      "(91)987259885",
+      "(91)991672037",
+      "(91)985150440",
+      "(91)988525107",
+      "(91)988525106",
+      "(21)21050000",
+      "(91)984089949",
+      "(91)984538931",
+      "(91)984868141"
+    ],
+    "emails": [
+      {
+        "email": "prof.ruthdavi@hotmail.com",
+        "score": "OTIMO",
+        "pessoal": true
+      },
+      {
+        "email": "ruthdavi@ufpa.br",
+        "score": "BOM",
+        "pessoal": true
+      }
+    ]
+  },
+  {
+    "cpf": "18454402268",
+    "nome": "RENO DAVI DE GOIS",
+    "dados_pessoais": {
+      "cpf": "18454402268",
+      "nome": "RENO DAVI DE GOIS",
+      "cns_definitivo": "704604158868825",
+      "raca_cor": "SEM INFORMAÇÃO",
+      "nacionalidade": "SEM INFORMAÇÃO",
+      "desaparecido": false,
+      "naturalidade": "SEM INFORMAÇÃO",
+      "sexo": "M",
+      "nascimento": "1963-09-30",
+      "signo": "LIBRA",
+      "estado_civil": "CASADO(A)"
+    },
+    "filiacao": {
+      "mae": "MARIA ZILDA DAVI DE GOIS",
+      "pai": "SEM INFORMAÇÃO"
+    },
+    "informacoes_profissionais_e_status": {
+      "escolaridade": "ENSINO SUPERIOR",
+      "empresario": "Não",
+      "aposentado": "Não",
+      "servidor_publico": "Não",
+      "renda_atual": 3700,
+      "score_spc": 668,
+      "profissao": "IMEDIATO DA MARINHA MERCANTE"
+    },
+    "situacao_cadastral": {
+      "descricao": "REGULAR",
+      "data_situacao": "2023-07-09 13:05:57",
+      "obito": "Não"
+    },
+    "telefones": [
+      "(85)24932120",
+      "(85)32344276",
+      "(85)986443276",
+      "(85)986443213",
+      "(85)999973479",
+      "(85)32421980",
+      "(85)32493212",
+      "(85)32863248",
+      "(85)992954574"
+    ],
+    "emails": [
+      {
+        "email": "reno_davi@hotmail.com",
+        "score": "OTIMO",
+        "pessoal": true
+      },
+      {
+        "email": "renogois@ig.com.br",
+        "score": "SEM INFORMAÇÃO",
+        "pessoal": true
+      },
+      {
+        "email": "renogois@terra.com.br",
+        "score": "SEM INFORMAÇÃO",
+        "pessoal": true
+      }
+    ],
+    "parentes": [
+      {
+        "nome": "MARIA ZILDA DAVI DE GOIS",
+        "cpf": "34338918187",
+        "parentesco": "MÃE"
+      },
+      {
+        "nome": "ROSY DAVI DE GOIS",
+        "cpf": "17009570310",
+        "parentesco": "IRMÃ"
+      },
+      {
+        "nome": "AWDREY PAYRITZ DE GOIS",
+        "cpf": "03870013109",
+        "parentesco": "SOBRINHA"
+      },
+      {
+        "nome": "RENY DAVI DE GOIS BOURGUIGNON",
+        "cpf": "15946738291",
+        "parentesco": "IRMÃ"
+      },
+      {
+        "nome": "RAFAEL DE GOIS BOURGUIGNON",
+        "cpf": "01003753167",
+        "parentesco": "SOBRINHO"
+      },
+      {
+        "nome": "ANA CAROLINA DE GOIS BOURGUIGNON",
+        "cpf": "01717590101",
+        "parentesco": "SOBRINHA"
+      },
+      {
+        "nome": "RODRIGO DE GOIS BOURGUIGNON",
+        "cpf": "02357468190",
+        "parentesco": "SOBRINHO"
+      },
+      {
+        "nome": "ROGERIO BOURGUIGNON DOS SANTOS",
+        "cpf": "22730206191",
+        "parentesco": "CUNHADO"
+      }
+    ]
+  }
+]
