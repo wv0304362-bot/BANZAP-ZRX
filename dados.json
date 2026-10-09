@@ -65,8 +65,7 @@
       { "telefone": "(84)987615925", "tipo": "MÓVEL" },
       { "telefone": "(84)988140220", "tipo": "MÓVEL" }
     ]
-  }
-]
+  },
   {
     "cpf": "05509754460",
     "nome": "MARIA DE DEUS FERNANDES DE LIMA",
@@ -138,7 +137,7 @@
     "emails": [
       { "email": "ceciliamdfl37@gmail.com", "pessoal": true, "blacklist": false }
     ]
-  }
+  },
   {
     "cpf": "83706984504",
     "nome": "CLEBSON DO CARMO",
@@ -280,8 +279,7 @@
       "cbo_descricao": "FRENTISTA",
       "data_admissao": "2015-04-01 00:00:00"
     }
-  }
-[
+  },
   {
     "cpf": "07012376430",
     "nome": "EDJANE ALVES DA SILVA",
@@ -981,8 +979,7 @@
     "sexo": "F - FEMININO",
     "data_nascimento": "05/10/1999",
     "mae": "SEM INFORMAÇÃO"
-  }
-]
+  },
   {
     "cpf": "09045913445",
     "nome": "FABIANA DO CARMO SOARES",
@@ -1137,7 +1134,7 @@
         "uf": "PE"
       }
     ]
-  }
+  },
   {
     "cpf": "09439543477",
     "nome": "KATIA DO CARMO",
@@ -1229,8 +1226,7 @@
     "veiculo_associado": {
       "placa": "PCL3519"
     }
-  }
-[
+  },
   {
     "cpf": "12711829200",
     "nome": "RUTH DAVI DE GOIS",
