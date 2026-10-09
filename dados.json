@@ -1138,3 +1138,95 @@
       }
     ]
   }
+  {
+    "cpf": "09439543477",
+    "nome": "KATIA DO CARMO",
+    "telefone": "8134318630",
+    "dados_pessoais": {
+      "cpf": "09439543477",
+      "nome": "KATIA DO CARMO",
+      "sexo": "F - FEMININO",
+      "data_de_nascimento": "30/07/1986",
+      "nome_da_mae": "RITA MARIA F DO CARMO",
+      "escolaridade": "Sem informação.",
+      "situacao_cadastral": "REGULAR",
+      "data_situacao": "2019-12-27 00:00:00",
+      "obito": "NÃO"
+    },
+    "profissao": {
+      "cbo": "SEM INFORMAÇÃO",
+      "descricao_cbo": "Sem descrição.",
+      "pis": "0"
+    },
+    "dados_economicos": {
+      "renda": "R$ 406,86",
+      "codigo_poder_aquisitivo": "1",
+      "poder_aquisitivo": "MUITO BAIXO",
+      "renda_poder_aquisitivo": "R$ 406,86089907203484",
+      "faixa_poder_aquisitivo": "De R$ 112 at? R$ 630",
+      "score_csba": "220",
+      "faixa_de_risco_csba": "ALTO"
+    },
+    "serasa_mosaic": {
+      "codigo_mosaic": "F19",
+      "descricao_mosaic": "Idosos independentes da classe média",
+      "classe_mosaic": "Envelhecendo no Século XXI",
+      "codigo_mosaic_novo": "C08",
+      "descricao_mosaic_novo": "Jovens protagonistas da classe média",
+      "classe_mosaic_novo": "Juventude Trabalhadora Urbana",
+      "codigo_mosaic_secundario": "D09",
+      "desc_mosaic_secundario": "Seguindo a vida na periferia"
+    },
+    "emails": [
+      {
+        "email": "clebsonedilma2017@outlook.com",
+        "prioridade": "MUITO ALTA",
+        "qualidade": "RUIM",
+        "email_pessoal": false,
+        "blacklist": false
+      },
+      {
+        "email": "cledsonedilma2017@outlook.com",
+        "prioridade": "MUITO ALTA",
+        "qualidade": "OTIMO",
+        "email_pessoal": true,
+        "blacklist": false
+      }
+    ],
+    "telefones": [
+      { "numero": "8134318630", "tipo": "TELEFONE RESIDENCIAL", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81983504090", "tipo": "TELEFONE MÓVEL", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81986738379", "tipo": "TELEFONE MÓVEL", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81986920528", "tipo": "TELEFONE MÓVEL", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "8130113280", "tipo": "TELEFONE RESIDENCIAL", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "8130110368", "tipo": "RESIDENCIAL", "operadora": "VIVO", "status": "CANCELADO" },
+      { "numero": "81999707980", "tipo": "CELULAR", "operadora": "VIVO", "status": "NO" },
+      { "numero": "8130114937", "tipo": "RESIDENCIAL", "operadora": "VIVO", "status": "INATIVO" },
+      { "numero": "81992399508", "tipo": "SEM INFORMAÇÃO", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81992399445", "tipo": "SEM INFORMAÇÃO", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "8134318769", "tipo": "SEM INFORMAÇÃO", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81983617785", "tipo": "SEM INFORMAÇÃO", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81983970635", "tipo": "CELULAR", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" }
+    ],
+    "enderecos": [
+      { "logradouro": "RUA BEIJA FLOR", "numero": "390", "complemento": "2 ETAPA", "bairro": "JD ATLANTICO", "cidade": "OLINDA", "uf": "PE", "cep": "53050160" },
+      { "logradouro": "AV DA INTEGRACAO", "numero": "1010", "complemento": "SEM INFORMAÇÃO", "bairro": "JD ATLANTICO", "cidade": "OLINDA", "uf": "PE", "cep": "53060001" },
+      { "logradouro": "RUA NOVO HORIZONTE", "numero": "101", "complemento": "ESQ C 12", "bairro": "RIO DOCE", "cidade": "OLINDA", "uf": "PE", "cep": "53150620" },
+      { "logradouro": "RUA ANTONIETA GUIMARAES DE ANDRADE", "numero": "110", "complemento": "SEM INFORMAÇÃO", "bairro": "JD ATLANTICO", "cidade": "OLINDA", "uf": "PE", "cep": "53050150" },
+      { "logradouro": "RUA NILSON SABINO PINHO", "numero": "351", "complemento": "SEM INFORMAÇÃO", "bairro": "JD ATLANTICO", "cidade": "OLINDA", "uf": "PE", "cep": "53050010" },
+      { "logradouro": "8 TRAVESSA ANTONIETA GUIMARAES DE ANDRADE", "numero": "1", "complemento": "SEM INFORMAÇÃO", "bairro": "JD ATLANTICO", "cidade": "OLINDA", "uf": "PE", "cep": "53050158" },
+      { "logradouro": "ANCHIETA GUIMARAES DE ANDRADE", "numero": "110", "complemento": "CASA", "bairro": "JARDIM ATLANTICO", "cidade": "OLINDA", "uf": "PE", "cep": "53050310" }
+    ],
+    "parentes": [
+      { "nome": "RITA MARIA F DO CARMO", "grau_de_parentesco": "MAE", "cpf": "SEM INFORMAÇÃO" }
+    ],
+    "beneficios": [
+      { "tipo": "AUXILIO EMERGENCIAL", "parcelas_recebidas": 0, "total_recebido": "R$ 0" },
+      { "tipo": "BOLSA FAMILIA", "parcelas_recebidas": 0, "total_recebido": "R$ 0" },
+      { "tipo": "BENEFICIO PRESTACAO CONTINUADA", "parcelas_recebidas": 0, "total_recebido": "R$ 0" },
+      { "tipo": "INSTITUTO NACIONAL DO SEGURO SOCIAL", "parcelas_recebidas": 0, "total_recebido": "R$ 0" }
+    ],
+    "veiculo_associado": {
+      "placa": "PCL3519"
+    }
+  }
