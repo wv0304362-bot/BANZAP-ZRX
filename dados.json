@@ -67,3 +67,75 @@
     ]
   }
 ]
+  {
+    "cpf": "05509754460",
+    "nome": "MARIA DE DEUS FERNANDES DE LIMA",
+    "telefone": "8432111088",
+    "dados_pessoais": {
+      "nome": "MARIA DE DEUS FERNANDES DE LIMA",
+      "cpf": "05509754460",
+      "cns_definitivo": "703407541863500",
+      "cns_provisorio": "898004019941817",
+      "raca_cor": "PARDO(A)",
+      "nacionalidade": "SEM INFORMAÇÃO",
+      "desaparecido": false,
+      "naturalidade": "SEM INFORMAÇÃO"
+    },
+    "biometria": {
+      "cor_olhos": "CASTANHOS ESCUROS",
+      "cor_cabelo": "CASTANHOS ESCUROS",
+      "altura": "SEM INFORMAÇÃO"
+    },
+    "filiacao": {
+      "mae": "MARIA EUNICE DA SILVA",
+      "pai": "ANTONIO FERNANDES DE LIMA"
+    },
+    "informacoes_adicionais": {
+      "nome_social": "SEM INFORMAÇÃO",
+      "sexo": "F",
+      "nascimento": "1980-09-25",
+      "signo": "LIBRA",
+      "tipo_sanguineo": "SEM INFORMAÇÃO"
+    },
+    "renda_e_status": {
+      "escolaridade": "SEM INFORMAÇÃO",
+      "empresario": "Não",
+      "aposentado": "Não",
+      "servidor_publico": "Não",
+      "renda_atual": "550",
+      "score_spc": "225"
+    },
+    "veiculos": {
+      "marca_modelo": "HONDA/POP 110I",
+      "placa": "QGP7F16",
+      "chassis": "9C2JB0100KR320822",
+      "renavam": "01201995733",
+      "ano_fabricacao": "2019",
+      "ano_modelo": "2019"
+    },
+    "enderecos": [
+      {
+        "logradouro": "R FRANCISCO ANTONIO CRUZ",
+        "numero": "2125",
+        "bairro": "NOVA DESCOBERTA",
+        "cidade": "NATAL/RN",
+        "cep": "59056460"
+      },
+      {
+        "logradouro": "LAGOA DA CARNAUBA",
+        "numero": "S/N",
+        "bairro": "ZONA RURAL",
+        "cidade": "240620/RN",
+        "cep": "59227000"
+      }
+    ],
+    "telefones": [
+      { "telefone": "(84)32111088", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(84)987918435", "tipo": "MÓVEL" },
+      { "telefone": "(84)33220960", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(84)986356568", "tipo": "MÓVEL" }
+    ],
+    "emails": [
+      { "email": "ceciliamdfl37@gmail.com", "pessoal": true, "blacklist": false }
+    ]
+  }
