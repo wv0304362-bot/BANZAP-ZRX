@@ -9,7 +9,7 @@
             --primary-color: #3b82f6;
             --bg-color: #0b1120;
             --card-bg: #131c31;
-            --border-color: #1e293b;
+            --border-color: rgba(59, 130, 246, 0.6);
             --text-color: #f8fafc;
         }
 
@@ -37,6 +37,8 @@
             align-items: center;
             padding: 1rem 1.25rem;
             background-color: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
         }
 
         .icon-btn {
@@ -45,6 +47,7 @@
             color: var(--text-color);
             font-size: 1.25rem;
             cursor: pointer;
+            text-shadow: 0 0 8px var(--primary-color);
         }
 
         .app-title {
@@ -52,6 +55,8 @@
             font-weight: 600;
             letter-spacing: 1px;
             opacity: 0.9;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px var(--primary-color);
         }
 
         .header-right {
@@ -91,7 +96,7 @@
 
         .lock-container {
             background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--primary-color);
             border-radius: 24px;
             padding: 2rem 1.5rem;
             width: 100%;
@@ -100,7 +105,7 @@
             flex-direction: column;
             align-items: center;
             gap: 1.2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
             text-align: center;
             margin: auto;
         }
@@ -110,6 +115,7 @@
             font-weight: 800;
             color: var(--primary-color);
             letter-spacing: 2px;
+            text-shadow: 0 0 12px var(--primary-color);
         }
 
         .payment-text {
@@ -123,11 +129,12 @@
             font-weight: 800;
             color: #22c55e;
             margin: 0.2rem 0;
+            text-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
         }
 
         .pix-box-bar {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid var(--border-color);
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--primary-color);
             padding: 0.75rem;
             border-radius: 12px;
             width: 100%;
@@ -136,6 +143,7 @@
             word-break: break-all;
             text-align: center;
             user-select: all;
+            box-shadow: inset 0 0 10px rgba(59, 130, 246, 0.2);
         }
 
         .copy-pix-btn, .submit-receipt-btn {
@@ -149,15 +157,17 @@
             cursor: pointer;
             width: 100%;
             transition: opacity 0.2s;
+            box-shadow: 0 0 12px var(--primary-color);
         }
 
         .submit-receipt-btn {
             background: #22c55e;
+            box-shadow: 0 0 12px #22c55e;
         }
 
         .payment-input {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid var(--border-color);
+            background: rgba(0, 0, 0, 0.4);
+            border: 1.5px solid var(--primary-color);
             padding: 0.8rem 1rem;
             border-radius: 12px;
             color: var(--text-color);
@@ -165,25 +175,28 @@
             outline: none;
             width: 100%;
             text-align: center;
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
         }
 
         .payment-input:focus {
             border-color: var(--primary-color);
+            box-shadow: 0 0 15px var(--primary-color);
         }
 
         .upload-box-receipt {
-            border: 2px dashed var(--border-color);
+            border: 2px dashed var(--primary-color);
             padding: 0.8rem;
             border-radius: 12px;
             width: 100%;
             cursor: pointer;
-            background: rgba(0,0,0,0.2);
+            background: rgba(0,0,0,0.3);
             font-size: 0.8rem;
             transition: 0.2s;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
         }
 
         .upload-box-receipt:hover {
-            border-color: var(--primary-color);
+            box-shadow: 0 0 15px var(--primary-color);
         }
 
         .lock-error-msg {
@@ -210,7 +223,7 @@
 
         .admin-pass-box {
             background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--primary-color);
             border-radius: 20px;
             padding: 2rem 1.5rem;
             max-width: 340px;
@@ -220,6 +233,7 @@
             align-items: center;
             gap: 1rem;
             text-align: center;
+            box-shadow: 0 0 25px var(--primary-color);
         }
 
         /* Painel Admin Modal Exclusivo */
@@ -235,6 +249,8 @@
             flex-direction: column;
             padding: 1.25rem;
             overflow-y: auto;
+            border: 2px solid var(--primary-color);
+            box-shadow: inset 0 0 30px var(--primary-color);
         }
 
         .admin-slider-container {
@@ -254,13 +270,14 @@
         }
 
         .admin-card-item {
-            background: rgba(0,0,0,0.3);
-            border: 1px solid var(--border-color);
+            background: rgba(0,0,0,0.4);
+            border: 1.5px solid var(--primary-color);
             padding: 1rem;
             border-radius: 14px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
         }
 
         .admin-user-info {
@@ -280,6 +297,7 @@
             align-items: center;
             justify-content: center;
             font-weight: bold;
+            box-shadow: 0 0 8px var(--primary-color);
         }
 
         /* Tela de Banimento Visual Estrita */
@@ -310,7 +328,7 @@
             flex-direction: column;
             align-items: center;
             gap: 1.5rem;
-            box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);
+            box-shadow: 0 0 30px rgba(239, 68, 68, 0.5);
         }
 
         /* Tela de Sucesso de Aprovação */
@@ -341,18 +359,19 @@
             flex-direction: column;
             align-items: center;
             gap: 1.5rem;
-            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
         }
 
         /* Profile Card */
         .profile-card {
             background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
+            border: 1.5px solid var(--primary-color);
             border-radius: 20px;
             padding: 1.25rem;
             display: flex;
             flex-direction: column;
             gap: 1rem;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
         }
 
         .profile-top {
@@ -381,6 +400,7 @@
             border: 2px solid var(--primary-color);
             cursor: pointer;
             position: relative;
+            box-shadow: 0 0 10px var(--primary-color);
         }
 
         .avatar img {
@@ -391,7 +411,7 @@
 
         .user-details span {
             font-size: 0.75rem;
-            opacity: 0.6;
+            opacity: 0.7;
         }
 
         .user-name {
@@ -401,11 +421,13 @@
             font-size: 1.1rem;
             font-weight: 700;
             cursor: pointer;
+            color: var(--primary-color);
+            text-shadow: 0 0 8px var(--primary-color);
         }
 
         .badge-dev {
             background: transparent;
-            border: 1px solid var(--primary-color);
+            border: 1.5px solid var(--primary-color);
             color: var(--primary-color);
             font-size: 0.6rem;
             padding: 2px 8px;
@@ -413,6 +435,7 @@
             letter-spacing: 1px;
             margin-top: 4px;
             display: inline-block;
+            box-shadow: 0 0 6px var(--primary-color);
         }
 
         .battery-box {
@@ -426,11 +449,13 @@
             justify-content: center;
             font-size: 0.75rem;
             font-weight: 700;
+            box-shadow: 0 0 12px var(--primary-color);
+            color: var(--primary-color);
         }
 
         .battery-box small {
             font-size: 0.5rem;
-            opacity: 0.7;
+            opacity: 0.8;
         }
 
         .profile-stats {
@@ -440,8 +465,8 @@
         }
 
         .stat-item {
-            background-color: rgba(0, 0, 0, 0.2);
-            border: 1px solid var(--border-color);
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 1.5px solid var(--primary-color);
             padding: 0.6rem;
             border-radius: 12px;
             text-align: center;
@@ -449,11 +474,13 @@
             display: flex;
             flex-direction: column;
             gap: 2px;
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.25);
         }
 
         .stat-item span:last-child {
             font-weight: 600;
             font-size: 0.8rem;
+            color: var(--primary-color);
         }
 
         /* Section Titles */
@@ -464,7 +491,9 @@
             font-size: 0.85rem;
             letter-spacing: 1px;
             font-weight: 600;
-            opacity: 0.9;
+            opacity: 0.95;
+            color: var(--primary-color);
+            text-shadow: 0 0 8px var(--primary-color);
         }
 
         /* Banner Container */
@@ -478,10 +507,11 @@
             height: 320px;
             border-radius: 18px;
             overflow: hidden;
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--primary-color);
             position: relative;
             cursor: pointer;
             background-color: #000;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
         }
 
         .anime-banner img, .anime-banner video {
@@ -499,18 +529,20 @@
 
         .quick-access-card {
             background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
+            border: 1.5px solid var(--primary-color);
             border-radius: 16px;
             padding: 1rem;
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
             cursor: pointer;
-            transition: border-color 0.2s;
+            transition: all 0.2s;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.25);
         }
 
         .quick-access-card:active {
             border-color: var(--primary-color);
+            box-shadow: 0 0 20px var(--primary-color);
         }
 
         .qa-top {
@@ -523,8 +555,8 @@
             width: 44px;
             height: 44px;
             border-radius: 12px;
-            background: rgba(239, 68, 68, 0.1);
-            border: 1px solid var(--primary-color);
+            background: rgba(0, 0, 0, 0.4);
+            border: 1.5px solid var(--primary-color);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -532,6 +564,7 @@
             font-weight: bold;
             flex-shrink: 0;
             color: var(--primary-color);
+            box-shadow: 0 0 8px var(--primary-color);
         }
 
         .qa-info h4 {
@@ -544,7 +577,7 @@
         .footer-btn {
             background: linear-gradient(135deg, var(--primary-color), #2563eb);
             color: white;
-            border: none;
+            border: 2px solid var(--primary-color);
             padding: 1rem;
             border-radius: 30px;
             font-weight: 600;
@@ -555,7 +588,7 @@
             justify-content: center;
             gap: 0.5rem;
             width: 100%;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 0 20px var(--primary-color);
         }
 
         /* Fullscreen Modals */
@@ -573,6 +606,8 @@
             transform: translateY(100%);
             transition: transform 0.3s ease-in-out;
             overflow-y: auto;
+            border: 2px solid var(--primary-color);
+            box-shadow: inset 0 0 35px var(--primary-color);
         }
 
         .fullscreen-modal.open {
@@ -585,7 +620,13 @@
             align-items: center;
             margin-bottom: 1.5rem;
             padding-bottom: 0.75rem;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1.5px solid var(--primary-color);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.15);
+        }
+
+        .modal-header h3 {
+            color: var(--primary-color);
+            text-shadow: 0 0 10px var(--primary-color);
         }
 
         .theme-list {
@@ -597,7 +638,7 @@
 
         .theme-option {
             background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
+            border: 1.5px solid var(--primary-color);
             padding: 1rem;
             border-radius: 12px;
             cursor: pointer;
@@ -605,6 +646,12 @@
             align-items: center;
             justify-content: space-between;
             font-weight: 600;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.25);
+            transition: box-shadow 0.2s;
+        }
+
+        .theme-option:hover {
+            box-shadow: 0 0 18px var(--primary-color);
         }
 
         .color-picker-group {
@@ -616,7 +663,9 @@
 
         .color-picker-group label {
             font-size: 0.85rem;
-            opacity: 0.8;
+            opacity: 0.9;
+            color: var(--primary-color);
+            font-weight: 600;
         }
 
         .search-content {
@@ -640,27 +689,33 @@
         .search-input {
             flex: 1;
             background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
+            border: 1.5px solid var(--primary-color);
             padding: 0.75rem 1rem;
             border-radius: 10px;
             color: var(--text-color);
             font-size: 0.95rem;
             outline: none;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.25);
+        }
+
+        .search-input:focus {
+            box-shadow: 0 0 15px var(--primary-color);
         }
 
         .search-submit-btn {
             background-color: var(--primary-color);
             color: white;
-            border: none;
+            border: 1.5px solid var(--primary-color);
             padding: 0 1.25rem;
             border-radius: 10px;
             font-weight: 600;
             cursor: pointer;
+            box-shadow: 0 0 10px var(--primary-color);
         }
 
         .search-results-box {
             background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
+            border: 1.5px solid var(--primary-color);
             border-radius: 12px;
             padding: 1rem;
             flex: 1;
@@ -670,37 +725,25 @@
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
-        }
-
-        .script-output {
-            background-color: #05070c;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 1rem;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.8rem;
-            color: #38ef7d;
-            white-space: pre-wrap;
-            word-break: break-all;
-            max-height: 50vh;
-            overflow-y: auto;
+            box-shadow: inset 0 0 15px rgba(59, 130, 246, 0.2);
         }
 
         .result-item-card {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid var(--border-color);
+            background: rgba(0, 0, 0, 0.4);
+            border: 1.5px solid var(--primary-color);
             border-radius: 10px;
             padding: 0.75rem;
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
+            box-shadow: 0 0 8px rgba(59, 130, 246, 0.2);
         }
 
         .result-line {
             display: flex;
             flex-direction: column;
             gap: 0.15rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding-bottom: 0.4rem;
         }
 
@@ -715,7 +758,8 @@
             letter-spacing: 0.5px;
             color: var(--primary-color);
             font-weight: 700;
-            opacity: 0.9;
+            opacity: 0.95;
+            text-shadow: 0 0 5px var(--primary-color);
         }
 
         .result-val {
@@ -733,6 +777,7 @@
             text-transform: uppercase;
             border-left: 3px solid var(--primary-color);
             padding-left: 6px;
+            text-shadow: 0 0 5px var(--primary-color);
         }
 
         /* Ícones Desenhados em CSS (Sem Emojis) */
@@ -926,7 +971,7 @@
                             <h4>NOME</h4>
                         </div>
                     </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
+                    <span style="font-size: 0.75rem; opacity: 0.6;">Pesquisar ></span>
                 </div>
 
                 <!-- 2. CPF -->
@@ -937,7 +982,7 @@
                             <h4>CPF</h4>
                         </div>
                     </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
+                    <span style="font-size: 0.75rem; opacity: 0.6;">Pesquisar ></span>
                 </div>
 
                 <!-- 3. TELEFONE -->
@@ -948,7 +993,7 @@
                             <h4>TELEFONE</h4>
                         </div>
                     </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
+                    <span style="font-size: 0.75rem; opacity: 0.6;">Pesquisar ></span>
                 </div>
 
                 <!-- 4. RG -->
@@ -959,7 +1004,7 @@
                             <h4>RG</h4>
                         </div>
                     </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
+                    <span style="font-size: 0.75rem; opacity: 0.6;">Pesquisar ></span>
                 </div>
 
                 <!-- 5. E-MAIL -->
@@ -970,7 +1015,7 @@
                             <h4>E-MAIL</h4>
                         </div>
                     </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
+                    <span style="font-size: 0.75rem; opacity: 0.6;">Pesquisar ></span>
                 </div>
 
                 <!-- 6. SPC -->
@@ -981,7 +1026,7 @@
                             <h4>SPC</h4>
                         </div>
                     </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
+                    <span style="font-size: 0.75rem; opacity: 0.6;">Pesquisar ></span>
                 </div>
 
                 <!-- 7. CPF PARENTE -->
@@ -992,7 +1037,7 @@
                             <h4>CPF PARENTE</h4>
                         </div>
                     </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
+                    <span style="font-size: 0.75rem; opacity: 0.6;">Pesquisar ></span>
                 </div>
 
                 <!-- 8. CEP -->
@@ -1003,18 +1048,18 @@
                             <h4>CEP</h4>
                         </div>
                     </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Pesquisar ></span>
+                    <span style="font-size: 0.75rem; opacity: 0.6;">Pesquisar ></span>
                 </div>
 
-                <!-- BRASILAPI - VARREDURA COMPLETA AUTOMÁTICA -->
-                <div class="quick-access-card" onclick="openSearchModal('BRASILAPI - VARREDURA TOTAL', 'brasilapi')" style="grid-column: span 2;">
+                <!-- DADOS.JSON - VARREDURA COMPLETA -->
+                <div class="quick-access-card" onclick="openSearchModal('BUSCA GLOBAL NO GITHUB (DADOS.JSON)', 'dadosjson')" style="grid-column: span 2;">
                     <div class="qa-top">
                         <div class="qa-icon"><span class="icon-draw-globe"></span></div>
                         <div class="qa-info">
-                            <h4>BRASILAPI (VARREDURA TOTAL AUTOMÁTICA)</h4>
+                            <h4>BUSCA GLOBAL (DADOS.JSON DO GITHUB)</h4>
                         </div>
                     </div>
-                    <span style="font-size: 0.75rem; opacity: 0.5;">Busca simultânea em todas as rotas compatíveis ></span>
+                    <span style="font-size: 0.75rem; opacity: 0.6;">Busca unificada em todo o banco de dados JSON ></span>
                 </div>
             </div>
         </div>
@@ -1032,7 +1077,7 @@
             <button class="icon-btn" id="closeMenuModal" style="font-size: 1.5rem;">&times;</button>
         </div>
 
-        <h4 style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 0.75rem;">TEMAS PRONTOS</h4>
+        <h4 style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 0.75rem; color: var(--primary-color);">TEMAS PRONTOS</h4>
         <div class="theme-list">
             <div class="theme-option" onclick="applyTheme('#f59e0b', '#0b1120', '#131c31')"><span>Dourado</span><span>></span></div>
             <div class="theme-option" onclick="applyTheme('#8b5cf6', '#090514', '#130b26')"><span>Roxo</span><span>></span></div>
@@ -1043,10 +1088,10 @@
             <div class="theme-option" onclick="applyTheme('#94a3b8', '#0f172a', '#1e293b')"><span>Preto Misturado com Prateado</span><span>></span></div>
         </div>
 
-        <h4 style="font-size: 0.85rem; opacity: 0.7; margin-bottom: 0.75rem;">EDITAR CORES LIVREMENTE</h4>
+        <h4 style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 0.75rem; color: var(--primary-color);">EDITAR CORES LIVREMENTE</h4>
         <div class="color-picker-group">
             <label for="customColorInput">Cor Principal:</label>
-            <input type="color" id="customColorInput" value="#3b82f6" style="width: 100%; height: 40px; border: none; border-radius: 8px; background: none; cursor: pointer;">
+            <input type="color" id="customColorInput" value="#3b82f6" style="width: 100%; height: 40px; border: 1.5px solid var(--primary-color); border-radius: 8px; background: none; cursor: pointer; box-shadow: 0 0 10px var(--primary-color);">
         </div>
     </div>
 
@@ -1091,9 +1136,7 @@
         const ADMIN_PASS = "ZRX WCT";
         let tempReceiptBase64 = "";
 
-        // Recuperar e restaurar dados salvos no localStorage (avatar, nome, banner, temas) ao carregar a página
         window.addEventListener('DOMContentLoaded', async () => {
-            // 1. Restaurar Tema e Cores
             const savedPrimary = localStorage.getItem('zrx_primary');
             const savedBg = localStorage.getItem('zrx_bg');
             const savedCard = localStorage.getItem('zrx_card');
@@ -1102,21 +1145,18 @@
             if (savedCard) document.documentElement.style.setProperty('--card-bg', savedCard);
             if (savedPrimary) document.getElementById('customColorInput').value = savedPrimary;
 
-            // 2. Restaurar Avatar
             const savedAvatar = localStorage.getItem('zrx_avatar');
             const profileAvatar = document.getElementById('profileAvatar');
             if (savedAvatar) {
                 profileAvatar.innerHTML = `<img src="${savedAvatar}" alt="Avatar">`;
             }
 
-            // 3. Restaurar Nome / ID
             const savedName = localStorage.getItem('zrx_name');
             const profileName = document.getElementById('profileName');
             if (savedName) {
                 profileName.innerHTML = `${savedName} <span class="icon-draw-bolt" style="width:10px; height:12px; margin-left:4px;"></span>`;
             }
 
-            // 4. Restaurar Banner / Mídia
             const savedBanner = localStorage.getItem('zrx_banner1');
             const bannerUpload1 = document.getElementById('bannerUpload1');
             if (savedBanner) {
@@ -1127,7 +1167,6 @@
                 }
             }
 
-            // 5. Verificação de Acesso / Administrador
             if(localStorage.getItem('zrx_is_admin') === 'true') {
                 document.getElementById('adminShortcutBtn').style.display = 'block';
                 document.getElementById('lockScreen').style.display = 'none';
@@ -1415,12 +1454,12 @@
             currentSearchType = type;
             searchResultsBox.innerHTML = 'Aguardando consulta... Insira os dados e clique em Buscar.';
             
-            if (type === 'brasilapi') {
+            if (type === 'dadosjson') {
                 searchBoxContainer.innerHTML = `
-                    <div style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 4px;">Insira o termo (ex: CEP, CNPJ, DDD, Feriado ou Ano) para varredura completa simultânea:</div>
+                    <div style="font-size: 0.8rem; opacity: 0.8; margin-bottom: 4px;">Insira o termo (CPF, Nome, Telefone ou E-mail) para buscar no dados.json:</div>
                     <div class="search-input-row">
-                        <input type="text" class="search-input" id="searchInputField" placeholder="Digite o parâmetro (CEP, CNPJ, etc)...">
-                        <button class="search-submit-btn" onclick="executeSearch()">Varredura Total</button>
+                        <input type="text" class="search-input" id="searchInputField" placeholder="Digite o termo...">
+                        <button class="search-submit-btn" onclick="executeSearch()">Pesquisar JSON</button>
                     </div>
                 `;
             } else {
@@ -1440,107 +1479,53 @@
 
         async function executeSearch() {
             const searchInputField = document.getElementById('searchInputField');
-            const query = searchInputField ? searchInputField.value.trim() : '';
+            const query = searchInputField ? searchInputField.value.trim().toLowerCase() : '';
             
-            if(currentSearchType !== 'brasilapi' && !query) {
+            if(!query) {
                 alert('Digite algum valor para pesquisar!');
                 return;
             }
 
-            searchResultsBox.innerHTML = `Buscando dados no servidor...`;
+            searchResultsBox.innerHTML = `Buscando dados no arquivo dados.json do GitHub...`;
 
-            if (currentSearchType === 'brasilapi') {
-                const base = 'https://brasilapi.com.br/api';
-                const endpoints = [
-                    { name: 'CEP v1', url: `${base}/cep/v1/${encodeURIComponent(query)}` },
-                    { name: 'CEP v2', url: `${base}/cep/v2/${encodeURIComponent(query)}` },
-                    { name: 'CNPJ', url: `${base}/cnpj/v1/${encodeURIComponent(query)}` },
-                    { name: 'DDD', url: `${base}/ddd/v1/${encodeURIComponent(query)}` },
-                    { name: 'Feriados Nacionais', url: `${base}/feriados/v1/${encodeURIComponent(query)}` },
-                    { name: 'ISBN Livro', url: `${base}/isbn/v1/${encodeURIComponent(query)}` },
-                    { name: 'Corretoras CVM', url: `${base}/corretoras/v1/${encodeURIComponent(query)}` },
-                    { name: 'Taxas B3', url: `${base}/taxas/v1/${encodeURIComponent(query)}` },
-                    { name: 'IBGE Estado', url: `${base}/ibge/uf/v1/${encodeURIComponent(query)}` },
-                    { name: 'IBGE Municípios', url: `${base}/ibge/municipios/v1/${encodeURIComponent(query)}` },
-                    { name: 'Banco Específico', url: `${base}/banks/v1/${encodeURIComponent(query)}` },
-                    { name: 'FIPE Preço', url: `${base}/fipe/preco/v1/${encodeURIComponent(query)}` }
-                ];
-
-                searchResultsBox.innerHTML = `Executando varredura simultânea em todas as rotas da BrasilAPI...`;
+            try {
+                // Substitua a URL abaixo pelo link bruto (raw) real do seu arquivo dados.json no GitHub
+                const githubJsonUrl = 'https://raw.githubusercontent.com/SEU_USUARIO/SEU_REPO/main/dados.json';
+                const response = await fetch(githubJsonUrl);
                 
-                let aggregatedHtml = '';
-                let successCount = 0;
+                if (!response.ok) {
+                    throw new Error("Não foi possível carregar o arquivo dados.json do GitHub.");
+                }
 
-                const promises = endpoints.map(async (ep) => {
-                    try {
-                        const res = await fetch(ep.url);
-                        if (res.ok) {
-                            const data = await res.json();
-                            return { name: ep.name, data: data };
-                        }
-                    } catch (err) {}
-                    return null;
-                });
+                const data = await response.json();
+                const items = Array.isArray(data) ? data : [data];
 
-                const results = await Promise.all(promises);
+                const queryDigits = query.replace(/\D/g, '');
 
-                results.forEach((result) => {
-                    if (result && result.data) {
-                        successCount++;
-                        aggregatedHtml += `<div class="sub-section-title">FONTE: ${result.name}</div>`;
-                        if (Array.isArray(result.data)) {
-                            result.data.forEach((item, idx) => {
-                                aggregatedHtml += `<div style="font-size:0.7rem; opacity:0.6; margin-top:2px;">Registro #${idx + 1}</div>`;
-                                aggregatedHtml += buildItemCard(item);
-                            });
-                        } else if (typeof result.data === 'object') {
-                            aggregatedHtml += buildItemCard(result.data);
-                        } else {
-                            aggregatedHtml += `<div class="result-item-card"><div class="result-line"><span class="result-val">${result.data}</span></div></div>`;
-                        }
+                const filtered = items.filter(item => {
+                    const itemStr = JSON.stringify(item).toLowerCase();
+                    if (itemStr.includes(query)) return true;
+
+                    if (queryDigits.length > 0) {
+                        const itemDigits = itemStr.replace(/\D/g, '');
+                        if (itemDigits.includes(queryDigits)) return true;
                     }
+                    return false;
                 });
 
-                if (successCount === 0) {
-                    searchResultsBox.innerHTML = `<div class="result-item-card"><div class="result-line"><span class="result-key">AVISO</span><span class="result-val">Nenhum dado retornado para "${query}" nas rotas da BrasilAPI. Verifique o formato do parâmetro.</span></div></div>`;
+                if (filtered.length === 0) {
+                    searchResultsBox.innerHTML = `<div class="result-item-card"><div class="result-line"><span class="result-key">AVISO</span><span class="result-val">Nenhum registro encontrado para "${query}" no arquivo dados.json.</span></div></div>`;
                 } else {
-                    searchResultsBox.innerHTML = aggregatedHtml;
+                    let htmlResult = `<div style="font-size: 0.75rem; opacity: 0.8; margin-bottom: 5px;">Total encontrado: ${filtered.length} resultado(s)</div>`;
+                    filtered.forEach((item, idx) => {
+                        htmlResult += `<div class="sub-section-title">REGISTRO #${idx + 1}</div>`;
+                        htmlResult += buildItemCard(item);
+                    });
+                    searchResultsBox.innerHTML = htmlResult;
                 }
 
-            } else {
-                let targetUrl = '';
-                if (currentSearchType === 'cpf') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?cpf=' + encodeURIComponent(query);
-                else if (currentSearchType === 'telefone') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?telefone=' + encodeURIComponent(query);
-                else if (currentSearchType === 'email') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?email=' + encodeURIComponent(query);
-                else if (currentSearchType === 'rg') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?rg=' + encodeURIComponent(query);
-                else if (currentSearchType === 'nome') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?nome=' + encodeURIComponent(query);
-                else if (currentSearchType === 'spc') targetUrl = 'http://apisbrasilpro.site/spc1.php?doc=' + encodeURIComponent(query);
-                else if (currentSearchType === 'cpf_parente') targetUrl = 'http://apisbrasilpro.site/consulta_serasa.php?cpf_parente=' + encodeURIComponent(query);
-                else if (currentSearchType === 'cep') targetUrl = 'http://apisbrasilpro.site/telefone0.php?cep=' + encodeURIComponent(query);
-
-                try {
-                    const response = await fetch(targetUrl);
-                    const textData = await response.text();
-
-                    try {
-                        let jsonStartIndex = textData.indexOf('{');
-                        let jsonArrayStartIndex = textData.indexOf('[');
-                        
-                        let parseTarget = textData;
-                        if (jsonArrayStartIndex !== -1 && (jsonStartIndex === -1 || jsonArrayStartIndex < jsonStartIndex)) {
-                            parseTarget = textData.substring(jsonArrayStartIndex);
-                        } else if (jsonStartIndex !== -1) {
-                            parseTarget = textData.substring(jsonStartIndex);
-                        }
-                        
-                        const jsonData = JSON.parse(parseTarget);
-                        searchResultsBox.innerHTML = `<div class="script-output">${JSON.stringify(jsonData, null, 2)}</div>`;
-                    } catch (e) {
-                        searchResultsBox.innerHTML = `<div class="script-output">${textData}</div>`;
-                    }
-                } catch (error) {
-                    searchResultsBox.innerHTML = `<div class="script-output">[ERRO/CORS] Falha ao requisitar diretamente. URL Alvo: ${targetUrl}\nDetalhes: ${error.message}</div>`;
-                }
+            } catch (error) {
+                searchResultsBox.innerHTML = `<div class="result-item-card"><div class="result-line"><span class="result-key">ERRO</span><span class="result-val">Falha ao ler o dados.json do GitHub. Certifique-se de que a URL RAW está correta.\nDetalhes: ${error.message}</span></div></div>`;
             }
         }
 
@@ -1573,7 +1558,7 @@
                                 if (subVal !== null && subVal !== undefined && subVal !== '') {
                                     cardHtml += `
                                         <div class="result-line" style="margin-left: 8px;">
-                                                <span class="result-key">${subKey}</span>
+                                            <span class="result-key">${subKey}</span>
                                             <span class="result-val">${subVal}</span>
                                         </div>
                                     `;
