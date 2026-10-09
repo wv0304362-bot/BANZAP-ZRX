@@ -1120,10 +1120,8 @@
                 return;
             }
 
-            // Se for o ID do admin, abre diretamente a tela de senha para entrar no painel e libera o botão de escudo para sempre neste navegador
+            // Se for o ID do admin, abre diretamente a tela de senha para entrar no painel
             if(userId === ADMIN_ID) {
-                localStorage.setItem('zrx_is_admin', 'true');
-                document.getElementById('adminShortcutBtn').style.display = 'block';
                 document.getElementById('adminPassModal').style.display = 'flex';
                 return;
             }
@@ -1167,6 +1165,7 @@
                 localStorage.setItem('zrx_is_admin', 'true');
                 document.getElementById('adminShortcutBtn').style.display = 'block';
                 document.getElementById('adminPassModal').style.display = 'none';
+                document.getElementById('lockScreen').style.display = 'none'; // Fecha o bloqueio para mostrar o menu normal
                 document.getElementById('adminModalOverlay').style.display = 'flex';
                 document.getElementById('adminPasswordInput').value = '';
                 loadAdminData();
@@ -1269,9 +1268,11 @@
         }
 
         window.addEventListener('DOMContentLoaded', async () => {
-            // Se for o administrador salvo no navegador, mostra o botão de escudo de admin no topo
+            // Se for o administrador salvo no navegador, libera a tela principal e exibe o botão de escudo no topo
             if(localStorage.getItem('zrx_is_admin') === 'true') {
                 document.getElementById('adminShortcutBtn').style.display = 'block';
+                document.getElementById('lockScreen').style.display = 'none';
+                return;
             }
 
             const savedId = localStorage.getItem('zrx_current_user_id');
