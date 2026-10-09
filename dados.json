@@ -1656,5 +1656,41 @@
       { "nome": "MANOEL NICODEMOS DE ARAUJO", "cpf": "03444996268", "parentesco": "PAI" },
       { "nome": "LUZIANE DA SILVA ARAUJO", "cpf": "94267294372", "parentesco": "IRMÃ" }
     ]
+  },
+  {
+    "cpf": "27901435879",
+    "nome": "GILMAR APARECIDO AUGUSTO",
+    "veiculos": {
+      "marca_modelo": "HONDA/XR 250 TORNADO",
+      "placa": "HFZ9B39",
+      "placa_consultada": "HFZ9139",
+      "chassis": "9C2MD34008R030287",
+      "renavam": "00991424522",
+      "ano_fabricacao": "2008",
+      "ano_modelo": "2008",
+      "cor": "PRETA",
+      "situacao": "INATIVO",
+      "municipio": "CAMPOS DO JORDAO / SP",
+      "combustivel": "GASOLINA",
+      "numero_motor": "MD34E8030287"
+    }
+  },
+  {
+    "cpf": "04429041695",
+    "nome": "EDER DE ALMEIDA RIBEIRO",
+    "veiculos": {
+      "marca_modelo": "HONDA/BIZ 125 ES",
+      "placa": "HFZ2139",
+      "chassis": "9C2JA04207R089801",
+      "renavam": "00929710789",
+      "ano_fabricacao": "2007",
+      "ano_modelo": "2007",
+      "cor": "PRATA",
+      "situacao": "EM_CIRCULACAO",
+      "municipio": "ARCEBURGO / MG",
+      "combustivel": "GASOLINA",
+      "numero_motor": "JA04E27089801",
+      "restricoes": ["Comunicação de Venda"]
+    }
   }
 ]
