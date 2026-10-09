@@ -200,7 +200,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.8);
+            background-color: rgba(0,0,0,0.85);
             z-index: 10005;
             display: none;
             align-items: center;
@@ -311,6 +311,37 @@
             align-items: center;
             gap: 1.5rem;
             box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);
+        }
+
+        /* Tela de Sucesso de Aprovação */
+        #approvedSuccessScreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0b1120;
+            z-index: 10002;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .approved-box {
+            background-color: #131c31;
+            border: 2px solid #22c55e;
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            max-width: 400px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            box-shadow: 0 10px 30px rgba(34, 197, 94, 0.3);
         }
 
         /* Profile Card */
@@ -742,12 +773,12 @@
 
             <input type="text" id="userInputId" class="payment-input" placeholder="Digite seu ID (ex: seu_nome)">
 
-            <div class="upload-box-receipt" id="uploadReceiptBox" style="display:none;">
+            <div class="upload-box-receipt" id="uploadReceiptBox">
                 <span id="receiptLabel" style="font-size: 0.8rem; opacity: 0.8;">Enviar foto do comprovante</span>
             </div>
             <input type="file" id="receiptFileInput" accept="image/*" style="display: none;">
 
-            <button class="submit-receipt-btn" onclick="submitPaymentReceipt()">Enviar / Acessar</button>
+            <button class="submit-receipt-btn" onclick="submitPaymentReceipt()">Enviar Comprovante</button>
 
             <div class="lock-error-msg" id="lockErrorMsg"></div>
         </div>
@@ -759,8 +790,20 @@
             <div style="font-size: 2.5rem; color: #ef4444; font-weight: bold;">!</div>
             <h2 style="font-size: 1.2rem; color: #ef4444;">CONTA BANIDA</h2>
             <p style="font-size: 0.9rem; line-height: 1.5; opacity: 0.9;">
-                Olá você violou as diretrizes do aplicativo por isso tua conta foi banida permanentemente
+                Você violou todas as diretrizes da plataforma
             </p>
+        </div>
+    </div>
+
+    <!-- TELA DE SUCESSO / APROVADO -->
+    <div id="approvedSuccessScreen">
+        <div class="approved-box">
+            <div style="font-size: 2.5rem; color: #22c55e; font-weight: bold;">✓</div>
+            <h2 style="font-size: 1.2rem; color: #22c55e;">ACESSO LIBERADO</h2>
+            <p style="font-size: 0.9rem; line-height: 1.5; opacity: 0.9;">
+                Você foi aceito parabéns
+            </p>
+            <button class="search-submit-btn" style="background:#22c55e; padding:10px 20px;" onclick="enterAppDashboard()">Entrar no Sistema</button>
         </div>
     </div>
 
@@ -780,7 +823,7 @@
         <div class="modal-header">
             <h3>Painel Administrativo</h3>
             <div style="display:flex; gap:10px; align-items:center;">
-                <button class="search-submit-btn" style="padding: 4px 8px; font-size:0.75rem;" onclick="switchAdminSlide(0)">Usuários</button>
+                <button class="search-submit-btn" style="padding: 4px 8px; font-size:0.75rem;" onclick="switchAdminSlide(0)">Gerenciar Usuários</button>
                 <button class="search-submit-btn" style="padding: 4px 8px; font-size:0.75rem;" onclick="switchAdminSlide(1)">Comprovantes</button>
                 <button class="icon-btn" onclick="closeAdminModal()" style="font-size: 1.5rem;">&times;</button>
             </div>
@@ -788,9 +831,9 @@
 
         <div style="overflow: hidden; width: 100%; flex: 1; display:flex;">
             <div class="admin-slider-container" id="adminSliderContainer">
-                <!-- Página 1: Usuários (Liberar e Banir) -->
+                <!-- Página 1: Usuários (Banir e Desbanir) -->
                 <div class="admin-slide-page">
-                    <h4 style="font-size:0.85rem; color: var(--primary-color);">Gerenciar Usuários (Nome, Foto e ID)</h4>
+                    <h4 style="font-size:0.85rem; color: var(--primary-color);">Gerenciamento de Contas (Banir / Desbanir)</h4>
                     <div id="adminUsersList" style="display:flex; flex-direction:column; gap:10px; overflow-y:auto; max-height: 65vh;">
                         <!-- Preenchido via Firebase -->
                     </div>
@@ -798,7 +841,7 @@
 
                 <!-- Página 2: Comprovantes e ID -->
                 <div class="admin-slide-page">
-                    <h4 style="font-size:0.85rem; color: var(--primary-color);">Lista de Comprovantes & IDs</h4>
+                    <h4 style="font-size:0.85rem; color: var(--primary-color);">Ver Quem Enviou Comprovante & Liberar</h4>
                     <div id="adminReceiptsList" style="display:flex; flex-direction:column; gap:10px; overflow-y:auto; max-height: 65vh;">
                         <!-- Preenchido via Firebase -->
                     </div>
@@ -1053,6 +1096,22 @@
             alert("Chave Pix copiada com sucesso!");
         }
 
+        const uploadBox = document.getElementById('uploadReceiptBox');
+        const receiptInput = document.getElementById('receiptFileInput');
+        uploadBox.addEventListener('click', () => receiptInput.click());
+        receiptInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if(file) {
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    tempReceiptBase64 = evt.target.result;
+                    document.getElementById('receiptLabel').innerText = "Comprovante anexado com sucesso!";
+                    uploadBox.style.borderColor = "#22c55e";
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
         window.submitPaymentReceipt = async function() {
             const userId = document.getElementById('userInputId').value.trim();
             if(!userId) {
@@ -1060,7 +1119,7 @@
                 return;
             }
 
-            // Se for o ID do administrador, abre diretamente o modal de senha secreta
+            // Se for o ID do admin, abre diretamente a tela de senha para entrar no painel
             if(userId === ADMIN_ID) {
                 document.getElementById('adminPassModal').style.display = 'flex';
                 return;
@@ -1094,7 +1153,7 @@
             location.reload();
         }
 
-        // Atalho de Administrador no Topo (Escudo)
+        // Botão de Atalho do Administrador no Topo
         document.getElementById('adminShortcutBtn').addEventListener('click', () => {
             document.getElementById('adminPassModal').style.display = 'flex';
         });
@@ -1125,6 +1184,7 @@
         }
 
         async function loadAdminData() {
+            // Aba 1: Gerenciar Usuários (Banir / Desbanir)
             const userContainer = document.getElementById('adminUsersList');
             userContainer.innerHTML = "Carregando usuários...";
             const userSnap = await get(ref(db, 'usuarios'));
@@ -1133,6 +1193,7 @@
                 userSnap.forEach((child) => {
                     const u = child.val();
                     if(u.id === ADMIN_ID) return;
+                    const isBanned = u.status === 'banido';
                     const row = document.createElement('div');
                     row.className = 'admin-card-item';
                     row.innerHTML = `
@@ -1144,8 +1205,10 @@
                             </div>
                         </div>
                         <div style="display:flex; gap:5px;">
-                            <button class="search-submit-btn" style="background:#22c55e; padding:5px 10px; font-size:0.75rem;" onclick="updateUserStatus('${u.id}', 'liberado')">Liberar</button>
-                            <button class="search-submit-btn" style="background:#ef4444; padding:5px 10px; font-size:0.75rem;" onclick="updateUserStatus('${u.id}', 'banido')">Banir</button>
+                            ${isBanned ? 
+                                `<button class="search-submit-btn" style="background:#22c55e; padding:5px 10px; font-size:0.75rem;" onclick="updateUserStatus('${u.id}', 'liberado')">Desbanir</button>` :
+                                `<button class="search-submit-btn" style="background:#ef4444; padding:5px 10px; font-size:0.75rem;" onclick="updateUserStatus('${u.id}', 'banido')">Banir</button>`
+                            }
                         </div>
                     `;
                     userContainer.appendChild(row);
@@ -1154,6 +1217,7 @@
                 userContainer.innerHTML = "Nenhum usuário cadastrado.";
             }
 
+            // Aba 2: Comprovantes & Liberação
             const receiptContainer = document.getElementById('adminReceiptsList');
             receiptContainer.innerHTML = "Carregando comprovantes...";
             const recSnap = await get(ref(db, 'comprovantes'));
@@ -1195,6 +1259,10 @@
             loadAdminData();
         }
 
+        window.enterAppDashboard = function() {
+            document.getElementById('approvedSuccessScreen').style.display = 'none';
+        }
+
         window.addEventListener('DOMContentLoaded', async () => {
             const savedId = localStorage.getItem('zrx_current_user_id');
             if(savedId && savedId !== ADMIN_ID) {
@@ -1206,6 +1274,7 @@
                         document.getElementById('bannedScreen').style.display = 'flex';
                     } else if(uData.status === 'liberado') {
                         document.getElementById('lockScreen').style.display = 'none';
+                        document.getElementById('approvedSuccessScreen').style.display = 'flex';
                     }
                 }
             }
