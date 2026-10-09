@@ -1069,7 +1069,7 @@
     <input type="file" id="galleryInput" accept="image/*" style="display: none;">
     <input type="file" id="mediaInput" accept="image/*,video/*" style="display: none;">
 
-    <!-- Firebase SDKs -->
+    <!-- Firebase SDKs & Script de Inicialização -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getDatabase, ref, set, get, update, remove } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
@@ -1090,6 +1090,65 @@
         const ADMIN_ID = "LOTUX@ZRX";
         const ADMIN_PASS = "ZRX WCT";
         let tempReceiptBase64 = "";
+
+        // Recuperar e restaurar dados salvos no localStorage (avatar, nome, banner, temas) ao carregar a página
+        window.addEventListener('DOMContentLoaded', async () => {
+            // 1. Restaurar Tema e Cores
+            const savedPrimary = localStorage.getItem('zrx_primary');
+            const savedBg = localStorage.getItem('zrx_bg');
+            const savedCard = localStorage.getItem('zrx_card');
+            if (savedPrimary) document.documentElement.style.setProperty('--primary-color', savedPrimary);
+            if (savedBg) document.documentElement.style.setProperty('--bg-color', savedBg);
+            if (savedCard) document.documentElement.style.setProperty('--card-bg', savedCard);
+            if (savedPrimary) document.getElementById('customColorInput').value = savedPrimary;
+
+            // 2. Restaurar Avatar
+            const savedAvatar = localStorage.getItem('zrx_avatar');
+            const profileAvatar = document.getElementById('profileAvatar');
+            if (savedAvatar) {
+                profileAvatar.innerHTML = `<img src="${savedAvatar}" alt="Avatar">`;
+            }
+
+            // 3. Restaurar Nome / ID
+            const savedName = localStorage.getItem('zrx_name');
+            const profileName = document.getElementById('profileName');
+            if (savedName) {
+                profileName.innerHTML = `${savedName} <span class="icon-draw-bolt" style="width:10px; height:12px; margin-left:4px;"></span>`;
+            }
+
+            // 4. Restaurar Banner / Mídia
+            const savedBanner = localStorage.getItem('zrx_banner1');
+            const bannerUpload1 = document.getElementById('bannerUpload1');
+            if (savedBanner) {
+                if (savedBanner.startsWith('data:video/') || savedBanner.includes('video')) {
+                    bannerUpload1.innerHTML = `<video src="${savedBanner}" autoplay loop muted playsinline></video>`;
+                } else {
+                    bannerUpload1.innerHTML = `<img src="${savedBanner}" alt="Custom Media">`;
+                }
+            }
+
+            // 5. Verificação de Acesso / Administrador
+            if(localStorage.getItem('zrx_is_admin') === 'true') {
+                document.getElementById('adminShortcutBtn').style.display = 'block';
+                document.getElementById('lockScreen').style.display = 'none';
+                return;
+            }
+
+            const savedId = localStorage.getItem('zrx_current_user_id');
+            if(savedId && savedId !== ADMIN_ID) {
+                const userSnap = await get(ref(db, 'usuarios/' + savedId));
+                if(userSnap.exists()) {
+                    const uData = userSnap.val();
+                    if(uData.status === 'banido') {
+                        document.getElementById('lockScreen').style.display = 'none';
+                        document.getElementById('bannedScreen').style.display = 'flex';
+                    } else if(uData.status === 'liberado') {
+                        document.getElementById('lockScreen').style.display = 'none';
+                        document.getElementById('approvedSuccessScreen').style.display = 'flex';
+                    }
+                }
+            }
+        });
 
         window.copyPixKey = function() {
             const key = document.getElementById('pixKeyText').innerText;
@@ -1120,8 +1179,10 @@
                 return;
             }
 
-            // Se for o ID do admin, abre diretamente a tela de senha para entrar no painel
             if(userId === ADMIN_ID) {
+                localStorage.setItem('zrx_is_admin', 'true');
+                document.getElementById('adminShortcutBtn').style.display = 'block';
+                document.getElementById('lockScreen').style.display = 'none';
                 document.getElementById('adminPassModal').style.display = 'flex';
                 return;
             }
@@ -1154,7 +1215,6 @@
             location.reload();
         }
 
-        // Botão de Atalho do Administrador no Topo
         document.getElementById('adminShortcutBtn').addEventListener('click', () => {
             document.getElementById('adminPassModal').style.display = 'flex';
         });
@@ -1165,7 +1225,7 @@
                 localStorage.setItem('zrx_is_admin', 'true');
                 document.getElementById('adminShortcutBtn').style.display = 'block';
                 document.getElementById('adminPassModal').style.display = 'none';
-                document.getElementById('lockScreen').style.display = 'none'; // Fecha o bloqueio para mostrar o menu normal
+                document.getElementById('lockScreen').style.display = 'none';
                 document.getElementById('adminModalOverlay').style.display = 'flex';
                 document.getElementById('adminPasswordInput').value = '';
                 loadAdminData();
@@ -1188,7 +1248,6 @@
         }
 
         async function loadAdminData() {
-            // Aba 1: Gerenciar Usuários (Banir / Desbanir)
             const userContainer = document.getElementById('adminUsersList');
             userContainer.innerHTML = "Carregando usuários...";
             const userSnap = await get(ref(db, 'usuarios'));
@@ -1221,7 +1280,6 @@
                 userContainer.innerHTML = "Nenhum usuário cadastrado.";
             }
 
-            // Aba 2: Comprovantes & Liberação
             const receiptContainer = document.getElementById('adminReceiptsList');
             receiptContainer.innerHTML = "Carregando comprovantes...";
             const recSnap = await get(ref(db, 'comprovantes'));
@@ -1266,30 +1324,6 @@
         window.enterAppDashboard = function() {
             document.getElementById('approvedSuccessScreen').style.display = 'none';
         }
-
-        window.addEventListener('DOMContentLoaded', async () => {
-            // Se for o administrador salvo no navegador, libera a tela principal e exibe o botão de escudo no topo
-            if(localStorage.getItem('zrx_is_admin') === 'true') {
-                document.getElementById('adminShortcutBtn').style.display = 'block';
-                document.getElementById('lockScreen').style.display = 'none';
-                return;
-            }
-
-            const savedId = localStorage.getItem('zrx_current_user_id');
-            if(savedId && savedId !== ADMIN_ID) {
-                const userSnap = await get(ref(db, 'usuarios/' + savedId));
-                if(userSnap.exists()) {
-                    const uData = userSnap.val();
-                    if(uData.status === 'banido') {
-                        document.getElementById('lockScreen').style.display = 'none';
-                        document.getElementById('bannedScreen').style.display = 'flex';
-                    } else if(uData.status === 'liberado') {
-                        document.getElementById('lockScreen').style.display = 'none';
-                        document.getElementById('approvedSuccessScreen').style.display = 'flex';
-                    }
-                }
-            }
-        });
     </script>
 
     <script>
