@@ -983,3 +983,158 @@
     "mae": "SEM INFORMAÇÃO"
   }
 ]
+  {
+    "cpf": "09045913445",
+    "nome": "FABIANA DO CARMO SOARES",
+    "telefone": "81983464258",
+    "dados_pessoais": {
+      "cpf": "09045913445",
+      "nome": "FABIANA DO CARMO SOARES",
+      "sexo": "F - FEMININO",
+      "data_de_nascimento": "10/05/1981",
+      "nome_da_mae": "RITA MARIA FRANCISCA DO CARMO",
+      "escolaridade": "Sem informação.",
+      "situacao_cadastral": "REGULAR",
+      "data_situacao": "2019-08-13 00:00:00",
+      "obito": "NÃO"
+    },
+    "profissao": {
+      "cbo": "SEM INFORMAÇÃO",
+      "descricao_cbo": "Sem descrição.",
+      "pis": "0"
+    },
+    "dados_economicos": {
+      "renda": "R$ 375,49",
+      "codigo_poder_aquisitivo": "1",
+      "poder_aquisitivo": "MUITO BAIXO",
+      "renda_poder_aquisitivo": "R$ 375,49218210410163",
+      "faixa_poder_aquisitivo": "De R$ 112 at? R$ 630",
+      "score_csba": "150",
+      "faixa_de_risco_csba": "ALTISSIMO"
+    },
+    "serasa_mosaic": {
+      "codigo_mosaic": "F19",
+      "descricao_mosaic": "Idosos independentes da classe média",
+      "classe_mosaic": "Envelhecendo no Século XXI",
+      "codigo_mosaic_novo": "H28",
+      "descricao_mosaic_novo": "Jovens da informalidade",
+      "classe_mosaic_novo": "Massa Trabalhadora Urbana",
+      "codigo_mosaic_secundario": "H26",
+      "desc_mosaic_secundario": "Trabalhadores manuais de baixa remuneração"
+    },
+    "emails": [
+      {
+        "email": "mmppaz@gmail.com",
+        "prioridade": "MUITO ALTA",
+        "qualidade": "POTENCIALMENTE BOM",
+        "email_pessoal": false,
+        "blacklist": false
+      },
+      {
+        "email": "alexfabiana2020@gmail.com",
+        "prioridade": "ALTA",
+        "qualidade": "POTENCIALMENTE BOM",
+        "email_pessoal": true,
+        "blacklist": false
+      },
+      {
+        "email": "fabianasoares2013@hotmail.com",
+        "prioridade": "MUITO ALTA",
+        "qualidade": "OTIMO",
+        "email_pessoal": true,
+        "blacklist": false
+      },
+      {
+        "email": "klebersonboy@outlook.com",
+        "prioridade": "ALTA",
+        "qualidade": "BOM",
+        "email_pessoal": false,
+        "blacklist": false
+      }
+    ],
+    "telefones": [
+      { "numero": "81983464258", "tipo": "TELEFONE MÓVEL", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81986738379", "tipo": "TELEFONE MÓVEL", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81983376177", "tipo": "TELEFONE MÓVEL", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81985732435", "tipo": "TELEFONE MÓVEL", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81986663780", "tipo": "TELEFONE MÓVEL", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81983566250", "tipo": "PRE PAGO", "operadora": "OI", "status": "ATIVA" },
+      { "numero": "81986771430", "tipo": "PRE PAGO", "operadora": "OI", "status": "ATIVA" },
+      { "numero": "81988546725", "tipo": "PRE PAGO", "operadora": "OI", "status": "ATIVA" },
+      { "numero": "8130145561", "tipo": "RESIDENCIAL", "operadora": "VIVO", "status": "CANCELADO" },
+      { "numero": "53140230", "tipo": "CELULAR", "operadora": "VIVO", "status": "NO" },
+      { "numero": "8130991098", "tipo": "RESIDENCIAL", "operadora": "VIVO", "status": "INATIVO" },
+      { "numero": "8130110644", "tipo": "RESIDENCIAL", "operadora": "VIVO", "status": "INATIVO" },
+      { "numero": "53140270", "tipo": "FIXO", "operadora": "VIVO", "status": "NO" },
+      { "numero": "8130123144", "tipo": "RESIDENCIAL", "operadora": "VIVO", "status": "INATIVO" },
+      { "numero": "8134726076", "tipo": "SEM INFORMAÇÃO", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81991984052", "tipo": "SEM INFORMAÇÃO", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "8134319848", "tipo": "SEM INFORMAÇÃO", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81985588420", "tipo": "SEM INFORMAÇÃO", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81986497102", "tipo": "SEM INFORMAÇÃO", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81987796727", "tipo": "SEM INFORMAÇÃO", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81983650211", "tipo": "SEM INFORMAÇÃO", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81983196248", "tipo": "SEM INFORMAÇÃO", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81991983989", "tipo": "SEM INFORMAÇÃO", "operadora": "TELEFONIA", "status": "SEM INFORMAÇÃO" },
+      { "numero": "8134950412", "tipo": "FIXO", "operadora": "TELEMAR", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81985990460", "tipo": "CELULAR", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81987720456", "tipo": "CELULAR", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81988135567", "tipo": "CELULAR", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" }
+    ],
+    "enderecos": [
+      { "logradouro": "RUA ONIX", "numero": "31", "complemento": "SEM INFORMAÇÃO", "bairro": "JD ATLANTICO", "cidade": "OLINDA", "uf": "PE", "cep": "53060160" },
+      { "logradouro": "RUA IRAPUA", "numero": "128", "complemento": "AP 2", "bairro": "IPSEP", "cidade": "RECIFE", "uf": "PE", "cep": "51350630" },
+      { "logradouro": "RUA BUZIO", "numero": "520", "complemento": "SEM INFORMAÇÃO", "bairro": "FRAGOSO", "cidade": "OLINDA", "uf": "PE", "cep": "53250010" },
+      { "logradouro": "RUA BARRETO DE MENEZES", "numero": "800", "complemento": "SEM INFORMAÇÃO", "bairro": "GUARARAPES", "cidade": "JABOATAO DOS GUARARAPES", "uf": "PE", "cep": "54325192" },
+      { "logradouro": "RUA ACAPULCO", "numero": "83", "complemento": "SEM INFORMAÇÃO", "bairro": "JD ATLANTICO", "cidade": "OLINDA", "uf": "PE", "cep": "53140210" },
+      { "logradouro": "RUA EVERALDO XAVIER", "numero": "388", "complemento": "SEM INFORMAÇÃO", "bairro": "JD ATLANTICO", "cidade": "OLINDA", "uf": "PE", "cep": "53140270" },
+      { "logradouro": "RUA ESMERALDA", "numero": "1176", "complemento": "SEM INFORMAÇÃO", "bairro": "FRAGOSO", "cidade": "OLINDA", "uf": "PE", "cep": "53060740" },
+      { "logradouro": "RUA PEDRO IVO", "numero": "338", "complemento": "CS A", "bairro": "SAPUCAIA", "cidade": "OLINDA", "uf": "PE", "cep": "53270655" },
+      { "logradouro": "RUA BELO HORIZONTE", "numero": "1256", "complemento": "SEM INFORMAÇÃO", "bairro": "RIO DOCE", "cidade": "OLINDA", "uf": "PE", "cep": "53040110" }
+    ],
+    "parentes": [
+      { "nome": "RAFAEL DO CARMO", "grau_de_parentesco": "IRMA(O)", "cpf": "08162338454" },
+      { "nome": "TIAGO DO CARMO", "grau_de_parentesco": "IRMA(O)", "cpf": "08162337482" },
+      { "nome": "CLEBSON DO CARMO", "grau_de_parentesco": "IRMA(O)", "cpf": "05670105460" },
+      { "nome": "FABIO DO CARMO SOARES", "grau_de_parentesco": "IRMA(O)", "cpf": "05517413412" },
+      { "nome": "RITA MARIA FRANCISCA DO CARMO", "grau_de_parentesco": "MAE", "cpf": "93534272404" }
+    ],
+    "beneficios": [
+      { "tipo": "AUXILIO EMERGENCIAL", "parcelas_recebidas": 0, "total_recebido": "R$ 0" },
+      { "tipo": "BOLSA FAMILIA", "parcelas_recebidas": 0, "total_recebido": "R$ 0" },
+      { "tipo": "BENEFICIO PRESTACAO CONTINUADA", "parcelas_recebidas": 0, "total_recebido": "R$ 0" },
+      { "tipo": "INSTITUTO NACIONAL DO SEGURO SOCIAL", "parcelas_recebidas": 0, "total_recebido": "R$ 0" }
+    ],
+    "vacinas": [
+      {
+        "vacina": "COVID-19 SINOVAC/BUTANTAN - CORONAVAC",
+        "dose": "2ª Dose",
+        "data_aplicacao": "15/09/2021",
+        "fabricante": "SINOVAC/BUTANTAN",
+        "lote": "210354",
+        "estabelecimento": "POLICLINICA OURO PRETO",
+        "municipio": "OLINDA",
+        "uf": "PE"
+      },
+      {
+        "vacina": "COVID-19 JANSSEN - Ad26.COV2.S",
+        "dose": "Reforço",
+        "data_aplicacao": "07/04/2022",
+        "fabricante": "JANSSEN",
+        "lote": "206H21A",
+        "estabelecimento": "POLICLINICA OURO PRETO",
+        "municipio": "OLINDA",
+        "uf": "PE"
+      },
+      {
+        "vacina": "COVID-19 SINOVAC/BUTANTAN - CORONAVAC",
+        "dose": "1ª Dose",
+        "data_aplicacao": "25/08/2021",
+        "fabricante": "SINOVAC/BUTANTAN",
+        "lote": "210344",
+        "estabelecimento": "POLICLINICA OURO PRETO",
+        "municipio": "OLINDA",
+        "uf": "PE"
+      }
+    ]
+  }
