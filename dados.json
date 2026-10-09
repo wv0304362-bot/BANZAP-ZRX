@@ -1,0 +1,69 @@
+[
+  {
+    "cpf": "01731814496",
+    "nome": "LEOMARQUES RODRIGUES DA SILVA",
+    "telefone": "84987615925",
+    "dados_pessoais": {
+      "nome": "LEOMARQUES RODRIGUES DA SILVA",
+      "cpf": "01731814496",
+      "cns_definitivo": "700105984356019",
+      "cns_provisorio": "203199794280018",
+      "raca_cor": "PARDO(A)",
+      "nacionalidade": "SEM INFORMAÇÃO",
+      "desaparecido": false,
+      "naturalidade": "SEM INFORMAÇÃO"
+    },
+    "biometria": {
+      "cor_olhos": "CASTANHOS ESCUROS",
+      "cor_cabelo": "PRETOS",
+      "altura": "SEM INFORMAÇÃO"
+    },
+    "filiacao": {
+      "mae": "LEIDEJANE COSTA",
+      "pai": "JOSANILTON RODRIGUES DA SILVA"
+    },
+    "informacoes_adicionais": {
+      "nome_social": "SEM INFORMAÇÃO",
+      "sexo": "M",
+      "nascimento": "1993-12-28",
+      "signo": "CAPRICÓRNIO",
+      "tipo_sanguineo": "SEM INFORMAÇÃO"
+    },
+    "renda_e_status": {
+      "escolaridade": "SEM INFORMAÇÃO",
+      "empresario": "Não",
+      "aposentado": "Não",
+      "servidor_publico": "Não",
+      "renda_atual": "1350",
+      "score_spc": "474"
+    },
+    "veiculos": {
+      "marca_modelo": "HONDA/CG 150 FAN ES",
+      "placa": "NOA8D02",
+      "chassis": "9C2KC1670BR506335",
+      "renavam": "00311536280",
+      "ano_fabricacao": "2011",
+      "ano_modelo": "2011"
+    },
+    "enderecos": [
+      {
+        "logradouro": "SI LAGOA DA CARNAUBA 112",
+        "numero": "112",
+        "bairro": "LGA DA CARNAUBA",
+        "cidade": "LAGOA D ANTA/RN",
+        "cep": "SEM INFORMAÇÃO"
+      },
+      {
+        "logradouro": "R NITEROI",
+        "numero": "250",
+        "bairro": "CENTRO",
+        "cidade": "SAO CAETANO DO SUL/SP",
+        "cep": "09510200"
+      }
+    ],
+    "telefones": [
+      { "telefone": "(84)987615925", "tipo": "MÓVEL" },
+      { "telefone": "(84)988140220", "tipo": "MÓVEL" }
+    ]
+  }
+]
