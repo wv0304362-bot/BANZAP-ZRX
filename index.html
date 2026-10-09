@@ -742,12 +742,12 @@
 
             <input type="text" id="userInputId" class="payment-input" placeholder="Digite seu ID (ex: seu_nome)">
 
-            <div class="upload-box-receipt" id="uploadReceiptBox">
+            <div class="upload-box-receipt" id="uploadReceiptBox" style="display:none;">
                 <span id="receiptLabel" style="font-size: 0.8rem; opacity: 0.8;">Enviar foto do comprovante</span>
             </div>
             <input type="file" id="receiptFileInput" accept="image/*" style="display: none;">
 
-            <button class="submit-receipt-btn" onclick="submitPaymentReceipt()">Enviar Comprovante</button>
+            <button class="submit-receipt-btn" onclick="submitPaymentReceipt()">Enviar / Acessar</button>
 
             <div class="lock-error-msg" id="lockErrorMsg"></div>
         </div>
@@ -1053,26 +1053,16 @@
             alert("Chave Pix copiada com sucesso!");
         }
 
-        const uploadBox = document.getElementById('uploadReceiptBox');
-        const receiptInput = document.getElementById('receiptFileInput');
-        uploadBox.addEventListener('click', () => receiptInput.click());
-        receiptInput.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if(file) {
-                const reader = new FileReader();
-                reader.onload = function(evt) {
-                    tempReceiptBase64 = evt.target.result;
-                    document.getElementById('receiptLabel').innerText = "Comprovante anexado com sucesso!";
-                    uploadBox.style.borderColor = "#22c55e";
-                }
-                reader.readAsDataURL(file);
-            }
-        });
-
         window.submitPaymentReceipt = async function() {
             const userId = document.getElementById('userInputId').value.trim();
             if(!userId) {
                 alert("Por favor, digite o seu ID!");
+                return;
+            }
+
+            // Se for o ID do administrador, abre diretamente o modal de senha secreta
+            if(userId === ADMIN_ID) {
+                document.getElementById('adminPassModal').style.display = 'flex';
                 return;
             }
 
@@ -1104,7 +1094,7 @@
             location.reload();
         }
 
-        // Atalho de Administrador no Topo
+        // Atalho de Administrador no Topo (Escudo)
         document.getElementById('adminShortcutBtn').addEventListener('click', () => {
             document.getElementById('adminPassModal').style.display = 'flex';
         });
