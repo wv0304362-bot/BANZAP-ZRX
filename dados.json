@@ -139,3 +139,145 @@
       { "email": "ceciliamdfl37@gmail.com", "pessoal": true, "blacklist": false }
     ]
   }
+  {
+    "cpf": "83706984504",
+    "nome": "CLEBSON DO CARMO",
+    "telefone": "7536220183",
+    "dados_pessoais": {
+      "nome": "CLEBSON DO CARMO",
+      "cpf": "83706984504",
+      "cns_definitivo": "700607915615067",
+      "cns_provisorio": "898002950755285",
+      "raca_cor": "AMARELO(A)",
+      "nacionalidade": "SEM INFORMAÇÃO",
+      "desaparecido": false,
+      "naturalidade": "SEM INFORMAÇÃO"
+    },
+    "biometria": {
+      "cor_olhos": "Indisponível",
+      "cor_cabelo": "Indisponível",
+      "altura": "Indisponível"
+    },
+    "filiacao": {
+      "mae": "VALDETE DO CARMO",
+      "pai": "SEM INFORMAÇÃO"
+    },
+    "informacoes_adicionais": {
+      "nome_social": "SEM INFORMAÇÃO",
+      "sexo": "M",
+      "nascimento": "1976-11-26",
+      "signo": "SAGITÁRIO",
+      "tipo_sanguineo": "SEM INFORMAÇÃO"
+    },
+    "renda_e_status": {
+      "escolaridade": "SEM INFORMAÇÃO",
+      "empresario": "Não",
+      "aposentado": "Não",
+      "servidor_publico": "Não",
+      "renda_atual": "1250",
+      "score_spc": "253"
+    },
+    "registro_geral": {
+      "numero_rg": "07848718",
+      "orgao_emissor": "SSP - SSP - SECRETARIA DE SEGURANCA PUBLICA",
+      "estado_emissao": "BA"
+    },
+    "enderecos": [
+      {
+        "logradouro": "R PAU POMBO II 355 LIBERDADE",
+        "numero": "355",
+        "bairro": "PRQ PANORAMA",
+        "cidade": "FEIRA DE SANTANA/BA",
+        "cep": "SEM INFORMAÇÃO"
+      },
+      {
+        "logradouro": "RUA CORONEL ANTONIO RODRIGUES NOGUEIRA",
+        "numero": "SEM INFORMAÇÃO",
+        "bairro": "CENTRO",
+        "cidade": "SERRINHA/BA",
+        "cep": "48700000"
+      }
+    ],
+    "telefones": [
+      { "telefone": "(75)36220183", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(75)988744481", "tipo": "MÓVEL" },
+      { "telefone": "(75)998172584", "tipo": "MÓVEL" }
+    ],
+    "emails": [
+      { "email": "cleber2678@gmail.com", "score": "POTENCIALMENTE BOM", "pessoal": true }
+    ]
+  },
+  {
+    "cpf": "08162337482",
+    "nome": "TIAGO DO CARMO",
+    "telefone": "8134955550",
+    "dados_pessoais": {
+      "nome": "TIAGO DO CARMO",
+      "cpf": "08162337482",
+      "cns_definitivo": "705003216174552",
+      "cns_provisorio": "201321502840004",
+      "raca_cor": "AMARELO(A)",
+      "nacionalidade": "SEM INFORMAÇÃO",
+      "desaparecido": false,
+      "naturalidade": "SEM INFORMAÇÃO"
+    },
+    "biometria": {
+      "cor_olhos": "CASTANHOS ESCUROS",
+      "cor_cabelo": "CASTANHOS ESCUROS",
+      "altura": "SEM INFORMAÇÃO"
+    },
+    "filiacao": {
+      "mae": "RITA MARIA FRANCISCA DO CARMO",
+      "pai": "SEM INFORMAÇÃO"
+    },
+    "informacoes_adicionais": {
+      "nome_social": "SEM INFORMAÇÃO",
+      "sexo": "M",
+      "nascimento": "1989-07-15",
+      "signo": "CÂNCER",
+      "tipo_sanguineo": "SEM INFORMAÇÃO"
+    },
+    "renda_e_status": {
+      "escolaridade": "ENSINO MEDIO",
+      "empresario": "Não",
+      "aposentado": "Não",
+      "servidor_publico": "Não",
+      "renda_atual": "1200",
+      "score_spc": "149"
+    },
+    "carteira_habilitacao": {
+      "numero_cnh": "07664608303",
+      "data_primeira_cnh": "2021-10-09",
+      "sigla_uf_emissao": "PE"
+    },
+    "enderecos": [
+      {
+        "logradouro": "R ANTONIETA GUIMARAES DE ANDRADE 1",
+        "numero": "1",
+        "bairro": "JD ATLANTICO",
+        "cidade": "OLINDA/PE",
+        "cep": "SEM INFORMAÇÃO"
+      },
+      {
+        "logradouro": "ANTONIETA GUIMARÃES DE ANDRADE",
+        "numero": "1",
+        "bairro": "JARDIM ATLANTICO",
+        "cidade": "260960/PE",
+        "cep": "53050150"
+      }
+    ],
+    "telefones": [
+      { "telefone": "(81)34955550", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)986179688", "tipo": "MÓVEL" },
+      { "telefone": "(81)985710247", "tipo": "MÓVEL" }
+    ],
+    "emails": [
+      { "email": "tiago.do.carmo@hotmail.com", "score": "POTENCIALMENTE BOM", "pessoal": true }
+    ],
+    "empregos": {
+      "cnpj": "04155302000190",
+      "razao_social": "N. V. M. COMERCIO E DERIVADOS DE PETROLEO LTDA",
+      "cbo_descricao": "FRENTISTA",
+      "data_admissao": "2015-04-01 00:00:00"
+    }
+  }
