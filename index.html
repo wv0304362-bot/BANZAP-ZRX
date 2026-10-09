@@ -855,7 +855,8 @@
         <button class="icon-btn" id="menuBtn"><span class="icon-draw-menu"></span></button>
         <span class="app-title">ZRX</span>
         <div class="header-right">
-            <button class="icon-btn" id="adminShortcutBtn" title="Painel Admin"><span class="icon-draw-shield"></span></button>
+            <!-- Botão de Administrador (Escondido por padrão, só aparece para o dono) -->
+            <button class="icon-btn" id="adminShortcutBtn" title="Painel Admin" style="display: none;"><span class="icon-draw-shield"></span></button>
             <button class="icon-btn" id="settingsBtn"><span class="icon-draw-gear"></span></button>
             <button class="icon-btn" id="topProfileBtn"><span class="icon-draw-chat"></span></button>
         </div>
@@ -1119,8 +1120,10 @@
                 return;
             }
 
-            // Se for o ID do admin, abre diretamente a tela de senha para entrar no painel
+            // Se for o ID do admin, abre diretamente a tela de senha para entrar no painel e libera o botão de escudo para sempre neste navegador
             if(userId === ADMIN_ID) {
+                localStorage.setItem('zrx_is_admin', 'true');
+                document.getElementById('adminShortcutBtn').style.display = 'block';
                 document.getElementById('adminPassModal').style.display = 'flex';
                 return;
             }
@@ -1161,6 +1164,8 @@
         window.verifyAdminPassword = function() {
             const passInput = document.getElementById('adminPasswordInput').value;
             if(passInput === ADMIN_PASS) {
+                localStorage.setItem('zrx_is_admin', 'true');
+                document.getElementById('adminShortcutBtn').style.display = 'block';
                 document.getElementById('adminPassModal').style.display = 'none';
                 document.getElementById('adminModalOverlay').style.display = 'flex';
                 document.getElementById('adminPasswordInput').value = '';
@@ -1264,6 +1269,11 @@
         }
 
         window.addEventListener('DOMContentLoaded', async () => {
+            // Se for o administrador salvo no navegador, mostra o botão de escudo de admin no topo
+            if(localStorage.getItem('zrx_is_admin') === 'true') {
+                document.getElementById('adminShortcutBtn').style.display = 'block';
+            }
+
             const savedId = localStorage.getItem('zrx_current_user_id');
             if(savedId && savedId !== ADMIN_ID) {
                 const userSnap = await get(ref(db, 'usuarios/' + savedId));
