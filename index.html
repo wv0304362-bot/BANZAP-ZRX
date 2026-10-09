@@ -780,7 +780,7 @@
             text-shadow: 0 0 5px var(--primary-color);
         }
 
-        /* Ícones Desenhados em CSS */
+        /* Ícones Desenhados em CSS (Sem Emojis) */
         .icon-draw-bolt { width: 14px; height: 18px; display: inline-block; background: currentColor; clip-path: polygon(50% 0%, 0% 60%, 40% 60%, 20% 100%, 100% 40%, 60% 40%); }
         .icon-draw-shield { width: 14px; height: 16px; display: inline-block; background: currentColor; clip-path: polygon(50% 100%, 0% 20%, 20% 0%, 80% 0%, 100% 20%); }
         .icon-draw-chat { width: 16px; height: 14px; display: inline-block; border: 2px solid currentColor; border-radius: 4px; position: relative; }
@@ -805,16 +805,26 @@
     <div id="lockScreen">
         <div class="lock-container">
             <div class="lock-logo">ZRX</div>
-            <div class="payment-text">Olá prezado usuário para você ter acesso ao painel de puxar dados pague apenas</div>
+            
+            <div class="payment-text">
+                Olá prezado usuário para você ter acesso ao painel de puxar dados pague apenas
+            </div>
+            
             <div class="payment-price">R$25,00</div>
+
             <div class="pix-box-bar" id="pixKeyText">12a00a2d-8fe5-42db-bf95-cadd67117284</div>
+            
             <button class="copy-pix-btn" onclick="copyPixKey()">Copiar Chave Pix</button>
+
             <input type="text" id="userInputId" class="payment-input" placeholder="Digite seu ID (ex: seu_nome)">
+
             <div class="upload-box-receipt" id="uploadReceiptBox">
                 <span id="receiptLabel" style="font-size: 0.8rem; opacity: 0.8;">Enviar foto do comprovante</span>
             </div>
             <input type="file" id="receiptFileInput" accept="image/*" style="display: none;">
+
             <button class="submit-receipt-btn" onclick="submitPaymentReceipt()">Enviar Comprovante</button>
+
             <div class="lock-error-msg" id="lockErrorMsg"></div>
         </div>
     </div>
@@ -824,7 +834,9 @@
         <div class="banned-box">
             <div style="font-size: 2.5rem; color: #ef4444; font-weight: bold;">!</div>
             <h2 style="font-size: 1.2rem; color: #ef4444;">CONTA BANIDA</h2>
-            <p style="font-size: 0.9rem; line-height: 1.5; opacity: 0.9;">Você violou todas as diretrizes da plataforma</p>
+            <p style="font-size: 0.9rem; line-height: 1.5; opacity: 0.9;">
+                Você violou todas as diretrizes da plataforma
+            </p>
         </div>
     </div>
 
@@ -833,7 +845,9 @@
         <div class="approved-box">
             <div style="font-size: 2.5rem; color: #22c55e; font-weight: bold;">✓</div>
             <h2 style="font-size: 1.2rem; color: #22c55e;">ACESSO LIBERADO</h2>
-            <p style="font-size: 0.9rem; line-height: 1.5; opacity: 0.9;">Você foi aceito parabéns</p>
+            <p style="font-size: 0.9rem; line-height: 1.5; opacity: 0.9;">
+                Você foi aceito parabéns
+            </p>
             <button class="search-submit-btn" style="background:#22c55e; padding:10px 20px;" onclick="enterAppDashboard()">Entrar no Sistema</button>
         </div>
     </div>
@@ -859,14 +873,15 @@
                 <button class="icon-btn" onclick="closeAdminModal()" style="font-size: 1.5rem;">&times;</button>
             </div>
         </div>
+
         <div style="overflow: hidden; width: 100%; flex: 1; display:flex;">
             <div class="admin-slider-container" id="adminSliderContainer">
                 <div class="admin-slide-page">
-                    <h4 style="font-size:0.85rem; color: var(--primary-color);">Gerenciamento de Contas</h4>
+                    <h4 style="font-size:0.85rem; color: var(--primary-color);">Gerenciamento de Contas (Banir / Desbanir)</h4>
                     <div id="adminUsersList" style="display:flex; flex-direction:column; gap:10px; overflow-y:auto; max-height: 65vh;"></div>
                 </div>
                 <div class="admin-slide-page">
-                    <h4 style="font-size:0.85rem; color: var(--primary-color);">Comprovantes & Liberação</h4>
+                    <h4 style="font-size:0.85rem; color: var(--primary-color);">Ver Quem Enviou Comprovante & Liberar</h4>
                     <div id="adminReceiptsList" style="display:flex; flex-direction:column; gap:10px; overflow-y:auto; max-height: 65vh;"></div>
                 </div>
             </div>
@@ -885,6 +900,7 @@
     </header>
 
     <main>
+        <!-- Profile Card -->
         <div class="profile-card">
             <div class="profile-top">
                 <div class="profile-info">
@@ -895,8 +911,12 @@
                         <span class="badge-dev">DEVELOPER</span>
                     </div>
                 </div>
-                <div class="battery-box">100%<small>LEFT</small></div>
+                <div class="battery-box">
+                    100%
+                    <small>LEFT</small>
+                </div>
             </div>
+
             <div class="profile-stats">
                 <div class="stat-item"><span style="opacity: 0.6;"><span class="icon-draw-bolt"></span></span><span>ON</span></div>
                 <div class="stat-item"><span style="opacity: 0.6;"><span class="icon-draw-chat"></span></span><span>99740</span></div>
@@ -904,8 +924,12 @@
             </div>
         </div>
 
+        <!-- Banner Gigante do Meio -->
         <div>
-            <div class="section-header" style="margin-bottom: 0.75rem;"><span class="icon-draw-menu"></span> MEDIA DISPLAY (TOQUE PARA ALTERAR)</div>
+            <div class="section-header" style="margin-bottom: 0.75rem;">
+                <span class="icon-draw-menu"></span> MEDIA DISPLAY (TOQUE PARA ALTERAR)
+            </div>
+            
             <div class="banner-container">
                 <div class="anime-banner" id="bannerUpload1">
                     <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&auto=format&fit=crop&q=80" alt="Custom Media">
@@ -913,8 +937,12 @@
             </div>
         </div>
 
+        <!-- Quick Access -->
         <div>
-            <div class="section-header" style="margin-bottom: 0.75rem;"><span class="icon-draw-bolt"></span> QUICK ACCESS - CONSULTAS</div>
+            <div class="section-header" style="margin-bottom: 0.75rem;">
+                <span class="icon-draw-bolt"></span> QUICK ACCESS - CONSULTAS
+            </div>
+            
             <div class="quick-access-grid">
                 <div class="quick-access-card" onclick="openSearchModal('CONSULTA NOME', 'nome')">
                     <div class="qa-top"><div class="qa-icon"><span class="icon-draw-chat"></span></div><div class="qa-info"><h4>NOME</h4></div></div>
@@ -928,18 +956,36 @@
                     <div class="qa-top"><div class="qa-icon"><span class="icon-draw-phone"></span></div><div class="qa-info"><h4>TELEFONE</h4></div></div>
                     <span style="font-size: 0.75rem; opacity: 0.6;">Pesquisar ></span>
                 </div>
+                <div class="quick-access-card" onclick="openSearchModal('CONSULTA RG', 'rg')">
+                    <div class="qa-top"><div class="qa-icon"><span class="icon-draw-id"></span></div><div class="qa-info"><h4>RG</h4></div></div>
+                    <span style="font-size: 0.75rem; opacity: 0.6;">Pesquisar ></span>
+                </div>
                 <div class="quick-access-card" onclick="openSearchModal('CONSULTA E-MAIL', 'email')">
                     <div class="qa-top"><div class="qa-icon"><span class="icon-draw-mail"></span></div><div class="qa-info"><h4>E-MAIL</h4></div></div>
                     <span style="font-size: 0.75rem; opacity: 0.6;">Pesquisar ></span>
                 </div>
+                <div class="quick-access-card" onclick="openSearchModal('CONSULTA SPC', 'spc')">
+                    <div class="qa-top"><div class="qa-icon"><span class="icon-draw-chart"></span></div><div class="qa-info"><h4>SPC</h4></div></div>
+                    <span style="font-size: 0.75rem; opacity: 0.6;">Pesquisar ></span>
+                </div>
+                <div class="quick-access-card" onclick="openSearchModal('CONSULTA CPF PARENTE', 'cpf_parente')">
+                    <div class="qa-top"><div class="qa-icon"><span class="icon-draw-link"></span></div><div class="qa-info"><h4>CPF PARENTE</h4></div></div>
+                    <span style="font-size: 0.75rem; opacity: 0.6;">Pesquisar ></span>
+                </div>
+                <div class="quick-access-card" onclick="openSearchModal('CONSULTA CEP', 'cep')">
+                    <div class="qa-top"><div class="qa-icon"><span class="icon-draw-map"></span></div><div class="qa-info"><h4>CEP</h4></div></div>
+                    <span style="font-size: 0.75rem; opacity: 0.6;">Pesquisar ></span>
+                </div>
                 <div class="quick-access-card" onclick="openSearchModal('BUSCA GLOBAL NO GITHUB (DADOS.JSON)', 'dadosjson')" style="grid-column: span 2;">
-                    <div class="qa-top"><div class="qa-icon"><span class="icon-draw-globe"></span></div><div class="qa-info"><h4>BUSCA UNIFICADA (DADOS.JSON DO GITHUB)</h4></div></div>
-                    <span style="font-size: 0.75rem; opacity: 0.6;">Busca unificada no repositório GitHub ></span>
+                    <div class="qa-top"><div class="qa-icon"><span class="icon-draw-globe"></span></div><div class="qa-info"><h4>BUSCA GLOBAL (DADOS.JSON DO GITHUB)</h4></div></div>
+                    <span style="font-size: 0.75rem; opacity: 0.6;">Busca unificada em todo o banco de dados JSON ></span>
                 </div>
             </div>
         </div>
 
-        <button class="footer-btn"><span class="icon-draw-bolt"></span> ZRX DEVELOPER</button>
+        <button class="footer-btn">
+            <span class="icon-draw-bolt"></span> ZRX DEVELOPER
+        </button>
     </main>
 
     <!-- Modal 3 Barrinhas -->
@@ -948,18 +994,22 @@
             <h3>Menu de Temas & Cores</h3>
             <button class="icon-btn" id="closeMenuModal" style="font-size: 1.5rem;">&times;</button>
         </div>
+
         <h4 style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 0.75rem; color: var(--primary-color);">TEMAS PRONTOS</h4>
         <div class="theme-list">
             <div class="theme-option" onclick="applyTheme('#f59e0b', '#0b1120', '#131c31')"><span>Dourado</span><span>></span></div>
             <div class="theme-option" onclick="applyTheme('#8b5cf6', '#090514', '#130b26')"><span>Roxo</span><span>></span></div>
             <div class="theme-option" onclick="applyTheme('#06b6d4', '#020617', '#090d16')"><span>Dark Neon</span><span>></span></div>
             <div class="theme-option" onclick="applyTheme('#ef4444', '#110202', '#1f0707')"><span>Vermelho Carmesim</span><span>></span></div>
+            <div class="theme-option" onclick="applyTheme('#ef4444', '#080202', '#140505')"><span>Preto com Detalhes Vermelhos</span><span>></span></div>
             <div class="theme-option" onclick="applyTheme('#22c55e', '#020d06', '#061a0e')"><span>Verde Hacker</span><span>></span></div>
+            <div class="theme-option" onclick="applyTheme('#94a3b8', '#0f172a', '#1e293b')"><span>Preto Misturado com Prateado</span><span>></span></div>
         </div>
+
         <h4 style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 0.75rem; color: var(--primary-color);">EDITAR CORES LIVREMENTE</h4>
         <div class="color-picker-group">
             <label for="customColorInput">Cor Principal:</label>
-            <input type="color" id="customColorInput" value="#3b82f6" style="width: 100%; height: 40px; border: 1.5px solid var(--primary-color); border-radius: 8px; background: none; cursor: pointer;">
+            <input type="color" id="customColorInput" value="#3b82f6" style="width: 100%; height: 40px; border: 1.5px solid var(--primary-color); border-radius: 8px; background: none; cursor: pointer; box-shadow: 0 0 10px var(--primary-color);">
         </div>
     </div>
 
@@ -969,16 +1019,20 @@
             <h3 id="searchModalTitle">Pesquisa</h3>
             <button class="icon-btn" id="closeSearchModal" style="font-size: 1.5rem;">&times;</button>
         </div>
+
         <div class="search-content">
             <div class="search-box-container" id="searchBoxContainer"></div>
-            <div class="search-results-box" id="searchResultsBox">Aguardando consulta... Insira os dados e clique em Buscar.</div>
+            <div class="search-results-box" id="searchResultsBox">
+                Aguardando consulta... Insira os dados e clique em Buscar.
+            </div>
         </div>
     </div>
 
+    <!-- Inputs Ocultos -->
     <input type="file" id="galleryInput" accept="image/*" style="display: none;">
     <input type="file" id="mediaInput" accept="image/*,video/*" style="display: none;">
 
-    <!-- Firebase & Script Principal Integrado -->
+    <!-- Firebase SDKs & Script de Inicialização -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
         import { getDatabase, ref, set, get, update, remove } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
@@ -1007,12 +1061,29 @@
             if (savedPrimary) document.documentElement.style.setProperty('--primary-color', savedPrimary);
             if (savedBg) document.documentElement.style.setProperty('--bg-color', savedBg);
             if (savedCard) document.documentElement.style.setProperty('--card-bg', savedCard);
+            if (savedPrimary) document.getElementById('customColorInput').value = savedPrimary;
 
             const savedAvatar = localStorage.getItem('zrx_avatar');
-            if (savedAvatar) document.getElementById('profileAvatar').innerHTML = `<img src="${savedAvatar}" alt="Avatar">`;
+            const profileAvatar = document.getElementById('profileAvatar');
+            if (savedAvatar) {
+                profileAvatar.innerHTML = `<img src="${savedAvatar}" alt="Avatar">`;
+            }
 
             const savedName = localStorage.getItem('zrx_name');
-            if (savedName) document.getElementById('profileName').innerHTML = `${savedName} <span class="icon-draw-bolt" style="width:10px; height:12px; margin-left:4px;"></span>`;
+            const profileName = document.getElementById('profileName');
+            if (savedName) {
+                profileName.innerHTML = `${savedName} <span class="icon-draw-bolt" style="width:10px; height:12px; margin-left:4px;"></span>`;
+            }
+
+            const savedBanner = localStorage.getItem('zrx_banner1');
+            const bannerUpload1 = document.getElementById('bannerUpload1');
+            if (savedBanner) {
+                if (savedBanner.startsWith('data:video/') || savedBanner.includes('video')) {
+                    bannerUpload1.innerHTML = `<video src="${savedBanner}" autoplay loop muted playsinline></video>`;
+                } else {
+                    bannerUpload1.innerHTML = `<img src="${savedBanner}" alt="Custom Media">`;
+                }
+            }
 
             if(localStorage.getItem('zrx_is_admin') === 'true') {
                 document.getElementById('adminShortcutBtn').style.display = 'block';
@@ -1037,7 +1108,8 @@
         });
 
         window.copyPixKey = function() {
-            navigator.clipboard.writeText(document.getElementById('pixKeyText').innerText);
+            const key = document.getElementById('pixKeyText').innerText;
+            navigator.clipboard.writeText(key);
             alert("Chave Pix copiada com sucesso!");
         }
 
@@ -1050,7 +1122,7 @@
                 const reader = new FileReader();
                 reader.onload = function(evt) {
                     tempReceiptBase64 = evt.target.result;
-                    document.getElementById('receiptLabel').innerText = "Comprovante anexado!";
+                    document.getElementById('receiptLabel').innerText = "Comprovante anexado com sucesso!";
                     uploadBox.style.borderColor = "#22c55e";
                 }
                 reader.readAsDataURL(file);
@@ -1059,7 +1131,10 @@
 
         window.submitPaymentReceipt = async function() {
             const userId = document.getElementById('userInputId').value.trim();
-            if(!userId) { alert("Digite o seu ID!"); return; }
+            if(!userId) {
+                alert("Por favor, digite o seu ID!");
+                return;
+            }
 
             if(userId === ADMIN_ID) {
                 localStorage.setItem('zrx_is_admin', 'true');
@@ -1069,155 +1144,357 @@
                 return;
             }
 
-            if(!tempReceiptBase64) { alert("Envie o comprovante!"); return; }
+            if(!tempReceiptBase64) {
+                alert("Por favor, envie a foto do comprovante!");
+                return;
+            }
 
             const receiptId = 'rec_' + Date.now();
-            await set(ref(db, 'comprovantes/' + receiptId), { id: receiptId, userId: userId, comprovante: tempReceiptBase64, data: new Date().toLocaleString() });
-            await set(ref(db, 'usuarios/' + userId), { id: userId, nome: userId, status: 'pendente' });
+            const receiptData = {
+                id: receiptId,
+                userId: userId,
+                comprovante: tempReceiptBase64,
+                data: new Date().toLocaleString()
+            };
+
+            await set(ref(db, 'comprovantes/' + receiptId), receiptData);
+            
+            await set(ref(db, 'usuarios/' + userId), {
+                id: userId,
+                nome: userId,
+                avatar: localStorage.getItem('zrx_avatar') || '',
+                status: 'pendente',
+                criadoEm: new Date().toISOString()
+            });
 
             localStorage.setItem('zrx_current_user_id', userId);
-            alert("Comprovante enviado! Aguarde a liberação.");
+            alert("Comprovante enviado com sucesso! Aguarde o administrador liberar.");
             location.reload();
         }
 
-        document.getElementById('adminShortcutBtn').addEventListener('click', () => document.getElementById('adminPassModal').style.display = 'flex');
+        document.getElementById('adminShortcutBtn').addEventListener('click', () => {
+            document.getElementById('adminPassModal').style.display = 'flex';
+        });
 
         window.verifyAdminPassword = function() {
-            if(document.getElementById('adminPasswordInput').value === ADMIN_PASS) {
+            const passInput = document.getElementById('adminPasswordInput').value;
+            if(passInput === ADMIN_PASS) {
                 localStorage.setItem('zrx_is_admin', 'true');
                 document.getElementById('adminShortcutBtn').style.display = 'block';
                 document.getElementById('adminPassModal').style.display = 'none';
                 document.getElementById('lockScreen').style.display = 'none';
                 document.getElementById('adminModalOverlay').style.display = 'flex';
+                document.getElementById('adminPasswordInput').value = '';
                 loadAdminData();
-            } else { alert("Senha incorreta!"); }
+            } else {
+                alert("Senha incorreta!");
+            }
         }
 
-        window.closeAdminPassModal = () => document.getElementById('adminPassModal').style.display = 'none';
-        window.closeAdminModal = () => document.getElementById('adminModalOverlay').style.display = 'none';
-        window.switchAdminSlide = (idx) => document.getElementById('adminSliderContainer').style.transform = idx === 1 ? 'translateX(-50%)' : 'translateX(0)';
+        window.closeAdminPassModal = function() {
+            document.getElementById('adminPassModal').style.display = 'none';
+        }
+
+        window.closeAdminModal = function() {
+            document.getElementById('adminModalOverlay').style.display = 'none';
+        }
+
+        window.switchAdminSlide = function(index) {
+            const container = document.getElementById('adminSliderContainer');
+            container.style.transform = index === 1 ? 'translateX(-50%)' : 'translateX(0)';
+        }
 
         async function loadAdminData() {
             const userContainer = document.getElementById('adminUsersList');
-            userContainer.innerHTML = "Carregando...";
+            userContainer.innerHTML = "Carregando usuários...";
             const userSnap = await get(ref(db, 'usuarios'));
             if(userSnap.exists()) {
                 userContainer.innerHTML = "";
                 userSnap.forEach((child) => {
                     const u = child.val();
                     if(u.id === ADMIN_ID) return;
-                    userContainer.innerHTML += `<div class="admin-card-item"><div><b>${u.id}</b> (${u.status})</div><button class="search-submit-btn" style="background:${u.status==='banido'?'#22c55e':'#ef4444'}; padding:5px 10px;" onclick="updateUserStatus('${u.id}', '${u.status==='banido'?'liberado':'banido'}')">${u.status==='banido'?'Desbanir':'Banir'}</button></div>`;
+                    const isBanned = u.status === 'banido';
+                    const row = document.createElement('div');
+                    row.className = 'admin-card-item';
+                    row.innerHTML = `
+                        <div class="admin-user-info">
+                            <img src="${u.avatar || 'https://via.placeholder.com/45'}" class="admin-user-avatar">
+                            <div>
+                                <div style="font-weight:700; font-size:0.85rem;">${u.nome}</div>
+                                <div style="font-size:0.7rem; opacity:0.6;">ID: ${u.id} | Status: <b>${u.status}</b></div>
+                            </div>
+                        </div>
+                        <div style="display:flex; gap:5px;">
+                            ${isBanned ? 
+                                `<button class="search-submit-btn" style="background:#22c55e; padding:5px 10px; font-size:0.75rem;" onclick="updateUserStatus('${u.id}', 'liberado')">Desbanir</button>` :
+                                `<button class="search-submit-btn" style="background:#ef4444; padding:5px 10px; font-size:0.75rem;" onclick="updateUserStatus('${u.id}', 'banido')">Banir</button>`
+                            }
+                        </div>
+                    `;
+                    userContainer.appendChild(row);
                 });
+            } else {
+                userContainer.innerHTML = "Nenhum usuário cadastrado.";
             }
 
-            const recContainer = document.getElementById('adminReceiptsList');
-            recContainer.innerHTML = "Carregando...";
+            const receiptContainer = document.getElementById('adminReceiptsList');
+            receiptContainer.innerHTML = "Carregando comprovantes...";
             const recSnap = await get(ref(db, 'comprovantes'));
             if(recSnap.exists()) {
-                recContainer.innerHTML = "";
+                receiptContainer.innerHTML = "";
                 recSnap.forEach((child) => {
                     const r = child.val();
-                    recContainer.innerHTML += `<div class="admin-card-item"><a href="${r.comprovante}" target="_blank">Ver Comprovante (${r.userId})</a><button class="search-submit-btn" style="background:#22c55e; padding:5px 10px;" onclick="approveUser('${r.userId}', '${r.id}')">Liberar</button></div>`;
+                    const row = document.createElement('div');
+                    row.className = 'admin-card-item';
+                    row.innerHTML = `
+                        <div class="admin-user-info">
+                            <a href="${r.comprovante}" target="_blank">
+                                <img src="${r.comprovante}" style="width:45px; height:45px; object-fit:cover; border-radius:8px; border:1px solid var(--primary-color);">
+                            </a>
+                            <div>
+                                <div style="font-weight:700; font-size:0.85rem;">ID: ${r.userId}</div>
+                                <div style="font-size:0.65rem; opacity:0.6;">Data: ${r.data}</div>
+                            </div>
+                        </div>
+                        <button class="search-submit-btn" style="background:#22c55e; padding:5px 10px; font-size:0.75rem;" onclick="approveUserFromReceipt('${r.userId}', '${r.id}')">Aprovar & Liberar</button>
+                    `;
+                    receiptContainer.appendChild(row);
                 });
+            } else {
+                receiptContainer.innerHTML = "Nenhum comprovante pendente.";
             }
         }
 
-        window.updateUserStatus = async (id, status) => { await update(ref(db, 'usuarios/' + id), { status }); loadAdminData(); }
-        window.approveUser = async (id, recId) => { await update(ref(db, 'usuarios/' + id), { status: 'liberado' }); await remove(ref(db, 'comprovantes/' + recId)); loadAdminData(); }
-        window.enterAppDashboard = () => document.getElementById('approvedSuccessScreen').style.display = 'none';
+        window.updateUserStatus = async function(userId, status) {
+            await update(ref(db, 'usuarios/' + userId), { status: status });
+            alert(`Status do usuário ${userId} atualizado para: ${status}`);
+            loadAdminData();
+        }
 
-        // Lógica de Busca via arquivo dados.json do GitHub
+        window.approveUserFromReceipt = async function(userId, receiptId) {
+            await update(ref(db, 'usuarios/' + userId), { status: 'liberado' });
+            await remove(ref(db, 'comprovantes/' + receiptId));
+            alert(`Usuário ${userId} liberado com sucesso!`);
+            loadAdminData();
+        }
+
+        window.enterAppDashboard = function() {
+            document.getElementById('approvedSuccessScreen').style.display = 'none';
+        }
+    </script>
+
+    <script>
         let currentSearchType = '';
+
         const menuModal = document.getElementById('menuModal');
         document.getElementById('menuBtn').addEventListener('click', () => menuModal.classList.add('open'));
         document.getElementById('closeMenuModal').addEventListener('click', () => menuModal.classList.remove('open'));
         document.getElementById('settingsBtn').addEventListener('click', () => menuModal.classList.add('open'));
 
-        window.applyTheme = function(primary, bg, card) {
+        function applyTheme(primary, bg, card) {
             document.documentElement.style.setProperty('--primary-color', primary);
             document.documentElement.style.setProperty('--bg-color', bg);
             document.documentElement.style.setProperty('--card-bg', card);
+            document.getElementById('customColorInput').value = primary;
+
             localStorage.setItem('zrx_primary', primary);
             localStorage.setItem('zrx_bg', bg);
             localStorage.setItem('zrx_card', card);
+
             menuModal.classList.remove('open');
         }
 
-        window.openSearchModal = function(title, type) {
-            document.getElementById('searchModalTitle').innerText = title;
+        document.getElementById('customColorInput').addEventListener('input', (e) => {
+            const val = e.target.value;
+            document.documentElement.style.setProperty('--primary-color', val);
+            localStorage.setItem('zrx_primary', val);
+        });
+
+        const galleryInput = document.getElementById('galleryInput');
+        const profileAvatar = document.getElementById('profileAvatar');
+        const profileName = document.getElementById('profileName');
+
+        profileAvatar.addEventListener('click', () => galleryInput.click());
+        document.getElementById('topProfileBtn').addEventListener('click', () => galleryInput.click());
+
+        galleryInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const res = event.target.result;
+                    profileAvatar.innerHTML = `<img src="${res}" alt="Avatar">`;
+                    localStorage.setItem('zrx_avatar', res);
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        profileName.addEventListener('click', () => {
+            const currentText = profileName.innerText.trim();
+            const newName = prompt("Digite o seu novo ID / Nome:", currentText);
+            if (newName) {
+                profileName.innerHTML = `${newName} <span class="icon-draw-bolt" style="width:10px; height:12px; margin-left:4px;"></span>`;
+                localStorage.setItem('zrx_name', newName);
+                localStorage.setItem('zrx_current_user_id', newName);
+            }
+        });
+
+        const mediaInput = document.getElementById('mediaInput');
+        const bannerUpload1 = document.getElementById('bannerUpload1');
+
+        bannerUpload1.addEventListener('click', () => mediaInput.click());
+
+        mediaInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const res = event.target.result;
+                    if (file.type.startsWith('video/')) {
+                        bannerUpload1.innerHTML = `<video src="${res}" autoplay loop muted playsinline></video>`;
+                    } else {
+                        bannerUpload1.innerHTML = `<img src="${res}" alt="Custom Media">`;
+                    }
+                    localStorage.setItem('zrx_banner1', res);
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        const searchModal = document.getElementById('searchModal');
+        const searchModalTitle = document.getElementById('searchModalTitle');
+        const searchBoxContainer = document.getElementById('searchBoxContainer');
+        const searchResultsBox = document.getElementById('searchResultsBox');
+
+        function openSearchModal(title, type) {
+            searchModalTitle.innerText = title;
             currentSearchType = type;
-            document.getElementById('searchResultsBox').innerHTML = 'Aguardando consulta...';
-            document.getElementById('searchBoxContainer').innerHTML = `<div class="search-input-row"><input type="text" class="search-input" id="searchInputField" placeholder="Digite o termo..."><button class="search-submit-btn" onclick="executeSearch()">Buscar</button></div>`;
-            document.getElementById('searchModal').classList.add('open');
+            searchResultsBox.innerHTML = 'Aguardando consulta... Insira os dados e clique em Buscar.';
+            
+            searchBoxContainer.innerHTML = `
+                <div class="search-input-row">
+                    <input type="text" class="search-input" id="searchInputField" placeholder="Digite o termo...">
+                    <button class="search-submit-btn" onclick="executeSearch()">Buscar</button>
+                </div>
+            `;
+            searchModal.classList.add('open');
         }
 
-        document.getElementById('closeSearchModal').addEventListener('click', () => document.getElementById('searchModal').classList.remove('open'));
+        document.getElementById('closeSearchModal').addEventListener('click', () => {
+            searchModal.classList.remove('open');
+        });
 
-        window.executeSearch = async function() {
-            const query = document.getElementById('searchInputField').value.trim().toLowerCase();
-            const resultsBox = document.getElementById('searchResultsBox');
-            if(!query) { alert('Digite um termo para pesquisar!'); return; }
+        async function executeSearch() {
+            const searchInputField = document.getElementById('searchInputField');
+            const query = searchInputField ? searchInputField.value.trim().toLowerCase() : '';
+            
+            if(!query) {
+                alert('Digite algum valor para pesquisar!');
+                return;
+            }
 
-            resultsBox.innerHTML = "Buscando dados no arquivo dados.json do GitHub...";
+            searchResultsBox.innerHTML = `Buscando dados no arquivo dados.json do GitHub...`;
 
             try {
                 const githubJsonUrl = 'https://raw.githubusercontent.com/wv0304362-bot/BANZAP-ZRX/main/dados.json';
                 const response = await fetch(githubJsonUrl);
-                if(!response.ok) throw new Error("Não foi possível carregar o dados.json");
+                
+                if (!response.ok) {
+                    throw new Error("Não foi possível carregar o arquivo dados.json do GitHub.");
+                }
 
-                const data = await response.json();
-                const items = Array.isArray(data) ? data : [data];
+                const rawText = await response.text();
+                let items = [];
+
+                // Tratamento blindado para JSON com múltiplos blocos/arrays separados
+                try {
+                    const parsed = JSON.parse(rawText);
+                    items = Array.isArray(parsed) ? parsed : [parsed];
+                } catch (jsonErr) {
+                    // Tenta consertar agrupando blocos soltos se houver múltiplos arrays no arquivo bruto
+                    const fixedText = "[" + rawText.trim().replace(/\]\s*\[/g, "],[") + "]";
+                    const parsedFixed = JSON.parse(fixedText);
+                    items = parsedFixed.flat();
+                }
+
                 const queryDigits = query.replace(/\D/g, '');
 
                 const filtered = items.filter(item => {
                     const itemStr = JSON.stringify(item).toLowerCase();
-                    if(itemStr.includes(query)) return true;
-                    if(queryDigits.length > 0 && itemStr.replace(/\D/g, '').includes(queryDigits)) return true;
+                    if (itemStr.includes(query)) return true;
+
+                    if (queryDigits.length > 0) {
+                        const itemDigits = itemStr.replace(/\D/g, '');
+                        if (itemDigits.includes(queryDigits)) return true;
+                    }
                     return false;
                 });
 
-                if(filtered.length === 0) {
-                    resultsBox.innerHTML = `<div class="result-item-card"><div class="result-line"><span class="result-key">AVISO</span><span class="result-val">Nenhum resultado encontrado para "${query}".</span></div></div>`;
+                if (filtered.length === 0) {
+                    searchResultsBox.innerHTML = `<div class="result-item-card"><div class="result-line"><span class="result-key">AVISO</span><span class="result-val">Nenhum registro encontrado para "${query}" no arquivo dados.json.</span></div></div>`;
                 } else {
-                    let html = `<div style="font-size: 0.75rem; opacity: 0.8; margin-bottom: 5px;">Total encontrado: ${filtered.length}</div>`;
+                    let htmlResult = `<div style="font-size: 0.75rem; opacity: 0.8; margin-bottom: 5px;">Total encontrado: ${filtered.length} resultado(s)</div>`;
                     filtered.forEach((item, idx) => {
-                        html += `<div class="sub-section-title">REGISTRO #${idx + 1}</div><div class="result-item-card">`;
-                        for(const [k, v] of Object.entries(item)) {
-                            if(v !== null && v !== undefined && v !== '') {
-                                if(typeof v === 'object') {
-                                    html += `<div class="sub-section-title">${k}</div>`;
-                                    if(Array.isArray(v)) {
-                                        v.forEach((sub, i) => {
-                                            html += `<div style="font-size:0.7rem; opacity:0.6; margin-top:4px;"># Item ${i+1}</div>`;
-                                            if(typeof sub === 'object') {
-                                                for(const [sk, sv] of Object.entries(sub)) {
-                                                    if(sv !== null && sv !== undefined && sv !== '') {
-                                                        html += `<div class="result-line" style="margin-left:8px;"><span class="result-key">${sk}</span><span class="result-val">${sv}</span></div>`;
-                                                    }
-                                                }
-                                            } else {
-                                                html += `<div class="result-line"><span class="result-val">${sub}</span></div>`;
-                                            }
-                                        });
-                                    } else {
-                                        for(const [sk, sv] of Object.entries(v)) {
-                                            if(sv !== null && sv !== undefined && sv !== '') {
-                                                html += `<div class="result-line" style="margin-left:8px;"><span class="result-key">${sk}</span><span class="result-val">${sv}</span></div>`;
-                                            }
+                        htmlResult += `<div class="sub-section-title">REGISTRO #${idx + 1}</div>`;
+                        htmlResult += buildItemCard(item);
+                    });
+                    searchResultsBox.innerHTML = htmlResult;
+                }
+
+            } catch (error) {
+                searchResultsBox.innerHTML = `<div class="result-item-card"><div class="result-line"><span class="result-key">ERRO</span><span class="result-val">Falha ao ler o dados.json do GitHub. Verifique a formatação do JSON no seu repositório.\nDetalhes: ${error.message}</span></div></div>`;
+            }
+        }
+
+        function buildItemCard(obj) {
+            let cardHtml = '<div class="result-item-card">';
+            for (const [key, value] of Object.entries(obj)) {
+                if (value !== null && value !== undefined && value !== '') {
+                    if (typeof value === 'object') {
+                        cardHtml += `<div class="sub-section-title">${key}</div>`;
+                        if (Array.isArray(value)) {
+                            value.forEach((subItem, idx) => {
+                                cardHtml += `<div style="font-size:0.7rem; opacity:0.6; margin-top:4px;"># Item ${idx + 1}</div>`;
+                                if (subItem !== null && typeof subItem === 'object') {
+                                    for (const [subKey, subVal] of Object.entries(subItem)) {
+                                        if (subVal !== null && subVal !== undefined && subVal !== '') {
+                                            cardHtml += `
+                                                <div class="result-line" style="margin-left: 8px;">
+                                                    <span class="result-key">${subKey}</span>
+                                                    <span class="result-val">${subVal}</span>
+                                                </div>
+                                            `;
                                         }
                                     }
                                 } else {
-                                    html += `<div class="result-line"><span class="result-key">${k}</span><span class="result-val">${v}</span></div>`;
+                                    cardHtml += `<div class="result-line"><span class="result-val">${subItem}</span></div>`;
+                                }
+                            });
+                        } else {
+                            for (const [subKey, subVal] of Object.entries(value)) {
+                                if (subVal !== null && subVal !== undefined && subVal !== '') {
+                                    cardHtml += `
+                                        <div class="result-line" style="margin-left: 8px;">
+                                            <span class="result-key">${subKey}</span>
+                                            <span class="result-val">${subVal}</span>
+                                        </div>
+                                    `;
                                 }
                             }
                         }
-                        html += `</div>`;
-                    });
-                    resultsBox.innerHTML = html;
+                    } else {
+                        cardHtml += `
+                            <div class="result-line">
+                                <span class="result-key">${key}</span>
+                                <span class="result-val">${value}</span>
+                            </div>
+                        `;
+                    }
                 }
-            } catch (error) {
-                resultsBox.innerHTML = `<div class="result-item-card"><div class="result-line"><span class="result-key">ERRO</span><span class="result-val">Falha ao carregar o dados.json do GitHub: ${error.message}</span></div></div>`;
             }
+            cardHtml += '</div>';
+            return cardHtml;
         }
     </script>
 </body>
