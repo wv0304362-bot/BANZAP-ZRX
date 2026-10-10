@@ -1692,5 +1692,675 @@
       "numero_motor": "JA04E27089801",
       "restricoes": ["Comunicação de Venda"]
     }
+  },
+  {
+    "cpf": "16839587649",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "14/04/1902"
+  },
+  {
+    "cpf": "10434311871",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "09/09/1915"
+  },
+  {
+    "cpf": "17075616803",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "31/12/1909"
+  },
+  {
+    "cpf": "21227918453",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "06/06/1904"
+  },
+  {
+    "cpf": "22844732887",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "08/10/1912",
+    "mae": "MARIA CONCEICAO DE JESUS"
+  },
+  {
+    "cpf": "30477140610",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "18/09/1901"
+  },
+  {
+    "cpf": "34013458691",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "03/08/1918"
+  },
+  {
+    "cpf": "44423683687",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "04/03/1915"
+  },
+  {
+    "cpf": "52623467820",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "21/05/1927"
+  },
+  {
+    "cpf": "65158938687",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "19/09/1905"
+  },
+  {
+    "cpf": "70877106487",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "10/07/1921",
+    "mae": "JOSEFA IDALINA DA CONCEICAO"
+  },
+  {
+    "cpf": "80916163415",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "08/04/1942",
+    "mae": "OTILIA VIRGINIA DAS DORES"
+  },
+  {
+    "cpf": "80426875753",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "29/10/1926"
+  },
+  {
+    "cpf": "09657550610",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "20/01/1901"
+  },
+  {
+    "cpf": "37254874807",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "15/09/1922",
+    "mae": "MARIA MIGUEL DOS SANTOS"
+  },
+  {
+    "cpf": "07200231495",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "06/05/1942",
+    "mae": "JOANA MARIA BASILIO"
+  },
+  {
+    "cpf": "10051451646",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "07/05/1940",
+    "mae": "DENISE AMARAL"
+  },
+  {
+    "cpf": "39779733809",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "24/05/1918",
+    "mae": "MARIA ANA DE JESUS"
+  },
+  {
+    "cpf": "07773738661",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "22/01/1923",
+    "mae": "AMBROSINA ROSA"
+  },
+  {
+    "cpf": "44146400678",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "18/03/1937",
+    "mae": "ONOFRA MARIA DE JESUS"
+  },
+  {
+    "cpf": "79012450691",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "18/06/1923"
+  },
+  {
+    "cpf": "31341098672",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "17/07/1903"
+  },
+  {
+    "cpf": "51349680630",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "08/07/1949",
+    "mae": "ANALUIZA DIOGO"
+  },
+  {
+    "cpf": "16087658149",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "05/11/1900"
+  },
+  {
+    "cpf": "00533452821",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "04/09/1945"
+  },
+  {
+    "cpf": "05517282806",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "11/11/1940"
+  },
+  {
+    "cpf": "01892161400",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "28/10/1929",
+    "mae": "MARIA JOAQUIM DAS DORES"
+  },
+  {
+    "cpf": "46938184615",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "14/03/1955",
+    "mae": "MARIA APARECIDA DA SILVA"
+  },
+  {
+    "cpf": "11141821842",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "17/03/1929",
+    "mae": "QUERUBINA MARIA DAS DORES"
+  },
+  {
+    "cpf": "14645327534",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "06/03/1954",
+    "mae": "JOANA DO CARMO"
+  },
+  {
+    "cpf": "48496332187",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "27/12/1960",
+    "mae": "CORACY FRANCISCA DAS DORES"
+  },
+  {
+    "cpf": "05609007674",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "18/06/1952",
+    "mae": "EURIDES MARIA DE JESUS"
+  },
+  {
+    "cpf": "13194540890",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "08/05/1933",
+    "mae": "MARIANA MAXIMO DAS DORES"
+  },
+  {
+    "cpf": "21675244120",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "19/03/1939"
+  },
+  {
+    "cpf": "05293187686",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "08/10/1911",
+    "mae": "MARIA DAS DORES DE JESUS"
+  },
+  {
+    "cpf": "00841075611",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "18/03/1937"
+  },
+  {
+    "cpf": "25742582668",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "19/03/1927",
+    "mae": "ANTONIO RIBEIRO DA SILVA"
+  },
+  {
+    "cpf": "37377884649",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "31/03/1904"
+  },
+  {
+    "cpf": "15284239415",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "27/10/1923",
+    "mae": "ANA EMILIA DA MOTA"
+  },
+  {
+    "cpf": "02840538806",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "08/04/1963",
+    "mae": "MARIA DAS GRACAS DAS DORES"
+  },
+  {
+    "cpf": "59067071668",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "15/06/1907"
+  },
+  {
+    "cpf": "17628305822",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "19/10/1972",
+    "mae": "ROSA MARIA DAS DORES"
+  },
+  {
+    "cpf": "10450812804",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "04/10/1944",
+    "mae": "ROSA MARIA INOCENCIO BEZERRA"
+  },
+  {
+    "cpf": "18579206863",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "03/12/1920",
+    "mae": "FRANCISCA MARIA DE JESUS"
+  },
+  {
+    "cpf": "03747665411",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "20/02/1922",
+    "mae": "MARIA INOCENCIA"
+  },
+  {
+    "cpf": "51579600697",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "04/08/1902"
+  },
+  {
+    "cpf": "00993142664",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "06/01/1933",
+    "mae": "MARIA JOAQUINA DA SOLEDADE"
+  },
+  {
+    "cpf": "28960505404",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "26/07/1904"
+  },
+  {
+    "cpf": "01324609710",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "05/06/1950",
+    "mae": "MARIA ANASTACIA DAS DORES"
+  },
+  {
+    "cpf": "50768581672",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "22/10/1923",
+    "mae": "AMBROSINA ROSA"
+  },
+  {
+    "cpf": "08758433104",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "15/03/1951"
+  },
+  {
+    "cpf": "23524316468",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "27/04/1954",
+    "mae": "MARIA DAS DORES DOS SANTOS"
+  },
+  {
+    "cpf": "53254228120",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "20/12/1956",
+    "mae": "MARIA DOMINGAS DE JESUS"
+  },
+  {
+    "cpf": "61330108191",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "02/11/1940",
+    "mae": "JULIAMARIA DA CONCEICAO"
+  },
+  {
+    "cpf": "45733562153",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "01/02/1952",
+    "mae": "SEVERINA MARIA JOSE"
+  },
+  {
+    "cpf": "63250888672",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "17/07/1943"
+  },
+  {
+    "cpf": "99992256672",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "30/11/1926"
+  },
+  {
+    "cpf": "63361825687",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "11/04/1914"
+  },
+  {
+    "cpf": "00374584699",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "08/11/1931",
+    "mae": "ALTINA MARIA DE JESUS"
+  },
+  {
+    "cpf": "36652385600",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "24/03/1932",
+    "mae": "EUCREZNA MARIA DE JESUS"
+  },
+  {
+    "cpf": "01395018782",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "25/09/1917",
+    "mae": "FLORIPA MARIA DO NASCIMENTO"
+  },
+  {
+    "cpf": "01927979803",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "19/03/1906"
+  },
+  {
+    "cpf": "02262550425",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "15/12/1919",
+    "mae": "MARIA DA SILVA"
+  },
+  {
+    "cpf": "04570215866",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "09/09/1950",
+    "mae": "PALACI DAS DORES"
+  },
+  {
+    "cpf": "00595911102",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "17/01/1940",
+    "mae": "MARIA DAS DORES"
+  },
+  {
+    "cpf": "00738169498",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "08/05/1923",
+    "mae": "MARIA SEVERINA DAS DORES"
+  },
+  {
+    "cpf": "01469430908",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "10/09/1920",
+    "mae": "MARIA JOSE DAS DORES"
+  },
+  {
+    "cpf": "03649726882",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "03/05/1948",
+    "mae": "FRANCISCA SILVA DOS SANTOS"
+  },
+  {
+    "cpf": "04041655676",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "16/05/1952",
+    "mae": "EVA MARIA DE LOURDES"
+  },
+  {
+    "cpf": "08072150820",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "09/09/1909",
+    "mae": "MARIA CLARA DE JESUS"
+  },
+  {
+    "cpf": "09366785859",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "28/12/1959",
+    "mae": "HONORINA DAS DORES ROSA"
+  },
+  {
+    "cpf": "19057865491",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "08/04/1954",
+    "mae": "FRANCISCA MARIA DAS DORES"
+  },
+  {
+    "cpf": "87133350491",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "18/06/1973",
+    "mae": "BERENICE MARIA DAS DORES"
+  },
+  {
+    "cpf": "60276347668",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "01/06/1938",
+    "mae": "MARIA JOSE DE SOUSA"
+  },
+  {
+    "cpf": "06306141642",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "13/05/1937",
+    "mae": "ANA MARIA DAS DORES"
+  },
+  {
+    "cpf": "03355883603",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "23/04/1953",
+    "mae": "CARMOZINA MARIA DE JESUS"
+  },
+  {
+    "cpf": "69494037634",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "15/09/1952",
+    "mae": "MARIA JOSE DE JESUS"
+  },
+  {
+    "cpf": "49944789534",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "03/08/1969",
+    "mae": "MARIA CONCEICAO DAS DORES"
+  },
+  {
+    "cpf": "77364333649",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "28/10/1927",
+    "mae": "OROZINHA MARIA DE JESUS"
+  },
+  {
+    "cpf": "79379630425",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "01/08/1920",
+    "mae": "MARIA FRANCISCA DAS DORES"
+  },
+  {
+    "cpf": "05439365460",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "23/08/1923",
+    "mae": "SERAFINA MARIA DA CONCEICAO"
+  },
+  {
+    "cpf": "05728081606",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "11/09/1956",
+    "mae": "ROSALINA CANDIDA DE JESUS"
+  },
+  {
+    "cpf": "05891704498",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "06/12/1967",
+    "mae": "MARIA JOSEFA DAS DORES"
+  },
+  {
+    "cpf": "05676888873",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "04/03/1931",
+    "mae": "RISOLETA MARIA DE JESUS"
+  },
+  {
+    "cpf": "09118450466",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "08/05/1945",
+    "mae": "MARIA DA SDORES DA CONCEICAO"
+  },
+  {
+    "cpf": "07836408469",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "03/01/1977",
+    "mae": "IZABEL QUITERIA DAS DORES"
+  },
+  {
+    "cpf": "11403330468",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "15/08/1918"
+  },
+  {
+    "cpf": "15071950871",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "16/01/1932",
+    "mae": "BINIDITA VITA DE JESUS"
+  },
+  {
+    "cpf": "06109828696",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "18/08/1963",
+    "mae": "MARIA INES DO PRADO"
+  },
+  {
+    "cpf": "14359707134",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "18/03/1955",
+    "mae": "ROSALINA JOSE DAS VIRGENS"
+  },
+  {
+    "cpf": "16561775449",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "08/02/1933",
+    "mae": "JOANA FRANCISCA DAS DORES"
+  },
+  {
+    "cpf": "19915365500",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "06/09/1945",
+    "mae": "MARIA DE LOURDES DAS DORES"
+  },
+  {
+    "cpf": "24319880404",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "15/06/1930"
+  },
+  {
+    "cpf": "25860277873",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "28/11/1931",
+    "mae": "EMILIA SEBASTIANA DOS REIS"
+  },
+  {
+    "cpf": "25836490864",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "18/01/1933",
+    "mae": "BERTOLINA MARIA DAS DORES"
+  },
+  {
+    "cpf": "26990679468",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "30/07/1925",
+    "mae": "MARIA DAS DORES DO ESPIRITO SANTO"
+  },
+  {
+    "cpf": "27381226634",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "07/04/1916",
+    "mae": "MARIA FRANCISCO DE JESUS"
+  },
+  {
+    "cpf": "33095261861",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "11/11/1940",
+    "mae": "ANA DAS DORES"
+  },
+  {
+    "cpf": "34992757839",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "23/06/1975",
+    "mae": "MARIA DAS DORES CARDOSO"
+  },
+  {
+    "cpf": "47477571634",
+    "nome": "MARIA JOSE DAS DORES",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "17/08/1932"
   }
 ]
