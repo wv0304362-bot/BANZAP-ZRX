@@ -2362,5 +2362,134 @@
     "nome": "MARIA JOSE DAS DORES",
     "sexo": "F - FEMININO",
     "data_nascimento": "17/08/1932"
+  },
+  {
+    "cpf": "05517413412",
+    "nome": "FABIO DO CARMO SOARES",
+    "telefone": "(81)988023035",
+    "dados_pessoais": {
+      "nome": "FABIO DO CARMO SOARES",
+      "cpf": "05517413412",
+      "cns_definitivo": "707609251673094",
+      "cns_provisorio": "898003368125313",
+      "raca_cor": "AMARELO(A)",
+      "nacionalidade": "SEM INFORMAÇÃO",
+      "desaparecido": false,
+      "naturalidade": "SEM INFORMAÇÃO",
+      "sexo": "M",
+      "nascimento": "1983-04-21",
+      "signo": "TOURO"
+    },
+    "filiacao": {
+      "mae": "RITA MARIA FRANCISCA DO CARMO",
+      "pai": "GERALDO SOARES DOS SANTOS"
+    },
+    "informacoes_adicionais": {
+      "escolaridade": "ENSINO MEDIO",
+      "empresario": "Não",
+      "aposentado": "Não",
+      "servidor_publico": "Não",
+      "renda_atual": "1250",
+      "score_spc": "115"
+    },
+    "situacao_cadastral": {
+      "descricao": "REGULAR",
+      "data_situacao": "2023-11-10 18:41:00",
+      "obito": "Não"
+    },
+    "enderecos": [
+      {
+        "logradouro": "ANTONIETA GUIMARÃES DE ANDRADE",
+        "numero": "1",
+        "bairro": "JARDIM ATLANTICO",
+        "complemento": "ILHA DE SANTANA",
+        "cidade": "260960/PE",
+        "cep": "53050150"
+      },
+      {
+        "logradouro": "R ANTONIETA GUIMARAES DE ANDRADE 1",
+        "numero": "1",
+        "bairro": "JD ATLANTICO",
+        "complemento": "SEM INFORMAÇÃO",
+        "cidade": "OLINDA/PE",
+        "cep": "SEM INFORMAÇÃO"
+      },
+      {
+        "logradouro": "R SANTANA",
+        "numero": "447",
+        "bairro": "JARDIM ATLANTICO",
+        "complemento": "SEM INFORMAÇÃO",
+        "cidade": "OLINDA/PE",
+        "cep": "53050030"
+      },
+      {
+        "logradouro": "BEIJA FLOR",
+        "numero": "SEM INFORMAÇÃO",
+        "bairro": "JARDIM ATLANTICO",
+        "complemento": "SEM INFORMAÇÃO",
+        "cidade": "OLINDA/PE",
+        "cep": "53050160"
+      },
+      {
+        "logradouro": "R EVERALDO XAVIER",
+        "numero": "388",
+        "bairro": "JD ATLANTICO",
+        "complemento": "SEM INFORMAÇÃO",
+        "cidade": "OLINDA/PE",
+        "cep": "53140270"
+      }
+    ],
+    "telefones": [
+      { "telefone": "(81)988023035", "tipo": "MÓVEL" },
+      { "telefone": "(81)984072837", "tipo": "MÓVEL" },
+      { "telefone": "(81)986037515", "tipo": "MÓVEL" },
+      { "telefone": "(81)987412694", "tipo": "MÓVEL" },
+      { "telefone": "(81)984295412", "tipo": "MÓVEL" },
+      { "telefone": "(81)994515918", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)994515981", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)34924826", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)30121694", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)34327772", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)983257496", "tipo": "MÓVEL" },
+      { "telefone": "(81)985441430", "tipo": "MÓVEL" },
+      { "telefone": "(81)983253307", "tipo": "MÓVEL" }
+    ],
+    "emails": [
+      { "email": "ffabinhosoares@gmail.com", "score": "OTIMO", "pessoal": true, "blacklist": false },
+      { "email": "fabiodocarmo922@gmail.com", "score": "BOM", "pessoal": false, "blacklist": false }
+    ],
+    "parentes": [
+      { "nome": "RITA MARIA FRANCISCA DO CARMO", "cpf": "93534272404", "parentesco": "MÃE" },
+      { "nome": "KATIA DO CARMO", "cpf": "09439543477", "parentesco": "IRMÃ" },
+      { "nome": "TIAGO DO CARMO", "cpf": "08162337482", "parentesco": "IRMÃO" },
+      { "nome": "FABIOLA CAVALCANTI DA SILVA", "cpf": "71585463493", "parentesco": "IRMÃ" },
+      { "nome": "LUCIANE DO CARMO SOARES DA SILVA", "cpf": "06567563494", "parentesco": "IRMÃ" },
+      { "nome": "FABIANA DO CARMO SOARES", "cpf": "09045913445", "parentesco": "IRMÃ" },
+      { "nome": "CLEBSON DO CARMO", "cpf": "05670105460", "parentesco": "IRMÃO" },
+      { "nome": "RAFAEL DO CARMO", "cpf": "08162338454", "parentesco": "IRMÃO" },
+      { "nome": "CLEUSON DO CARMO SOARES", "cpf": "72051444420", "parentesco": "IRMÃO" },
+      { "nome": "RAFAELA DO CARMO", "cpf": "11761386425", "parentesco": "IRMÃ" }
+    ],
+    "empregos": [
+      {
+        "cnpj": "14946726000126",
+        "razao_social": "REGINALDO B DA SILVA",
+        "cbo_numero": "521110",
+        "cbo_descricao": "VENDEDOR DE COMÉRCIO VAREJISTA",
+        "data_admissao": "2015-02-02 00:00:00"
+      },
+      {
+        "cnpj": "12630300000133",
+        "razao_social": "SILVANO DA SILVA",
+        "cbo_numero": "848510",
+        "cbo_descricao": "AÇOUGUEIRO",
+        "data_admissao": "2020-12-24 00:00:00"
+      },
+      {
+        "cnpj": "10404184000109",
+        "razao_social": "MUNICIPIO DE OLINDA",
+        "data_admissao": "2017-01-02 00:00:00"
+      }
+    ]
   }
 ]
