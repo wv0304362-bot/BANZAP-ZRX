@@ -62,14 +62,8 @@
       }
     ],
     "telefones": [
-      {
-        "telefone": "(84)987615925",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(84)988140220",
-        "tipo": "MÓVEL"
-      }
+      { "telefone": "(84)987615925", "tipo": "MÓVEL" },
+      { "telefone": "(84)988140220", "tipo": "MÓVEL" }
     ]
   },
   {
@@ -135,29 +129,13 @@
       }
     ],
     "telefones": [
-      {
-        "telefone": "(84)32111088",
-        "tipo": "SEM INFORMAÇÃO"
-      },
-      {
-        "telefone": "(84)987918435",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(84)33220960",
-        "tipo": "SEM INFORMAÇÃO"
-      },
-      {
-        "telefone": "(84)986356568",
-        "tipo": "MÓVEL"
-      }
+      { "telefone": "(84)32111088", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(84)987918435", "tipo": "MÓVEL" },
+      { "telefone": "(84)33220960", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(84)986356568", "tipo": "MÓVEL" }
     ],
     "emails": [
-      {
-        "email": "ceciliamdfl37@gmail.com",
-        "pessoal": true,
-        "blacklist": false
-      }
+      { "email": "ceciliamdfl37@gmail.com", "pessoal": true, "blacklist": false }
     ]
   },
   {
@@ -220,25 +198,12 @@
       }
     ],
     "telefones": [
-      {
-        "telefone": "(75)36220183",
-        "tipo": "SEM INFORMAÇÃO"
-      },
-      {
-        "telefone": "(75)988744481",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(75)998172584",
-        "tipo": "MÓVEL"
-      }
+      { "telefone": "(75)36220183", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(75)988744481", "tipo": "MÓVEL" },
+      { "telefone": "(75)998172584", "tipo": "MÓVEL" }
     ],
     "emails": [
-      {
-        "email": "cleber2678@gmail.com",
-        "score": "POTENCIALMENTE BOM",
-        "pessoal": true
-      }
+      { "email": "cleber2678@gmail.com", "score": "POTENCIALMENTE BOM", "pessoal": true }
     ]
   },
   {
@@ -301,25 +266,12 @@
       }
     ],
     "telefones": [
-      {
-        "telefone": "(81)34955550",
-        "tipo": "SEM INFORMAÇÃO"
-      },
-      {
-        "telefone": "(81)986179688",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(81)985710247",
-        "tipo": "MÓVEL"
-      }
+      { "telefone": "(81)34955550", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)986179688", "tipo": "MÓVEL" },
+      { "telefone": "(81)985710247", "tipo": "MÓVEL" }
     ],
     "emails": [
-      {
-        "email": "tiago.do.carmo@hotmail.com",
-        "score": "POTENCIALMENTE BOM",
-        "pessoal": true
-      }
+      { "email": "tiago.do.carmo@hotmail.com", "score": "POTENCIALMENTE BOM", "pessoal": true }
     ],
     "empregos": {
       "cnpj": "04155302000190",
@@ -327,6 +279,706 @@
       "cbo_descricao": "FRENTISTA",
       "data_admissao": "2015-04-01 00:00:00"
     }
+  },
+  {
+    "cpf": "07012376430",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "10/12/1973",
+    "mae": "EDILEUSA MARIA ADRIAO DA SILVA"
+  },
+  {
+    "cpf": "43240658453",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "23/05/1968",
+    "mae": "ELISAMA MARINHO DA SILVA"
+  },
+  {
+    "cpf": "46365834420",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "02/02/1956",
+    "mae": "SEM INFORMAÇÃO"
+  },
+  {
+    "cpf": "48041599400",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "20/05/1964",
+    "mae": "NOEMIA ALVES DA SILVA"
+  },
+  {
+    "cpf": "88978478468",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "20/12/1971",
+    "mae": "MARIA ALVES DE MELO"
+  },
+  {
+    "cpf": "92123880434",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "19/03/1976",
+    "mae": "DALVA JOSE DA SILVA"
+  },
+  {
+    "cpf": "89879775449",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "23/06/1973",
+    "mae": "AMARA JOSEFA DA SILVA"
+  },
+  {
+    "cpf": "05889132431",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "03/08/1985",
+    "mae": "MARIA DE JESUS ALVES"
+  },
+  {
+    "cpf": "08109473407",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "17/07/1994",
+    "mae": "MARIA DILMA ALVES DA SILVA"
+  },
+  {
+    "cpf": "07890358474",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "19/03/1989",
+    "mae": "MARIA DO SOCORRO ALVES SILVA"
+  },
+  {
+    "cpf": "08665509410",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "26/04/1991",
+    "mae": "MARIA JOSE MORAIS ALVES"
+  },
+  {
+    "cpf": "09298986483",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "18/01/1989",
+    "mae": "MARIA VIRGINIA DA SILVA"
+  },
+  {
+    "cpf": "09260395470",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "03/03/1973",
+    "mae": "EDITE GOMES DE OLIVEIRA"
+  },
+  {
+    "cpf": "09308649484",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "12/11/1989",
+    "mae": "MARIA DAS NEVES DA SILVA"
+  },
+  {
+    "cpf": "18175386835",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "10/06/1970",
+    "mae": "EUNICE ALVES DA SILVA"
+  },
+  {
+    "cpf": "29201160453",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "26/10/1958",
+    "mae": "SEM INFORMAÇÃO"
+  },
+  {
+    "cpf": "00513855548",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "08/01/1981",
+    "mae": "MARIA JOSE DA SILVA"
+  },
+  {
+    "cpf": "09967975482",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "03/01/1991",
+    "mae": "QUITERIA A SILVA"
+  },
+  {
+    "cpf": "04173920440",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "19/06/1976",
+    "mae": "BEATRIZ ALVES DA SILVA"
+  },
+  {
+    "cpf": "61893145115",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "30/07/1969",
+    "mae": "MARIA JOSE DA SILVA"
+  },
+  {
+    "cpf": "43338925468",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "07/04/1962",
+    "mae": "AMARA ALVES DA SILVA"
+  },
+  {
+    "cpf": "48490652449",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "16/05/1970",
+    "mae": "AMARA ALVES DA SILVA"
+  },
+  {
+    "cpf": "05789485405",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "13/02/1985",
+    "mae": "MARIA SOCORRO ALVES DA SILVA"
+  },
+  {
+    "cpf": "20089024800",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "24/12/1975",
+    "mae": "FELICIA ALVES DA SILVA"
+  },
+  {
+    "cpf": "32116889863",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "05/07/1978",
+    "mae": "MARIA MARGARIDA GUILHERME DA SILVA"
+  },
+  {
+    "cpf": "05694929470",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "27/03/1984",
+    "mae": "QUITERIA CORREIA ALVES"
+  },
+  {
+    "cpf": "79747825449",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "26/06/1973",
+    "mae": "MARIA DE LOURDES ALVES DA SILVA"
+  },
+  {
+    "cpf": "16247333870",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "14/04/1974",
+    "mae": "EDLEUZA ALVES DA SILVA"
+  },
+  {
+    "cpf": "03563705852",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "09/06/1960",
+    "mae": "DELVITA GODOI DA SILVA"
+  },
+  {
+    "cpf": "14381659864",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "18/08/1974",
+    "mae": "MARIA ALVES DA SILVA"
+  },
+  {
+    "cpf": "32162436809",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "13/08/1976",
+    "mae": "MARIA DE LOURDES ALVES DA SILVA"
+  },
+  {
+    "cpf": "06601895423",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "12/10/1992",
+    "mae": "MARIA CLEONICE FELOMENA ALVES"
+  },
+  {
+    "cpf": "70016860420",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "15/05/1976",
+    "mae": "FRANCISCA ALVES DOS SANTOS"
+  },
+  {
+    "cpf": "00930912497",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "12/07/1977",
+    "mae": "ZENILDA ALVES DA SILVA"
+  },
+  {
+    "cpf": "06295817467",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "10/11/1978",
+    "mae": "ANTONIA BRITO DA SILVA"
+  },
+  {
+    "cpf": "41548485420",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "14/01/1960",
+    "mae": "NEDA NADJA DE AMORIM SILVA"
+  },
+  {
+    "cpf": "40720802768",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "30/01/1956",
+    "mae": "NEUZA ALVES DA SILVA"
+  },
+  {
+    "cpf": "04521901425",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "09/09/1982",
+    "mae": "INACIA RITA DA SILVA"
+  },
+  {
+    "cpf": "04368682459",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "25/11/1982",
+    "mae": "JANECY ALVES BEZERRA"
+  },
+  {
+    "cpf": "00960577424",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "10/12/1980",
+    "mae": "LUZIA MARIA ALVES DA SILVA"
+  },
+  {
+    "cpf": "00959641424",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "28/01/1981",
+    "mae": "SEVERINA MARIA ALVES DA SILVA"
+  },
+  {
+    "cpf": "06346113488",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "11/07/1975",
+    "mae": "MARIA ALVES DA SILVA"
+  },
+  {
+    "cpf": "06904853875",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "29/10/1966",
+    "mae": "ELOIZA JOSE DA SILVA"
+  },
+  {
+    "cpf": "01539408167",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "13/02/1986",
+    "mae": "MARIA DAS GRACAS FONSECA SILVA"
+  },
+  {
+    "cpf": "03285975466",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "03/10/1964",
+    "mae": "MARIA JOSE MARTINS DA SILVA"
+  },
+  {
+    "cpf": "06527619413",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "28/03/1987",
+    "mae": "EDNALVA ALIXANDRE ALVES"
+  },
+  {
+    "cpf": "62501925734",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "21/02/1961",
+    "mae": "TEREZA MARIA DA SILVA"
+  },
+  {
+    "cpf": "01901963438",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "10/10/1970",
+    "mae": "IRACI ALVES BOM DA SILVA"
+  },
+  {
+    "cpf": "04795511462",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "17/02/1978",
+    "mae": "CICERA LUIZA DA SILVA"
+  },
+  {
+    "cpf": "04532207460",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "09/12/1979",
+    "mae": "MARIA JOSE ALVES"
+  },
+  {
+    "cpf": "62813048453",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "14/06/1968",
+    "mae": "ALEXANDRINA SANTANA DA SILVA"
+  },
+  {
+    "cpf": "76307468491",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "30/10/1968",
+    "mae": "MARIA DO CARMO NUNES DA SILVA"
+  },
+  {
+    "cpf": "05812254818",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "25/11/1973",
+    "mae": "GUIOMAR MARIA DA SILVA"
+  },
+  {
+    "cpf": "11466152486",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "17/11/1995",
+    "mae": "EDILEUSA ALVES SALES"
+  },
+  {
+    "cpf": "11528014499",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "01/08/1993",
+    "mae": "BERNADETE FARIAS DOS SANTOS"
+  },
+  {
+    "cpf": "08436846400",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "02/08/1986",
+    "mae": "MARIA DO CARMO DA SILVA"
+  },
+  {
+    "cpf": "08687075464",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "10/08/1988",
+    "mae": "MARIA DE ASSIS ALVES"
+  },
+  {
+    "cpf": "07945765408",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "28/12/1994",
+    "mae": "LINDALVA ALVES GONCALVES PIMENTEL"
+  },
+  {
+    "cpf": "09196248475",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "14/07/1990",
+    "mae": "REGINA ALVES DA SILVA"
+  },
+  {
+    "cpf": "14330191830",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "29/09/1965",
+    "mae": "ALICE ALVES DA SILVA"
+  },
+  {
+    "cpf": "17617763808",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "25/10/1970",
+    "mae": "ELZA MARIA DA SILVA"
+  },
+  {
+    "cpf": "24635120406",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "28/03/1953",
+    "mae": "SEM INFORMAÇÃO"
+  },
+  {
+    "cpf": "26090671860",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "27/08/1968",
+    "mae": "BENEDITA ALVES DA SILVA"
+  },
+  {
+    "cpf": "31837213844",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "28/01/1976",
+    "mae": "MARIA DE FATIMA ALVES DA SILVA"
+  },
+  {
+    "cpf": "35885464804",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "03/05/1986",
+    "mae": "REJANE ALVES DAS NEVES"
+  },
+  {
+    "cpf": "42885701404",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "03/07/1964",
+    "mae": "MARIA ALVES DA SILVA"
+  },
+  {
+    "cpf": "43790364487",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "01/08/1963",
+    "mae": "LEONITA ALVES DA SILVA"
+  },
+  {
+    "cpf": "45231397415",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "27/02/1966",
+    "mae": "DELIZA MARIA DA SILVA"
+  },
+  {
+    "cpf": "47941316404",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "29/09/1965",
+    "mae": "SEM INFORMAÇÃO"
+  },
+  {
+    "cpf": "58298711491",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "01/02/1967",
+    "mae": "CREUSA ALVES DA SILVA"
+  },
+  {
+    "cpf": "74384554400",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "04/10/1972",
+    "mae": "RAIMUNDA ALVES DA SILVA"
+  },
+  {
+    "cpf": "76791025468",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "16/10/1969",
+    "mae": "BENEDITA AUTA DA SILVA"
+  },
+  {
+    "cpf": "11844560465",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "26/01/1995",
+    "mae": "MARIA CICERA DO NASCIMENTO"
+  },
+  {
+    "cpf": "07962989475",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "16/09/1979",
+    "mae": "MARIA C ALVES"
+  },
+  {
+    "cpf": "05212441455",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "16/06/1977",
+    "mae": "MARIA DA CONCEICAO DA SILVA"
+  },
+  {
+    "cpf": "07234844490",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "18/05/1988",
+    "mae": "EDITE SANTOS DA SILVA"
+  },
+  {
+    "cpf": "07769809479",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "22/09/1979",
+    "mae": "GERUZA LIDIA DA CONCEICAO"
+  },
+  {
+    "cpf": "09142621496",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "18/01/1981",
+    "mae": "CICERA MARIA ALVES DA SILVA"
+  },
+  {
+    "cpf": "10134704436",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "21/09/1985",
+    "mae": "MARIA JOSE DA SILVA"
+  },
+  {
+    "cpf": "09632448413",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "11/04/1990",
+    "mae": "MARIA JOSE ALVES DA SILVA"
+  },
+  {
+    "cpf": "09898279419",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "07/10/1992",
+    "mae": "ELIONADJA ALVES DE MELO"
+  },
+  {
+    "cpf": "05652010509",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "31/01/1990",
+    "mae": "EDNA ALVES RODRIGUES"
+  },
+  {
+    "cpf": "71025347447",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "20/12/1999",
+    "mae": "SEM INFORMAÇÃO"
+  },
+  {
+    "cpf": "11112436464",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "01/11/1983",
+    "mae": "JANEIDE ALVES DE LIMA"
+  },
+  {
+    "cpf": "01172748101",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "24/01/1983",
+    "mae": "GERALDINA ALVES DA SILVA"
+  },
+  {
+    "cpf": "01203402406",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "26/01/1979",
+    "mae": "MARIA ALVES DA SILVA"
+  },
+  {
+    "cpf": "03948784426",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "23/05/1982",
+    "mae": "VITALINA ALVES DE GOES"
+  },
+  {
+    "cpf": "04474590406",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "17/08/1983",
+    "mae": "LUSINETE MARIA DO NASCIMENTO"
+  },
+  {
+    "cpf": "11306552885",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "29/09/1965",
+    "mae": "SEM INFORMAÇÃO"
+  },
+  {
+    "cpf": "06383030442",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "21/09/1981",
+    "mae": "MARIA JOSE DEOCLECIANO SILVA"
+  },
+  {
+    "cpf": "06690973492",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "21/08/1986",
+    "mae": "MARIA DAS MERCEDES ALVES DA SILVA"
+  },
+  {
+    "cpf": "06951011451",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "21/09/1984",
+    "mae": "LEDIJANE CALDAS DA SILVA"
+  },
+  {
+    "cpf": "51993627472",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "28/09/1967",
+    "mae": "JOSELITA ALVES DA SILVA"
+  },
+  {
+    "cpf": "09239161481",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "19/09/1985",
+    "mae": "MARIA JOSE ALVES"
+  },
+  {
+    "cpf": "09625460462",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "10/06/1992",
+    "mae": "MARIA DE LOURDES DA SILVA"
+  },
+  {
+    "cpf": "09729168490",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "02/05/1993",
+    "mae": "MARIA DE LOURDES ALVES DE OLIVEIRA"
+  },
+  {
+    "cpf": "70125875479",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "25/11/1987",
+    "mae": "LUCIENE VICENTE DA SILVA"
+  },
+  {
+    "cpf": "03481621469",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "31/03/1978",
+    "mae": "CARMEN BARBOSA DA SILVA"
+  },
+  {
+    "cpf": "95957766453",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "15/05/1976",
+    "mae": "MARIA ALVES DE QUEIROZ"
+  },
+  {
+    "cpf": "86466394522",
+    "nome": "EDJANE ALVES DA SILVA",
+    "sexo": "F - FEMININO",
+    "data_nascimento": "05/10/1999",
+    "mae": "SEM INFORMAÇÃO"
   },
   {
     "cpf": "09045913445",
@@ -398,300 +1050,57 @@
       }
     ],
     "telefones": [
-      {
-        "numero": "81983464258",
-        "tipo": "TELEFONE MÓVEL",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81986738379",
-        "tipo": "TELEFONE MÓVEL",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81983376177",
-        "tipo": "TELEFONE MÓVEL",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81985732435",
-        "tipo": "TELEFONE MÓVEL",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81986663780",
-        "tipo": "TELEFONE MÓVEL",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81983566250",
-        "tipo": "PRE PAGO",
-        "operadora": "OI",
-        "status": "ATIVA"
-      },
-      {
-        "numero": "81986771430",
-        "tipo": "PRE PAGO",
-        "operadora": "OI",
-        "status": "ATIVA"
-      },
-      {
-        "numero": "81988546725",
-        "tipo": "PRE PAGO",
-        "operadora": "OI",
-        "status": "ATIVA"
-      },
-      {
-        "numero": "8130145561",
-        "tipo": "RESIDENCIAL",
-        "operadora": "VIVO",
-        "status": "CANCELADO"
-      },
-      {
-        "numero": "53140230",
-        "tipo": "CELULAR",
-        "operadora": "VIVO",
-        "status": "NO"
-      },
-      {
-        "numero": "8130991098",
-        "tipo": "RESIDENCIAL",
-        "operadora": "VIVO",
-        "status": "INATIVO"
-      },
-      {
-        "numero": "8130110644",
-        "tipo": "RESIDENCIAL",
-        "operadora": "VIVO",
-        "status": "INATIVO"
-      },
-      {
-        "numero": "53140270",
-        "tipo": "FIXO",
-        "operadora": "VIVO",
-        "status": "NO"
-      },
-      {
-        "numero": "8130123144",
-        "tipo": "RESIDENCIAL",
-        "operadora": "VIVO",
-        "status": "INATIVO"
-      },
-      {
-        "numero": "8134726076",
-        "tipo": "SEM INFORMAÇÃO",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81991984052",
-        "tipo": "SEM INFORMAÇÃO",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "8134319848",
-        "tipo": "SEM INFORMAÇÃO",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81985588420",
-        "tipo": "SEM INFORMAÇÃO",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81986497102",
-        "tipo": "SEM INFORMAÇÃO",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81987796727",
-        "tipo": "SEM INFORMAÇÃO",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81983650211",
-        "tipo": "SEM INFORMAÇÃO",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81983196248",
-        "tipo": "SEM INFORMAÇÃO",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81991983989",
-        "tipo": "SEM INFORMAÇÃO",
-        "operadora": "TELEFONIA",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "8134950412",
-        "tipo": "FIXO",
-        "operadora": "TELEMAR",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81985990460",
-        "tipo": "CELULAR",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81987720456",
-        "tipo": "CELULAR",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81988135567",
-        "tipo": "CELULAR",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      }
+      { "numero": "81983464258", "tipo": "TELEFONE MÓVEL", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81986738379", "tipo": "TELEFONE MÓVEL", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81983376177", "tipo": "TELEFONE MÓVEL", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81985732435", "tipo": "TELEFONE MÓVEL", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81986663780", "tipo": "TELEFONE MÓVEL", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81983566250", "tipo": "PRE PAGO", "operadora": "OI", "status": "ATIVA" },
+      { "numero": "81986771430", "tipo": "PRE PAGO", "operadora": "OI", "status": "ATIVA" },
+      { "numero": "81988546725", "tipo": "PRE PAGO", "operadora": "OI", "status": "ATIVA" },
+      { "numero": "8130145561", "tipo": "RESIDENCIAL", "operadora": "VIVO", "status": "CANCELADO" },
+      { "numero": "53140230", "tipo": "CELULAR", "operadora": "VIVO", "status": "NO" },
+      { "numero": "8130991098", "tipo": "RESIDENCIAL", "operadora": "VIVO", "status": "INATIVO" },
+      { "numero": "8130110644", "tipo": "RESIDENCIAL", "operadora": "VIVO", "status": "INATIVO" },
+      { "numero": "53140270", "tipo": "FIXO", "operadora": "VIVO", "status": "NO" },
+      { "numero": "8130123144", "tipo": "RESIDENCIAL", "operadora": "VIVO", "status": "INATIVO" },
+      { "numero": "8134726076", "tipo": "SEM INFORMAÇÃO", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81991984052", "tipo": "SEM INFORMAÇÃO", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "8134319848", "tipo": "SEM INFORMAÇÃO", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81985588420", "tipo": "SEM INFORMAÇÃO", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81986497102", "tipo": "SEM INFORMAÇÃO", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81987796727", "tipo": "SEM INFORMAÇÃO", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81983650211", "tipo": "SEM INFORMAÇÃO", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81983196248", "tipo": "SEM INFORMAÇÃO", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81991983989", "tipo": "SEM INFORMAÇÃO", "operadora": "TELEFONIA", "status": "SEM INFORMAÇÃO" },
+      { "numero": "8134950412", "tipo": "FIXO", "operadora": "TELEMAR", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81985990460", "tipo": "CELULAR", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81987720456", "tipo": "CELULAR", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" },
+      { "numero": "81988135567", "tipo": "CELULAR", "operadora": "SEM INFORMAÇÃO", "status": "SEM INFORMAÇÃO" }
     ],
     "enderecos": [
-      {
-        "logradouro": "RUA ONIX",
-        "numero": "31",
-        "complemento": "SEM INFORMAÇÃO",
-        "bairro": "JD ATLANTICO",
-        "cidade": "OLINDA",
-        "uf": "PE",
-        "cep": "53060160"
-      },
-      {
-        "logradouro": "RUA IRAPUA",
-        "numero": "128",
-        "complemento": "AP 2",
-        "bairro": "IPSEP",
-        "cidade": "RECIFE",
-        "uf": "PE",
-        "cep": "51350630"
-      },
-      {
-        "logradouro": "RUA BUZIO",
-        "numero": "520",
-        "complemento": "SEM INFORMAÇÃO",
-        "bairro": "FRAGOSO",
-        "cidade": "OLINDA",
-        "uf": "PE",
-        "cep": "53250010"
-      },
-      {
-        "logradouro": "RUA BARRETO DE MENEZES",
-        "numero": "800",
-        "complemento": "SEM INFORMAÇÃO",
-        "bairro": "GUARARAPES",
-        "cidade": "JABOATAO DOS GUARARAPES",
-        "uf": "PE",
-        "cep": "54325192"
-      },
-      {
-        "logradouro": "RUA ACAPULCO",
-        "numero": "83",
-        "complemento": "SEM INFORMAÇÃO",
-        "bairro": "JD ATLANTICO",
-        "cidade": "OLINDA",
-        "uf": "PE",
-        "cep": "53140210"
-      },
-      {
-        "logradouro": "RUA EVERALDO XAVIER",
-        "numero": "388",
-        "complemento": "SEM INFORMAÇÃO",
-        "bairro": "JD ATLANTICO",
-        "cidade": "OLINDA",
-        "uf": "PE",
-        "cep": "53140270"
-      },
-      {
-        "logradouro": "RUA ESMERALDA",
-        "numero": "1176",
-        "complemento": "SEM INFORMAÇÃO",
-        "bairro": "FRAGOSO",
-        "cidade": "OLINDA",
-        "uf": "PE",
-        "cep": "53060740"
-      },
-      {
-        "logradouro": "RUA PEDRO IVO",
-        "numero": "338",
-        "complemento": "CS A",
-        "bairro": "SAPUCAIA",
-        "cidade": "OLINDA",
-        "uf": "PE",
-        "cep": "53270655"
-      },
-      {
-        "logradouro": "RUA BELO HORIZONTE",
-        "numero": "1256",
-        "complemento": "SEM INFORMAÇÃO",
-        "bairro": "RIO DOCE",
-        "cidade": "OLINDA",
-        "uf": "PE",
-        "cep": "53040110"
-      }
+      { "logradouro": "RUA ONIX", "numero": "31", "complemento": "SEM INFORMAÇÃO", "bairro": "JD ATLANTICO", "cidade": "OLINDA", "uf": "PE", "cep": "53060160" },
+      { "logradouro": "RUA IRAPUA", "numero": "128", "complemento": "AP 2", "bairro": "IPSEP", "cidade": "RECIFE", "uf": "PE", "cep": "51350630" },
+      { "logradouro": "RUA BUZIO", "numero": "520", "complemento": "SEM INFORMAÇÃO", "bairro": "FRAGOSO", "cidade": "OLINDA", "uf": "PE", "cep": "53250010" },
+      { "logradouro": "RUA BARRETO DE MENEZES", "numero": "800", "complemento": "SEM INFORMAÇÃO", "bairro": "GUARARAPES", "cidade": "JABOATAO DOS GUARARAPES", "uf": "PE", "cep": "54325192" },
+      { "logradouro": "RUA ACAPULCO", "numero": "83", "complemento": "SEM INFORMAÇÃO", "bairro": "JD ATLANTICO", "cidade": "OLINDA", "uf": "PE", "cep": "53140210" },
+      { "logradouro": "RUA EVERALDO XAVIER", "numero": "388", "complemento": "SEM INFORMAÇÃO", "bairro": "JD ATLANTICO", "cidade": "OLINDA", "uf": "PE", "cep": "53140270" },
+      { "logradouro": "RUA ESMERALDA", "numero": "1176", "complemento": "SEM INFORMAÇÃO", "bairro": "FRAGOSO", "cidade": "OLINDA", "uf": "PE", "cep": "53060740" },
+      { "logradouro": "RUA PEDRO IVO", "numero": "338", "complemento": "CS A", "bairro": "SAPUCAIA", "cidade": "OLINDA", "uf": "PE", "cep": "53270655" },
+      { "logradouro": "RUA BELO HORIZONTE", "numero": "1256", "complemento": "SEM INFORMAÇÃO", "bairro": "RIO DOCE", "cidade": "OLINDA", "uf": "PE", "cep": "53040110" }
     ],
     "parentes": [
-      {
-        "nome": "RAFAEL DO CARMO",
-        "grau_de_parentesco": "IRMA(O)",
-        "cpf": "08162338454"
-      },
-      {
-        "nome": "TIAGO DO CARMO",
-        "grau_de_parentesco": "IRMA(O)",
-        "cpf": "08162337482"
-      },
-      {
-        "nome": "CLEBSON DO CARMO",
-        "grau_de_parentesco": "IRMA(O)",
-        "cpf": "05670105460"
-      },
-      {
-        "nome": "FABIO DO CARMO SOARES",
-        "grau_de_parentesco": "IRMA(O)",
-        "cpf": "05517413412"
-      },
-      {
-        "nome": "RITA MARIA FRANCISCA DO CARMO",
-        "grau_de_parentesco": "MAE",
-        "cpf": "93534272404"
-      }
+      { "nome": "RAFAEL DO CARMO", "grau_de_parentesco": "IRMA(O)", "cpf": "08162338454" },
+      { "nome": "TIAGO DO CARMO", "grau_de_parentesco": "IRMA(O)", "cpf": "08162337482" },
+      { "nome": "CLEBSON DO CARMO", "grau_de_parentesco": "IRMA(O)", "cpf": "05670105460" },
+      { "nome": "FABIO DO CARMO SOARES", "grau_de_parentesco": "IRMA(O)", "cpf": "05517413412" },
+      { "nome": "RITA MARIA FRANCISCA DO CARMO", "grau_de_parentesco": "MAE", "cpf": "93534272404" }
     ],
     "beneficios": [
-      {
-        "tipo": "AUXILIO EMERGENCIAL",
-        "parcelas_recebidas": 0,
-        "total_recebido": "R$ 0"
-      },
-      {
-        "tipo": "BOLSA FAMILIA",
-        "parcelas_recebidas": 0,
-        "total_recebido": "R$ 0"
-      },
-      {
-        "tipo": "BENEFICIO PRESTACAO CONTINUADA",
-        "parcelas_recebidas": 0,
-        "total_recebido": "R$ 0"
-      },
-      {
-        "tipo": "INSTITUTO NACIONAL DO SEGURO SOCIAL",
-        "parcelas_recebidas": 0,
-        "total_recebido": "R$ 0"
-      }
+      { "tipo": "AUXILIO EMERGENCIAL", "parcelas_recebidas": 0, "total_recebido": "R$ 0" },
+      { "tipo": "BOLSA FAMILIA", "parcelas_recebidas": 0, "total_recebido": "R$ 0" },
+      { "tipo": "BENEFICIO PRESTACAO CONTINUADA", "parcelas_recebidas": 0, "total_recebido": "R$ 0" },
+      { "tipo": "INSTITUTO NACIONAL DO SEGURO SOCIAL", "parcelas_recebidas": 0, "total_recebido": "R$ 0" }
     ],
     "vacinas": [
       {
@@ -727,917 +1136,254 @@
     ]
   },
   {
-    "cpf": "09439543477",
-    "nome": "KATIA DO CARMO",
-    "telefone": "8134318630",
+    "tipo": "CONSULTA RG",
+    "rg": "6929665",
     "dados_pessoais": {
-      "cpf": "09439543477",
-      "nome": "KATIA DO CARMO",
-      "sexo": "F - FEMININO",
-      "data_de_nascimento": "30/07/1986",
-      "nome_da_mae": "RITA MARIA F DO CARMO",
-      "escolaridade": "Sem informação.",
-      "situacao_cadastral": "REGULAR",
-      "data_situacao": "2019-12-27 00:00:00",
-      "obito": "NÃO"
+      "rg": "6929665",
+      "nome": "ANGELICA SOUZA DE OLIVEIRA",
+      "cpf": "028.973.122-46",
+      "nascimento": "28/12/1993",
+      "idade": "32 anos"
     },
-    "profissao": {
-      "cbo": "SEM INFORMAÇÃO",
-      "descricao_cbo": "Sem descrição.",
-      "pis": "0"
+    "filiacao": {
+      "mae": "BENEDITA SOUZA DE OLIVEIRA"
     },
-    "dados_economicos": {
-      "renda": "R$ 406,86",
-      "codigo_poder_aquisitivo": "1",
-      "poder_aquisitivo": "MUITO BAIXO",
-      "renda_poder_aquisitivo": "R$ 406,86089907203484",
-      "faixa_poder_aquisitivo": "De R$ 112 até R$ 630",
-      "score_csba": "220",
-      "faixa_de_risco_csba": "ALTO"
-    },
-    "serasa_mosaic": {
-      "codigo_mosaic": "F19",
-      "descricao_mosaic": "Idosos independentes da classe média",
-      "classe_mosaic": "Envelhecendo no Século XXI",
-      "codigo_mosaic_novo": "C08",
-      "descricao_mosaic_novo": "Jovens protagonistas da classe média",
-      "classe_mosaic_novo": "Juventude Trabalhadora Urbana",
-      "codigo_mosaic_secundario": "D09",
-      "desc_mosaic_secundario": "Seguindo a vida na periferia"
-    },
-    "emails": [
+    "data_consulta": "11/10/2026, 14:56:46"
+  },
+  {
+    "tipo": "CONSULTA POR TELEFONE",
+    "telefone_consultado": "81981858465",
+    "total_registros": 4,
+    "registros": [
       {
-        "email": "clebsonedilma2017@outlook.com",
-        "prioridade": "MUITO ALTA",
-        "qualidade": "RUIM",
-        "email_pessoal": false,
-        "blacklist": false
-      },
-      {
-        "email": "cledsonedilma2017@outlook.com",
-        "prioridade": "MUITO ALTA",
-        "qualidade": "OTIMO",
-        "email_pessoal": true,
-        "blacklist": false
-      }
-    ],
-    "telefones": [
-      {
-        "numero": "8134318630",
-        "tipo": "TELEFONE RESIDENCIAL",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81983504090",
-        "tipo": "TELEFONE MÓVEL",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81986738379",
-        "tipo": "TELEFONE MÓVEL",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81986920528",
-        "tipo": "TELEFONE MÓVEL",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "8130113280",
-        "tipo": "TELEFONE RESIDENCIAL",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "8130110368",
-        "tipo": "RESIDENCIAL",
+        "nome": "CLEBSON DO CARMO",
+        "documento": "056.701.054-60",
         "operadora": "VIVO",
-        "status": "CANCELADO"
+        "endereco": "Nenhum endereço registrado"
       },
       {
-        "numero": "81999707980",
-        "tipo": "CELULAR",
+        "nome": "CLEBSON DO CARMO",
+        "documento": "5670105460",
         "operadora": "VIVO",
-        "status": "NO"
+        "endereco": "Nenhum endereço registrado"
       },
       {
-        "numero": "8130114937",
-        "tipo": "RESIDENCIAL",
-        "operadora": "VIVO",
-        "status": "INATIVO"
+        "nome": "ANDRE LUIZ ALVES DA SILVA",
+        "documento": "9882314414",
+        "operadora": "NÃO INFORMADO",
+        "endereco": "Nenhum endereço registrado"
       },
       {
-        "numero": "81992399508",
-        "tipo": "SEM INFORMAÇÃO",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81992399445",
-        "tipo": "SEM INFORMAÇÃO",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "8134318769",
-        "tipo": "SEM INFORMAÇÃO",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81983617785",
-        "tipo": "SEM INFORMAÇÃO",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
-      },
-      {
-        "numero": "81983970635",
-        "tipo": "CELULAR",
-        "operadora": "SEM INFORMAÇÃO",
-        "status": "SEM INFORMAÇÃO"
+        "nome": "BRUNO CEZAR PEREIRA DE ARRUDA",
+        "documento": "026.761.244-39",
+        "operadora": "ASSECC",
+        "endereco": "Nenhum endereço registrado"
       }
     ],
-    "enderecos": [
-      {
-        "logradouro": "RUA BEIJA FLOR",
-        "numero": "390",
-        "complemento": "2 ETAPA",
-        "bairro": "JD ATLANTICO",
-        "cidade": "OLINDA",
-        "uf": "PE",
-        "cep": "53050160"
-      },
-      {
-        "logradouro": "AV DA INTEGRACAO",
-        "numero": "1010",
-        "complemento": "SEM INFORMAÇÃO",
-        "bairro": "JD ATLANTICO",
-        "cidade": "OLINDA",
-        "uf": "PE",
-        "cep": "53060001"
-      },
-      {
-        "logradouro": "RUA NOVO HORIZONTE",
-        "numero": "101",
-        "complemento": "ESQ C 12",
-        "bairro": "RIO DOCE",
-        "cidade": "OLINDA",
-        "uf": "PE",
-        "cep": "53150620"
-      },
-      {
-        "logradouro": "RUA ANTONIETA GUIMARAES DE ANDRADE",
-        "numero": "110",
-        "complemento": "SEM INFORMAÇÃO",
-        "bairro": "JD ATLANTICO",
-        "cidade": "OLINDA",
-        "uf": "PE",
-        "cep": "53050150"
-      },
-      {
-        "logradouro": "RUA NILSON SABINO PINHO",
-        "numero": "351",
-        "complemento": "SEM INFORMAÇÃO",
-        "bairro": "JD ATLANTICO",
-        "cidade": "OLINDA",
-        "uf": "PE",
-        "cep": "53050010"
-      },
-      {
-        "logradouro": "8 TRAVESSA ANTONIETA GUIMARAES DE ANDRADE",
-        "numero": "1",
-        "complemento": "SEM INFORMAÇÃO",
-        "bairro": "JD ATLANTICO",
-        "cidade": "OLINDA",
-        "uf": "PE",
-        "cep": "53050158"
-      },
-      {
-        "logradouro": "ANCHIETA GUIMARAES DE ANDRADE",
-        "numero": "110",
-        "complemento": "CASA",
-        "bairro": "JARDIM ATLANTICO",
-        "cidade": "OLINDA",
-        "uf": "PE",
-        "cep": "53050310"
-      }
-    ],
-    "parentes": [
-      {
-        "nome": "RITA MARIA F DO CARMO",
-        "grau_de_parentesco": "MAE",
-        "cpf": "SEM INFORMAÇÃO"
-      }
-    ],
-    "beneficios": [
-      {
-        "tipo": "AUXILIO EMERGENCIAL",
-        "parcelas_recebidas": 0,
-        "total_recebido": "R$ 0"
-      },
-      {
-        "tipo": "BOLSA FAMILIA",
-        "parcelas_recebidas": 0,
-        "total_recebido": "R$ 0"
-      },
-      {
-        "tipo": "BENEFICIO PRESTACAO CONTINUADA",
-        "parcelas_recebidas": 0,
-        "total_recebido": "R$ 0"
-      },
-      {
-        "tipo": "INSTITUTO NACIONAL DO SEGURO SOCIAL",
-        "parcelas_recebidas": 0,
-        "total_recebido": "R$ 0"
-      }
-    ],
-    "veiculo_associado": {
-      "placa": "PCL3519"
-    }
+    "data_consulta": "11/10/2026, 00:40:11"
   },
   {
-    "cpf": "12711829200",
-    "nome": "RUTH DAVI DE GOIS",
+    "tipo": "CONSULTA CPF",
+    "cpf": "05670105460",
+    "titular": "CLEBSON DO CARMO",
     "dados_pessoais": {
-      "cpf": "12711829200",
-      "nome": "RUTH DAVI DE GOIS",
-      "cns_definitivo": "703005846247074",
-      "cns_provisorio": "201562582040009",
-      "raca_cor": "BRANCO(A)",
-      "nacionalidade": "SEM INFORMAÇÃO",
-      "desaparecido": false,
-      "naturalidade": "SEM INFORMAÇÃO",
-      "sexo": "F",
-      "nascimento": "1959-02-22",
-      "signo": "PEIXES",
-      "estado_civil": "DIVORCIADO(A)"
-    },
-    "filiacao": {
-      "mae": "MARIA ZILDA DAVI",
-      "pai": "RAIMUNDO NONATO GOIS"
-    },
-    "informacoes_profissionais_e_status": {
-      "escolaridade": "ENSINO SUPERIOR",
-      "empresario": "Não",
-      "aposentado": "Não",
-      "servidor_publico": "Sim",
-      "renda_atual": 12550,
-      "score_spc": 575,
-      "profissao": "ENFERMEIRO"
-    },
-    "situacao_cadastral": {
-      "descricao": "REGULAR",
-      "data_situacao": "2023-09-26 21:53:39",
-      "obito": "Não"
-    },
-    "veiculo": {
-      "marca_modelo": "FIAT/TORO FREEDOM AT6",
-      "placa": "QVB1B89",
-      "chassis": "98822611BLKC82770",
-      "renavam": "01211542537",
-      "ano_fabricacao": 2019,
-      "ano_modelo": 2020
-    },
-    "telefones": [
-      "(91)996267615",
-      "(91)999815106",
-      "(91)987259885",
-      "(91)991672037",
-      "(91)985150440",
-      "(91)988525107",
-      "(91)988525106",
-      "(21)21050000",
-      "(91)984089949",
-      "(91)984538931",
-      "(91)984868141"
-    ],
-    "emails": [
-      {
-        "email": "prof.ruthdavi@hotmail.com",
-        "score": "OTIMO",
-        "pessoal": true
-      },
-      {
-        "email": "ruthdavi@ufpa.br",
-        "score": "BOM",
-        "pessoal": true
-      }
-    ]
-  },
-  {
-    "cpf": "18454402268",
-    "nome": "RENO DAVI DE GOIS",
-    "dados_pessoais": {
-      "cpf": "18454402268",
-      "nome": "RENO DAVI DE GOIS",
-      "cns_definitivo": "704604158868825",
-      "raca_cor": "SEM INFORMAÇÃO",
-      "nacionalidade": "SEM INFORMAÇÃO",
-      "desaparecido": false,
-      "naturalidade": "SEM INFORMAÇÃO",
-      "sexo": "M",
-      "nascimento": "1963-09-30",
-      "signo": "LIBRA",
-      "estado_civil": "CASADO(A)"
-    },
-    "filiacao": {
-      "mae": "MARIA ZILDA DAVI DE GOIS",
-      "pai": "SEM INFORMAÇÃO"
-    },
-    "informacoes_profissionais_e_status": {
-      "escolaridade": "ENSINO SUPERIOR",
-      "empresario": "Não",
-      "aposentado": "Não",
-      "servidor_publico": "Não",
-      "renda_atual": 3700,
-      "score_spc": 668,
-      "profissao": "IMEDIATO DA MARINHA MERCANTE"
-    },
-    "situacao_cadastral": {
-      "descricao": "REGULAR",
-      "data_situacao": "2023-07-09 13:05:57",
-      "obito": "Não"
-    },
-    "telefones": [
-      "(85)24932120",
-      "(85)32344276",
-      "(85)986443276",
-      "(85)986443213",
-      "(85)999973479",
-      "(85)32421980",
-      "(85)32493212",
-      "(85)32863248",
-      "(85)992954574"
-    ],
-    "emails": [
-      {
-        "email": "reno_davi@hotmail.com",
-        "score": "OTIMO",
-        "pessoal": true
-      },
-      {
-        "email": "renogois@ig.com.br",
-        "score": "SEM INFORMAÇÃO",
-        "pessoal": true
-      },
-      {
-        "email": "renogois@terra.com.br",
-        "score": "SEM INFORMAÇÃO",
-        "pessoal": true
-      }
-    ],
-    "parentes": [
-      {
-        "nome": "MARIA ZILDA DAVI DE GOIS",
-        "cpf": "34338918187",
-        "parentesco": "MÃE"
-      },
-      {
-        "nome": "ROSY DAVI DE GOIS",
-        "cpf": "17009570310",
-        "parentesco": "IRMÃ"
-      },
-      {
-        "nome": "AWDREY PAYRITZ DE GOIS",
-        "cpf": "03870013109",
-        "parentesco": "SOBRINHA"
-      },
-      {
-        "nome": "RENY DAVI DE GOIS BOURGUIGNON",
-        "cpf": "15946738291",
-        "parentesco": "IRMÃ"
-      },
-      {
-        "nome": "RAFAEL DE GOIS BOURGUIGNON",
-        "cpf": "01003753167",
-        "parentesco": "SOBRINHO"
-      },
-      {
-        "nome": "ANA CAROLINA DE GOIS BOURGUIGNON",
-        "cpf": "01717590101",
-        "parentesco": "SOBRINHA"
-      },
-      {
-        "nome": "RODRIGO DE GOIS BOURGUIGNON",
-        "cpf": "02357468190",
-        "parentesco": "SOBRINHO"
-      },
-      {
-        "nome": "ROGERIO BOURGUIGNON DOS SANTOS",
-        "cpf": "22730206191",
-        "parentesco": "CUNHADO"
-      }
-    ]
-  },
-  {
-    "cpf": "71180449460",
-    "nome": "ELLEN LAVINIA DA SILVA RODRIGUES",
-    "telefone": "(84)988160682",
-    "dados_pessoais": {
-      "nome": "ELLEN LAVINIA DA SILVA RODRIGUES",
-      "cpf": "71180449460",
-      "cns_definitivo": "705602420471911",
-      "cns_provisorio": "SEM INFORMAÇÃO",
-      "raca_cor": "PARDO(A)",
-      "nacionalidade": "SEM INFORMAÇÃO",
-      "desaparecido": false,
-      "naturalidade": "SEM INFORMAÇÃO"
-    },
-    "biometria": {
-      "cor_olhos": "Indisponível",
-      "cor_cabelo": "Indisponível",
-      "altura": "Indisponível"
-    },
-    "filiacao": {
-      "mae": "EDNA RODRIGUES DA SILVA",
-      "pai": "LEOMARQUES RODRIGUES DA SILVA"
-    },
-    "informacoes_adicionais": {
-      "nome_social": "SEM INFORMAÇÃO",
-      "sexo": "F",
-      "nascimento": "2011-07-22",
-      "signo": "CÂNCER",
-      "tipo_sanguineo": "SEM INFORMAÇÃO"
-    },
-    "renda_e_status": {
-      "escolaridade": "SEM INFORMAÇÃO",
-      "empresario": "Não",
-      "aposentado": "Não",
-      "servidor_publico": "Não",
-      "renda_atual": "225",
-      "score_spc": "SEM INFORMAÇÃO"
-    },
-    "enderecos": [
-      {
-        "logradouro": "ERONILDES SOARES BENTO",
-        "numero": "89",
-        "bairro": "CENTRO",
-        "complemento": "CASA",
-        "cidade": "240620/RN",
-        "cep": "59227000"
-      }
-    ],
-    "telefones": [
-      {
-        "telefone": "(84)988160682",
-        "tipo": "MÓVEL"
-      }
-    ],
-    "parentes": [
-      {
-        "nome": "LEOMARQUES RODRIGUES DA SILVA",
-        "cpf": "01731814496",
-        "parentesco": "PAI"
-      },
-      {
-        "nome": "CECILIA RODRIGUES DE LIMA",
-        "cpf": "14570986447",
-        "parentesco": "IRMÃ"
-      },
-      {
-        "nome": "MARIA DE DEUS FERNANDES DE LIMA",
-        "cpf": "05509754460",
-        "parentesco": "MADRASTA"
-      }
-    ],
-    "vacinas": [
-      {
-        "vacina": "COVID-19 PEDIÁTRICA - PFIZER COMIRNATY",
-        "dose": "2ª DOSE",
-        "lote": "FN5988",
-        "fabricante": "PENDENTE IDENTIFICAÇÃO",
-        "estabelecimento": "UBS II",
-        "data_aplicacao": "2022-03-24"
-      },
-      {
-        "vacina": "COVID-19 PEDIÁTRICA - PFIZER COMIRNATY",
-        "dose": "1ª DOSE",
-        "lote": "FP1176",
-        "fabricante": "PENDENTE IDENTIFICAÇÃO",
-        "estabelecimento": "UBS II",
-        "data_aplicacao": "2022-01-25"
-      }
-    ]
-  },
-  {
-    "cpf": "91724015400",
-    "nome": "NOEL PEREIRA DOS SANTOS",
-    "telefone": "(84)988432533",
-    "dados_pessoais": {
-      "nome": "NOEL PEREIRA DOS SANTOS",
-      "cpf": "91724015400",
-      "cns_definitivo": "706408116836080",
-      "cns_provisorio": "126611756460005",
-      "raca_cor": "PARDO(A)",
-      "nacionalidade": "SEM INFORMAÇÃO",
-      "desaparecido": false,
-      "naturalidade": "SEM INFORMAÇÃO"
-    },
-    "biometria": {
-      "cor_olhos": "Indisponível",
-      "cor_cabelo": "Indisponível",
-      "altura": "Indisponível"
-    },
-    "filiacao": {
-      "mae": "MARIA DO VALE DOS SANTOS",
-      "pai": "FRACICO PEREIRA DOS SANTOS"
-    },
-    "informacoes_adicionais": {
-      "nome_social": "SEM INFORMAÇÃO",
-      "sexo": "M",
-      "nascimento": "1968-01-03",
-      "signo": "CAPRICÓRNIO",
-      "tipo_sanguineo": "SEM INFORMAÇÃO"
-    },
-    "renda_e_status": {
-      "escolaridade": "SEM INFORMAÇÃO",
-      "empresario": "Não",
-      "aposentado": "Não",
-      "servidor_publico": "Não",
-      "renda_atual": "1200",
-      "score_spc": "588"
-    },
-    "registro_geral": {
-      "numero_rg": "1375185",
-      "orgao_emissor": "SSP - SSP - SECRETARIA DE SEGURANCA PUBLICA",
-      "estado_emissao": "RN"
-    },
-    "veiculos": [
-      {
-        "marca_modelo": "CELTA",
-        "placa": "MYF6I59",
-        "chassis": "9BGRD08Z01G176669",
-        "renavam": "00765989948",
-        "ano_fabricacao": "2001",
-        "ano_modelo": "2001"
-      },
-      {
-        "marca_modelo": "HONDA/CG 125 TITAN",
-        "placa": "MXI4G58",
-        "chassis": "9C2JC2500YR018227",
-        "renavam": "00722340095",
-        "ano_fabricacao": "1999",
-        "ano_modelo": "2000"
-      }
-    ],
-    "enderecos": [
-      {
-        "logradouro": "LGA DO CHICO",
-        "numero": "SEM INFORMAÇÃO",
-        "bairro": "SEM INFORMAÇÃO",
-        "cidade": "LAGOA D ANTA/RN",
-        "cep": "SEM INFORMAÇÃO"
-      },
-      {
-        "logradouro": "LAGOA DO CHICO",
-        "numero": "S/N",
-        "bairro": "ZONA RURAL",
-        "cidade": "240620/RN",
-        "cep": "59227000"
-      }
-    ],
-    "telefones": [
-      {
-        "telefone": "(84)988432533",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(84)988588921",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(84)987913987",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(84)32870121",
-        "tipo": "SEM INFORMAÇÃO"
-      },
-      {
-        "telefone": "(84)32123139",
-        "tipo": "SEM INFORMAÇÃO"
-      },
-      {
-        "telefone": "(84)32870142",
-        "tipo": "FIXO"
-      }
-    ],
-    "vacinas": [
-      {
-        "vacina": "COVID-19 ASTRAZENECA/FIOCRUZ - COVISHIELD",
-        "dose": "1ª DOSE",
-        "data_aplicacao": "2021-06-15"
-      },
-      {
-        "vacina": "COVID-19 ASTRAZENECA/FIOCRUZ - COVISHIELD",
-        "dose": "2ª DOSE",
-        "data_aplicacao": "2021-09-14"
-      },
-      {
-        "vacina": "COVID-19 PFIZER - COMIRNATY",
-        "dose": "REFORÇO",
-        "data_aplicacao": "2022-01-21"
-      }
-    ]
-  },
-  {
-    "cpf": "07819227397",
-    "nome": "LUANY DA SILVA ARAUJO",
-    "telefone": "(85)981431118",
-    "dados_pessoais": {
-      "nome": "LUANY DA SILVA ARAUJO",
-      "cpf": "07819227397",
-      "cns_definitivo": "700502388614651",
-      "cns_provisorio": "898004835121521",
-      "raca_cor": "BRANCO(A)",
-      "nacionalidade": "SEM INFORMAÇÃO",
-      "desaparecido": false,
-      "naturalidade": "SEM INFORMAÇÃO"
-    },
-    "biometria": {
-      "cor_olhos": "Indisponível",
-      "cor_cabelo": "Indisponível",
-      "altura": "Indisponível"
-    },
-    "filiacao": {
-      "mae": "LUZANIRA MENDES DA SILVA ARAUJO",
-      "pai": "MANOEL NICODEMOS DE ARAUJO"
-    },
-    "informacoes_adicionais": {
-      "nome_social": "SEM INFORMAÇÃO",
-      "sexo": "F",
-      "nascimento": "1999-04-23",
-      "signo": "TOURO",
-      "tipo_sanguineo": "SEM INFORMAÇÃO"
-    },
-    "renda_e_status": {
-      "escolaridade": "SEM INFORMAÇÃO",
-      "empresario": "Não",
-      "aposentado": "Não",
-      "servidor_publico": "Não",
-      "renda_atual": "550",
-      "score_spc": "SEM INFORMAÇÃO"
-    },
-    "enderecos": [
-      {
-        "logradouro": "SAMUEL BEDE",
-        "numero": "2556",
-        "bairro": "CENTRO",
-        "cidade": "230350/CE",
-        "cep": "62850000"
-      },
-      {
-        "logradouro": "SAMUEL BEDE",
-        "numero": "SEM INFORMAÇÃO",
-        "bairro": "CENTRO",
-        "cidade": "CASCAVEL/CE",
-        "cep": "62850000"
-      },
-      {
-        "logradouro": "R SAMUEL BEDE",
-        "numero": "2559",
-        "bairro": "SEM INFORMAÇÃO",
-        "cidade": "CASCAVEL/CE",
-        "cep": "62850000"
-      }
-    ],
-    "telefones": [
-      {
-        "telefone": "(85)981431118",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(85)33341069",
-        "tipo": "SEM INFORMAÇÃO"
-      },
-      {
-        "telefone": "(85)989092726",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(85)985510845",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(85)989747250",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(85)988445246",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(85)991742901",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(85)985902194",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(85)992453826",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(85)992121191",
-        "tipo": "SEM INFORMAÇÃO"
-      }
-    ],
-    "parentes": [
-      {
-        "nome": "MANOEL NICODEMOS DE ARAUJO",
-        "cpf": "03444996268",
-        "parentesco": "PAI"
-      },
-      {
-        "nome": "LUZIANE DA SILVA ARAUJO",
-        "cpf": "94267294372",
-        "parentesco": "IRMÃ"
-      }
-    ]
-  },
-  {
-    "cpf": "27901435879",
-    "nome": "GILMAR APARECIDO AUGUSTO",
-    "veiculos": {
-      "marca_modelo": "HONDA/XR 250 TORNADO",
-      "placa": "HFZ9B39",
-      "placa_consultada": "HFZ9139",
-      "chassis": "9C2MD34008R030287",
-      "renavam": "00991424522",
-      "ano_fabricacao": "2008",
-      "ano_modelo": "2008",
-      "cor": "PRETA",
-      "situacao": "INATIVO",
-      "municipio": "CAMPOS DO JORDAO / SP",
-      "combustivel": "GASOLINA",
-      "numero_motor": "MD34E8030287"
-    }
-  },
-  {
-    "cpf": "04429041695",
-    "nome": "EDER DE ALMEIDA RIBEIRO",
-    "veiculos": {
-      "marca_modelo": "HONDA/BIZ 125 ES",
-      "placa": "HFZ2139",
-      "chassis": "9C2JA04207R089801",
-      "renavam": "00929710789",
-      "ano_fabricacao": "2007",
-      "ano_modelo": "2007",
-      "cor": "PRATA",
-      "situacao": "EM_CIRCULACAO",
-      "municipio": "ARCEBURGO / MG",
-      "combustivel": "GASOLINA",
-      "numero_motor": "JA04E27089801",
-      "restricoes": [
-        "Comunicação de Venda"
-      ]
-    }
-  },
-  {
-    "cpf": "05517413412",
-    "nome": "FABIO DO CARMO SOARES",
-    "telefone": "(81)988023035",
-    "dados_pessoais": {
-      "nome": "FABIO DO CARMO SOARES",
-      "cpf": "05517413412",
-      "cns_definitivo": "707609251673094",
-      "cns_provisorio": "898003368125313",
+      "nome": "CLEBSON DO CARMO",
+      "cpf": "05670105460",
+      "cns_definitivo": "705004062799850",
+      "cns_provisorio": "898003360621893",
       "raca_cor": "AMARELO(A)",
       "nacionalidade": "SEM INFORMAÇÃO",
       "desaparecido": false,
-      "naturalidade": "SEM INFORMAÇÃO",
-      "sexo": "M",
-      "nascimento": "1983-04-21",
-      "signo": "TOURO"
+      "naturalidade": "SEM INFORMAÇÃO"
+    },
+    "biometria": {
+      "cor_olhos": "CASTANHOS ESCUROS",
+      "cor_cabelo": "CASTANHOS ESCUROS",
+      "altura": "SEM INFORMAÇÃO"
     },
     "filiacao": {
       "mae": "RITA MARIA FRANCISCA DO CARMO",
-      "pai": "GERALDO SOARES DOS SANTOS"
+      "pai": "SEM INFORMAÇÃO"
     },
     "informacoes_adicionais": {
-      "escolaridade": "ENSINO MEDIO",
+      "nome_social": "SEM INFORMAÇÃO",
+      "sexo": "M",
+      "sexo_retratado": "M",
+      "nascimento": "1985-08-23",
+      "signo": "VIRGEM",
+      "tipo_sanguineo": "SEM INFORMAÇÃO"
+    },
+    "info_basica_renda_status": {
+      "escolaridade": "SEM INFORMAÇÃO",
       "empresario": "Não",
       "aposentado": "Não",
       "servidor_publico": "Não",
-      "renda_atual": "1250",
-      "score_spc": "115"
+      "renda_atual": "2200",
+      "score_spc": "135",
+      "estado_civil": "SOLTEIRO(A)",
+      "parto_gemelar": false,
+      "vip_sus": false,
+      "motivo_vip": "SEM INFORMAÇÃO"
     },
-    "situacao_cadastral": {
+    "situacao_e_obito": {
       "descricao": "REGULAR",
-      "data_situacao": "2023-11-10 18:41:00",
+      "data_situacao": "2022-07-08 09:26:30",
       "obito": "Não"
     },
-    "enderecos": [
+    "registro_geral": {
+      "numero_rg": "Não informado",
+      "orgao_emissor": "Não informado",
+      "estado_emissao": "Não informado"
+    },
+    "analise_credito_serasa": [
       {
-        "logradouro": "ANTONIETA GUIMARÃES DE ANDRADE",
-        "numero": "1",
-        "bairro": "JARDIM ATLANTICO",
-        "complemento": "ILHA DE SANTANA",
-        "cidade": "260960/PE",
-        "cep": "53050150"
+        "item": 1,
+        "csb8": "175",
+        "faixa_csb8": "ALTO",
+        "descricao_csb8": "UTILIZADO PARA ANÁLISE DE PRODUTOS DE CRÉDITO PESSOAL"
       },
       {
-        "logradouro": "R ANTONIETA GUIMARAES DE ANDRADE 1",
-        "numero": "1",
-        "bairro": "JD ATLANTICO",
+        "item": 2,
+        "csba": "288",
+        "faixa_csba": "ALTO",
+        "descricao_csba": "UTILIZADO PARA ANÁLISE E AVALIAÇÃO DE CRÉDITO EMPRESARIAL SOBRE O TITULAR"
+      }
+    ],
+    "perfil_socioeconomico": {
+      "codigo_mosaic": "F18",
+      "descricao": "SEM INFORMAÇÃO",
+      "codigo_secundario": "G22",
+      "descricao_secundaria": "EMPRESÁRIOS ESTABILIZADOS",
+      "codigo_novo": "D10",
+      "descricao_nova": "NO CORAÇÃO DA PERIFERIA"
+    },
+    "profissao": {
+      "escolaridade": "512105",
+      "profissao": "EMPREGADO DOMÉSTICO NOS SERVIÇOS GERAIS"
+    },
+    "poder_aquisitivo": {
+      "codigo": 2,
+      "poder_aquisitivo": "BAIXO",
+      "renda": "2200",
+      "faixa": "DE R$ 631 ATÉ R$ 1018"
+    },
+    "chaves_pix": [],
+    "processos_registrados": [
+      { "numero_processo": "0017528-55.2020.8.17.2990" },
+      { "numero_processo": "0006884-05.2019.8.17.8223" },
+      { "numero_processo": "0004496-32.2019.8.17.8223" },
+      { "numero_processo": "0004492-92.2019.8.17.8223" }
+    ],
+    "pis_pasep": [
+      { "numero_pis": "16408175512", "data_inclusao": "2022-02-23 00:00:00" }
+    ],
+    "titulo_eleitoral_tse": [
+      { "titulo_eleitoral": "072413600833", "zona": "10", "secao": "143" }
+    ],
+    "big_data_sancoes": {
+      "procurado_internacional": false,
+      "aliases": [],
+      "sancoes": []
+    },
+    "carteira_de_habilitacao": {
+      "numero_cnh": "04139049338",
+      "data_primeira_cnh": "2007-07-11",
+      "data_atualizacao": "2023-10-03",
+      "sigla_uf_emissao": "PE"
+    },
+    "imoveis": [
+      {
+        "codsetor": "260960005000103",
+        "tipodomicilio": "CASA",
+        "condicaodomicilio": "QUITADO"
+      }
+    ],
+    "enderecos": [
+      {
+        "logradouro": "R VLTO DA PRATIAARCA SN",
+        "numero": "SN",
+        "bairro": "CPO GRANDE",
         "complemento": "SEM INFORMAÇÃO",
         "cidade": "OLINDA/PE",
         "cep": "SEM INFORMAÇÃO"
       },
       {
-        "logradouro": "R SANTANA",
-        "numero": "447",
+        "logradouro": "ANTONIETA GUIMARAES DE ANDRADE",
+        "numero": "1",
         "bairro": "JARDIM ATLANTICO",
         "complemento": "SEM INFORMAÇÃO",
         "cidade": "OLINDA/PE",
-        "cep": "53050030"
+        "cep": "53050150"
       },
       {
-        "logradouro": "BEIJA FLOR",
-        "numero": "SEM INFORMAÇÃO",
+        "logradouro": "R ANTONIETA GUIMARAES DE ANDRADE",
+        "numero": "1",
+        "bairro": "53050150",
+        "complemento": "SEM INFORMAÇÃO",
+        "cidade": "OLINDA/PE",
+        "cep": "JARDIM ATLANTICO"
+      },
+      {
+        "logradouro": "R DELLA ROSA",
+        "numero": "35",
         "bairro": "JARDIM ATLANTICO",
         "complemento": "SEM INFORMAÇÃO",
         "cidade": "OLINDA/PE",
-        "cep": "53050160"
+        "cep": "53060105"
       },
       {
-        "logradouro": "R EVERALDO XAVIER",
-        "numero": "388",
+        "logradouro": "AV INTERLAGOS",
+        "numero": "110",
+        "bairro": "JARDIM ATLANTICO",
+        "complemento": "SEM INFORMAÇÃO",
+        "cidade": "OLINDA/PE",
+        "cep": "53060001"
+      },
+      {
+        "logradouro": "ANTONIETA GUIMARAES",
+        "numero": "1",
+        "bairro": "RIO DOCE LL",
+        "complemento": "SEM INFORMAÇÃO",
+        "cidade": "260960/PE",
+        "cep": "53070191"
+      },
+      {
+        "logradouro": "R OLAVO BILAC",
+        "numero": "227",
         "bairro": "JD ATLANTICO",
         "complemento": "SEM INFORMAÇÃO",
         "cidade": "OLINDA/PE",
-        "cep": "53140270"
+        "cep": "53140240"
       }
     ],
     "telefones": [
-      {
-        "telefone": "(81)988023035",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(81)984072837",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(81)986037515",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(81)987412694",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(81)984295412",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(81)994515918",
-        "tipo": "SEM INFORMAÇÃO"
-      },
-      {
-        "telefone": "(81)994515981",
-        "tipo": "SEM INFORMAÇÃO"
-      },
-      {
-        "telefone": "(81)34924826",
-        "tipo": "SEM INFORMAÇÃO"
-      },
-      {
-        "telefone": "(81)30121694",
-        "tipo": "SEM INFORMAÇÃO"
-      },
-      {
-        "telefone": "(81)34327772",
-        "tipo": "SEM INFORMAÇÃO"
-      },
-      {
-        "telefone": "(81)983257496",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(81)985441430",
-        "tipo": "MÓVEL"
-      },
-      {
-        "telefone": "(81)983253307",
-        "tipo": "MÓVEL"
-      }
+      { "telefone": "(81)30827010", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)986738379", "tipo": "MÓVEL" },
+      { "telefone": "(81)992145424", "tipo": "MÓVEL" },
+      { "telefone": "(81)994357842", "tipo": "MÓVEL" },
+      { "telefone": "(81)30114215", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)992145487", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)994357905", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)30114404", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)999460066", "tipo": "MÓVEL" },
+      { "telefone": "(81)910114310", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)910099292", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)910110244", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)975040028", "tipo": "MÓVEL" },
+      { "telefone": "(81)983357402", "tipo": "MÓVEL" },
+      { "telefone": "(81)981858465", "tipo": "MÓVEL" },
+      { "telefone": "(81)985932710", "tipo": "SEM INFORMAÇÃO" }
     ],
     "emails": [
       {
-        "email": "ffabinhosoares@gmail.com",
-        "score": "OTIMO",
+        "email": "clebsonedilma2017@outlook.com",
+        "score": "RUIM",
         "pessoal": true,
         "blacklist": false
       },
       {
-        "email": "fabiodocarmo922@gmail.com",
-        "score": "BOM",
+        "email": "infornetclebson@gmail.com",
+        "score": "POTENCIALMENTE BOM",
         "pessoal": false,
         "blacklist": false
       }
@@ -1647,6 +1393,21 @@
         "nome": "RITA MARIA FRANCISCA DO CARMO",
         "cpf": "93534272404",
         "parentesco": "MÃE"
+      },
+      {
+        "nome": "FABIANA DO CARMO SOARES",
+        "cpf": "09045913445",
+        "parentesco": "IRMÃ"
+      },
+      {
+        "nome": "LUCIANE DO CARMO SOARES DA SILVA",
+        "cpf": "06567563494",
+        "parentesco": "IRMÃ"
+      },
+      {
+        "nome": "FABIO DO CARMO SOARES",
+        "cpf": "05517413412",
+        "parentesco": "IRMÃO"
       },
       {
         "nome": "KATIA DO CARMO",
@@ -1664,9 +1425,298 @@
         "parentesco": "IRMÃ"
       },
       {
-        "nome": "LUCIANE DO CARMO SOARES DA SILVA",
-        "cpf": "06567563494",
+        "nome": "RAFAEL DO CARMO",
+        "cpf": "08162338454",
+        "parentesco": "IRMÃO"
+      },
+      {
+        "nome": "CLEUSON DO CARMO SOARES",
+        "cpf": "72051444420",
+        "parentesco": "IRMÃO"
+      },
+      {
+        "nome": "RAFAELA DO CARMO",
+        "cpf": "11761386425",
         "parentesco": "IRMÃ"
+      }
+    ],
+    "veiculos": [
+      {
+        "marca_modelo": "I/SHINERAY XY 150 GY",
+        "placa": "PGK6D40",
+        "chassis": "LXYJCKL08D0520647",
+        "renavam": "00489551882",
+        "ano_fabricacao": "2012",
+        "ano_modelo": "2013"
+      },
+      {
+        "marca_modelo": "CHEVROLET/ONIX 10MT JOYE",
+        "placa": "PCL3F19",
+        "chassis": "9BGKL48U0HB132839",
+        "renavam": "01098018556",
+        "ano_fabricacao": "2016",
+        "ano_modelo": "2017"
+      }
+    ],
+    "compras": [
+      {
+        "produto": "VIVO PRÉ - RECARGA DE CELULAR (81981858465)",
+        "detalhes": "SEM INFORMAÇÃO",
+        "preco": 50.00,
+        "quantidade": 1
+      }
+    ],
+    "interesses": {
+      "creditopessoalpreaprovado": "Não",
+      "creditoimobiliariopreaprovado": "Não",
+      "financiamentodeveiculopreaprovado": "Não",
+      "classemedia": "Não",
+      "debitoautomatico": "Não",
+      "possuiluxo": "Não",
+      "possuiinvestimentos": "Não",
+      "possuicartaodecredito": "Não",
+      "possuimultiploscartoes": "Não",
+      "possuicontaaltopadrao": "Não",
+      "possuicartaoblack": "Não",
+      "possuicartaoprime": "Não",
+      "possuicelularprepago": "Não",
+      "possuicelularpospago": "Não",
+      "possuimilhasacumuladas": "Não",
+      "possuicasapropria": "Não",
+      "possuidescontos": "Não",
+      "possuicontascorrentes": "Não",
+      "possuiinternetbanking": "Não",
+      "possuiseguroautomotivo": "Não",
+      "possuiprevidenciaprivada": "Não",
+      "realizouviagens": "Não"
+    },
+    "data_consulta_geral": "11/10/2026, 00:35:58"
+  },
+  {
+    "tipo": "CONSULTA POR TELEFONE",
+    "telefone_consultado": "81994357842",
+    "total_registros": 5,
+    "registros": [
+      {
+        "nome": "ALLINY DAIANY MACIEL SILVA",
+        "documento": "110.709.154-32",
+        "operadora": "CLARO",
+        "endereco": "Nenhum endereço registrado"
+      },
+      {
+        "nome": "GENIVALDO LUCIANO DA SILVA",
+        "documento": "949.378.504-15",
+        "operadora": "CLARO",
+        "endereco": "Nenhum endereço registrado"
+      },
+      {
+        "nome": "GENIVALDO LUCIANO DA SILVA",
+        "documento": "949.378.504-15",
+        "operadora": "NÃO INFORMADO",
+        "endereco": "Nenhum endereço registrado"
+      },
+      {
+        "nome": "GENIVALDO LUCIANO DA SILVA",
+        "documento": "00.094.937/8504-15",
+        "operadora": "NÃO INFORMADO",
+        "endereco": "Nenhum endereço registrado"
+      },
+      {
+        "nome": "CLEBSON DO CARMO",
+        "documento": "056.701.054-60",
+        "operadora": "ASSECC",
+        "endereco": "Nenhum endereço registrado"
+      }
+    ],
+    "data_consulta": "11/10/2026, 00:23:32"
+  },
+  {
+    "tipo": "CONSULTA CPF",
+    "cpf": "09439543477",
+    "titular": "KATIA DO CARMO",
+    "dados_pessoais": {
+      "nome": "KATIA DO CARMO",
+      "cpf": "09439543477",
+      "cns_definitivo": "708100552404836",
+      "cns_provisorio": "898003300070416",
+      "raca_cor": "AMARELO(A)",
+      "nacionalidade": "SEM INFORMAÇÃO",
+      "desaparecido": false,
+      "naturalidade": "SEM INFORMAÇÃO"
+    },
+    "biometria": {
+      "cor_olhos": "Indisponível",
+      "cor_cabelo": "Indisponível",
+      "altura": "Indisponível"
+    },
+    "filiacao": {
+      "mae": "RITA MARIA F DO CARMO",
+      "pai": "SEM INFORMAÇÃO"
+    },
+    "informacoes_adicionais": {
+      "nome_social": "SEM INFORMAÇÃO",
+      "sexo": "F",
+      "sexo_retratado": "SEM INFORMAÇÃO",
+      "nascimento": "1986-07-30",
+      "signo": "LEÃO",
+      "tipo_sanguineo": "SEM INFORMAÇÃO"
+    },
+    "info_basica_renda_status": {
+      "escolaridade": "SEM INFORMAÇÃO",
+      "empresario": "Não",
+      "aposentado": "Não",
+      "servidor_publico": "Não",
+      "renda_atual": "550",
+      "score_spc": "479",
+      "estado_civil": "SOLTEIRO(A)",
+      "parto_gemelar": false,
+      "vip_sus": false,
+      "motivo_vip": "SEM INFORMAÇÃO"
+    },
+    "situacao_e_obito": {
+      "descricao": "REGULAR",
+      "data_situacao": "2023-09-20 12:27:20",
+      "obito": "Não"
+    },
+    "registro_geral": {
+      "numero_rg": "Não informado",
+      "orgao_emissor": "Não informado",
+      "estado_emissao": "Não informado"
+    },
+    "analise_credito_serasa": [
+      {
+        "item": 1,
+        "csb8": "405",
+        "faixa_csb8": "MEDIO",
+        "descricao_csb8": "UTILIZADO PARA ANÁLISE DE PRODUTOS DE CRÉDITO PESSOAL"
+      },
+      {
+        "item": 2,
+        "csba": "220",
+        "faixa_csba": "ALTO",
+        "descricao_csba": "UTILIZADO PARA ANÁLISE E AVALIAÇÃO DE CRÉDITO EMPRESARIAL SOBRE O TITULAR"
+      }
+    ],
+    "perfil_socioeconomico": {
+      "codigo_mosaic": "F19",
+      "descricao": "IDOSOS INDEPENDENTES DA CLASSE MÉDIA",
+      "codigo_secundario": "D09",
+      "descricao_secundaria": "SEGUINDO A VIDA NA PERIFERIA",
+      "codigo_novo": "H27",
+      "descricao_nova": "PRESTADORES DE SERVIÇOS NAS REGIÕES METROPOLITANAS"
+    },
+    "profissao": {
+      "escolaridade": "Não informado",
+      "profissao": "Não informado"
+    },
+    "poder_aquisitivo": {
+      "codigo": 4,
+      "poder_aquisitivo": "MEDIO",
+      "renda": "550",
+      "faixa": "DE R$ 1631 ATÉ R$ 4082"
+    },
+    "chaves_pix": [],
+    "processos_registrados": [],
+    "pis_pasep": [
+      { "numero_pis": "16408115706", "data_inclusao": "2022-02-23 00:00:00" }
+    ],
+    "historico_nis": [
+      { "numeronis": "16408115706", "datainclusao": "Não informado" }
+    ],
+    "imoveis": [
+      {
+        "codsetor": "260960005000103",
+        "tipodomicilio": "CASA",
+        "condicaodomicilio": "QUITADO"
+      }
+    ],
+    "vizinhos": [
+      {
+        "nome": "MARIA JOSE DA SILVA",
+        "cpf": "21274495415",
+        "cep": "53150620"
+      }
+    ],
+    "enderecos": [
+      {
+        "logradouro": "R NOVO HORIZONTE 101 ESQ C 12",
+        "numero": "101",
+        "bairro": "RIO DOCE",
+        "complemento": "SEM INFORMAÇÃO",
+        "cidade": "OLINDA/PE",
+        "cep": "SEM INFORMAÇÃO"
+      },
+      {
+        "logradouro": "ANTONIETA GUIMARÃES DE ANDRADE",
+        "numero": "1",
+        "bairro": "JARDIM ATLANTICO",
+        "complemento": "ILHA DE SANTANA",
+        "cidade": "260960/PE",
+        "cep": "53050150"
+      },
+      {
+        "logradouro": "NILSON SABINO PINHO",
+        "numero": "0",
+        "bairro": "JARDIM ATLANTICO",
+        "complemento": "SEM INFORMAÇÃO",
+        "cidade": "OLINDA/PE",
+        "cep": "53050010"
+      },
+      {
+        "logradouro": "RUA PROJETADA A",
+        "numero": "SEM INFORMAÇÃO",
+        "bairro": "CIDADE GARAPU",
+        "complemento": "SEM INFORMAÇÃO",
+        "cidade": "CABO DE SANTO AGOSTINHO/PE",
+        "cep": "54517710"
+      },
+      {
+        "logradouro": "R NILSON SABINO PINHO",
+        "numero": "351",
+        "bairro": "JD ATLANTICO",
+        "complemento": "SEM INFORMAÇÃO",
+        "cidade": "OLINDA/PE",
+        "cep": "53050010"
+      }
+    ],
+    "telefones": [
+      { "telefone": "(81)34318630", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)983504090", "tipo": "MÓVEL" },
+      { "telefone": "(81)986738379", "tipo": "MÓVEL" },
+      { "telefone": "(81)986920528", "tipo": "MÓVEL" },
+      { "telefone": "(81)30113280", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)992399508", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)34320919", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)30114937", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)992399445", "tipo": "SEM INFORMAÇÃO" },
+      { "telefone": "(81)34923481", "tipo": "FIXO" },
+      { "telefone": "(81)93504090", "tipo": "MÓVEL" },
+      { "telefone": "(81)983970635", "tipo": "MÓVEL" }
+    ],
+    "emails": [
+      {
+        "email": "clebsonedilma2017@outlook.com",
+        "score": "RUIM",
+        "pessoal": false,
+        "blacklist": false
+      },
+      {
+        "email": "cledsonedilma2017@outlook.com",
+        "score": "SEM INFORMAÇÃO",
+        "pessoal": true,
+        "blacklist": false
+      }
+    ],
+    "parentes": [
+      {
+        "nome": "RITA MARIA FRANCISCA DO CARMO",
+        "cpf": "93534272404",
+        "parentesco": "MÃE"
+      },
+      {
+        "nome": "TIAGO DO CARMO",
+        "cpf": "08162337482",
+        "parentesco": "IRMÃO"
       },
       {
         "nome": "FABIANA DO CARMO SOARES",
@@ -1677,6 +1727,21 @@
         "nome": "CLEBSON DO CARMO",
         "cpf": "05670105460",
         "parentesco": "IRMÃO"
+      },
+      {
+        "nome": "FABIOLA CAVALCANTI DA SILVA",
+        "cpf": "71585463493",
+        "parentesco": "IRMÃ"
+      },
+      {
+        "nome": "FABIO DO CARMO SOARES",
+        "cpf": "05517413412",
+        "parentesco": "IRMÃO"
+      },
+      {
+        "nome": "LUCIANE DO CARMO SOARES DA SILVA",
+        "cpf": "06567563494",
+        "parentesco": "IRMÃ"
       },
       {
         "nome": "RAFAEL DO CARMO",
@@ -1694,27 +1759,750 @@
         "parentesco": "IRMÃ"
       }
     ],
-    "empregos": [
+    "data_consulta_geral": "10/10/2026, 15:04:46"
+  },
+  {
+    "tipo": "CONSULTA PLACA SERPRO",
+    "placa": "PCL3519",
+    "metadados": {
+      "sucesso": true,
+      "protocolo": "REQmv2kk5xbmolic27xf",
+      "usuario": "klord",
+      "data_consulta": "2026-10-10 12:48:47"
+    },
+    "limites": {
+      "consumo_hoje": 255,
+      "total_diario": 1000,
+      "reset_em": "08:11:12"
+    },
+    "plano": {
+      "tipo": "Token",
+      "status": "Ativo",
+      "inicio_uso": "15/09/2026, 15:59:46",
+      "vencimento": "01/02/2027, 00:00:00",
+      "tempo_restante": "113 dia(s) 8h 11m 12s",
+      "dias_restantes": 113
+    },
+    "dados_veiculo": {
+      "chassis": "9BGKL48U0HB132839",
+      "placa": "PCL3519",
+      "codigo_renavam": "01098018556",
+      "situacao": "EM_CIRCULACAO",
+      "municipio_emplacamento": "OLINDA / PE",
+      "uf_jurisdicao": "—",
+      "tipo_veiculo": "AUTOMOVEL",
+      "marca_modelo": "CHEVROLET/ONIX 10MT JOYE",
+      "especie_veiculo": "PASSAGEIRO",
+      "tipo_carroceria": "NãO APLICAVEL",
+      "cor": "PRETA",
+      "categoria": "PARTICULAR",
+      "ano_modelo": 2017,
+      "ano_fabricacao": 2016,
+      "combustivel": "ALCOOL/GASOLINA",
+      "numero_motor": "GFG008004",
+      "capacidade_carga": 0,
+      "procedencia": "NACIONAL",
+      "id_proprietario": "05670105460",
+      "nome_proprietario": "CLEBSON DO CARMO",
+      "lotacao": 5,
+      "cod_seguranca_crv": "53379268158",
+      "sequencial_documento": "541262673",
+      "numero_tipografico": "—",
+      "identificacao_unica": "1625007204539BG0320"
+    },
+    "restricoes": [
+      "Recall Pendente\nAlienação Fiduciária",
+      "SEM RESTRICAO",
+      "SEM RESTRICAO",
+      "SEM RESTRICAO"
+    ],
+    "flags": {
+      "possui_piv": "NAO",
+      "placa_pre_mercosul": true,
+      "placa_nao_utilizada": false,
+      "mostrar_alerta_obs": false,
+      "indicador_multa_renainf": true,
+      "indicador_roubo_furto": false,
+      "indicador_restricao_renajud": false,
+      "ano_exercicio_lic_pago": 2024
+    },
+    "observacoes": {
+      "mensagem_alerta": "A não existência de observações no documento físico não causa prejuízo para o condutor.",
+      "obs_1": "{\"descricao\":\"ALIENAÇÃO FIDUCIÁRIA\",\"dataHora\":\"21/11/2019 - 15:04:27\"}"
+    },
+    "multas": [
       {
-        "cnpj": "14946726000126",
-        "razao_social": "REGINALDO B DA SILVA",
-        "cbo_numero": "521110",
-        "cbo_descricao": "VENDEDOR DE COMÉRCIO VAREJISTA",
-        "data_admissao": "2015-02-02 00:00:00"
+        "codigo": "5185",
+        "descricao": "DEIXAR O PASSAGEIRO DE USAR O CINTO SEGURANCA",
+        "quantidade": 1
+      }
+    ],
+    "data_consulta_geral": "10/10/2026, 15:48:48"
+  },
+  {
+    "tipo": "CONSULTA POR TELEFONE",
+    "telefone_consultado": "84999125202",
+    "total_registros": 4,
+    "registros": [
+      {
+        "nome": "ANTONIO RAIMUNDO GUIMARAES",
+        "documento": "119.450.875-87",
+        "operadora": "CLARO",
+        "endereco": "Nenhum endereço registrado"
       },
       {
-        "cnpj": "12630300000133",
-        "razao_social": "SILVANO DA SILVA",
-        "cbo_numero": "848510",
-        "cbo_descricao": "AÇOUGUEIRO",
-        "data_admissao": "2020-12-24 00:00:00"
+        "nome": "ANTONIO RAIMUNDO GUIMARAES",
+        "documento": "119.450.875-87",
+        "operadora": "NÃO INFORMADO",
+        "endereco": "Nenhum endereço registrado"
       },
       {
-        "cnpj": "10404184000109",
-        "razao_social": "MUNICIPIO DE OLINDA",
-        "data_admissao": "2017-01-02 00:00:00"
+        "nome": "ANTONIO RAIMUNDO GUIMARAES",
+        "documento": "00.011.945/0875-87",
+        "operadora": "NÃO INFORMADO",
+        "endereco": "Nenhum endereço registrado"
+      },
+      {
+        "nome": "ANTONIO RAIMUNDO GUIMARAES",
+        "documento": "119.450.875-87",
+        "operadora": "ASSECC",
+        "endereco": "Nenhum endereço registrado"
+      }
+    ],
+    "data_consulta": "11/10/2026, 15:07:20"
+  },
+  {
+    "tipo": "CONSULTA CPF",
+    "cpf": "14816908927",
+    "titular": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+    "informacoes_basicas": {
+      "cpf": "14816908927",
+      "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+      "situacao_cadastral": "REGULAR",
+      "data_situacao": "28/02/2019",
+      "data_de_entrada": "28/02/2019",
+      "desaparecido": "Não",
+      "servidor_publico": "Não consta"
+    },
+    "profissao": {
+      "descricao_cbo": "PICADOR EM AÇOUGUE"
+    },
+    "dados_economicos": {
+      "poder_aquisitivo": "Não consta",
+      "renda_poder_aquisitivo": 8.84,
+      "faixa_poder_aquisitivo": "Não consta"
+    },
+    "telefones": [
+      {
+        "numero": "41992355756",
+        "tipo": "MÓVEL",
+        "operadora": "VIVO",
+        "status": "SEM INFORMAÇÃO"
+      }
+    ],
+    "enderecos": [
+      {
+        "logradouro": "NOSSA SENHORA APARECIDA",
+        "numero": "543",
+        "complemento": "SEM INFORMAÇÃO",
+        "bairro": "SANTA TEREZINHA",
+        "cidade": "FAZENDA RIO GRANDE",
+        "uf": "PR",
+        "cep": "83829091"
+      }
+    ],
+    "parentes": [
+      {
+        "nome": "JULIANA DOS SANTOS PROENCA",
+        "grau_de_parentesco": "MÃE"
+      }
+    ],
+    "historico_rg": [
+      {
+        "registro_geral": "14838495",
+        "orgao_emissor": "/PR",
+        "situacao": "Cédula Impressa",
+        "data_emissao": "SEM INFORMAÇÃO"
+      }
+    ],
+    "historico_de_empregos": [
+      {
+        "ano_referencia": 2024,
+        "empresa": "SUPERMERCADO BOZA LTDA",
+        "cnpj": "73419905000921",
+        "descricao_cbo": "PICADOR EM AÇOUGUE",
+        "admissao": "20/10/2023",
+        "desligamento": "26/12/2023"
+      },
+      {
+        "ano_referencia": 2025,
+        "empresa": "ALERTA MAXIMA",
+        "cnpj": "05091498000169",
+        "descricao_cbo": "ARRUMADOR DE PRATELEIRAS - NO COMÉRCIO",
+        "admissao": "23/01/2024",
+        "desligamento": "14/02/2024",
+        "salario": "R$ 1446.90"
+      },
+      {
+        "ano_referencia": 2025,
+        "empresa": "FL DRYWALL LTDA",
+        "cnpj": "37482746000199",
+        "descricao_cbo": "AJUDANTE DE OBRAS",
+        "admissao": "08/10/2024",
+        "salario": "R$ 8.84"
+      }
+    ],
+    "vacinas": [
+      {
+        "vacina": "COVID-19 SINOVAC/BUTANTAN - CORONAVAC",
+        "dose": "1ª DOSE",
+        "data": "15/10/2021",
+        "fabricante": "SINOVAC/BUTANTAN",
+        "lote": "210468",
+        "local": "UNIDADE DE SAUDE GRALHA AZUL"
+      },
+      {
+        "vacina": "COVID-19 PFIZER - COMIRNATY",
+        "dose": "REFORÇO",
+        "data": "22/06/2022",
+        "fabricante": "PFIZER",
+        "lote": "FP8073",
+        "local": "DEPARTAMENTO DE VIGILANCIA EM SAUDE DE FAZENDA RIO GRANDE"
+      },
+      {
+        "vacina": "COVID-19 SINOVAC/BUTANTAN - CORONAVAC",
+        "dose": "2ª DOSE",
+        "data": "19/11/2021",
+        "fabricante": "SINOVAC/BUTANTAN",
+        "lote": "210469",
+        "local": "UNIDADE DE SAUDE GRALHA AZUL"
+      }
+    ],
+    "cns": "898005948206809 (DEFINITIVO)",
+    "pis_nis_nit": "1644891716 (PIS)",
+    "ctps": {
+      "numero_ctps": "1481690",
+      "serie": "Não consta"
+    },
+    "beneficios": [
+      { "tipo": "AUXÍLIO BRASIL", "valor": "0 registro(s)" },
+      { "tipo": "AUXÍLIO EMERGENCIAL", "valor": "0 registro(s)" },
+      { "tipo": "BENEFÍCIO DE PRESTAÇÃO CONTINUADA", "valor": "0 registro(s)" },
+      { "tipo": "BOLSA FAMÍLIA", "valor": "0 registro(s)" },
+      { "tipo": "PLANOS DE SAÚDE PRIVADOS", "valor": "0 registro(s)" },
+      { "tipo": "LEI ORGÂNICA DE ASSISTÊNCIA SOCIAL", "valor": "0 registro(s)" },
+      { "tipo": "INSTITUO NACIONAL DO SEGURO SOCIAL", "valor": "0 registro(s)" }
+    ],
+    "colegas_de_trabalho": [
+      {
+        "nome": "JAIR BUENO",
+        "nascimento": "02/08/1988",
+        "sexo": "M - MASCULINO",
+        "cbo": "715725",
+        "salario": "R$ 12,51",
+        "empresa": "FL DRYWALL LTDA",
+        "cnpj": "37482746000199"
+      },
+      {
+        "nome": "RENATO DE JESUS LIMA",
+        "nascimento": "20/04/1973",
+        "sexo": "M - MASCULINO",
+        "cbo": "715315",
+        "salario": "R$ 12,51",
+        "empresa": "FL DRYWALL LTDA",
+        "cnpj": "37482746000199"
+      }
+    ],
+    "exterior": {
+      "status": "Não consta",
+      "pais": "Brasil"
+    },
+    "registros_na_internet": {
+      "site": "www.catho.com.br",
+      "status": "Usuário Cadastrado",
+      "email": "Matheus.msrhenriquedsp@gmail.com"
+    },
+    "compras": [
+      {
+        "produto": "VIVO RECARGA DE CELULAR (41992355756)",
+        "detalhes": "DÉBITO",
+        "preco": "R$ 20.00",
+        "quantidade": 1
+      }
+    ],
+    "outros_dados": {
+      "cpf": "14816908927",
+      "nascimento": "05/02/2002",
+      "sexo": "Não consta",
+      "estado_civil": "Não consta",
+      "renda": "R$ 8,84",
+      "mae": "JULIANA DOS SANTOS PROENCA"
+    },
+    "data_consulta_geral": "12/10/2026, 20:30:23"
+  },
+  {
+    "tipo": "CONSULTA POR TELEFONE",
+    "telefone_consultado": "41984797891",
+    "total_registros": 1,
+    "registros": [
+      {
+        "nome": "DURVAL FERNANDO SILVA ALBERTO",
+        "documento": "NÃO INFORMADO",
+        "operadora": "NÃO INFORMADO",
+        "endereco": "Nenhum endereço registrado"
+      }
+    ],
+    "data_consulta": "12/10/2026, 20:25:38"
+  },
+  {
+    "tipo": "CONSULTA POR NOME",
+    "nome_pesquisado": "Matheus Henrique dos Santos Rodrigues",
+    "total_encontrado": 35,
+    "resultados": [
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "10975010948",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "12/09/1998",
+        "mae": "SIMONE DOS SANTOS RODRIGUES"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "45272533879",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "16/02/2012",
+        "mae": "JENNIFER ALVINA DOS SANTOS SOUZA"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "47021456816",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "25/09/1999",
+        "mae": "VIVIANE FERNANDA DOS SANTOS"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "49181805829",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "15/12/2005"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "71035886430",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "05/10/1999",
+        "mae": "ALCIONE MARIA DOS SANTOS"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "45840217832",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "19/12/2005"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "10623262967",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "23/08/2011",
+        "mae": "HEMILIN ANDRESSA RODRIGUES DOS SANTOS"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "14950829629",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "16/10/2001"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "53563056803",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "02/05/2001"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "49940847858",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "13/02/2011"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "70159577608",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "29/05/2001"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "71237725470",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "26/03/2012"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "50639367844",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "21/10/2002"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "20133903788",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "19/10/2010"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "55085839803",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "31/10/2007"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "56315073824",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "10/04/2007"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "57559222846",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "20/02/2012"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "58513147885",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "21/12/2013"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "14816908927",
+        "sexo": "Não informado",
+        "data_nascimento": "05/02/2002"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "15327294641",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "30/03/2012"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "15094918648",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "03/06/2008"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "48085004852",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "15/08/2002"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "50740759809",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "05/09/2004"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "48847864836",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "30/12/2007"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "51024635864",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "10/06/1999",
+        "mae": "MARINICE DOS SANTOS PIRES"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "17769422647",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "10/10/2005"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "16780726648",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "20/10/2016"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "06475144517",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "03/11/1994",
+        "mae": "MARIA VILMA MATIAS DOS SANTOS"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "45262103820",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "17/04/2011",
+        "mae": "JOSENILZE JOSE DOS SANTOS"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "45506704879",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "28/10/1999",
+        "mae": "VANESSA LEITE DOS SANTOS"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "12526682959",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "25/08/2008",
+        "mae": "CARLA CRISTINA DOS SANTOS RODRIGUES"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "18427837771",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "07/05/2013"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "49161285838",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "17/05/2000",
+        "mae": "ZILDA DONIZETI DOS SANTOS"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "08357745547",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "01/02/2001"
+      },
+      {
+        "nome": "MATHEUS HENRIQUE DOS SANTOS RODRIGUES",
+        "cpf": "11993970754",
+        "sexo": "M - MASCULINO",
+        "data_nascimento": "07/05/1996",
+        "mae": "SHEILA DOS SANTOS RODRIGUES"
       }
     ]
+  },
+  {
+    "tipo": "CONSULTA PLACA SERPRO",
+    "placa": "PEG1E93",
+    "metadados": {
+      "sucesso": true,
+      "protocolo": "REQmv5dmfswwr7xsf62c",
+      "usuario": "klord",
+      "data_consulta": "2026-10-12 11:57:55"
+    },
+    "limites": {
+      "consumo_hoje": 292,
+      "total_diario": 1000,
+      "reset_em": "09:02:04"
+    },
+    "plano": {
+      "tipo": "Token",
+      "status": "Ativo",
+      "inicio_uso": "15/09/2026, 15:59:46",
+      "vencimento": "01/02/2027, 00:00:00",
+      "tempo_restante": "111 dia(s) 9h 2m 4s",
+      "dias_restantes": 111
+    },
+    "dados_veiculo": {
+      "chassi": "93HGE6850CZ110622",
+      "placa_atual": "PEG1E93",
+      "codigo_renavam": "00459191683",
+      "situacao": "INATIVO",
+      "municipio_emplacamento": "SAO PAULO / SP",
+      "uf_jurisdicao": "—",
+      "tipo_veiculo": "AUTOMOVEL",
+      "marca_modelo": "HONDA/FIT LX FLEX",
+      "especie_veiculo": "PASSAGEIRO",
+      "tipo_carroceria": "NãO APLICAVEL",
+      "cor": "PRATA",
+      "categoria": "PARTICULAR",
+      "ano_modelo": 2012,
+      "ano_fabricacao": 2012,
+      "combustivel": "ALCOOL/GASOLINA",
+      "numero_motor": "L13Z3-2110666",
+      "capacidade_carga": 0,
+      "procedencia": "NACIONAL",
+      "id_proprietario": "13193476811",
+      "nome_proprietario": "ANDREIA SINA",
+      "lotacao": 5,
+      "cod_seguranca_crv": "01565843585",
+      "sequencial_documento": "555141235",
+      "numero_tipografico": "—",
+      "identificacao_unica": "12054030102093H0674"
+    },
+    "restricoes": [
+      "NAO HA",
+      "SEM RESTRICAO",
+      "SEM RESTRICAO",
+      "SEM RESTRICAO"
+    ],
+    "estampador": {
+      "data_hora_estampador": "14/02/2020 10:56",
+      "serial_placa": "191202011263628",
+      "nome_estampador": "—",
+      "uf_estampador": "SP",
+      "identificador_estampador": "32.516.701/0001-74",
+      "telefone_estampador": "—",
+      "cidade_estampador": "—",
+      "tipo_placa": "TRASEIRA"
+    },
+    "flags": {
+      "possui_piv": "❌ NÃO",
+      "placa_pre_mercosul": "✅ SIM",
+      "placa_nao_utilizada": "❌ NÃO",
+      "mostrar_alerta_obs": "❌ NÃO",
+      "indicador_multa_renainf": "✅ SIM",
+      "indicador_roubo_furto": "❌ NÃO",
+      "indicador_restricao_renajud": "❌ NÃO",
+      "ano_exercicio_lic_pago": 2024
+    },
+    "multas": [
+      {
+        "codigo": "7455",
+        "descricao": "TRANSITAR EM VELOCIDADE SUPERIOR A MAXIMA PERMITIDA EM ATE 20%",
+        "quantidade": 1
+      }
+    ],
+    "data_consulta_geral": "12/10/2026, 14:57:55"
+  },
+  {
+    "tipo": "CONSULTA CPF",
+    "cpf": "06180354600",
+    "titular": "MATHEUS SOUZA CARVALHO",
+    "informacoes_basicas": {
+      "cpf": "06180354600",
+      "nome": "MATHEUS SOUZA CARVALHO",
+      "sexo": "MASCULINO",
+      "data_de_nascimento": "05/12/1995",
+      "idade": "30 anos",
+      "nome_ da_mae": "NADIA MARIA DE SOUZA",
+      "nome_do_pai": "Não Informado",
+      "nacionalidade": "BRASILEIRO",
+      "situacao_cadastral": "REGULAR",
+      "data_situacao_cadastral": "2019-09-27 00:00:00",
+      "obito": "NÃO",
+      "faixa_de_score": "ENTRE 751 E 1.000",
+      "renda_atual": "R$ 4.350,00"
+    },
+    "profissao": {
+      "cbo": "252105",
+      "descricao_cbo": "ADMINISTRADOR DE ORÇAMENTO"
+    },
+    "cnh": {
+      "registro": "06197796352",
+      "uf": "MG",
+      "primeira_cnh": "07/10/2014"
+    },
+    "cns": "700201961776327 (DEFINITIVO) - Sistema Único de Saúde",
+    "dados_economicos": {
+      "poder_aquisitivo": "MEDIO",
+      "faixa_renda": "De R$ 1631 até R$ 4082",
+      "codigo_mosaic": "C08",
+      "codigo_mosaic_novo": "C06",
+      "renda_declarada": "R$ 7054,70"
+    },
+    "beneficios": [
+      { "tipo": "AUXÍLIO BRASIL", "tipo_acesso": "PÚBLICO" },
+      { "tipo": "AUXÍLIO EMERGENCIAL", "tipo_acesso": "PÚBLICO" },
+      { "tipo": "BENEFÍCIO DE PRESTAÇÃO CONTINUADA", "tipo_acesso": "PÚBLICO" },
+      { "tipo": "BOLSA FAMÍLIA", "tipo_acesso": "PÚBLICO" },
+      { "tipo": "PLANOS DE SAÚDE PRIVADOS", "tipo_acesso": "PRIVADO" },
+      { "tipo": "LEI ORGÂNICA DE ASSISTÊNCIA SOCIAL", "tipo_acesso": "PÚBLICO" },
+      { "tipo": "INSTITUTO NACIONAL DO SEGURO SOCIAL", "tipo_acesso": "PÚBLICO" }
+    ],
+    "parentes": [
+      {
+        "nome": "ROSAINIA APARECIDA DE SOUZA",
+        "grau": "TIA(O)",
+        "cpf": "49379739672"
+      },
+      {
+        "nome": "NADIA MARIA DE SOUZA",
+        "grau": "MAE",
+        "cpf": "53953606620"
+      }
+    ],
+    "veiculos": [
+      {
+        "marca_modelo": "CITROEN I/CITROEN C4 20EXC5P F",
+        "placa": "OPB1974",
+        "ano": 2012,
+        "cor": "Branca",
+        "uf": "MG",
+        "renavam": "00494396911"
+      }
+    ],
+    "declaracoes_irpf": [
+      { "ano": 2015, "status": "SALDO INEXISTENTE DE IMPOSTO A PAGAR OU A RESTITUIR" },
+      { "ano": 2017, "status": "IMPOSTO A PAGAR" },
+      { "ano": 2019, "status": "IMPOSTO A PAGAR, SEM OPCAO POR DEBITO AUTOMATICO" },
+      { "ano": 2016, "status": "IMPOSTO A PAGAR" },
+      { "ano": 2018, "status": "IMPOSTO A PAGAR, SEM OPCAO POR DEBITO AUTOMATICO" },
+      { "ano": 2022, "status": "IMPOSTO A PAGAR, SEM OPCAO POR DEBITO AUTOMATICO" },
+      { "ano": 2021, "status": "IMPOSTO A PAGAR, SEM OPCAO POR DEBITO AUTOMATICO" },
+      { "ano": 2020, "status": "IMPOSTO A PAGAR, SEM OPCAO POR DEBITO AUTOMATICO" }
+    ],
+    "empresas_sociais": [
+      { "nome": "MATHEUS SOUZA CARVALHO", "cnpj": "08303487000274" }
+    ],
+    "emails": [
+      { "email": "matheusscarvalho@hotmail.com", "score": "BOM" }
+    ],
+    "enderecos": [
+      {
+        "logradouro": "R TIJUCA",
+        "numero": "333",
+        "complemento": "Não Informado",
+        "bairro": "COPACABANA",
+        "cidade": "317020",
+        "uf": "MG",
+        "cep": "38411042"
+      },
+      {
+        "logradouro": "RUA JOAO NAVES DE AVILA",
+        "numero": "2121",
+        "complemento": "Não Informado",
+        "bairro": "STA MONICA",
+        "cidade": "UBERLANDIA",
+        "uf": "MG",
+        "cep": "38408144"
+      },
+      {
+        "logradouro": "R EDUARDO DE OLIVEIRA",
+        "numero": "206",
+        "complemento": "AP 601",
+        "bairro": "LIDICE",
+        "cidade": "UBERLANDIA",
+        "uf": "MG",
+        "cep": "38400068"
+      },
+      {
+        "logradouro": "R TIJUCA",
+        "numero": "333",
+        "complemento": "1",
+        "bairro": "PATRIMONIO",
+        "cidade": "UBERLANDIA",
+        "uf": "MG",
+        "cep": "38411042"
+      },
+      {
+        "logradouro": "R FADUA BARCHA GUSTIM",
+        "numero": "445",
+        "complemento": "AP 1804",
+        "bairro": "TUBALINA",
+        "cidade": "UBERLANDIA",
+        "uf": "MG",
+        "cep": "38412003"
+      }
+    ],
+    "telefones": [
+      { "numero": "(16) 98817-2272", "tipo": "TELEFONE MÓVEL", "whatsapp": true },
+      { "numero": "(34) 3214-9398", "tipo": "TELEFONE FIXO" },
+      { "numero": "(16) 99881-7227", "tipo": "TELEFONE MÓVEL", "prioridade": 2.0 },
+      { "numero": "(31) 3214-9398", "tipo": "TELEFONE RESIDENCIAL", "prioridade": 3.0 }
+    ],
+    "data_consulta_geral": "12/10/2026, 13:43:45"
   }
 ]
-
