@@ -3201,8 +3201,10 @@
         "sexo": "F - FEMININO",
         "data_nascimento": "29/04/1998",
         "mae": "EDLEUSA MARIA DA SILVA"
-      },
-      {
+      }
+    ]
+  },
+  {
     "nome": "MARCOS AURELIO DE ALBUQUERQUE COSTA",
     "cpf": "106.540.894-34",
     "sexo": "M",
@@ -8766,7 +8768,5 @@
     "bairro": "NOVA DESCOBERTA",
     "cidade": "NATAL",
     "uf": "RN"
-       }
-    ]
   }
 ]
