@@ -9533,6 +9533,387 @@
       "cor": "VERMELHA",
       "proprietario": "MARIA DE DEUS FERNANDES DE LIMA"
     }
+  ],
+  "consultas": [
+    {
+      "tipo": "CONSULTA POR TELEFONE",
+      "telefone": "84991551001",
+      "total_registros": 4,
+      "registros": [
+        {
+          "registro": 1,
+          "nome": "MARGARETH JUCA DE MEDEIROS",
+          "documento": "365.848.604-00",
+          "operadora": "CLARO",
+          "endereco": "Nenhum endereço registrado"
+        },
+        {
+          "registro": 2,
+          "nome": "FABIO GUEVARA DANTAS DE PAIVA BARROS",
+          "documento": "014.468.494-22",
+          "operadora": "CLARO",
+          "endereco": "Nenhum endereço registrado"
+        },
+        {
+          "registro": 3,
+          "nome": "FABIO GUEVARA DANTAS DE PAIVA BARROS",
+          "documento": "014.468.494-22",
+          "operadora": "NÃO INFORMADO",
+          "endereco": "Nenhum endereço registrado"
+        },
+        {
+          "registro": 4,
+          "nome": "FABIO GUEVARA DANTAS DE PAIVA BARROS",
+          "documento": "00.001.446/8494-22",
+          "operadora": "NÃO INFORMADO",
+          "endereco": "Nenhum endereço registrado"
+        }
+      ],
+      "data_hora": "16/10/2026, 15:30:09"
+    },
+    {
+      "tipo": "CONSULTA CPF",
+      "cpf": "01446849422",
+      "dados_pessoais": {
+        "nome": "FABIO GUEVARA DANTAS DE PAIVA BARROS",
+        "cpf": "01446849422",
+        "cns_definitivo": "700902989695296",
+        "cns_provisorio": "209880885970003",
+        "raca_cor": "PARDO(A)",
+        "nacionalidade": "SEM INFORMAÇÃO",
+        "desaparecido": false,
+        "naturalidade": "SEM INFORMAÇÃO"
+      },
+      "biometria": {
+        "cor_olhos": "Indisponível",
+        "cor_cabelo": "Indisponível",
+        "altura": "Indisponível"
+      },
+      "filiacao": {
+        "mae": "KATIA FABIANA DANTAS P BARROS",
+        "pai": "LIVIO GOMES DE BARROS JUNIOR"
+      },
+      "informacoes_adicionais": {
+        "nome_social": "SEM INFORMAÇÃO",
+        "sexo": "M",
+        "sexo_retratado": "M",
+        "nascimento": "1986-09-16",
+        "signo": "VIRGEM",
+        "tipo_sanguineo": "SEM INFORMAÇÃO"
+      },
+      "info_basica_renda_e_status": {
+        "escolaridade": "ENSINO SUPERIOR",
+        "empresario": "Sim",
+        "aposentado": "Não",
+        "servidor_publico": "Não",
+        "renda_atual": 3550,
+        "score_spc": 58,
+        "estado_civil": "SOLTEIRO(A)",
+        "parto_gemelar": false,
+        "vip_sus": false,
+        "motivo_vip": "SEM INFORMAÇÃO"
+      },
+      "situacao_e_obito": {
+        "descricao": "REGULAR",
+        "data_situacao": "2023-02-25 10:19:52",
+        "obito": "Não"
+      },
+      "registro_geral": {
+        "numero_rg": "2117255",
+        "orgao_emissor": "SSP - SSP - SECRETARIA DE SEGURANCA PUBLICA",
+        "estado_emissao": "RN"
+      },
+      "analise_de_credito_serasa": [
+        {
+          "item": 1,
+          "csb8": 6,
+          "faixa_csb8": "ALTISSIMO",
+          "descricao_csb8": "UTILIZADO PARA ANÁLISE DE PRODUTOS DE CRÉDITO PESSOAL"
+        },
+        {
+          "item": 2,
+          "csba": 34,
+          "faixa_csba": "ALTISSIMO",
+          "descricao_csba": "UTILIZADO PARA ANÁLISE E AVALIAÇÃO DE CRÉDITO EMPRESARIAL SOBRE O TITULAR"
+        }
+      ],
+      "perfil_socioeconomico": {
+        "codigo_mosaic": "F19",
+        "descricao": "IDOSOS INDEPENDENTES DA CLASSE MÉDIA",
+        "codigo_secundario": "E17",
+        "descricao_secundaria": "ASCENDENTES DO BAIRRO",
+        "codigo_novo": "D09",
+        "descricao_nova": "SEGUINDO A VIDA NA PERIFERIA"
+      },
+      "profissao": {
+        "escolaridade": "376235",
+        "profissao": "MÁGICO"
+      },
+      "poder_aquisitivo": {
+        "codigo_poder_aquisitivo": 3,
+        "poder_aquisitivo": "MEDIO BAIXO",
+        "renda": 3550,
+        "fx_poder_aquisitivo": "DE R$ 1019 ATÉ R$ 1630"
+      },
+      "chaves_pix": [],
+      "processos_registrados": [
+        {"numero_do_processo": "0803411-38.2025.8.20.5004"},
+        {"numero_do_processo": "0000058-48.2025.8.17.3600"},
+        {"numero_do_processo": "0810392-73.2017.8.20.5001"},
+        {"numero_do_processo": "0852213-28.2015.8.20.5001"},
+        {"numero_do_processo": "0800809-39.2016.4.05.8400"},
+        {"numero_do_processo": "0810028-03.2021.4.05.8400"},
+        {"numero_do_processo": "0810028-03.2021.4.05.8400"},
+        {"numero_do_processo": "0849173-28.2021.8.20.5001"},
+        {"numero_do_processo": "0805258-59.2024.4.05.8400"},
+        {"numero_do_processo": "0841064-98.2016.8.20.5001"},
+        {"numero_do_processo": "0809656-50.2020.8.20.5001"},
+        {"numero_do_processo": "0833660-88.2019.8.20.5001"},
+        {"numero_do_processo": "0804333-61.2022.8.20.0000"},
+        {"numero_do_processo": "0855122-43.2015.8.20.5001"},
+        {"numero_do_processo": "0848953-06.2016.8.20.5001"},
+        {"numero_do_processo": "0011902-80.2013.8.20.0124"},
+        {"numero_do_processo": "0037884-14.2012.8.20.0001"},
+        {"numero_do_processo": "0038031-40.2012.8.20.0001"},
+        {"numero_do_processo": "0807240-85.2015.8.20.5001"},
+        {"numero_do_processo": "0810028-03.2021.4.05.8400"}
+      ],
+      "pis_pasep": [
+        {
+          "numero_pis": "20988088597",
+          "data_inclusao": "2023-01-31 00:00:00"
+        }
+      ],
+      "big_data_documentos": [
+        {
+          "numero_do_documento": "20988088597",
+          "tipo_do_documento": "PIS"
+        },
+        {
+          "numero_do_documento": "356297155",
+          "tipo_do_documento": "RG - SP"
+        }
+      ],
+      "big_data_sancoes": {
+        "procurado_internacional": false,
+        "aliases_registrados": [],
+        "sancoes_registradas": []
+      },
+      "carteira_de_habilitacao": {
+        "numerocnh": "03446562716",
+        "dataprimeiracnh": "2004-12-07",
+        "dataatualizacao": "2020-01-13",
+        "siglaufemissao": "RN"
+      },
+      "dividas": [
+        {
+          "referenciadivida": "SIDA",
+          "receitaprincipal": "DIV ATIVA-SIMPLES NACIONAL",
+          "numeroinscricao": "4141900176658",
+          "datainscricao": "2019-06-07 00:00:00",
+          "tipositinscricao": "EM COBRANÇA",
+          "situacaoinscricao": "ATIVA EM COBRANCA",
+          "indicadorajuizado": false,
+          "valorconsolidado": 4753.61
+        },
+        {
+          "referenciadivida": "SIDA",
+          "receitaprincipal": "DIV ATIVA-SIMPLES NACIONAL",
+          "numeroinscricao": "4141900176658",
+          "datainscricao": "2019-06-07 00:00:00",
+          "tipositinscricao": "EM COBRANÇA",
+          "situacaoinscricao": "ATIVA EM COBRANCA",
+          "indicadorajuizado": false,
+          "valorconsolidado": 4894.48
+        }
+      ],
+      "advogados": [
+        {
+          "nome": "LUANA CAVALCANTI LYRA",
+          "tipo_de_representacao": "ADVOGADO",
+          "oab": "7863",
+          "uf_oab": "RN"
+        },
+        {
+          "nome": "THIAGO HENRIQUE SIMOES SANTOS",
+          "tipo_de_representacao": "ADVOGADO",
+          "oab": "033681",
+          "uf_oab": "PE"
+        },
+        {
+          "nome": "LEONARDO SALES XAVIER",
+          "tipo_de_representacao": "ADVOGADO",
+          "oab": "SEM INFORMAÇÃO",
+          "uf_oab": "SEM INFORMAÇÃO"
+        },
+        {
+          "nome": "LUANA CAVALCANTI LYRA",
+          "tipo_de_representacao": "ADVOGADO",
+          "oab": "SEM INFORMAÇÃO",
+          "uf_oab": "SEM INFORMAÇÃO"
+        },
+        {
+          "nome": "DEYSE PEREIRA DE SOUZA",
+          "tipo_de_representacao": "ADVOGADO",
+          "oab": "16743",
+          "uf_oab": "RN"
+        }
+      ],
+      "imoveis": [
+        {
+          "codsetor": "240810205060143",
+          "tipodomicilio": "CASA",
+          "condicaodomicilio": "Não informado"
+        }
+      ],
+      "vizinhos": [
+        {
+          "nome": "JANDIRA FEITOSA MAGALHAES",
+          "cpf": "72825278734",
+          "cep": "59133600"
+        },
+        {
+          "nome": "SUELI GOMES MARTINS",
+          "cpf": "80741304449",
+          "cep": "59133600"
+        },
+        {
+          "nome": "RICARDO PATREZI DE MEDEIROS DA SILVA",
+          "cpf": "06504482438",
+          "cep": "59133600"
+        }
+      ],
+      "enderecos": [
+        {
+          "logradouro": "AV DR JOAO MED FILHO 4550 POTENGI",
+          "numero": "4550",
+          "bairro": "SEM INFORMAÇÃO",
+          "complemento": "SEM INFORMAÇÃO",
+          "cidade": "NATAL/RN",
+          "cep": "SEM INFORMAÇÃO"
+        },
+        {
+          "logradouro": "R 0000261",
+          "numero": "VALE DO SOL",
+          "bairro": "PAJUCARA",
+          "complemento": "SEM INFORMAÇÃO",
+          "cidade": "NATAL/RN",
+          "cep": "59122500"
+        },
+        {
+          "logradouro": "VALE DO SOL R",
+          "numero": "261",
+          "bairro": "PAJUCARA",
+          "complemento": "SEM INFORMAÇÃO",
+          "cidade": "NATAL/RN",
+          "cep": "59122500"
+        },
+        {
+          "logradouro": "VALE DO SOL",
+          "numero": "261",
+          "bairro": "PAJUCARA",
+          "complemento": "SEM INFORMAÇÃO",
+          "cidade": "240810/RN",
+          "cep": "59114280"
+        },
+        {
+          "logradouro": "VALE DO SOL  261",
+          "numero": "SEM INFORMAÇÃO",
+          "bairro": "REDINHA",
+          "complemento": "SEM INFORMAÇÃO",
+          "cidade": "NATAL/RN",
+          "cep": "59122500"
+        },
+        {
+          "logradouro": "AV JACI TOLEDO",
+          "numero": "143",
+          "bairro": "VL SABRINA",
+          "complemento": "SEM INFORMAÇÃO",
+          "cidade": "SAO PAULO/SP",
+          "cep": "02140000"
+        }
+      ],
+      "telefones": [
+        {"telefone": "(84)36625826", "tipo": "SEM INFORMAÇÃO"},
+        {"telefone": "(84)36615712", "tipo": "SEM INFORMAÇÃO"},
+        {"telefone": "(84)32783506", "tipo": "SEM INFORMAÇÃO"},
+        {"telefone": "(84)987347320", "tipo": "MÓVEL"},
+        {"telefone": "(84)988112395", "tipo": "MÓVEL"},
+        {"telefone": "(84)987080628", "tipo": "SEM INFORMAÇÃO"},
+        {"telefone": "(84)981181390", "tipo": "SEM INFORMAÇÃO"},
+        {"telefone": "(84)987230691", "tipo": "SEM INFORMAÇÃO"},
+        {"telefone": "(84)988404161", "tipo": "SEM INFORMAÇÃO"},
+        {"telefone": "(84)999350691", "tipo": "SEM INFORMAÇÃO"},
+        {"telefone": "(84)999350628", "tipo": "MÓVEL"},
+        {"telefone": "(84)987080565", "tipo": "SEM INFORMAÇÃO"},
+        {"telefone": "(84)987551075", "tipo": "SEM INFORMAÇÃO"},
+        {"telefone": "(84)987230628", "tipo": "SEM INFORMAÇÃO"},
+        {"telefone": "(84)991551001", "tipo": "MÓVEL"}
+      ],
+      "emails": [
+        {
+          "email": "fabiobarrostst@hotmail.com",
+          "score": "OTIMO",
+          "pessoal": true,
+          "blacklist": false
+        },
+        {
+          "email": "ibrcontabilidade@hotmail.com",
+          "score": "RUIM",
+          "pessoal": false,
+          "blacklist": false
+        },
+        {
+          "email": "decoratisinteticos@hotmail.com",
+          "score": "RUIM",
+          "pessoal": false,
+          "blacklist": false
+        }
+      ],
+      "parentes": [
+        {"nome": "LIVIO GOMES DE BARROS JUNIOR", "cpf": "33025185449", "parentesco": "PAI"},
+        {"nome": "LUZINETE MARIA LIMA BARROS", "cpf": "03109933420", "parentesco": "AVÔ(Ó)"},
+        {"nome": "LIVIA HANNA DANTAS DE PAIVA BARROS", "cpf": "08281180439", "parentesco": "IRMÃ"},
+        {"nome": "LUIZ HENRIQUE DE LIMA BARROS", "cpf": "12240737468", "parentesco": "TIO"},
+        {"nome": "ANA ELIZABETH BARROS MACHADO", "cpf": "31377955400", "parentesco": "TIA"},
+        {"nome": "FATIMA MARIA BARROS SOBREIRA", "cpf": "02397413400", "parentesco": "TIA"},
+        {"nome": "LEOPOLDINA GOMES DE LIMA", "cpf": "20057156468", "parentesco": "BISAVÔ(Ó)"},
+        {"nome": "NOE GOMES DE LIMA", "cpf": "22650601949", "parentesco": "BISAVÔ(Ó)"},
+        {"nome": "MARIA LUIZA BARROS PESSOA", "cpf": "13562392427", "parentesco": "SOBRINHA"}
+      ],
+      "veiculos": [
+        {
+          "marca_modelo": "R/MILTON BRASILIA CA",
+          "placa": "NVB8G98",
+          "chassis": "9A9BF01CPBBEM8772",
+          "renavam": "00271485965",
+          "ano_fabricacao": 2010,
+          "ano_modelo": 2011
+        },
+        {
+          "marca_modelo": "PEUGEOT/207PASSION XS A",
+          "placa": "NPT3A11",
+          "chassis": "9362NN6AYBB025930",
+          "renavam": "00254322786",
+          "ano_fabricacao": 2010,
+          "ano_modelo": 2011
+        }
+      ],
+      "empresas": {
+        "razao_social": "DECORATI SINTETICOS INDUSTRIA E COMERCIO LTDA",
+        "cnpj": "17341950000182",
+        "nome_fantasia": "DECORATI SINTETICOS"
+      },
+      "imposto_de_renda": [
+        {"situacao_receita": "IMPOSTO A PAGAR SEM OPCAO POR DEBITO AUTOMATICO"},
+        {"situacao_receita": "IMPOSTO A PAGAR", "data_consulta": "2018-01-21 00:00:00"},
+        {"situacao_receita": "IMPOSTO A PAGAR", "data_consulta": "2017-11-30 00:00:00"},
+        {"situacao_receita": "IMPOSTO A PAGAR", "data_consulta": "2018-05-24 09:37:00"},
+        {"situacao_receita": "SUA DECLARACAO NAO CONSTA NA BASE DE DADOS DA RECEITA FEDERAL", "data_consulta": "2020-10-02 16:55:36"},
+        {"situacao_receita": "SUA DECLARACAO NAO CONSTA NA BASE DE DADOS DA RECEITA FEDERAL", "data_consulta": "2022-06-15 15:20:39"}
+      ],
+      "data_hora_consulta": "16/10/2026, 15:31:22"
+    }
   ]
 }
 
